@@ -1,6 +1,2485 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js":
+/*!***********************************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "arrayLikeToArray": () => (/* binding */ _arrayLikeToArray),
+/* harmony export */   "createForOfIteratorHelperLoose": () => (/* binding */ _createForOfIteratorHelperLoose),
+/* harmony export */   "extends": () => (/* binding */ _extends),
+/* harmony export */   "objectWithoutPropertiesLoose": () => (/* binding */ _objectWithoutPropertiesLoose),
+/* harmony export */   "unsupportedIterableToArray": () => (/* binding */ _unsupportedIterableToArray)
+/* harmony export */ });
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+}
+
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+
+  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
+
+  return arr2;
+}
+
+function _createForOfIteratorHelperLoose(o, allowArrayLike) {
+  var it;
+
+  if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {
+    if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {
+      if (it) o = it;
+      var i = 0;
+      return function () {
+        if (i >= o.length) return {
+          done: true
+        };
+        return {
+          done: false,
+          value: o[i++]
+        };
+      };
+    }
+
+    throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+  }
+
+  it = o[Symbol.iterator]();
+  return it.next.bind(it);
+}
+
+
+//# sourceMappingURL=_rollupPluginBabelHelpers.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/components/description/description.esm.js":
+/*!***************************************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/components/description/description.esm.js ***!
+  \***************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Description": () => (/* binding */ Description),
+/* harmony export */   "useDescriptions": () => (/* binding */ useDescriptions)
+/* harmony export */ });
+/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../utils/render.esm.js */ "./node_modules/@headlessui/react/dist/utils/render.esm.js");
+/* harmony import */ var _hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../hooks/use-iso-morphic-effect.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-iso-morphic-effect.esm.js");
+/* harmony import */ var _hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../hooks/use-id.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-id.esm.js");
+
+
+
+
+
+
+var DescriptionContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
+
+function useDescriptionContext() {
+  var context = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(DescriptionContext);
+
+  if (context === null) {
+    var err = new Error('You used a <Description /> component, but it is not inside a relevant parent.');
+    if (Error.captureStackTrace) Error.captureStackTrace(err, useDescriptionContext);
+    throw err;
+  }
+
+  return context;
+}
+
+function useDescriptions() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+      descriptionIds = _useState[0],
+      setDescriptionIds = _useState[1];
+
+  return [// The actual id's as string or undefined
+  descriptionIds.length > 0 ? descriptionIds.join(' ') : undefined, // The provider component
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+    return function DescriptionProvider(props) {
+      var register = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
+        setDescriptionIds(function (existing) {
+          return [].concat(existing, [value]);
+        });
+        return function () {
+          return setDescriptionIds(function (existing) {
+            var clone = existing.slice();
+            var idx = clone.indexOf(value);
+            if (idx !== -1) clone.splice(idx, 1);
+            return clone;
+          });
+        };
+      }, []);
+      var contextBag = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+        return {
+          register: register,
+          slot: props.slot,
+          name: props.name,
+          props: props.props
+        };
+      }, [register, props.slot, props.name, props.props]);
+      return react__WEBPACK_IMPORTED_MODULE_0__.createElement(DescriptionContext.Provider, {
+        value: contextBag
+      }, props.children);
+    };
+  }, [setDescriptionIds])];
+} // ---
+
+var DEFAULT_DESCRIPTION_TAG = 'p';
+function Description(props) {
+  var context = useDescriptionContext();
+  var id = "headlessui-description-" + (0,_hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_1__.useId)();
+  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_2__.useIsoMorphicEffect)(function () {
+    return context.register(id);
+  }, [id, context.register]);
+  var passThroughProps = props;
+
+  var propsWeControl = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_3__["extends"])({}, context.props, {
+    id: id
+  });
+
+  return (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_4__.render)({
+    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_3__["extends"])({}, passThroughProps, propsWeControl),
+    slot: context.slot || {},
+    defaultTag: DEFAULT_DESCRIPTION_TAG,
+    name: context.name || 'Description'
+  });
+}
+
+
+//# sourceMappingURL=description.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/components/dialog/dialog.esm.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/components/dialog/dialog.esm.js ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Dialog": () => (/* binding */ Dialog)
+/* harmony export */ });
+/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utils_match_esm_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/match.esm.js */ "./node_modules/@headlessui/react/dist/utils/match.esm.js");
+/* harmony import */ var _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils/render.esm.js */ "./node_modules/@headlessui/react/dist/utils/render.esm.js");
+/* harmony import */ var _hooks_use_sync_refs_esm_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../hooks/use-sync-refs.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-sync-refs.esm.js");
+/* harmony import */ var _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../keyboard.esm.js */ "./node_modules/@headlessui/react/dist/components/keyboard.esm.js");
+/* harmony import */ var _utils_bugs_esm_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../utils/bugs.esm.js */ "./node_modules/@headlessui/react/dist/utils/bugs.esm.js");
+/* harmony import */ var _hooks_use_server_handoff_complete_esm_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../hooks/use-server-handoff-complete.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-server-handoff-complete.esm.js");
+/* harmony import */ var _hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../hooks/use-id.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-id.esm.js");
+/* harmony import */ var _hooks_use_window_event_esm_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../hooks/use-window-event.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-window-event.esm.js");
+/* harmony import */ var _hooks_use_focus_trap_esm_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../hooks/use-focus-trap.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-focus-trap.esm.js");
+/* harmony import */ var _hooks_use_inert_others_esm_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../hooks/use-inert-others.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-inert-others.esm.js");
+/* harmony import */ var _internal_portal_force_root_esm_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../internal/portal-force-root.esm.js */ "./node_modules/@headlessui/react/dist/internal/portal-force-root.esm.js");
+/* harmony import */ var _portal_portal_esm_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../portal/portal.esm.js */ "./node_modules/@headlessui/react/dist/components/portal/portal.esm.js");
+/* harmony import */ var _description_description_esm_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../description/description.esm.js */ "./node_modules/@headlessui/react/dist/components/description/description.esm.js");
+/* harmony import */ var _internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../internal/open-closed.esm.js */ "./node_modules/@headlessui/react/dist/internal/open-closed.esm.js");
+/* harmony import */ var _internal_stack_context_esm_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../internal/stack-context.esm.js */ "./node_modules/@headlessui/react/dist/internal/stack-context.esm.js");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _reducers;
+var DialogStates;
+
+(function (DialogStates) {
+  DialogStates[DialogStates["Open"] = 0] = "Open";
+  DialogStates[DialogStates["Closed"] = 1] = "Closed";
+})(DialogStates || (DialogStates = {}));
+
+var ActionTypes;
+
+(function (ActionTypes) {
+  ActionTypes[ActionTypes["SetTitleId"] = 0] = "SetTitleId";
+})(ActionTypes || (ActionTypes = {}));
+
+var reducers = (_reducers = {}, _reducers[ActionTypes.SetTitleId] = function (state, action) {
+  if (state.titleId === action.id) return state;
+  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
+    titleId: action.id
+  });
+}, _reducers);
+var DialogContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
+DialogContext.displayName = 'DialogContext';
+
+function useDialogContext(component) {
+  var context = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(DialogContext);
+
+  if (context === null) {
+    var err = new Error("<" + component + " /> is missing a parent <" + Dialog.displayName + " /> component.");
+    if (Error.captureStackTrace) Error.captureStackTrace(err, useDialogContext);
+    throw err;
+  }
+
+  return context;
+}
+
+function stateReducer(state, action) {
+  return (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_2__.match)(action.type, reducers, state, action);
+} // ---
+
+
+var DEFAULT_DIALOG_TAG = 'div';
+var DialogRenderFeatures = _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_3__.Features.RenderStrategy | _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_3__.Features.Static;
+var DialogRoot = /*#__PURE__*/(0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_3__.forwardRefWithAs)(function Dialog(props, ref) {
+  var open = props.open,
+      onClose = props.onClose,
+      initialFocus = props.initialFocus,
+      rest = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.objectWithoutPropertiesLoose)(props, ["open", "onClose", "initialFocus"]);
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+      nestedDialogCount = _useState[0],
+      setNestedDialogCount = _useState[1];
+
+  var usesOpenClosedState = (0,_internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_4__.useOpenClosed)();
+
+  if (open === undefined && usesOpenClosedState !== null) {
+    var _match;
+
+    // Update the `open` prop based on the open closed state
+    open = (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_2__.match)(usesOpenClosedState, (_match = {}, _match[_internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_4__.State.Open] = true, _match[_internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_4__.State.Closed] = false, _match));
+  }
+
+  var containers = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(new Set());
+  var internalDialogRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  var dialogRef = (0,_hooks_use_sync_refs_esm_js__WEBPACK_IMPORTED_MODULE_5__.useSyncRefs)(internalDialogRef, ref); // Validations
+
+  var hasOpen = props.hasOwnProperty('open') || usesOpenClosedState !== null;
+  var hasOnClose = props.hasOwnProperty('onClose');
+
+  if (!hasOpen && !hasOnClose) {
+    throw new Error("You have to provide an `open` and an `onClose` prop to the `Dialog` component.");
+  }
+
+  if (!hasOpen) {
+    throw new Error("You provided an `onClose` prop to the `Dialog`, but forgot an `open` prop.");
+  }
+
+  if (!hasOnClose) {
+    throw new Error("You provided an `open` prop to the `Dialog`, but forgot an `onClose` prop.");
+  }
+
+  if (typeof open !== 'boolean') {
+    throw new Error("You provided an `open` prop to the `Dialog`, but the value is not a boolean. Received: " + open);
+  }
+
+  if (typeof onClose !== 'function') {
+    throw new Error("You provided an `onClose` prop to the `Dialog`, but the value is not a function. Received: " + onClose);
+  }
+
+  var dialogState = open ? DialogStates.Open : DialogStates.Closed;
+
+  var visible = function () {
+    if (usesOpenClosedState !== null) {
+      return usesOpenClosedState === _internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_4__.State.Open;
+    }
+
+    return dialogState === DialogStates.Open;
+  }();
+
+  var _useReducer = (0,react__WEBPACK_IMPORTED_MODULE_0__.useReducer)(stateReducer, {
+    titleId: null,
+    descriptionId: null
+  }),
+      state = _useReducer[0],
+      dispatch = _useReducer[1];
+
+  var close = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function () {
+    return onClose(false);
+  }, [onClose]);
+  var setTitleId = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (id) {
+    return dispatch({
+      type: ActionTypes.SetTitleId,
+      id: id
+    });
+  }, [dispatch]);
+  var ready = (0,_hooks_use_server_handoff_complete_esm_js__WEBPACK_IMPORTED_MODULE_6__.useServerHandoffComplete)();
+  var enabled = ready && dialogState === DialogStates.Open;
+  var hasNestedDialogs = nestedDialogCount > 1; // 1 is the current dialog
+
+  var hasParentDialog = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(DialogContext) !== null; // If there are multiple dialogs, then you can be the root, the leaf or one
+  // in between. We only care abou whether you are the top most one or not.
+
+  var position = !hasNestedDialogs ? 'leaf' : 'parent';
+  (0,_hooks_use_focus_trap_esm_js__WEBPACK_IMPORTED_MODULE_7__.useFocusTrap)(internalDialogRef, enabled ? (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_2__.match)(position, {
+    parent: _hooks_use_focus_trap_esm_js__WEBPACK_IMPORTED_MODULE_7__.Features.RestoreFocus,
+    leaf: _hooks_use_focus_trap_esm_js__WEBPACK_IMPORTED_MODULE_7__.Features.All
+  }) : _hooks_use_focus_trap_esm_js__WEBPACK_IMPORTED_MODULE_7__.Features.None, {
+    initialFocus: initialFocus,
+    containers: containers
+  });
+  (0,_hooks_use_inert_others_esm_js__WEBPACK_IMPORTED_MODULE_8__.useInertOthers)(internalDialogRef, hasNestedDialogs ? enabled : false); // Handle outside click
+
+  (0,_hooks_use_window_event_esm_js__WEBPACK_IMPORTED_MODULE_9__.useWindowEvent)('mousedown', function (event) {
+    var _internalDialogRef$cu;
+
+    var target = event.target;
+    if (dialogState !== DialogStates.Open) return;
+    if (hasNestedDialogs) return;
+    if ((_internalDialogRef$cu = internalDialogRef.current) == null ? void 0 : _internalDialogRef$cu.contains(target)) return;
+    close();
+  }); // Handle `Escape` to close
+
+  (0,_hooks_use_window_event_esm_js__WEBPACK_IMPORTED_MODULE_9__.useWindowEvent)('keydown', function (event) {
+    if (event.key !== _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_10__.Keys.Escape) return;
+    if (dialogState !== DialogStates.Open) return;
+    if (hasNestedDialogs) return;
+    event.preventDefault();
+    event.stopPropagation();
+    close();
+  }); // Scroll lock
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (dialogState !== DialogStates.Open) return;
+    if (hasParentDialog) return;
+    var overflow = document.documentElement.style.overflow;
+    var paddingRight = document.documentElement.style.paddingRight;
+    var scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    document.documentElement.style.overflow = 'hidden';
+    document.documentElement.style.paddingRight = scrollbarWidth + "px";
+    return function () {
+      document.documentElement.style.overflow = overflow;
+      document.documentElement.style.paddingRight = paddingRight;
+    };
+  }, [dialogState, hasParentDialog]); // Trigger close when the FocusTrap gets hidden
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (dialogState !== DialogStates.Open) return;
+    if (!internalDialogRef.current) return;
+    var observer = new IntersectionObserver(function (entries) {
+      for (var _iterator = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.createForOfIteratorHelperLoose)(entries), _step; !(_step = _iterator()).done;) {
+        var entry = _step.value;
+
+        if (entry.boundingClientRect.x === 0 && entry.boundingClientRect.y === 0 && entry.boundingClientRect.width === 0 && entry.boundingClientRect.height === 0) {
+          close();
+        }
+      }
+    });
+    observer.observe(internalDialogRef.current);
+    return function () {
+      return observer.disconnect();
+    };
+  }, [dialogState, internalDialogRef, close]);
+
+  var _useDescriptions = (0,_description_description_esm_js__WEBPACK_IMPORTED_MODULE_11__.useDescriptions)(),
+      describedby = _useDescriptions[0],
+      DescriptionProvider = _useDescriptions[1];
+
+  var id = "headlessui-dialog-" + (0,_hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_12__.useId)();
+  var contextBag = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+    return [{
+      dialogState: dialogState,
+      close: close,
+      setTitleId: setTitleId
+    }, state];
+  }, [dialogState, state, close, setTitleId]);
+  var slot = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+    return {
+      open: dialogState === DialogStates.Open
+    };
+  }, [dialogState]);
+  var propsWeControl = {
+    ref: dialogRef,
+    id: id,
+    role: 'dialog',
+    'aria-modal': dialogState === DialogStates.Open ? true : undefined,
+    'aria-labelledby': state.titleId,
+    'aria-describedby': describedby,
+    onClick: function onClick(event) {
+      event.stopPropagation();
+    }
+  };
+  var passthroughProps = rest;
+  return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_internal_stack_context_esm_js__WEBPACK_IMPORTED_MODULE_13__.StackProvider, {
+    type: "Dialog",
+    element: internalDialogRef,
+    onUpdate: (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (message, type, element) {
+      var _match2;
+
+      if (type !== 'Dialog') return;
+      (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_2__.match)(message, (_match2 = {}, _match2[_internal_stack_context_esm_js__WEBPACK_IMPORTED_MODULE_13__.StackMessage.Add] = function () {
+        containers.current.add(element);
+        setNestedDialogCount(function (count) {
+          return count + 1;
+        });
+      }, _match2[_internal_stack_context_esm_js__WEBPACK_IMPORTED_MODULE_13__.StackMessage.Remove] = function () {
+        containers.current.add(element);
+        setNestedDialogCount(function (count) {
+          return count - 1;
+        });
+      }, _match2));
+    }, [])
+  }, react__WEBPACK_IMPORTED_MODULE_0__.createElement(_internal_portal_force_root_esm_js__WEBPACK_IMPORTED_MODULE_14__.ForcePortalRoot, {
+    force: true
+  }, react__WEBPACK_IMPORTED_MODULE_0__.createElement(_portal_portal_esm_js__WEBPACK_IMPORTED_MODULE_15__.Portal, null, react__WEBPACK_IMPORTED_MODULE_0__.createElement(DialogContext.Provider, {
+    value: contextBag
+  }, react__WEBPACK_IMPORTED_MODULE_0__.createElement(_portal_portal_esm_js__WEBPACK_IMPORTED_MODULE_15__.Portal.Group, {
+    target: internalDialogRef
+  }, react__WEBPACK_IMPORTED_MODULE_0__.createElement(_internal_portal_force_root_esm_js__WEBPACK_IMPORTED_MODULE_14__.ForcePortalRoot, {
+    force: false
+  }, react__WEBPACK_IMPORTED_MODULE_0__.createElement(DescriptionProvider, {
+    slot: slot,
+    name: "Dialog.Description"
+  }, (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_3__.render)({
+    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, passthroughProps, propsWeControl),
+    slot: slot,
+    defaultTag: DEFAULT_DIALOG_TAG,
+    features: DialogRenderFeatures,
+    visible: visible,
+    name: 'Dialog'
+  }))))))));
+}); // ---
+
+var DEFAULT_OVERLAY_TAG = 'div';
+var Overlay = /*#__PURE__*/(0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_3__.forwardRefWithAs)(function Overlay(props, ref) {
+  var _useDialogContext = useDialogContext([Dialog.displayName, Overlay.name].join('.')),
+      _useDialogContext$ = _useDialogContext[0],
+      dialogState = _useDialogContext$.dialogState,
+      close = _useDialogContext$.close;
+
+  var overlayRef = (0,_hooks_use_sync_refs_esm_js__WEBPACK_IMPORTED_MODULE_5__.useSyncRefs)(ref);
+  var id = "headlessui-dialog-overlay-" + (0,_hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_12__.useId)();
+  var handleClick = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (event) {
+    if (event.target !== event.currentTarget) return;
+    if ((0,_utils_bugs_esm_js__WEBPACK_IMPORTED_MODULE_16__.isDisabledReactIssue7711)(event.currentTarget)) return event.preventDefault();
+    event.preventDefault();
+    event.stopPropagation();
+    close();
+  }, [close]);
+  var slot = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+    return {
+      open: dialogState === DialogStates.Open
+    };
+  }, [dialogState]);
+  var propsWeControl = {
+    ref: overlayRef,
+    id: id,
+    'aria-hidden': true,
+    onClick: handleClick
+  };
+  var passthroughProps = props;
+  return (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_3__.render)({
+    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, passthroughProps, propsWeControl),
+    slot: slot,
+    defaultTag: DEFAULT_OVERLAY_TAG,
+    name: 'Dialog.Overlay'
+  });
+}); // ---
+
+var DEFAULT_TITLE_TAG = 'h2';
+
+function Title(props) {
+  var _useDialogContext2 = useDialogContext([Dialog.displayName, Title.name].join('.')),
+      _useDialogContext2$ = _useDialogContext2[0],
+      dialogState = _useDialogContext2$.dialogState,
+      setTitleId = _useDialogContext2$.setTitleId;
+
+  var id = "headlessui-dialog-title-" + (0,_hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_12__.useId)();
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    setTitleId(id);
+    return function () {
+      return setTitleId(null);
+    };
+  }, [id, setTitleId]);
+  var slot = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+    return {
+      open: dialogState === DialogStates.Open
+    };
+  }, [dialogState]);
+  var propsWeControl = {
+    id: id
+  };
+  var passthroughProps = props;
+  return (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_3__.render)({
+    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, passthroughProps, propsWeControl),
+    slot: slot,
+    defaultTag: DEFAULT_TITLE_TAG,
+    name: 'Dialog.Title'
+  });
+} // ---
+
+
+var Dialog = /*#__PURE__*/Object.assign(DialogRoot, {
+  Overlay: Overlay,
+  Title: Title,
+  Description: _description_description_esm_js__WEBPACK_IMPORTED_MODULE_11__.Description
+});
+
+
+//# sourceMappingURL=dialog.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/components/keyboard.esm.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/components/keyboard.esm.js ***!
+  \************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Keys": () => (/* binding */ Keys)
+/* harmony export */ });
+// TODO: This must already exist somewhere, right? 🤔
+// Ref: https://www.w3.org/TR/uievents-key/#named-key-attribute-values
+var Keys;
+
+(function (Keys) {
+  Keys["Space"] = " ";
+  Keys["Enter"] = "Enter";
+  Keys["Escape"] = "Escape";
+  Keys["Backspace"] = "Backspace";
+  Keys["ArrowLeft"] = "ArrowLeft";
+  Keys["ArrowUp"] = "ArrowUp";
+  Keys["ArrowRight"] = "ArrowRight";
+  Keys["ArrowDown"] = "ArrowDown";
+  Keys["Home"] = "Home";
+  Keys["End"] = "End";
+  Keys["PageUp"] = "PageUp";
+  Keys["PageDown"] = "PageDown";
+  Keys["Tab"] = "Tab";
+})(Keys || (Keys = {}));
+
+
+//# sourceMappingURL=keyboard.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/components/portal/portal.esm.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/components/portal/portal.esm.js ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Portal": () => (/* binding */ Portal)
+/* harmony export */ });
+/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utils/render.esm.js */ "./node_modules/@headlessui/react/dist/utils/render.esm.js");
+/* harmony import */ var _hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../hooks/use-iso-morphic-effect.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-iso-morphic-effect.esm.js");
+/* harmony import */ var _hooks_use_server_handoff_complete_esm_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../hooks/use-server-handoff-complete.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-server-handoff-complete.esm.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var _internal_portal_force_root_esm_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../internal/portal-force-root.esm.js */ "./node_modules/@headlessui/react/dist/internal/portal-force-root.esm.js");
+
+
+
+
+
+
+
+
+function usePortalTarget() {
+  var forceInRoot = (0,_internal_portal_force_root_esm_js__WEBPACK_IMPORTED_MODULE_2__.usePortalRoot)();
+  var groupTarget = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(PortalGroupContext);
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(function () {
+    // Group context is used, but still null
+    if (!forceInRoot && groupTarget !== null) return null; // No group context is used, let's create a default portal root
+
+    if (typeof window === 'undefined') return null;
+    var existingRoot = document.getElementById('headlessui-portal-root');
+    if (existingRoot) return existingRoot;
+    var root = document.createElement('div');
+    root.setAttribute('id', 'headlessui-portal-root');
+    return document.body.appendChild(root);
+  }),
+      target = _useState[0],
+      setTarget = _useState[1]; // Ensure the portal root is always in the DOM
+
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (target === null) return;
+
+    if (!document.body.contains(target)) {
+      document.body.appendChild(target);
+    }
+  }, [target]);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (forceInRoot) return;
+    if (groupTarget === null) return;
+    setTarget(groupTarget.current);
+  }, [groupTarget, setTarget, forceInRoot]);
+  return target;
+} // ---
+
+
+var DEFAULT_PORTAL_TAG = react__WEBPACK_IMPORTED_MODULE_0__.Fragment;
+function Portal(props) {
+  var passthroughProps = props;
+  var target = usePortalTarget();
+
+  var _useState2 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(function () {
+    return typeof window === 'undefined' ? null : document.createElement('div');
+  }),
+      element = _useState2[0];
+
+  var ready = (0,_hooks_use_server_handoff_complete_esm_js__WEBPACK_IMPORTED_MODULE_3__.useServerHandoffComplete)();
+  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_4__.useIsoMorphicEffect)(function () {
+    if (!target) return;
+    if (!element) return;
+    target.appendChild(element);
+    return function () {
+      if (!target) return;
+      if (!element) return;
+      target.removeChild(element);
+
+      if (target.childNodes.length <= 0) {
+        var _target$parentElement;
+
+        (_target$parentElement = target.parentElement) == null ? void 0 : _target$parentElement.removeChild(target);
+      }
+    };
+  }, [target, element]);
+  if (!ready) return null;
+  return !target || !element ? null : (0,react_dom__WEBPACK_IMPORTED_MODULE_1__.createPortal)((0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_5__.render)({
+    props: passthroughProps,
+    defaultTag: DEFAULT_PORTAL_TAG,
+    name: 'Portal'
+  }), element);
+} // ---
+
+var DEFAULT_GROUP_TAG = react__WEBPACK_IMPORTED_MODULE_0__.Fragment;
+var PortalGroupContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
+
+function Group(props) {
+  var target = props.target,
+      passthroughProps = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_6__.objectWithoutPropertiesLoose)(props, ["target"]);
+
+  return react__WEBPACK_IMPORTED_MODULE_0__.createElement(PortalGroupContext.Provider, {
+    value: target
+  }, (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_5__.render)({
+    props: passthroughProps,
+    defaultTag: DEFAULT_GROUP_TAG,
+    name: 'Popover.Group'
+  }));
+} // ---
+
+
+Portal.Group = Group;
+
+
+//# sourceMappingURL=portal.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/components/transitions/transition.esm.js":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/components/transitions/transition.esm.js ***!
+  \**************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Transition": () => (/* binding */ Transition)
+/* harmony export */ });
+/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utils_match_esm_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils/match.esm.js */ "./node_modules/@headlessui/react/dist/utils/match.esm.js");
+/* harmony import */ var _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/render.esm.js */ "./node_modules/@headlessui/react/dist/utils/render.esm.js");
+/* harmony import */ var _hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../hooks/use-iso-morphic-effect.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-iso-morphic-effect.esm.js");
+/* harmony import */ var _hooks_use_server_handoff_complete_esm_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../hooks/use-server-handoff-complete.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-server-handoff-complete.esm.js");
+/* harmony import */ var _hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../hooks/use-id.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-id.esm.js");
+/* harmony import */ var _hooks_use_is_mounted_esm_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../hooks/use-is-mounted.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-is-mounted.esm.js");
+/* harmony import */ var _internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../internal/open-closed.esm.js */ "./node_modules/@headlessui/react/dist/internal/open-closed.esm.js");
+/* harmony import */ var _hooks_use_is_initial_render_esm_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../hooks/use-is-initial-render.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-is-initial-render.esm.js");
+/* harmony import */ var _utils_transition_esm_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./utils/transition.esm.js */ "./node_modules/@headlessui/react/dist/components/transitions/utils/transition.esm.js");
+
+
+
+
+
+
+
+
+
+
+
+
+function useSplitClasses(classes) {
+  if (classes === void 0) {
+    classes = '';
+  }
+
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+    return classes.split(' ').filter(function (className) {
+      return className.trim().length > 1;
+    });
+  }, [classes]);
+}
+
+var TransitionContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
+TransitionContext.displayName = 'TransitionContext';
+var TreeStates;
+
+(function (TreeStates) {
+  TreeStates["Visible"] = "visible";
+  TreeStates["Hidden"] = "hidden";
+})(TreeStates || (TreeStates = {}));
+
+function useTransitionContext() {
+  var context = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(TransitionContext);
+
+  if (context === null) {
+    throw new Error('A <Transition.Child /> is used but it is missing a parent <Transition /> or <Transition.Root />.');
+  }
+
+  return context;
+}
+
+function useParentNesting() {
+  var context = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(NestingContext);
+
+  if (context === null) {
+    throw new Error('A <Transition.Child /> is used but it is missing a parent <Transition /> or <Transition.Root />.');
+  }
+
+  return context;
+}
+
+var NestingContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
+NestingContext.displayName = 'NestingContext';
+
+function hasChildren(bag) {
+  if ('children' in bag) return hasChildren(bag.children);
+  return bag.current.filter(function (_ref) {
+    var state = _ref.state;
+    return state === TreeStates.Visible;
+  }).length > 0;
+}
+
+function useNesting(done) {
+  var doneRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(done);
+  var transitionableChildren = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)([]);
+  var mounted = (0,_hooks_use_is_mounted_esm_js__WEBPACK_IMPORTED_MODULE_1__.useIsMounted)();
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    doneRef.current = done;
+  }, [done]);
+  var unregister = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (childId, strategy) {
+    var _match;
+
+    if (strategy === void 0) {
+      strategy = _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_2__.RenderStrategy.Hidden;
+    }
+
+    var idx = transitionableChildren.current.findIndex(function (_ref2) {
+      var id = _ref2.id;
+      return id === childId;
+    });
+    if (idx === -1) return;
+    (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_3__.match)(strategy, (_match = {}, _match[_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_2__.RenderStrategy.Unmount] = function () {
+      transitionableChildren.current.splice(idx, 1);
+    }, _match[_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_2__.RenderStrategy.Hidden] = function () {
+      transitionableChildren.current[idx].state = TreeStates.Hidden;
+    }, _match));
+
+    if (!hasChildren(transitionableChildren) && mounted.current) {
+      doneRef.current == null ? void 0 : doneRef.current();
+    }
+  }, [doneRef, mounted, transitionableChildren]);
+  var register = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (childId) {
+    var child = transitionableChildren.current.find(function (_ref3) {
+      var id = _ref3.id;
+      return id === childId;
+    });
+
+    if (!child) {
+      transitionableChildren.current.push({
+        id: childId,
+        state: TreeStates.Visible
+      });
+    } else if (child.state !== TreeStates.Visible) {
+      child.state = TreeStates.Visible;
+    }
+
+    return function () {
+      return unregister(childId, _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_2__.RenderStrategy.Unmount);
+    };
+  }, [transitionableChildren, unregister]);
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+    return {
+      children: transitionableChildren,
+      register: register,
+      unregister: unregister
+    };
+  }, [register, unregister, transitionableChildren]);
+}
+
+function noop() {}
+
+var eventNames = ['beforeEnter', 'afterEnter', 'beforeLeave', 'afterLeave'];
+
+function ensureEventHooksExist(events) {
+  var result = {};
+
+  for (var _iterator = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_4__.createForOfIteratorHelperLoose)(eventNames), _step; !(_step = _iterator()).done;) {
+    var _events$name;
+
+    var name = _step.value;
+    result[name] = (_events$name = events[name]) != null ? _events$name : noop;
+  }
+
+  return result;
+}
+
+function useEvents(events) {
+  var eventsRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(ensureEventHooksExist(events));
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    eventsRef.current = ensureEventHooksExist(events);
+  }, [events]);
+  return eventsRef;
+} // ---
+
+
+var DEFAULT_TRANSITION_CHILD_TAG = 'div';
+var TransitionChildRenderFeatures = _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_2__.Features.RenderStrategy;
+
+function TransitionChild(props) {
+  var _match3;
+
+  var beforeEnter = props.beforeEnter,
+      afterEnter = props.afterEnter,
+      beforeLeave = props.beforeLeave,
+      afterLeave = props.afterLeave,
+      enter = props.enter,
+      enterFrom = props.enterFrom,
+      enterTo = props.enterTo,
+      entered = props.entered,
+      leave = props.leave,
+      leaveFrom = props.leaveFrom,
+      leaveTo = props.leaveTo,
+      rest = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_4__.objectWithoutPropertiesLoose)(props, ["beforeEnter", "afterEnter", "beforeLeave", "afterLeave", "enter", "enterFrom", "enterTo", "entered", "leave", "leaveFrom", "leaveTo"]);
+
+  var container = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(TreeStates.Visible),
+      state = _useState[0],
+      setState = _useState[1];
+
+  var strategy = rest.unmount ? _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_2__.RenderStrategy.Unmount : _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_2__.RenderStrategy.Hidden;
+
+  var _useTransitionContext = useTransitionContext(),
+      show = _useTransitionContext.show,
+      appear = _useTransitionContext.appear,
+      initial = _useTransitionContext.initial;
+
+  var _useParentNesting = useParentNesting(),
+      register = _useParentNesting.register,
+      unregister = _useParentNesting.unregister;
+
+  var id = (0,_hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_5__.useId)();
+  var isTransitioning = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(false);
+  var nesting = useNesting(function () {
+    // When all children have been unmounted we can only hide ourselves if and only if we are not
+    // transitioning ourselves. Otherwise we would unmount before the transitions are finished.
+    if (!isTransitioning.current) {
+      setState(TreeStates.Hidden);
+      unregister(id);
+      events.current.afterLeave();
+    }
+  });
+  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_6__.useIsoMorphicEffect)(function () {
+    if (!id) return;
+    return register(id);
+  }, [register, id]);
+  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_6__.useIsoMorphicEffect)(function () {
+    var _match2;
+
+    // If we are in another mode than the Hidden mode then ignore
+    if (strategy !== _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_2__.RenderStrategy.Hidden) return;
+    if (!id) return; // Make sure that we are visible
+
+    if (show && state !== TreeStates.Visible) {
+      setState(TreeStates.Visible);
+      return;
+    }
+
+    (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_3__.match)(state, (_match2 = {}, _match2[TreeStates.Hidden] = function () {
+      return unregister(id);
+    }, _match2[TreeStates.Visible] = function () {
+      return register(id);
+    }, _match2));
+  }, [state, id, register, unregister, show, strategy]);
+  var enterClasses = useSplitClasses(enter);
+  var enterFromClasses = useSplitClasses(enterFrom);
+  var enterToClasses = useSplitClasses(enterTo);
+  var enteredClasses = useSplitClasses(entered);
+  var leaveClasses = useSplitClasses(leave);
+  var leaveFromClasses = useSplitClasses(leaveFrom);
+  var leaveToClasses = useSplitClasses(leaveTo);
+  var events = useEvents({
+    beforeEnter: beforeEnter,
+    afterEnter: afterEnter,
+    beforeLeave: beforeLeave,
+    afterLeave: afterLeave
+  });
+  var ready = (0,_hooks_use_server_handoff_complete_esm_js__WEBPACK_IMPORTED_MODULE_7__.useServerHandoffComplete)();
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (ready && state === TreeStates.Visible && container.current === null) {
+      throw new Error('Did you forget to passthrough the `ref` to the actual DOM node?');
+    }
+  }, [container, state, ready]); // Skipping initial transition
+
+  var skip = initial && !appear;
+  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_6__.useIsoMorphicEffect)(function () {
+    var node = container.current;
+    if (!node) return;
+    if (skip) return;
+    isTransitioning.current = true;
+    if (show) events.current.beforeEnter();
+    if (!show) events.current.beforeLeave();
+    return show ? (0,_utils_transition_esm_js__WEBPACK_IMPORTED_MODULE_8__.transition)(node, enterClasses, enterFromClasses, enterToClasses, enteredClasses, function (reason) {
+      isTransitioning.current = false;
+      if (reason === _utils_transition_esm_js__WEBPACK_IMPORTED_MODULE_8__.Reason.Finished) events.current.afterEnter();
+    }) : (0,_utils_transition_esm_js__WEBPACK_IMPORTED_MODULE_8__.transition)(node, leaveClasses, leaveFromClasses, leaveToClasses, enteredClasses, function (reason) {
+      isTransitioning.current = false;
+      if (reason !== _utils_transition_esm_js__WEBPACK_IMPORTED_MODULE_8__.Reason.Finished) return; // When we don't have children anymore we can safely unregister from the parent and hide
+      // ourselves.
+
+      if (!hasChildren(nesting)) {
+        setState(TreeStates.Hidden);
+        unregister(id);
+        events.current.afterLeave();
+      }
+    });
+  }, [events, id, isTransitioning, unregister, nesting, container, skip, show, enterClasses, enterFromClasses, enterToClasses, leaveClasses, leaveFromClasses, leaveToClasses]);
+  var propsWeControl = {
+    ref: container
+  };
+  var passthroughProps = rest;
+  return react__WEBPACK_IMPORTED_MODULE_0__.createElement(NestingContext.Provider, {
+    value: nesting
+  }, react__WEBPACK_IMPORTED_MODULE_0__.createElement(_internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_9__.OpenClosedProvider, {
+    value: (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_3__.match)(state, (_match3 = {}, _match3[TreeStates.Visible] = _internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_9__.State.Open, _match3[TreeStates.Hidden] = _internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_9__.State.Closed, _match3))
+  }, (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_2__.render)({
+    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_4__["extends"])({}, passthroughProps, propsWeControl),
+    defaultTag: DEFAULT_TRANSITION_CHILD_TAG,
+    features: TransitionChildRenderFeatures,
+    visible: state === TreeStates.Visible,
+    name: 'Transition.Child'
+  })));
+}
+
+function Transition(props) {
+  // @ts-expect-error
+  var show = props.show,
+      _props$appear = props.appear,
+      appear = _props$appear === void 0 ? false : _props$appear,
+      unmount = props.unmount,
+      passthroughProps = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_4__.objectWithoutPropertiesLoose)(props, ["show", "appear", "unmount"]);
+
+  var usesOpenClosedState = (0,_internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_9__.useOpenClosed)();
+
+  if (show === undefined && usesOpenClosedState !== null) {
+    var _match4;
+
+    show = (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_3__.match)(usesOpenClosedState, (_match4 = {}, _match4[_internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_9__.State.Open] = true, _match4[_internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_9__.State.Closed] = false, _match4));
+  }
+
+  if (![true, false].includes(show)) {
+    throw new Error('A <Transition /> is used but it is missing a `show={true | false}` prop.');
+  }
+
+  var _useState2 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(show ? TreeStates.Visible : TreeStates.Hidden),
+      state = _useState2[0],
+      setState = _useState2[1];
+
+  var nestingBag = useNesting(function () {
+    setState(TreeStates.Hidden);
+  });
+  var initial = (0,_hooks_use_is_initial_render_esm_js__WEBPACK_IMPORTED_MODULE_10__.useIsInitialRender)();
+  var transitionBag = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+    return {
+      show: show,
+      appear: appear || !initial,
+      initial: initial
+    };
+  }, [show, appear, initial]);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (show) {
+      setState(TreeStates.Visible);
+    } else if (!hasChildren(nestingBag)) {
+      setState(TreeStates.Hidden);
+    }
+  }, [show, nestingBag]);
+  var sharedProps = {
+    unmount: unmount
+  };
+  return react__WEBPACK_IMPORTED_MODULE_0__.createElement(NestingContext.Provider, {
+    value: nestingBag
+  }, react__WEBPACK_IMPORTED_MODULE_0__.createElement(TransitionContext.Provider, {
+    value: transitionBag
+  }, (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_2__.render)({
+    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_4__["extends"])({}, sharedProps, {
+      as: react__WEBPACK_IMPORTED_MODULE_0__.Fragment,
+      children: react__WEBPACK_IMPORTED_MODULE_0__.createElement(TransitionChild, Object.assign({}, sharedProps, passthroughProps))
+    }),
+    defaultTag: react__WEBPACK_IMPORTED_MODULE_0__.Fragment,
+    features: TransitionChildRenderFeatures,
+    visible: state === TreeStates.Visible,
+    name: 'Transition'
+  })));
+}
+
+Transition.Child = function Child(props) {
+  var hasTransitionContext = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(TransitionContext) !== null;
+  var hasOpenClosedContext = (0,_internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_9__.useOpenClosed)() !== null;
+  return !hasTransitionContext && hasOpenClosedContext ? react__WEBPACK_IMPORTED_MODULE_0__.createElement(Transition, Object.assign({}, props)) : react__WEBPACK_IMPORTED_MODULE_0__.createElement(TransitionChild, Object.assign({}, props));
+};
+
+Transition.Root = Transition;
+
+
+//# sourceMappingURL=transition.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/components/transitions/utils/transition.esm.js":
+/*!********************************************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/components/transitions/utils/transition.esm.js ***!
+  \********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Reason": () => (/* binding */ Reason),
+/* harmony export */   "transition": () => (/* binding */ transition)
+/* harmony export */ });
+/* harmony import */ var _utils_disposables_esm_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../utils/disposables.esm.js */ "./node_modules/@headlessui/react/dist/utils/disposables.esm.js");
+/* harmony import */ var _utils_once_esm_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../utils/once.esm.js */ "./node_modules/@headlessui/react/dist/utils/once.esm.js");
+
+
+
+function addClasses(node) {
+  var _node$classList;
+
+  for (var _len = arguments.length, classes = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    classes[_key - 1] = arguments[_key];
+  }
+
+  node && classes.length > 0 && (_node$classList = node.classList).add.apply(_node$classList, classes);
+}
+
+function removeClasses(node) {
+  var _node$classList2;
+
+  for (var _len2 = arguments.length, classes = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
+    classes[_key2 - 1] = arguments[_key2];
+  }
+
+  node && classes.length > 0 && (_node$classList2 = node.classList).remove.apply(_node$classList2, classes);
+}
+
+var Reason;
+
+(function (Reason) {
+  Reason["Finished"] = "finished";
+  Reason["Cancelled"] = "cancelled";
+})(Reason || (Reason = {}));
+
+function waitForTransition(node, done) {
+  var d = (0,_utils_disposables_esm_js__WEBPACK_IMPORTED_MODULE_0__.disposables)();
+  if (!node) return d.dispose; // Safari returns a comma separated list of values, so let's sort them and take the highest value.
+
+  var _getComputedStyle = getComputedStyle(node),
+      transitionDuration = _getComputedStyle.transitionDuration,
+      transitionDelay = _getComputedStyle.transitionDelay;
+
+  var _map = [transitionDuration, transitionDelay].map(function (value) {
+    var _value$split$filter$m = value.split(',') // Remove falsy we can't work with
+    .filter(Boolean) // Values are returned as `0.3s` or `75ms`
+    .map(function (v) {
+      return v.includes('ms') ? parseFloat(v) : parseFloat(v) * 1000;
+    }).sort(function (a, z) {
+      return z - a;
+    }),
+        _value$split$filter$m2 = _value$split$filter$m[0],
+        resolvedValue = _value$split$filter$m2 === void 0 ? 0 : _value$split$filter$m2;
+
+    return resolvedValue;
+  }),
+      durationMs = _map[0],
+      delaysMs = _map[1]; // Waiting for the transition to end. We could use the `transitionend` event, however when no
+  // actual transition/duration is defined then the `transitionend` event is not fired.
+  //
+  // TODO: Downside is, when you slow down transitions via devtools this timeout is still using the
+  // full 100% speed instead of the 25% or 10%.
+
+
+  if (durationMs !== 0) {
+    d.setTimeout(function () {
+      done(Reason.Finished);
+    }, durationMs + delaysMs);
+  } else {
+    // No transition is happening, so we should cleanup already. Otherwise we have to wait until we
+    // get disposed.
+    done(Reason.Finished);
+  } // If we get disposed before the timeout runs we should cleanup anyway
+
+
+  d.add(function () {
+    return done(Reason.Cancelled);
+  });
+  return d.dispose;
+}
+
+function transition(node, base, from, to, entered, done) {
+  var d = (0,_utils_disposables_esm_js__WEBPACK_IMPORTED_MODULE_0__.disposables)();
+
+  var _done = done !== undefined ? (0,_utils_once_esm_js__WEBPACK_IMPORTED_MODULE_1__.once)(done) : function () {};
+
+  removeClasses.apply(void 0, [node].concat(entered));
+  addClasses.apply(void 0, [node].concat(base, from));
+  d.nextFrame(function () {
+    removeClasses.apply(void 0, [node].concat(from));
+    addClasses.apply(void 0, [node].concat(to));
+    d.add(waitForTransition(node, function (reason) {
+      removeClasses.apply(void 0, [node].concat(to, base));
+      addClasses.apply(void 0, [node].concat(entered));
+      return _done(reason);
+    }));
+  }); // Once we get disposed, we should ensure that we cleanup after ourselves. In case of an unmount,
+  // the node itself will be nullified and will be a no-op. In case of a full transition the classes
+  // are already removed which is also a no-op. However if you go from enter -> leave mid-transition
+  // then we have some leftovers that should be cleaned.
+
+  d.add(function () {
+    return removeClasses.apply(void 0, [node].concat(base, from, to, entered));
+  }); // When we get disposed early, than we should also call the done method but switch the reason.
+
+  d.add(function () {
+    return _done(Reason.Cancelled);
+  });
+  return d.dispose;
+}
+
+
+//# sourceMappingURL=transition.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/hooks/use-focus-trap.esm.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/hooks/use-focus-trap.esm.js ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Features": () => (/* binding */ Features),
+/* harmony export */   "useFocusTrap": () => (/* binding */ useFocusTrap)
+/* harmony export */ });
+/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _components_keyboard_esm_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/keyboard.esm.js */ "./node_modules/@headlessui/react/dist/components/keyboard.esm.js");
+/* harmony import */ var _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/focus-management.esm.js */ "./node_modules/@headlessui/react/dist/utils/focus-management.esm.js");
+/* harmony import */ var _use_window_event_esm_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./use-window-event.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-window-event.esm.js");
+/* harmony import */ var _use_is_mounted_esm_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./use-is-mounted.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-is-mounted.esm.js");
+
+
+
+
+
+
+
+var Features;
+
+(function (Features) {
+  /** No features enabled for the `useFocusTrap` hook. */
+  Features[Features["None"] = 1] = "None";
+  /** Ensure that we move focus initially into the container. */
+
+  Features[Features["InitialFocus"] = 2] = "InitialFocus";
+  /** Ensure that pressing `Tab` and `Shift+Tab` is trapped within the container. */
+
+  Features[Features["TabLock"] = 4] = "TabLock";
+  /** Ensure that programmatically moving focus outside of the container is disallowed. */
+
+  Features[Features["FocusLock"] = 8] = "FocusLock";
+  /** Ensure that we restore the focus when unmounting the component that uses this `useFocusTrap` hook. */
+
+  Features[Features["RestoreFocus"] = 16] = "RestoreFocus";
+  /** Enable all features. */
+
+  Features[Features["All"] = 30] = "All";
+})(Features || (Features = {}));
+
+function useFocusTrap(container, features, _temp) {
+  if (features === void 0) {
+    features = Features.All;
+  }
+
+  var _ref = _temp === void 0 ? {} : _temp,
+      initialFocus = _ref.initialFocus,
+      containers = _ref.containers;
+
+  var restoreElement = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(typeof window !== 'undefined' ? document.activeElement : null);
+  var previousActiveElement = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  var mounted = (0,_use_is_mounted_esm_js__WEBPACK_IMPORTED_MODULE_1__.useIsMounted)();
+  var featuresRestoreFocus = Boolean(features & Features.RestoreFocus);
+  var featuresInitialFocus = Boolean(features & Features.InitialFocus); // Capture the currently focused element, before we enable the focus trap.
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (!featuresRestoreFocus) return;
+    restoreElement.current = document.activeElement;
+  }, [featuresRestoreFocus]); // Restore the focus when we unmount the component.
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (!featuresRestoreFocus) return;
+    return function () {
+      (0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.focusElement)(restoreElement.current);
+      restoreElement.current = null;
+    };
+  }, [featuresRestoreFocus]); // Handle initial focus
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (!featuresInitialFocus) return;
+    if (!container.current) return;
+    var activeElement = document.activeElement;
+
+    if (initialFocus == null ? void 0 : initialFocus.current) {
+      if ((initialFocus == null ? void 0 : initialFocus.current) === activeElement) {
+        previousActiveElement.current = activeElement;
+        return; // Initial focus ref is already the active element
+      }
+    } else if (container.current.contains(activeElement)) {
+      previousActiveElement.current = activeElement;
+      return; // Already focused within Dialog
+    } // Try to focus the initialFocus ref
+
+
+    if (initialFocus == null ? void 0 : initialFocus.current) {
+      (0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.focusElement)(initialFocus.current);
+    } else {
+      if ((0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.focusIn)(container.current, _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.Focus.First) === _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.FocusResult.Error) {
+        console.warn('There are no focusable elements inside the <FocusTrap />');
+      }
+    }
+
+    previousActiveElement.current = document.activeElement;
+  }, [container, initialFocus, featuresInitialFocus]); // Handle `Tab` & `Shift+Tab` keyboard events
+
+  (0,_use_window_event_esm_js__WEBPACK_IMPORTED_MODULE_3__.useWindowEvent)('keydown', function (event) {
+    if (!(features & Features.TabLock)) return;
+    if (!container.current) return;
+    if (event.key !== _components_keyboard_esm_js__WEBPACK_IMPORTED_MODULE_4__.Keys.Tab) return;
+    event.preventDefault();
+
+    if ((0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.focusIn)(container.current, (event.shiftKey ? _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.Focus.Previous : _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.Focus.Next) | _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.Focus.WrapAround) === _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.FocusResult.Success) {
+      previousActiveElement.current = document.activeElement;
+    }
+  }); // Prevent programmatically escaping the container
+
+  (0,_use_window_event_esm_js__WEBPACK_IMPORTED_MODULE_3__.useWindowEvent)('focus', function (event) {
+    if (!(features & Features.FocusLock)) return;
+    var allContainers = new Set(containers == null ? void 0 : containers.current);
+    allContainers.add(container);
+    if (!allContainers.size) return;
+    var previous = previousActiveElement.current;
+    if (!previous) return;
+    if (!mounted.current) return;
+    var toElement = event.target;
+
+    if (toElement && toElement instanceof HTMLElement) {
+      if (!contains(allContainers, toElement)) {
+        event.preventDefault();
+        event.stopPropagation();
+        (0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.focusElement)(previous);
+      } else {
+        previousActiveElement.current = toElement;
+        (0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.focusElement)(toElement);
+      }
+    } else {
+      (0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.focusElement)(previousActiveElement.current);
+    }
+  }, true);
+}
+
+function contains(containers, element) {
+  for (var _iterator = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_5__.createForOfIteratorHelperLoose)(containers), _step; !(_step = _iterator()).done;) {
+    var _container$current;
+
+    var container = _step.value;
+    if ((_container$current = container.current) == null ? void 0 : _container$current.contains(element)) return true;
+  }
+
+  return false;
+}
+
+
+//# sourceMappingURL=use-focus-trap.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/hooks/use-id.esm.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/hooks/use-id.esm.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useId": () => (/* binding */ useId)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./use-iso-morphic-effect.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-iso-morphic-effect.esm.js");
+/* harmony import */ var _use_server_handoff_complete_esm_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./use-server-handoff-complete.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-server-handoff-complete.esm.js");
+
+
+
+
+// didn't take care of the Suspense case. To fix this we used the approach the @reach-ui/auto-id
+// uses.
+//
+// Credits: https://github.com/reach/reach-ui/blob/develop/packages/auto-id/src/index.tsx
+
+var id = 0;
+
+function generateId() {
+  return ++id;
+}
+
+function useId() {
+  var ready = (0,_use_server_handoff_complete_esm_js__WEBPACK_IMPORTED_MODULE_1__.useServerHandoffComplete)();
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(ready ? generateId : null),
+      id = _useState[0],
+      setId = _useState[1];
+
+  (0,_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_2__.useIsoMorphicEffect)(function () {
+    if (id === null) setId(generateId());
+  }, [id]);
+  return id != null ? '' + id : undefined;
+}
+
+
+//# sourceMappingURL=use-id.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/hooks/use-inert-others.esm.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/hooks/use-inert-others.esm.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useInertOthers": () => (/* binding */ useInertOthers)
+/* harmony export */ });
+/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js");
+/* harmony import */ var _use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./use-iso-morphic-effect.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-iso-morphic-effect.esm.js");
+
+
+
+var interactables = /*#__PURE__*/new Set();
+var originals = /*#__PURE__*/new Map();
+
+function inert(element) {
+  element.setAttribute('aria-hidden', 'true'); // @ts-expect-error `inert` does not exist on HTMLElement (yet!)
+
+  element.inert = true;
+}
+
+function restore(element) {
+  var original = originals.get(element);
+  if (!original) return;
+  if (original['aria-hidden'] === null) element.removeAttribute('aria-hidden');else element.setAttribute('aria-hidden', original['aria-hidden']); // @ts-expect-error `inert` does not exist on HTMLElement (yet!)
+
+  element.inert = original.inert;
+}
+
+function useInertOthers(container, enabled) {
+  if (enabled === void 0) {
+    enabled = true;
+  }
+
+  (0,_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_0__.useIsoMorphicEffect)(function () {
+    if (!enabled) return;
+    if (!container.current) return;
+    var element = container.current; // Mark myself as an interactable element
+
+    interactables.add(element); // Restore elements that now contain an interactable child
+
+    for (var _iterator = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.createForOfIteratorHelperLoose)(originals.keys()), _step; !(_step = _iterator()).done;) {
+      var original = _step.value;
+
+      if (original.contains(element)) {
+        restore(original);
+        originals["delete"](original);
+      }
+    } // Collect direct children of the body
+
+
+    document.querySelectorAll('body > *').forEach(function (child) {
+      if (!(child instanceof HTMLElement)) return; // Skip non-HTMLElements
+      // Skip the interactables, and the parents of the interactables
+
+      for (var _iterator2 = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.createForOfIteratorHelperLoose)(interactables), _step2; !(_step2 = _iterator2()).done;) {
+        var interactable = _step2.value;
+        if (child.contains(interactable)) return;
+      } // Keep track of the elements
+
+
+      if (interactables.size === 1) {
+        originals.set(child, {
+          'aria-hidden': child.getAttribute('aria-hidden'),
+          // @ts-expect-error `inert` does not exist on HTMLElement (yet!)
+          inert: child.inert
+        }); // Mutate the element
+
+        inert(child);
+      }
+    });
+    return function () {
+      // Inert is disabled on the current element
+      interactables["delete"](element); // We still have interactable elements, therefore this one and its parent
+      // will become inert as well.
+
+      if (interactables.size > 0) {
+        // Collect direct children of the body
+        document.querySelectorAll('body > *').forEach(function (child) {
+          if (!(child instanceof HTMLElement)) return; // Skip non-HTMLElements
+          // Skip already inert parents
+
+          if (originals.has(child)) return; // Skip the interactables, and the parents of the interactables
+
+          for (var _iterator3 = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.createForOfIteratorHelperLoose)(interactables), _step3; !(_step3 = _iterator3()).done;) {
+            var interactable = _step3.value;
+            if (child.contains(interactable)) return;
+          }
+
+          originals.set(child, {
+            'aria-hidden': child.getAttribute('aria-hidden'),
+            // @ts-expect-error `inert` does not exist on HTMLElement (yet!)
+            inert: child.inert
+          }); // Mutate the element
+
+          inert(child);
+        });
+      } else {
+        for (var _iterator4 = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.createForOfIteratorHelperLoose)(originals.keys()), _step4; !(_step4 = _iterator4()).done;) {
+          var _element = _step4.value;
+          // Restore
+          restore(_element); // Cleanup
+
+          originals["delete"](_element);
+        }
+      }
+    };
+  }, [enabled]);
+}
+
+
+//# sourceMappingURL=use-inert-others.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/hooks/use-is-initial-render.esm.js":
+/*!********************************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/hooks/use-is-initial-render.esm.js ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useIsInitialRender": () => (/* binding */ useIsInitialRender)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+function useIsInitialRender() {
+  var initial = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(true);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    initial.current = false;
+  }, []);
+  return initial.current;
+}
+
+
+//# sourceMappingURL=use-is-initial-render.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/hooks/use-is-mounted.esm.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/hooks/use-is-mounted.esm.js ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useIsMounted": () => (/* binding */ useIsMounted)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+function useIsMounted() {
+  var mounted = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(false);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    mounted.current = true;
+    return function () {
+      mounted.current = false;
+    };
+  }, []);
+  return mounted;
+}
+
+
+//# sourceMappingURL=use-is-mounted.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/hooks/use-iso-morphic-effect.esm.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/hooks/use-iso-morphic-effect.esm.js ***!
+  \*********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useIsoMorphicEffect": () => (/* binding */ useIsoMorphicEffect)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+var useIsoMorphicEffect = typeof window !== 'undefined' ? react__WEBPACK_IMPORTED_MODULE_0__.useLayoutEffect : react__WEBPACK_IMPORTED_MODULE_0__.useEffect;
+
+
+//# sourceMappingURL=use-iso-morphic-effect.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/hooks/use-server-handoff-complete.esm.js":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/hooks/use-server-handoff-complete.esm.js ***!
+  \**************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useServerHandoffComplete": () => (/* binding */ useServerHandoffComplete)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+var state = {
+  serverHandoffComplete: false
+};
+function useServerHandoffComplete() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(state.serverHandoffComplete),
+      serverHandoffComplete = _useState[0],
+      setServerHandoffComplete = _useState[1];
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (serverHandoffComplete === true) return;
+    setServerHandoffComplete(true);
+  }, [serverHandoffComplete]);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (state.serverHandoffComplete === false) state.serverHandoffComplete = true;
+  }, []);
+  return serverHandoffComplete;
+}
+
+
+//# sourceMappingURL=use-server-handoff-complete.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/hooks/use-sync-refs.esm.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/hooks/use-sync-refs.esm.js ***!
+  \************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useSyncRefs": () => (/* binding */ useSyncRefs)
+/* harmony export */ });
+/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+
+function useSyncRefs() {
+  for (var _len = arguments.length, refs = new Array(_len), _key = 0; _key < _len; _key++) {
+    refs[_key] = arguments[_key];
+  }
+
+  var cache = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(refs);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    cache.current = refs;
+  }, [refs]);
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
+    for (var _iterator = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.createForOfIteratorHelperLoose)(cache.current), _step; !(_step = _iterator()).done;) {
+      var ref = _step.value;
+      if (ref == null) continue;
+      if (typeof ref === 'function') ref(value);else ref.current = value;
+    }
+  }, [cache]);
+}
+
+
+//# sourceMappingURL=use-sync-refs.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/hooks/use-window-event.esm.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/hooks/use-window-event.esm.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useWindowEvent": () => (/* binding */ useWindowEvent)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+function useWindowEvent(type, listener, options) {
+  var listenerRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(listener);
+  listenerRef.current = listener;
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    function handler(event) {
+      listenerRef.current.call(window, event);
+    }
+
+    window.addEventListener(type, handler, options);
+    return function () {
+      return window.removeEventListener(type, handler, options);
+    };
+  }, [type, options]);
+}
+
+
+//# sourceMappingURL=use-window-event.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/internal/open-closed.esm.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/internal/open-closed.esm.js ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "OpenClosedProvider": () => (/* binding */ OpenClosedProvider),
+/* harmony export */   "State": () => (/* binding */ State),
+/* harmony export */   "useOpenClosed": () => (/* binding */ useOpenClosed)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+var Context = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
+Context.displayName = 'OpenClosedContext';
+var State;
+
+(function (State) {
+  State[State["Open"] = 0] = "Open";
+  State[State["Closed"] = 1] = "Closed";
+})(State || (State = {}));
+
+function useOpenClosed() {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(Context);
+}
+function OpenClosedProvider(_ref) {
+  var value = _ref.value,
+      children = _ref.children;
+  return react__WEBPACK_IMPORTED_MODULE_0__.createElement(Context.Provider, {
+    value: value
+  }, children);
+}
+
+
+//# sourceMappingURL=open-closed.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/internal/portal-force-root.esm.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/internal/portal-force-root.esm.js ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ForcePortalRoot": () => (/* binding */ ForcePortalRoot),
+/* harmony export */   "usePortalRoot": () => (/* binding */ usePortalRoot)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+var ForcePortalRootContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(false);
+function usePortalRoot() {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(ForcePortalRootContext);
+}
+function ForcePortalRoot(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0__.createElement(ForcePortalRootContext.Provider, {
+    value: props.force
+  }, props.children);
+}
+
+
+//# sourceMappingURL=portal-force-root.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/internal/stack-context.esm.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/internal/stack-context.esm.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "StackMessage": () => (/* binding */ StackMessage),
+/* harmony export */   "StackProvider": () => (/* binding */ StackProvider),
+/* harmony export */   "useStackContext": () => (/* binding */ useStackContext)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../hooks/use-iso-morphic-effect.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-iso-morphic-effect.esm.js");
+
+
+
+var StackContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(function () {});
+StackContext.displayName = 'StackContext';
+var StackMessage;
+
+(function (StackMessage) {
+  StackMessage[StackMessage["Add"] = 0] = "Add";
+  StackMessage[StackMessage["Remove"] = 1] = "Remove";
+})(StackMessage || (StackMessage = {}));
+
+function useStackContext() {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(StackContext);
+}
+function StackProvider(_ref) {
+  var children = _ref.children,
+      onUpdate = _ref.onUpdate,
+      type = _ref.type,
+      element = _ref.element;
+  var parentUpdate = useStackContext();
+  var notify = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function () {
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    // Notify our layer
+    onUpdate == null ? void 0 : onUpdate.apply(void 0, args); // Notify the parent
+
+    parentUpdate.apply(void 0, args);
+  }, [parentUpdate, onUpdate]);
+  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_1__.useIsoMorphicEffect)(function () {
+    notify(StackMessage.Add, type, element);
+    return function () {
+      return notify(StackMessage.Remove, type, element);
+    };
+  }, [notify, type, element]);
+  return react__WEBPACK_IMPORTED_MODULE_0__.createElement(StackContext.Provider, {
+    value: notify
+  }, children);
+}
+
+
+//# sourceMappingURL=stack-context.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/utils/bugs.esm.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/utils/bugs.esm.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "isDisabledReactIssue7711": () => (/* binding */ isDisabledReactIssue7711)
+/* harmony export */ });
+// See: https://github.com/facebook/react/issues/7711
+// See: https://github.com/facebook/react/pull/20612
+// See: https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#concept-fe-disabled (2.)
+function isDisabledReactIssue7711(element) {
+  var _ref, _parent;
+
+  var parent = element.parentElement;
+  var legend = null;
+
+  while (parent && !(parent instanceof HTMLFieldSetElement)) {
+    if (parent instanceof HTMLLegendElement) legend = parent;
+    parent = parent.parentElement;
+  }
+
+  var isParentDisabled = (_ref = ((_parent = parent) == null ? void 0 : _parent.getAttribute('disabled')) === '') != null ? _ref : false;
+  if (isParentDisabled && isFirstLegend(legend)) return false;
+  return isParentDisabled;
+}
+
+function isFirstLegend(element) {
+  if (!element) return false;
+  var previous = element.previousElementSibling;
+
+  while (previous !== null) {
+    if (previous instanceof HTMLLegendElement) return false;
+    previous = previous.previousElementSibling;
+  }
+
+  return true;
+}
+
+
+//# sourceMappingURL=bugs.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/utils/disposables.esm.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/utils/disposables.esm.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "disposables": () => (/* binding */ disposables)
+/* harmony export */ });
+/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js");
+
+
+function disposables() {
+  var disposables = [];
+  var api = {
+    requestAnimationFrame: function (_requestAnimationFrame) {
+      function requestAnimationFrame() {
+        return _requestAnimationFrame.apply(this, arguments);
+      }
+
+      requestAnimationFrame.toString = function () {
+        return _requestAnimationFrame.toString();
+      };
+
+      return requestAnimationFrame;
+    }(function () {
+      var raf = requestAnimationFrame.apply(void 0, arguments);
+      api.add(function () {
+        return cancelAnimationFrame(raf);
+      });
+    }),
+    nextFrame: function nextFrame() {
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      api.requestAnimationFrame(function () {
+        api.requestAnimationFrame.apply(api, args);
+      });
+    },
+    setTimeout: function (_setTimeout) {
+      function setTimeout() {
+        return _setTimeout.apply(this, arguments);
+      }
+
+      setTimeout.toString = function () {
+        return _setTimeout.toString();
+      };
+
+      return setTimeout;
+    }(function () {
+      var timer = setTimeout.apply(void 0, arguments);
+      api.add(function () {
+        return clearTimeout(timer);
+      });
+    }),
+    add: function add(cb) {
+      disposables.push(cb);
+    },
+    dispose: function dispose() {
+      for (var _iterator = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_0__.createForOfIteratorHelperLoose)(disposables.splice(0)), _step; !(_step = _iterator()).done;) {
+        var dispose = _step.value;
+        dispose();
+      }
+    }
+  };
+  return api;
+}
+
+
+//# sourceMappingURL=disposables.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/utils/focus-management.esm.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/utils/focus-management.esm.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Focus": () => (/* binding */ Focus),
+/* harmony export */   "FocusResult": () => (/* binding */ FocusResult),
+/* harmony export */   "FocusableMode": () => (/* binding */ FocusableMode),
+/* harmony export */   "focusElement": () => (/* binding */ focusElement),
+/* harmony export */   "focusIn": () => (/* binding */ focusIn),
+/* harmony export */   "getFocusableElements": () => (/* binding */ getFocusableElements),
+/* harmony export */   "isFocusableElement": () => (/* binding */ isFocusableElement)
+/* harmony export */ });
+/* harmony import */ var _match_esm_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./match.esm.js */ "./node_modules/@headlessui/react/dist/utils/match.esm.js");
+
+
+//  - https://stackoverflow.com/a/30753870
+
+var focusableSelector = /*#__PURE__*/['[contentEditable=true]', '[tabindex]', 'a[href]', 'area[href]', 'button:not([disabled])', 'iframe', 'input:not([disabled])', 'select:not([disabled])', 'textarea:not([disabled])'].map( false ? // TODO: Remove this once JSDOM fixes the issue where an element that is
+// "hidden" can be the document.activeElement, because this is not possible
+// in real browsers.
+// TODO: Remove this once JSDOM fixes the issue where an element that is
+0 : function (selector) {
+  return selector + ":not([tabindex='-1'])";
+}).join(',');
+var Focus;
+
+(function (Focus) {
+  /** Focus the first non-disabled element */
+  Focus[Focus["First"] = 1] = "First";
+  /** Focus the previous non-disabled element */
+
+  Focus[Focus["Previous"] = 2] = "Previous";
+  /** Focus the next non-disabled element */
+
+  Focus[Focus["Next"] = 4] = "Next";
+  /** Focus the last non-disabled element */
+
+  Focus[Focus["Last"] = 8] = "Last";
+  /** Wrap tab around */
+
+  Focus[Focus["WrapAround"] = 16] = "WrapAround";
+  /** Prevent scrolling the focusable elements into view */
+
+  Focus[Focus["NoScroll"] = 32] = "NoScroll";
+})(Focus || (Focus = {}));
+
+var FocusResult;
+
+(function (FocusResult) {
+  /** Something went wrong while trying to focus. */
+  FocusResult[FocusResult["Error"] = 0] = "Error";
+  /** When `Focus.WrapAround` is enabled, going from position `N` to `N+1` where `N` is the last index in the array, then we overflow. */
+
+  FocusResult[FocusResult["Overflow"] = 1] = "Overflow";
+  /** Focus was successful. */
+
+  FocusResult[FocusResult["Success"] = 2] = "Success";
+  /** When `Focus.WrapAround` is enabled, going from position `N` to `N-1` where `N` is the first index in the array, then we underflow. */
+
+  FocusResult[FocusResult["Underflow"] = 3] = "Underflow";
+})(FocusResult || (FocusResult = {}));
+
+var Direction;
+
+(function (Direction) {
+  Direction[Direction["Previous"] = -1] = "Previous";
+  Direction[Direction["Next"] = 1] = "Next";
+})(Direction || (Direction = {}));
+
+function getFocusableElements(container) {
+  if (container === void 0) {
+    container = document.body;
+  }
+
+  if (container == null) return [];
+  return Array.from(container.querySelectorAll(focusableSelector));
+}
+var FocusableMode;
+
+(function (FocusableMode) {
+  /** The element itself must be focusable. */
+  FocusableMode[FocusableMode["Strict"] = 0] = "Strict";
+  /** The element should be inside of a focusable element. */
+
+  FocusableMode[FocusableMode["Loose"] = 1] = "Loose";
+})(FocusableMode || (FocusableMode = {}));
+
+function isFocusableElement(element, mode) {
+  var _match;
+
+  if (mode === void 0) {
+    mode = FocusableMode.Strict;
+  }
+
+  if (element === document.body) return false;
+  return (0,_match_esm_js__WEBPACK_IMPORTED_MODULE_0__.match)(mode, (_match = {}, _match[FocusableMode.Strict] = function () {
+    return element.matches(focusableSelector);
+  }, _match[FocusableMode.Loose] = function () {
+    var next = element;
+
+    while (next !== null) {
+      if (next.matches(focusableSelector)) return true;
+      next = next.parentElement;
+    }
+
+    return false;
+  }, _match));
+}
+function focusElement(element) {
+  element == null ? void 0 : element.focus({
+    preventScroll: true
+  });
+}
+function focusIn(container, focus) {
+  var elements = Array.isArray(container) ? container.slice().sort(function (a, b) {
+    var position = a.compareDocumentPosition(b);
+    if (position & Node.DOCUMENT_POSITION_FOLLOWING) return -1;
+    if (position & Node.DOCUMENT_POSITION_PRECEDING) return 1;
+    return 0;
+  }) : getFocusableElements(container);
+  var active = document.activeElement;
+
+  var direction = function () {
+    if (focus & (Focus.First | Focus.Next)) return Direction.Next;
+    if (focus & (Focus.Previous | Focus.Last)) return Direction.Previous;
+    throw new Error('Missing Focus.First, Focus.Previous, Focus.Next or Focus.Last');
+  }();
+
+  var startIndex = function () {
+    if (focus & Focus.First) return 0;
+    if (focus & Focus.Previous) return Math.max(0, elements.indexOf(active)) - 1;
+    if (focus & Focus.Next) return Math.max(0, elements.indexOf(active)) + 1;
+    if (focus & Focus.Last) return elements.length - 1;
+    throw new Error('Missing Focus.First, Focus.Previous, Focus.Next or Focus.Last');
+  }();
+
+  var focusOptions = focus & Focus.NoScroll ? {
+    preventScroll: true
+  } : {};
+  var offset = 0;
+  var total = elements.length;
+  var next = undefined;
+
+  do {
+    var _next;
+
+    // Guard against infinite loops
+    if (offset >= total || offset + total <= 0) return FocusResult.Error;
+    var nextIdx = startIndex + offset;
+
+    if (focus & Focus.WrapAround) {
+      nextIdx = (nextIdx + total) % total;
+    } else {
+      if (nextIdx < 0) return FocusResult.Underflow;
+      if (nextIdx >= total) return FocusResult.Overflow;
+    }
+
+    next = elements[nextIdx]; // Try the focus the next element, might not work if it is "hidden" to the user.
+
+    (_next = next) == null ? void 0 : _next.focus(focusOptions); // Try the next one in line
+
+    offset += direction;
+  } while (next !== document.activeElement); // This is a little weird, but let me try and explain: There are a few scenario's
+  // in chrome for example where a focused `<a>` tag does not get the default focus
+  // styles and sometimes they do. This highly depends on whether you started by
+  // clicking or by using your keyboard. When you programmatically add focus `anchor.focus()`
+  // then the active element (document.activeElement) is this anchor, which is expected.
+  // However in that case the default focus styles are not applied *unless* you
+  // also add this tabindex.
+
+
+  if (!next.hasAttribute('tabindex')) next.setAttribute('tabindex', '0');
+  return FocusResult.Success;
+}
+
+
+//# sourceMappingURL=focus-management.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/utils/match.esm.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/utils/match.esm.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "match": () => (/* binding */ match)
+/* harmony export */ });
+function match(value, lookup) {
+  if (value in lookup) {
+    var returnValue = lookup[value];
+
+    for (var _len = arguments.length, args = new Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
+      args[_key - 2] = arguments[_key];
+    }
+
+    return typeof returnValue === 'function' ? returnValue.apply(void 0, args) : returnValue;
+  }
+
+  var error = new Error("Tried to handle \"" + value + "\" but there is no handler defined. Only defined handlers are: " + Object.keys(lookup).map(function (key) {
+    return "\"" + key + "\"";
+  }).join(', ') + ".");
+  if (Error.captureStackTrace) Error.captureStackTrace(error, match);
+  throw error;
+}
+
+
+//# sourceMappingURL=match.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/utils/once.esm.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/utils/once.esm.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "once": () => (/* binding */ once)
+/* harmony export */ });
+function once(cb) {
+  var state = {
+    called: false
+  };
+  return function () {
+    if (state.called) return;
+    state.called = true;
+    return cb.apply(void 0, arguments);
+  };
+}
+
+
+//# sourceMappingURL=once.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/utils/render.esm.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/utils/render.esm.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Features": () => (/* binding */ Features),
+/* harmony export */   "RenderStrategy": () => (/* binding */ RenderStrategy),
+/* harmony export */   "forwardRefWithAs": () => (/* binding */ forwardRefWithAs),
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _match_esm_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./match.esm.js */ "./node_modules/@headlessui/react/dist/utils/match.esm.js");
+
+
+
+
+var Features;
+
+(function (Features) {
+  /** No features at all */
+  Features[Features["None"] = 0] = "None";
+  /**
+   * When used, this will allow us to use one of the render strategies.
+   *
+   * **The render strategies are:**
+   *    - **Unmount**   _(Will unmount the component.)_
+   *    - **Hidden**    _(Will hide the component using the [hidden] attribute.)_
+   */
+
+  Features[Features["RenderStrategy"] = 1] = "RenderStrategy";
+  /**
+   * When used, this will allow the user of our component to be in control. This can be used when
+   * you want to transition based on some state.
+   */
+
+  Features[Features["Static"] = 2] = "Static";
+})(Features || (Features = {}));
+
+var RenderStrategy;
+
+(function (RenderStrategy) {
+  RenderStrategy[RenderStrategy["Unmount"] = 0] = "Unmount";
+  RenderStrategy[RenderStrategy["Hidden"] = 1] = "Hidden";
+})(RenderStrategy || (RenderStrategy = {}));
+
+function render(_ref) {
+  var props = _ref.props,
+      slot = _ref.slot,
+      defaultTag = _ref.defaultTag,
+      features = _ref.features,
+      _ref$visible = _ref.visible,
+      visible = _ref$visible === void 0 ? true : _ref$visible,
+      name = _ref.name;
+  // Visible always render
+  if (visible) return _render(props, slot, defaultTag, name);
+  var featureFlags = features != null ? features : Features.None;
+
+  if (featureFlags & Features.Static) {
+    var _props$static = props["static"],
+        isStatic = _props$static === void 0 ? false : _props$static,
+        rest = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.objectWithoutPropertiesLoose)(props, ["static"]); // When the `static` prop is passed as `true`, then the user is in control, thus we don't care about anything else
+
+
+    if (isStatic) return _render(rest, slot, defaultTag, name);
+  }
+
+  if (featureFlags & Features.RenderStrategy) {
+    var _match;
+
+    var _props$unmount = props.unmount,
+        unmount = _props$unmount === void 0 ? true : _props$unmount,
+        _rest = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.objectWithoutPropertiesLoose)(props, ["unmount"]);
+
+    var strategy = unmount ? RenderStrategy.Unmount : RenderStrategy.Hidden;
+    return (0,_match_esm_js__WEBPACK_IMPORTED_MODULE_2__.match)(strategy, (_match = {}, _match[RenderStrategy.Unmount] = function () {
+      return null;
+    }, _match[RenderStrategy.Hidden] = function () {
+      return _render((0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, _rest, {
+        hidden: true,
+        style: {
+          display: 'none'
+        }
+      }), slot, defaultTag, name);
+    }, _match));
+  } // No features enabled, just render
+
+
+  return _render(props, slot, defaultTag, name);
+}
+
+function _render(props, slot, tag, name) {
+  var _ref2;
+
+  if (slot === void 0) {
+    slot = {};
+  }
+
+  var _omit = omit(props, ['unmount', 'static']),
+      _omit$as = _omit.as,
+      Component = _omit$as === void 0 ? tag : _omit$as,
+      children = _omit.children,
+      _omit$refName = _omit.refName,
+      refName = _omit$refName === void 0 ? 'ref' : _omit$refName,
+      passThroughProps = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.objectWithoutPropertiesLoose)(_omit, ["as", "children", "refName"]); // This allows us to use `<HeadlessUIComponent as={MyComponent} refName="innerRef" />`
+
+
+  var refRelatedProps = props.ref !== undefined ? (_ref2 = {}, _ref2[refName] = props.ref, _ref2) : {};
+  var resolvedChildren = typeof children === 'function' ? children(slot) : children; // Allow for className to be a function with the slot as the contents
+
+  if (passThroughProps.className && typeof passThroughProps.className === 'function') {
+    passThroughProps.className = passThroughProps.className(slot);
+  }
+
+  if (Component === react__WEBPACK_IMPORTED_MODULE_0__.Fragment) {
+    if (Object.keys(passThroughProps).length > 0) {
+      if (!(0,react__WEBPACK_IMPORTED_MODULE_0__.isValidElement)(resolvedChildren) || Array.isArray(resolvedChildren) && resolvedChildren.length > 1) {
+        throw new Error(['Passing props on "Fragment"!', '', "The current component <" + name + " /> is rendering a \"Fragment\".", "However we need to passthrough the following props:", Object.keys(passThroughProps).map(function (line) {
+          return "  - " + line;
+        }).join('\n'), '', 'You can apply a few solutions:', ['Add an `as="..."` prop, to ensure that we render an actual element instead of a "Fragment".', 'Render a single element as the child so that we can forward the props onto that element.'].map(function (line) {
+          return "  - " + line;
+        }).join('\n')].join('\n'));
+      }
+
+      return (0,react__WEBPACK_IMPORTED_MODULE_0__.cloneElement)(resolvedChildren, Object.assign({}, // Filter out undefined values so that they don't override the existing values
+      mergeEventFunctions(compact(omit(passThroughProps, ['ref'])), resolvedChildren.props, ['onClick']), refRelatedProps));
+    }
+  }
+
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(Component, Object.assign({}, omit(passThroughProps, ['ref']), Component !== react__WEBPACK_IMPORTED_MODULE_0__.Fragment && refRelatedProps), resolvedChildren);
+}
+/**
+ * We can use this function for the following useCase:
+ *
+ * <Menu.Item> <button onClick={console.log} /> </Menu.Item>
+ *
+ * Our `Menu.Item` will have an internal `onClick`, if you passthrough an `onClick` to the actual
+ * `Menu.Item` component we will call it correctly. However, when we have an `onClick` on the actual
+ * first child, that one should _also_ be called (but before this implementation, it was just
+ * overriding the `onClick`). But it is only when we *render* that we have access to the existing
+ * props of this component.
+ *
+ * It's a bit hacky, and not that clean, but it is something internal and we have tests to rely on
+ * so that we can refactor this later (if needed).
+ */
+
+
+function mergeEventFunctions(passThroughProps, existingProps, functionsToMerge) {
+  var clone = Object.assign({}, passThroughProps);
+
+  var _loop = function _loop() {
+    var func = _step.value;
+
+    if (passThroughProps[func] !== undefined && existingProps[func] !== undefined) {
+      var _Object$assign;
+
+      Object.assign(clone, (_Object$assign = {}, _Object$assign[func] = function (event) {
+        // Props we control
+        if (!event.defaultPrevented) passThroughProps[func](event); // Existing props on the component
+
+        if (!event.defaultPrevented) existingProps[func](event);
+      }, _Object$assign));
+    }
+  };
+
+  for (var _iterator = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.createForOfIteratorHelperLoose)(functionsToMerge), _step; !(_step = _iterator()).done;) {
+    _loop();
+  }
+
+  return clone;
+}
+/**
+ * This is a hack, but basically we want to keep the full 'API' of the component, but we do want to
+ * wrap it in a forwardRef so that we _can_ passthrough the ref
+ */
+
+
+function forwardRefWithAs(component) {
+  var _component$displayNam;
+
+  return Object.assign((0,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)(component), {
+    displayName: (_component$displayNam = component.displayName) != null ? _component$displayNam : component.name
+  });
+}
+
+function compact(object) {
+  var clone = Object.assign({}, object);
+
+  for (var key in clone) {
+    if (clone[key] === undefined) delete clone[key];
+  }
+
+  return clone;
+}
+
+function omit(object, keysToOmit) {
+  if (keysToOmit === void 0) {
+    keysToOmit = [];
+  }
+
+  var clone = Object.assign({}, object);
+
+  for (var _iterator2 = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.createForOfIteratorHelperLoose)(keysToOmit), _step2; !(_step2 = _iterator2()).done;) {
+    var key = _step2.value;
+    if (key in clone) delete clone[key];
+  }
+
+  return clone;
+}
+
+
+//# sourceMappingURL=render.esm.js.map
+
+
+/***/ }),
+
 /***/ "./node_modules/@inertiajs/inertia-react/dist/index.js":
 /*!*************************************************************!*\
   !*** ./node_modules/@inertiajs/inertia-react/dist/index.js ***!
@@ -2078,6 +4557,1220 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./resources/js/Components/AddForm.jsx":
+/*!*********************************************!*\
+  !*** ./resources/js/Components/AddForm.jsx ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ AddForm)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _ModalRoot__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ModalRoot */ "./resources/js/Components/ModalRoot.jsx");
+/* harmony import */ var _Parts_ButtonBlue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Parts/ButtonBlue */ "./resources/js/Components/Parts/ButtonBlue.jsx");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var recoil__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! recoil */ "./node_modules/recoil/es/recoil.js");
+/* harmony import */ var _Store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Store */ "./resources/js/Store/index.js");
+/* harmony import */ var react_hot_toast__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-hot-toast */ "./node_modules/react-hot-toast/dist/react-hot-toast.esm.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+
+function AddForm() {
+  var _useRecoilState = (0,recoil__WEBPACK_IMPORTED_MODULE_4__.useRecoilState)(_Store__WEBPACK_IMPORTED_MODULE_5__.dialog),
+      _useRecoilState2 = _slicedToArray(_useRecoilState, 2),
+      showDialog = _useRecoilState2[0],
+      setShowDialog = _useRecoilState2[1];
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+    goods_code: "",
+    goods_name: "",
+    contract_no: "",
+    contract_date: "",
+    skpd: "",
+    bank_name: "",
+    npwp: "",
+    spm_no: "",
+    bast_no: "",
+    bast_date: "",
+    sp2d_no: "",
+    sp2d_date: "",
+    company_name: "",
+    brand: "",
+    size: "",
+    ingredient: "",
+    buy_year: "",
+    model_no: "",
+    price: "",
+    file: ""
+  }),
+      _useState2 = _slicedToArray(_useState, 2),
+      files = _useState2[0],
+      setFiles = _useState2[1];
+
+  var submitHandler = function submitHandler(e) {
+    e.preventDefault();
+    var formData = new FormData();
+    formData = files;
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__.Inertia.post("/files", formData, {
+      onSuccess: function onSuccess() {
+        setShowDialog(false);
+        react_hot_toast__WEBPACK_IMPORTED_MODULE_7__["default"].success("File Upload Successful");
+        setFiles(_objectSpread(_objectSpread({}, files), {}, {
+          goods_code: "",
+          goods_name: "",
+          contract_no: "",
+          contract_date: "",
+          skpd: "",
+          bank_name: "",
+          npwp: "",
+          spm_no: "",
+          bast_no: "",
+          bast_date: "",
+          sp2d_no: "",
+          sp2d_date: "",
+          company_name: "",
+          brand: "",
+          size: "",
+          ingredient: "",
+          buy_year: "",
+          model_no: "",
+          price: "",
+          file: ""
+        }));
+      },
+      onError: function onError(e) {
+        react_hot_toast__WEBPACK_IMPORTED_MODULE_7__["default"].error("File Upload Failed");
+      }
+    });
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_ModalRoot__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    title: "Tambah Arsip",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("form", {
+      onSubmit: submitHandler,
+      className: "space-y-4",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        className: "flex flex-col space-y-2 w-full",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
+          className: "text-gray-500",
+          htmlFor: "goods_code",
+          children: "Kode Barang"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+          className: "bg-white border-0 ring-2 ring-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-0 rounded-lg py-2 px-4 block w-full appearance-none leading-normal focus:shadow-xl transform focus:-translate-y-1 transition-all duration-200",
+          type: "text",
+          name: "goods_code",
+          id: "goods_code",
+          onChange: function onChange(e) {
+            setFiles(_objectSpread(_objectSpread({}, files), {}, {
+              goods_code: e.target.value
+            }));
+          },
+          value: files.goods_code
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        className: "flex flex-col space-y-2 w-full",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
+          className: "text-gray-500",
+          htmlFor: "goods_name",
+          children: "Nama Barang"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+          className: "bg-white border-0 ring-2 ring-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-0 rounded-lg py-2 px-4 block w-full appearance-none leading-normal focus:shadow-xl transform focus:-translate-y-1 transition-all duration-200",
+          type: "text",
+          name: "goods_name",
+          id: "goods_name",
+          onChange: function onChange(e) {
+            setFiles(_objectSpread(_objectSpread({}, files), {}, {
+              goods_name: e.target.value
+            }));
+          },
+          value: files.goods_name
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        className: "flex flex-col space-y-2 w-full",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
+          className: "text-gray-500",
+          htmlFor: "contract_no",
+          children: "No. Kontrak"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+          className: "bg-white border-0 ring-2 ring-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-0 rounded-lg py-2 px-4 block w-full appearance-none leading-normal focus:shadow-xl transform focus:-translate-y-1 transition-all duration-200",
+          type: "text",
+          name: "contract_no",
+          id: "contract_no",
+          onChange: function onChange(e) {
+            setFiles(_objectSpread(_objectSpread({}, files), {}, {
+              contract_no: e.target.value
+            }));
+          },
+          value: files.contract_no
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        className: "flex flex-col space-y-2 w-full",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
+          className: "text-gray-500",
+          htmlFor: "contract_date",
+          children: "Tanggal Kontrak"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+          className: "bg-white border-0 ring-2 ring-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-0 rounded-lg py-2 px-4 block w-full appearance-none leading-normal focus:shadow-xl transform focus:-translate-y-1 transition-all duration-200",
+          type: "date",
+          name: "contract_date",
+          id: "contract_date",
+          onChange: function onChange(e) {
+            setFiles(_objectSpread(_objectSpread({}, files), {}, {
+              contract_date: e.target.value
+            }));
+          },
+          value: files.contract_date
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        className: "flex flex-col space-y-2 w-full",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
+          className: "text-gray-500",
+          htmlFor: "skpd",
+          children: "SKPD"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+          className: "bg-white border-0 ring-2 ring-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-0 rounded-lg py-2 px-4 block w-full appearance-none leading-normal focus:shadow-xl transform focus:-translate-y-1 transition-all duration-200",
+          type: "text",
+          name: "skpd",
+          id: "skpd",
+          onChange: function onChange(e) {
+            setFiles(_objectSpread(_objectSpread({}, files), {}, {
+              skpd: e.target.value
+            }));
+          },
+          value: files.skpd
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        className: "flex flex-col space-y-2 w-full",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
+          className: "text-gray-500",
+          htmlFor: "bank_name",
+          children: "Nama Bank"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+          className: "bg-white border-0 ring-2 ring-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-0 rounded-lg py-2 px-4 block w-full appearance-none leading-normal focus:shadow-xl transform focus:-translate-y-1 transition-all duration-200",
+          type: "text",
+          name: "bank_name",
+          id: "bank_name",
+          onChange: function onChange(e) {
+            setFiles(_objectSpread(_objectSpread({}, files), {}, {
+              bank_name: e.target.value
+            }));
+          },
+          value: files.bank_name
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        className: "flex flex-col space-y-2 w-full",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
+          className: "text-gray-500",
+          htmlFor: "npwp",
+          children: "NPWP"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+          className: "bg-white border-0 ring-2 ring-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-0 rounded-lg py-2 px-4 block w-full appearance-none leading-normal focus:shadow-xl transform focus:-translate-y-1 transition-all duration-200",
+          type: "text",
+          name: "npwp",
+          id: "npwp",
+          onChange: function onChange(e) {
+            setFiles(_objectSpread(_objectSpread({}, files), {}, {
+              npwp: e.target.value
+            }));
+          },
+          value: files.npwp
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        className: "flex flex-col space-y-2 w-full",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
+          className: "text-gray-500",
+          htmlFor: "spm_no",
+          children: "No SPM"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+          className: "bg-white border-0 ring-2 ring-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-0 rounded-lg py-2 px-4 block w-full appearance-none leading-normal focus:shadow-xl transform focus:-translate-y-1 transition-all duration-200",
+          type: "text",
+          name: "spm_no",
+          id: "spm_no",
+          onChange: function onChange(e) {
+            setFiles(_objectSpread(_objectSpread({}, files), {}, {
+              spm_no: e.target.value
+            }));
+          },
+          value: files.spm_no
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        className: "flex flex-col space-y-2 w-full",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
+          className: "text-gray-500",
+          htmlFor: "bast_no",
+          children: "No. BAST"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+          className: "bg-white border-0 ring-2 ring-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-0 rounded-lg py-2 px-4 block w-full appearance-none leading-normal focus:shadow-xl transform focus:-translate-y-1 transition-all duration-200",
+          type: "text",
+          name: "bast_no",
+          id: "bast_no",
+          onChange: function onChange(e) {
+            setFiles(_objectSpread(_objectSpread({}, files), {}, {
+              bast_no: e.target.value
+            }));
+          },
+          value: files.bast_no
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        className: "flex flex-col space-y-2 w-full",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
+          className: "text-gray-500",
+          htmlFor: "bast_date",
+          children: "Tanggal BAST"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+          className: "bg-white border-0 ring-2 ring-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-0 rounded-lg py-2 px-4 block w-full appearance-none leading-normal focus:shadow-xl transform focus:-translate-y-1 transition-all duration-200",
+          type: "date",
+          name: "bast_date",
+          id: "bast_date",
+          onChange: function onChange(e) {
+            setFiles(_objectSpread(_objectSpread({}, files), {}, {
+              bast_date: e.target.value
+            }));
+          },
+          value: files.bast_date
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        className: "flex flex-col space-y-2 w-full",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
+          className: "text-gray-500",
+          htmlFor: "sp2d_no",
+          children: "No SP2D"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+          className: "bg-white border-0 ring-2 ring-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-0 rounded-lg py-2 px-4 block w-full appearance-none leading-normal focus:shadow-xl transform focus:-translate-y-1 transition-all duration-200",
+          type: "text",
+          name: "sp2d_no",
+          id: "sp2d_no",
+          onChange: function onChange(e) {
+            setFiles(_objectSpread(_objectSpread({}, files), {}, {
+              sp2d_no: e.target.value
+            }));
+          },
+          value: files.sp2d_no
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        className: "flex flex-col space-y-2 w-full",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
+          className: "text-gray-500",
+          htmlFor: "sp2d_date",
+          children: "Tanggal SP2D"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+          className: "bg-white border-0 ring-2 ring-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-0 rounded-lg py-2 px-4 block w-full appearance-none leading-normal focus:shadow-xl transform focus:-translate-y-1 transition-all duration-200",
+          type: "date",
+          name: "sp2d_date",
+          id: "sp2d_date",
+          onChange: function onChange(e) {
+            setFiles(_objectSpread(_objectSpread({}, files), {}, {
+              sp2d_date: e.target.value
+            }));
+          },
+          value: files.sp2d_date
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        className: "flex flex-col space-y-2 w-full",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
+          className: "text-gray-500",
+          htmlFor: "company_name",
+          children: "Nama Perusahan"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+          className: "bg-white border-0 ring-2 ring-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-0 rounded-lg py-2 px-4 block w-full appearance-none leading-normal focus:shadow-xl transform focus:-translate-y-1 transition-all duration-200",
+          type: "text",
+          name: "company_name",
+          id: "company_name",
+          onChange: function onChange(e) {
+            setFiles(_objectSpread(_objectSpread({}, files), {}, {
+              company_name: e.target.value
+            }));
+          },
+          value: files.company_name
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        className: "flex flex-col space-y-2 w-full",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
+          className: "text-gray-500",
+          htmlFor: "brand",
+          children: "Merek"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+          className: "bg-white border-0 ring-2 ring-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-0 rounded-lg py-2 px-4 block w-full appearance-none leading-normal focus:shadow-xl transform focus:-translate-y-1 transition-all duration-200",
+          type: "text",
+          name: "brand",
+          id: "brand",
+          onChange: function onChange(e) {
+            setFiles(_objectSpread(_objectSpread({}, files), {}, {
+              brand: e.target.value
+            }));
+          },
+          value: files.brand
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        className: "flex flex-col space-y-2 w-full",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
+          className: "text-gray-500",
+          htmlFor: "size",
+          children: "Ukuran"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+          className: "bg-white border-0 ring-2 ring-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-0 rounded-lg py-2 px-4 block w-full appearance-none leading-normal focus:shadow-xl transform focus:-translate-y-1 transition-all duration-200",
+          type: "text",
+          name: "size",
+          id: "size",
+          onChange: function onChange(e) {
+            setFiles(_objectSpread(_objectSpread({}, files), {}, {
+              size: e.target.value
+            }));
+          },
+          value: files.size
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        className: "flex flex-col space-y-2 w-full",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
+          className: "text-gray-500",
+          htmlFor: "ingredient",
+          children: "Bahan"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+          className: "bg-white border-0 ring-2 ring-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-0 rounded-lg py-2 px-4 block w-full appearance-none leading-normal focus:shadow-xl transform focus:-translate-y-1 transition-all duration-200",
+          type: "text",
+          name: "ingredient",
+          id: "ingredient",
+          onChange: function onChange(e) {
+            setFiles(_objectSpread(_objectSpread({}, files), {}, {
+              ingredient: e.target.value
+            }));
+          },
+          value: files.ingredient
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        className: "flex flex-col space-y-2 w-full",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
+          className: "text-gray-500",
+          htmlFor: "buy_year",
+          children: "Tahun Pembelian"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+          className: "bg-white border-0 ring-2 ring-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-0 rounded-lg py-2 px-4 block w-full appearance-none leading-normal focus:shadow-xl transform focus:-translate-y-1 transition-all duration-200",
+          type: "text",
+          name: "buy_year",
+          id: "buy_year",
+          onChange: function onChange(e) {
+            setFiles(_objectSpread(_objectSpread({}, files), {}, {
+              buy_year: e.target.value
+            }));
+          },
+          value: files.buy_year
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        className: "flex flex-col space-y-2 w-full",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
+          className: "text-gray-500",
+          htmlFor: "model_no",
+          children: "No. Model"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+          className: "bg-white border-0 ring-2 ring-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-0 rounded-lg py-2 px-4 block w-full appearance-none leading-normal focus:shadow-xl transform focus:-translate-y-1 transition-all duration-200",
+          type: "text",
+          name: "model_no",
+          id: "model_no",
+          onChange: function onChange(e) {
+            setFiles(_objectSpread(_objectSpread({}, files), {}, {
+              model_no: e.target.value
+            }));
+          },
+          value: files.model_no
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        className: "flex flex-col space-y-2 w-full",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
+          className: "text-gray-500",
+          htmlFor: "price",
+          children: "harga"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+          className: "bg-white border-0 ring-2 ring-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-0 rounded-lg py-2 px-4 block w-full appearance-none leading-normal focus:shadow-xl transform focus:-translate-y-1 transition-all duration-200",
+          type: "text",
+          name: "price",
+          id: "price",
+          onChange: function onChange(e) {
+            setFiles(_objectSpread(_objectSpread({}, files), {}, {
+              price: e.target.value
+            }));
+          },
+          value: files.price
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        className: "flex flex-col space-y-2 w-full",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
+          className: "text-gray-500",
+          htmlFor: "file",
+          children: "File Surat"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+          className: " file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100  w-full appearance-none leading-normal",
+          type: "file",
+          name: "file",
+          id: "file",
+          onChange: function onChange(e) {
+            setFiles(_objectSpread(_objectSpread({}, files), {}, {
+              file: e.target.files[0]
+            }));
+          }
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Parts_ButtonBlue__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        type: "submit",
+        label: "Simpan"
+      })]
+    })
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/Components/Header.jsx":
+/*!********************************************!*\
+  !*** ./resources/js/Components/Header.jsx ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Header)
+/* harmony export */ });
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_icons_fi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-icons/fi */ "./node_modules/react-icons/fi/index.esm.js");
+/* harmony import */ var _ResetPasswordForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ResetPasswordForm */ "./resources/js/Components/ResetPasswordForm.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+function Header(_ref) {
+  var user = _ref.user;
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      dropDown = _useState2[0],
+      setDropDown = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      showDialog = _useState4[0],
+      setShowDialog = _useState4[1];
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    className: "flex w-full justify-between h-20 bg-white shadow-xl p-3 items-center",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ResetPasswordForm__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      showDialog: showDialog,
+      setShowDialog: setShowDialog
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
+      "class": "text-3xl font-bold",
+      children: "Arsip BPKAD"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "flex space-x-3 items-center",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "flex px-4 py-2 rounded-lg bg-gray-50 hover:bg-gray-100 relative",
+        children: [dropDown && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          className: "bg-white w-[150px] flex justify-center text-red-400 hover:text-red-500 cursor-pointer transition-all duration-200 rounded-lg absolute top-0 right-0 translate-y-12 p-3 shadow-xl",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            onClick: function onClick() {
+              return setShowDialog(true);
+            },
+            className: "p-1 rounded hover:bg-red-50",
+            children: "Ubah Password"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+          className: "cursor-pointer",
+          onClick: function onClick() {
+            return setDropDown(!dropDown);
+          },
+          children: user.name
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Link, {
+        href: "/logout",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+          title: "Keluar",
+          className: "text-red-400",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_icons_fi__WEBPACK_IMPORTED_MODULE_4__.FiLogOut, {
+            size: 24
+          })
+        })
+      })]
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/Components/ModalRoot.jsx":
+/*!***********************************************!*\
+  !*** ./resources/js/Components/ModalRoot.jsx ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ MyModal)
+/* harmony export */ });
+/* harmony import */ var _headlessui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @headlessui/react */ "./node_modules/@headlessui/react/dist/components/transitions/transition.esm.js");
+/* harmony import */ var _headlessui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @headlessui/react */ "./node_modules/@headlessui/react/dist/components/dialog/dialog.esm.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var recoil__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! recoil */ "./node_modules/recoil/es/recoil.js");
+/* harmony import */ var _Store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Store */ "./resources/js/Store/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+function MyModal(_ref) {
+  var children = _ref.children,
+      title = _ref.title;
+
+  var _useRecoilState = (0,recoil__WEBPACK_IMPORTED_MODULE_1__.useRecoilState)(_Store__WEBPACK_IMPORTED_MODULE_2__.dialog),
+      _useRecoilState2 = _slicedToArray(_useRecoilState, 2),
+      isOpen = _useRecoilState2[0],
+      setIsOpen = _useRecoilState2[1];
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_4__.Transition, {
+      appear: true,
+      show: isOpen,
+      as: react__WEBPACK_IMPORTED_MODULE_0__.Fragment,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_5__.Dialog, {
+        as: "div",
+        className: "fixed inset-0 z-10 overflow-y-auto",
+        onClose: closeModal,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "min-h-screen px-4 text-center",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_4__.Transition.Child, {
+            as: react__WEBPACK_IMPORTED_MODULE_0__.Fragment,
+            enter: "ease-out duration-300",
+            enterFrom: "opacity-0",
+            enterTo: "opacity-100",
+            leave: "ease-in duration-200",
+            leaveFrom: "opacity-100",
+            leaveTo: "opacity-0",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_5__.Dialog.Overlay, {
+              className: "fixed inset-0"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            className: "inline-block h-screen align-middle",
+            "aria-hidden": "true",
+            children: "\u200B"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_4__.Transition.Child, {
+            as: react__WEBPACK_IMPORTED_MODULE_0__.Fragment,
+            enter: "ease-out duration-300",
+            enterFrom: "opacity-0 scale-95",
+            enterTo: "opacity-100 scale-100",
+            leave: "ease-in duration-200",
+            leaveFrom: "opacity-100 scale-100",
+            leaveTo: "opacity-0 scale-95",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+              className: "inline-block w-full max-w-xl p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl border-2 border-gray-100",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_5__.Dialog.Title, {
+                as: "h3",
+                className: "text-lg font-medium leading-6 text-gray-900",
+                children: title
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_5__.Dialog.Description, {
+                as: "div",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                  className: "mt-4",
+                  children: children
+                })
+              })]
+            })
+          })]
+        })
+      })
+    })
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/Components/Parts/ButtonBlue.jsx":
+/*!******************************************************!*\
+  !*** ./resources/js/Components/Parts/ButtonBlue.jsx ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ButtonBlue)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+function ButtonBlue(_ref) {
+  var label = _ref.label,
+      onClick = _ref.onClick,
+      type = _ref.type;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+    type: type,
+    onClick: onClick,
+    className: "bg-blue-500 rounded-full py-2 px-4 text-white font-bold",
+    children: label
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/Components/ResetPasswordForm.jsx":
+/*!*******************************************************!*\
+  !*** ./resources/js/Components/ResetPasswordForm.jsx ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ResetPasswordForm)
+/* harmony export */ });
+/* harmony import */ var _headlessui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @headlessui/react */ "./node_modules/@headlessui/react/dist/components/transitions/transition.esm.js");
+/* harmony import */ var _headlessui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @headlessui/react */ "./node_modules/@headlessui/react/dist/components/dialog/dialog.esm.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_hot_toast__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-hot-toast */ "./node_modules/react-hot-toast/dist/react-hot-toast.esm.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+function ResetPasswordForm(_ref) {
+  var showDialog = _ref.showDialog,
+      setShowDialog = _ref.setShowDialog;
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
+    old_password: "",
+    new_password: "",
+    new_password_confirmation: ""
+  }),
+      _useState2 = _slicedToArray(_useState, 2),
+      password = _useState2[0],
+      setPassword = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
+      _useState4 = _slicedToArray(_useState3, 2),
+      errorMessages = _useState4[0],
+      setErrorMessages = _useState4[1];
+
+  function closeModal() {
+    setShowDialog(false);
+  }
+
+  function openModal() {
+    setShowDialog(true);
+  }
+
+  var submitPassword = function submitPassword(e) {
+    e.preventDefault();
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__.Inertia.post("/password/update", password, {
+      onError: function onError(error) {
+        setErrorMessages(error);
+        error.password && react_hot_toast__WEBPACK_IMPORTED_MODULE_3__["default"].error(error.password);
+      },
+      onSuccess: function onSuccess() {
+        react_hot_toast__WEBPACK_IMPORTED_MODULE_3__["default"].success("Password berhasil diubah!");
+        setShowDialog(false);
+      }
+    });
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_4__.Transition, {
+      appear: true,
+      show: showDialog,
+      as: react__WEBPACK_IMPORTED_MODULE_1__.Fragment,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_5__.Dialog, {
+        as: "div",
+        className: "fixed inset-0 z-10 overflow-y-auto",
+        onClose: closeModal,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "min-h-screen px-4 text-center",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_4__.Transition.Child, {
+            as: react__WEBPACK_IMPORTED_MODULE_1__.Fragment,
+            enter: "ease-out duration-300",
+            enterFrom: "opacity-0",
+            enterTo: "opacity-100",
+            leave: "ease-in duration-200",
+            leaveFrom: "opacity-100",
+            leaveTo: "opacity-0",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_5__.Dialog.Overlay, {
+              className: "fixed inset-0"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            className: "inline-block h-screen align-middle",
+            "aria-hidden": "true",
+            children: "\u200B"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_4__.Transition.Child, {
+            as: react__WEBPACK_IMPORTED_MODULE_1__.Fragment,
+            enter: "ease-out duration-300",
+            enterFrom: "opacity-0 scale-95",
+            enterTo: "opacity-100 scale-100",
+            leave: "ease-in duration-200",
+            leaveFrom: "opacity-100 scale-100",
+            leaveTo: "opacity-0 scale-95",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_5__.Dialog.Title, {
+                as: "h3",
+                className: "text-lg font-medium leading-6 text-gray-900",
+                children: "Ubah Password"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
+                onSubmit: submitPassword,
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                  className: "mt-6 grid grid-cols-1 row-gap-6 col-gap-4 sm:grid-cols-6",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    className: "sm:col-span-6",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      htmlFor: "old_password",
+                      className: "block text-sm font-medium leading-5 text-gray-700",
+                      children: "Password Lama"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      className: "mt-1 rounded-md shadow-sm",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                        id: "old_password",
+                        type: "password",
+                        required: true,
+                        className: "form-input rounded-lg block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5",
+                        onChange: function onChange(e) {
+                          setPassword(_objectSpread(_objectSpread({}, password), {}, {
+                            old_password: e.target.value
+                          }));
+                        },
+                        value: password.old_password
+                      }), (errorMessages === null || errorMessages === void 0 ? void 0 : errorMessages.old_password) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+                        className: "text-red-400 text-xs italic mt-2",
+                        children: errorMessages.old_password
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    className: "sm:col-span-6",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      htmlFor: "password",
+                      className: "block text-sm font-medium leading-5 text-gray-700",
+                      children: "Password Baru"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      className: "mt-1 rounded-md shadow-sm",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                        id: "password",
+                        type: "password",
+                        required: true,
+                        className: "form-input rounded-lg block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5",
+                        onChange: function onChange(e) {
+                          setPassword(_objectSpread(_objectSpread({}, password), {}, {
+                            new_password: e.target.value
+                          }));
+                        },
+                        value: password.new_password
+                      }), (errorMessages === null || errorMessages === void 0 ? void 0 : errorMessages.new_password) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+                        className: "text-red-400 text-xs italic mt-2",
+                        children: errorMessages.new_password
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    className: "sm:col-span-6",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      htmlFor: "password",
+                      className: "block text-sm font-medium leading-5 text-gray-700",
+                      children: "Konfirmasi Password Baru"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      className: "mt-1 rounded-md shadow-sm",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                        id: "password",
+                        type: "password",
+                        required: true,
+                        className: "form-input rounded-lg block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5",
+                        onChange: function onChange(e) {
+                          setPassword(_objectSpread(_objectSpread({}, password), {}, {
+                            new_password_confirmation: e.target.value
+                          }));
+                        },
+                        value: password.new_password_confirmation
+                      }), (errorMessages === null || errorMessages === void 0 ? void 0 : errorMessages.new_password_confirmation) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+                        className: "text-red-400 text-xs italic mt-2",
+                        children: errorMessages.new_password_confirmation
+                      })]
+                    })]
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                  className: "mt-4",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                    type: "submit",
+                    className: "inline-flex justify-center px-4 py-2 text-sm font-medium text-blue-900 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500",
+                    children: "Ubah Password"
+                  })
+                })]
+              })]
+            })
+          })]
+        })
+      })
+    })
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/Layout/Main.jsx":
+/*!**************************************!*\
+  !*** ./resources/js/Layout/Main.jsx ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Main)
+/* harmony export */ });
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+function Main(_ref) {
+  var title = _ref.title,
+      children = _ref.children;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    className: "bg-gradient-to-b from-white to-gray-100 text-gray-700 overflow-hidden",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Head, {
+      title: "".concat(title, " | Arsip BPKAD")
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "w-screen h-screen overflow-y-auto",
+      children: children
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Auth/Login.jsx":
+/*!*******************************************!*\
+  !*** ./resources/js/Pages/Auth/Login.jsx ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Login)
+/* harmony export */ });
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_hot_toast__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-hot-toast */ "./node_modules/react-hot-toast/dist/react-hot-toast.esm.js");
+/* harmony import */ var _Layout_Main__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Layout/Main */ "./resources/js/Layout/Main.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+function Login() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
+    username: "",
+    password: ""
+  }),
+      _useState2 = _slicedToArray(_useState, 2),
+      credential = _useState2[0],
+      setCredential = _useState2[1];
+
+  var submitHandler = function submitHandler(e) {
+    e.preventDefault();
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__.Inertia.post("login", credential, {
+      onSuccess: function onSuccess() {
+        react_hot_toast__WEBPACK_IMPORTED_MODULE_4__["default"].success("Login Successful");
+      },
+      onError: function onError(e) {
+        react_hot_toast__WEBPACK_IMPORTED_MODULE_4__["default"].error("Login Failed");
+      }
+    });
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Layout_Main__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    title: "Login",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "h-full w-full flex flex-col justify-center items-center space-y-6 p-5",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
+        className: "text-4xl sm:text-6xl font-semibold",
+        children: "Arsip BPKAD"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("form", {
+        onSubmit: submitHandler,
+        className: "w-full sm:w-1/3 flex flex-col items-center space-y-4",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "flex flex-col space-y-2 w-full",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+            htmlFor: "username",
+            children: "Username"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+            className: "bg-white border-0 ring-2 ring-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-0 rounded-lg py-2 px-4 block w-full appearance-none leading-normal focus:shadow-xl transform focus:-translate-y-1 transition-all duration-200",
+            type: "text",
+            name: "username",
+            id: "username",
+            onChange: function onChange(e) {
+              setCredential(_objectSpread(_objectSpread({}, credential), {}, {
+                username: e.target.value
+              }));
+            },
+            value: credential.username
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "flex flex-col space-y-2 w-full mb-5",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+            htmlFor: "username",
+            children: "Password"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+            className: "bg-white border-0 ring-2 ring-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-0 rounded-lg py-2 px-4 block w-full appearance-none leading-normal focus:shadow-xl transform focus:-translate-y-1 transition-all duration-200",
+            type: "password",
+            name: "password",
+            id: "password",
+            onChange: function onChange(e) {
+              setCredential(_objectSpread(_objectSpread({}, credential), {}, {
+                password: e.target.value
+              }));
+            },
+            value: credential.password
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          className: "flex pt-5 w-full",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+            type: "submit",
+            className: "bg-gray-700 hover:bg-gray-800 rounded-lg py-2 px-4 text-lg w-full text-white font-bold text-center transition-all duration-200 tranform hover:-translate-y-1",
+            children: "Masuk"
+          })
+        })]
+      })]
+    })
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Dashboard.jsx":
+/*!******************************************!*\
+  !*** ./resources/js/Pages/Dashboard.jsx ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Dashboard)
+/* harmony export */ });
+/* harmony import */ var gridjs_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gridjs-react */ "./node_modules/gridjs-react/dist/gridjs.production.es.min.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var recoil__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! recoil */ "./node_modules/recoil/es/recoil.js");
+/* harmony import */ var _Components_AddForm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Components/AddForm */ "./resources/js/Components/AddForm.jsx");
+/* harmony import */ var _Components_Header__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Components/Header */ "./resources/js/Components/Header.jsx");
+/* harmony import */ var _Components_Parts_ButtonBlue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Components/Parts/ButtonBlue */ "./resources/js/Components/Parts/ButtonBlue.jsx");
+/* harmony import */ var _Layout_Main__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Layout/Main */ "./resources/js/Layout/Main.jsx");
+/* harmony import */ var _Store__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Store */ "./resources/js/Store/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+
+
+
+function Dashboard(_ref) {
+  var user = _ref.user;
+
+  var _useRecoilState = (0,recoil__WEBPACK_IMPORTED_MODULE_2__.useRecoilState)(_Store__WEBPACK_IMPORTED_MODULE_7__.dialog),
+      _useRecoilState2 = _slicedToArray(_useRecoilState, 2),
+      showForm = _useRecoilState2[0],
+      setShowForm = _useRecoilState2[1];
+
+  var prev = "http://localhost:8000/api/";
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_Layout_Main__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    title: "Dashboard",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_Header__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      user: user
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_AddForm__WEBPACK_IMPORTED_MODULE_3__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+      className: "px-3 mt-5",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_Parts_ButtonBlue__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        onClick: function onClick() {
+          console.log("tes");
+          setShowForm(true);
+        },
+        label: "Tambah Arsip"
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+      className: "overflow-x-auto w-full ",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(gridjs_react__WEBPACK_IMPORTED_MODULE_0__.Grid, {
+        server: {
+          url: "".concat(prev, "files"),
+          then: function then(data) {
+            return data.map(function (file) {
+              return [(0,gridjs_react__WEBPACK_IMPORTED_MODULE_0__._)( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("a", {
+                className: "py-1 px-2 rounded-lg text-white bg-blue-600 box-border text-xs",
+                href: "http://localhost:8000/".concat(file.file_path),
+                target: "_blank",
+                children: "Lihat"
+              })), file.goods_code, file.goods_name, file.contract_no, file.contract_date, file.skpd, file.bank_name, file.npwp, file.spm_no, file.bast_no, file.bast_date, file.sp2d_no, file.sp2d_date, file.company_name, file.brand, file.size, file.ingredient, file.buy_year, file.model_no, file.price, file.user_name];
+            });
+          }
+        },
+        columns: ["File", "Kode Barang", "Nama Barang", "No Kontrak", "Tgl Kontrak", "SKPD", "Nama Bank", "NPWP", "No SPM", "No BAST", "Tgl BAST", "No SP2D", "Tgl SP2D", "Nama Perusahaan", "Merek", "Ukuran", "Bahan", "Tahun Pembelian", "Model", "Harga", "Diinput Oleh"],
+        language: {
+          search: {
+            placeholder: "🔍 Cari..."
+          },
+          pagination: {
+            previous: "Sebelumnya",
+            next: "Selanjutnya",
+            showing: "Menampilkan",
+            results: function results() {
+              return "Data";
+            }
+          }
+        },
+        search: {
+          enabled: true,
+          keyword: ""
+        },
+        className: {
+          container: "p-3 w-fit ",
+          td: "px-5",
+          thead: "bg-gray-700 text-white",
+          th: "py-3",
+          tr: "border-b border-gray-200",
+          table: "bg-white my-5 shadow-lg rounded-lg overflow-hidden",
+          paginationButton: "mt-5",
+          paginationButtonCurrent: "bg-gray-600 text-white px-2 py-1 rounded mx-3",
+          paginationButtonNext: "bg-gray-100 hover:bg-gray-200 px-2 py-1 ml-3 rounded",
+          paginationButtonPrev: "bg-gray-100 hover:bg-gray-200 px-2 py-1 mr-3 rounded"
+        },
+        pagination: {
+          enabled: true,
+          limit: 10
+        },
+        sort: true
+      })
+    })]
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/Pages/home.jsx":
 /*!*************************************!*\
   !*** ./resources/js/Pages/home.jsx ***!
@@ -2101,6 +5794,26 @@ function home() {
 
 /***/ }),
 
+/***/ "./resources/js/Store/index.js":
+/*!*************************************!*\
+  !*** ./resources/js/Store/index.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "dialog": () => (/* binding */ dialog)
+/* harmony export */ });
+/* harmony import */ var recoil__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! recoil */ "./node_modules/recoil/es/recoil.js");
+
+var dialog = (0,recoil__WEBPACK_IMPORTED_MODULE_0__.atom)({
+  key: "dialog",
+  "default": false
+});
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -2112,12 +5825,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_hot_toast__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-hot-toast */ "./node_modules/react-hot-toast/dist/react-hot-toast.esm.js");
+/* harmony import */ var recoil__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! recoil */ "./node_modules/recoil/es/recoil.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
 
 
 
@@ -2131,7 +5849,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     var el = _ref.el,
         App = _ref.App,
         props = _ref.props;
-    (0,react_dom__WEBPACK_IMPORTED_MODULE_1__.render)( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(App, _objectSpread({}, props)), el);
+    (0,react_dom__WEBPACK_IMPORTED_MODULE_1__.render)( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(recoil__WEBPACK_IMPORTED_MODULE_3__.RecoilRoot, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_hot_toast__WEBPACK_IMPORTED_MODULE_5__.Toaster, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(App, _objectSpread({}, props))]
+    }), el);
   }
 });
 
@@ -2781,6 +6501,76 @@ module.exports = function GetIntrinsic(name, allowMissing) {
 	}
 	return value;
 };
+
+
+/***/ }),
+
+/***/ "./node_modules/gridjs-react/dist/gridjs.production.es.min.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/gridjs-react/dist/gridjs.production.es.min.js ***!
+  \********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Grid": () => (/* binding */ s),
+/* harmony export */   "ReactWrapper": () => (/* binding */ f),
+/* harmony export */   "_": () => (/* binding */ l)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var gridjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gridjs */ "./node_modules/gridjs/dist/gridjs.module.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */var u=function(t,r){return(u=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(t,r){t.__proto__=r}||function(t,r){for(var n in r)Object.prototype.hasOwnProperty.call(r,n)&&(t[n]=r[n])})(t,r)};function a(t,r){if("function"!=typeof r&&null!==r)throw new TypeError("Class extends value "+String(r)+" is not a constructor or null");function n(){this.constructor=t}u(t,r),t.prototype=null===r?Object.create(r):(n.prototype=r.prototype,new n)}var s=function(n){function o(t){var o=n.call(this,t)||this;return o.wrapper=(0,react__WEBPACK_IMPORTED_MODULE_0__.createRef)(),o.instance=null,o.instance=new gridjs__WEBPACK_IMPORTED_MODULE_1__.Grid(t||{}),o}return a(o,n),o.prototype.getInstance=function(){return this.instance},o.prototype.componentDidMount=function(){this.instance.render(this.wrapper.current)},o.prototype.componentDidUpdate=function(){this.instance.updateConfig(this.props).forceRender()},o.prototype.render=function(){return react__WEBPACK_IMPORTED_MODULE_0__.createElement("div",{ref:this.wrapper})},o}(react__WEBPACK_IMPORTED_MODULE_0__.Component),f=function(t){function r(){var r=null!==t&&t.apply(this,arguments)||this;return r.ref=(0,gridjs__WEBPACK_IMPORTED_MODULE_1__.createRef)(),r}return a(r,t),r.prototype.componentDidMount=function(){react_dom__WEBPACK_IMPORTED_MODULE_2__.render(this.props.element,this.ref.current)},r.prototype.render=function(){return (0,gridjs__WEBPACK_IMPORTED_MODULE_1__.h)(this.props.parent,{ref:this.ref})},r.defaultProps={parent:"div"},r}(gridjs__WEBPACK_IMPORTED_MODULE_1__.Component);function l(t,r){return (0,gridjs__WEBPACK_IMPORTED_MODULE_1__.h)(f,{element:t,parent:r})}
+//# sourceMappingURL=gridjs.production.es.min.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/gridjs/dist/gridjs.module.js":
+/*!***************************************************!*\
+  !*** ./node_modules/gridjs/dist/gridjs.module.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "BaseActions": () => (/* binding */ st),
+/* harmony export */   "BaseComponent": () => (/* binding */ G),
+/* harmony export */   "BaseStore": () => (/* binding */ it),
+/* harmony export */   "Cell": () => (/* binding */ V),
+/* harmony export */   "Component": () => (/* binding */ S),
+/* harmony export */   "Config": () => (/* binding */ Mt),
+/* harmony export */   "Dispatcher": () => (/* binding */ kt),
+/* harmony export */   "Grid": () => (/* binding */ ie),
+/* harmony export */   "PluginBaseComponent": () => (/* binding */ ct),
+/* harmony export */   "PluginPosition": () => (/* binding */ rt),
+/* harmony export */   "Row": () => (/* binding */ Y),
+/* harmony export */   "className": () => (/* binding */ et),
+/* harmony export */   "createElement": () => (/* binding */ y),
+/* harmony export */   "createRef": () => (/* binding */ w),
+/* harmony export */   "h": () => (/* binding */ y),
+/* harmony export */   "html": () => (/* binding */ $),
+/* harmony export */   "useEffect": () => (/* binding */ fe),
+/* harmony export */   "useRef": () => (/* binding */ de)
+/* harmony export */ });
+function t(t,e){for(var n=0;n<e.length;n++){var r=e[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(t,r.key,r)}}function e(e,n,r){return n&&t(e.prototype,n),r&&t(e,r),e}function n(){return(n=Object.assign||function(t){for(var e=1;e<arguments.length;e++){var n=arguments[e];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(t[r]=n[r])}return t}).apply(this,arguments)}function r(t,e){t.prototype=Object.create(e.prototype),t.prototype.constructor=t,i(t,e)}function i(t,e){return(i=Object.setPrototypeOf||function(t,e){return t.__proto__=e,t})(t,e)}function o(t){if(void 0===t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return t}function s(t,e){(null==e||e>t.length)&&(e=t.length);for(var n=0,r=new Array(e);n<e;n++)r[n]=t[n];return r}function a(t,e){var n="undefined"!=typeof Symbol&&t[Symbol.iterator]||t["@@iterator"];if(n)return(n=n.call(t)).next.bind(n);if(Array.isArray(t)||(n=function(t,e){if(t){if("string"==typeof t)return s(t,e);var n=Object.prototype.toString.call(t).slice(8,-1);return"Object"===n&&t.constructor&&(n=t.constructor.name),"Map"===n||"Set"===n?Array.from(t):"Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)?s(t,e):void 0}}(t))||e&&t&&"number"==typeof t.length){n&&(t=n);var r=0;return function(){return r>=t.length?{done:!0}:{done:!1,value:t[r++]}}}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}var u,l,c,p,h,f,d={},_=[],m=/acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i;function g(t,e){for(var n in e)t[n]=e[n];return t}function v(t){var e=t.parentNode;e&&e.removeChild(t)}function y(t,e,n){var r,i,o,s=arguments,a={};for(o in e)"key"==o?r=e[o]:"ref"==o?i=e[o]:a[o]=e[o];if(arguments.length>3)for(n=[n],o=3;o<arguments.length;o++)n.push(s[o]);if(null!=n&&(a.children=n),"function"==typeof t&&null!=t.defaultProps)for(o in t.defaultProps)void 0===a[o]&&(a[o]=t.defaultProps[o]);return b(t,a,r,i,null)}function b(t,e,n,r,i){var o={type:t,props:e,key:n,ref:r,__k:null,__:null,__b:0,__e:null,__d:void 0,__c:null,__h:null,constructor:void 0,__v:null==i?++u.__v:i};return null!=u.vnode&&u.vnode(o),o}function w(){return{current:null}}function k(t){return t.children}function S(t,e){this.props=t,this.context=e}function C(t,e){if(null==e)return t.__?C(t.__,t.__.__k.indexOf(t)+1):null;for(var n;e<t.__k.length;e++)if(null!=(n=t.__k[e])&&null!=n.__e)return n.__e;return"function"==typeof t.type?C(t):null}function P(t){var e,n;if(null!=(t=t.__)&&null!=t.__c){for(t.__e=t.__c.base=null,e=0;e<t.__k.length;e++)if(null!=(n=t.__k[e])&&null!=n.__e){t.__e=t.__c.base=n.__e;break}return P(t)}}function x(t){(!t.__d&&(t.__d=!0)&&c.push(t)&&!N.__r++||h!==u.debounceRendering)&&((h=u.debounceRendering)||p)(N)}function N(){for(var t;N.__r=c.length;)t=c.sort(function(t,e){return t.__v.__b-e.__v.__b}),c=[],t.some(function(t){var e,n,r,i,o,s;t.__d&&(o=(i=(e=t).__v).__e,(s=e.__P)&&(n=[],(r=g({},i)).__v=i.__v+1,A(s,i,r,e.__n,void 0!==s.ownerSVGElement,null!=i.__h?[o]:null,n,null==o?C(i):o,i.__h),U(n,i),i.__e!=o&&P(i)))})}function E(t,e,n,r,i,o,s,a,u,l){var c,p,h,f,m,g,v,y=r&&r.__k||_,w=y.length;for(n.__k=[],c=0;c<e.length;c++)if(null!=(f=n.__k[c]=null==(f=e[c])||"boolean"==typeof f?null:"string"==typeof f||"number"==typeof f||"bigint"==typeof f?b(null,f,null,null,f):Array.isArray(f)?b(k,{children:f},null,null,null):f.__b>0?b(f.type,f.props,f.key,null,f.__v):f)){if(f.__=n,f.__b=n.__b+1,null===(h=y[c])||h&&f.key==h.key&&f.type===h.type)y[c]=void 0;else for(p=0;p<w;p++){if((h=y[p])&&f.key==h.key&&f.type===h.type){y[p]=void 0;break}h=null}A(t,f,h=h||d,i,o,s,a,u,l),m=f.__e,(p=f.ref)&&h.ref!=p&&(v||(v=[]),h.ref&&v.push(h.ref,null,f),v.push(p,f.__c||m,f)),null!=m?(null==g&&(g=m),"function"==typeof f.type&&null!=f.__k&&f.__k===h.__k?f.__d=u=F(f,u,t):u=T(t,f,h,y,m,u),l||"option"!==n.type?"function"==typeof n.type&&(n.__d=u):t.value=""):u&&h.__e==u&&u.parentNode!=t&&(u=C(h))}for(n.__e=g,c=w;c--;)null!=y[c]&&("function"==typeof n.type&&null!=y[c].__e&&y[c].__e==n.__d&&(n.__d=C(r,c+1)),M(y[c],y[c]));if(v)for(c=0;c<v.length;c++)H(v[c],v[++c],v[++c])}function F(t,e,n){var r,i;for(r=0;r<t.__k.length;r++)(i=t.__k[r])&&(i.__=t,e="function"==typeof i.type?F(i,e,n):T(n,i,i,t.__k,i.__e,e));return e}function T(t,e,n,r,i,o){var s,a,u;if(void 0!==e.__d)s=e.__d,e.__d=void 0;else if(null==n||i!=o||null==i.parentNode)t:if(null==o||o.parentNode!==t)t.appendChild(i),s=null;else{for(a=o,u=0;(a=a.nextSibling)&&u<r.length;u+=2)if(a==i)break t;t.insertBefore(i,o),s=o}return void 0!==s?s:i.nextSibling}function D(t,e,n){"-"===e[0]?t.setProperty(e,n):t[e]=null==n?"":"number"!=typeof n||m.test(e)?n:n+"px"}function R(t,e,n,r,i){var o;t:if("style"===e)if("string"==typeof n)t.style.cssText=n;else{if("string"==typeof r&&(t.style.cssText=r=""),r)for(e in r)n&&e in n||D(t.style,e,"");if(n)for(e in n)r&&n[e]===r[e]||D(t.style,e,n[e])}else if("o"===e[0]&&"n"===e[1])o=e!==(e=e.replace(/Capture$/,"")),e=e.toLowerCase()in t?e.toLowerCase().slice(2):e.slice(2),t.l||(t.l={}),t.l[e+o]=n,n?r||t.addEventListener(e,o?I:L,o):t.removeEventListener(e,o?I:L,o);else if("dangerouslySetInnerHTML"!==e){if(i)e=e.replace(/xlink[H:h]/,"h").replace(/sName$/,"s");else if("href"!==e&&"list"!==e&&"form"!==e&&"tabIndex"!==e&&"download"!==e&&e in t)try{t[e]=null==n?"":n;break t}catch(t){}"function"==typeof n||(null!=n&&(!1!==n||"a"===e[0]&&"r"===e[1])?t.setAttribute(e,n):t.removeAttribute(e))}}function L(t){this.l[t.type+!1](u.event?u.event(t):t)}function I(t){this.l[t.type+!0](u.event?u.event(t):t)}function A(t,e,n,r,i,o,s,a,l){var c,p,h,f,m,y,b,w,C,P,x,N=e.type;if(void 0!==e.constructor)return null;null!=n.__h&&(l=n.__h,a=e.__e=n.__e,e.__h=null,o=[a]),(c=u.__b)&&c(e);try{t:if("function"==typeof N){if(w=e.props,C=(c=N.contextType)&&r[c.__c],P=c?C?C.props.value:c.__:r,n.__c?b=(p=e.__c=n.__c).__=p.__E:("prototype"in N&&N.prototype.render?e.__c=p=new N(w,P):(e.__c=p=new S(w,P),p.constructor=N,p.render=O),C&&C.sub(p),p.props=w,p.state||(p.state={}),p.context=P,p.__n=r,h=p.__d=!0,p.__h=[]),null==p.__s&&(p.__s=p.state),null!=N.getDerivedStateFromProps&&(p.__s==p.state&&(p.__s=g({},p.__s)),g(p.__s,N.getDerivedStateFromProps(w,p.__s))),f=p.props,m=p.state,h)null==N.getDerivedStateFromProps&&null!=p.componentWillMount&&p.componentWillMount(),null!=p.componentDidMount&&p.__h.push(p.componentDidMount);else{if(null==N.getDerivedStateFromProps&&w!==f&&null!=p.componentWillReceiveProps&&p.componentWillReceiveProps(w,P),!p.__e&&null!=p.shouldComponentUpdate&&!1===p.shouldComponentUpdate(w,p.__s,P)||e.__v===n.__v){p.props=w,p.state=p.__s,e.__v!==n.__v&&(p.__d=!1),p.__v=e,e.__e=n.__e,e.__k=n.__k,e.__k.forEach(function(t){t&&(t.__=e)}),p.__h.length&&s.push(p);break t}null!=p.componentWillUpdate&&p.componentWillUpdate(w,p.__s,P),null!=p.componentDidUpdate&&p.__h.push(function(){p.componentDidUpdate(f,m,y)})}p.context=P,p.props=w,p.state=p.__s,(c=u.__r)&&c(e),p.__d=!1,p.__v=e,p.__P=t,c=p.render(p.props,p.state,p.context),p.state=p.__s,null!=p.getChildContext&&(r=g(g({},r),p.getChildContext())),h||null==p.getSnapshotBeforeUpdate||(y=p.getSnapshotBeforeUpdate(f,m)),x=null!=c&&c.type===k&&null==c.key?c.props.children:c,E(t,Array.isArray(x)?x:[x],e,n,r,i,o,s,a,l),p.base=e.__e,e.__h=null,p.__h.length&&s.push(p),b&&(p.__E=p.__=null),p.__e=!1}else null==o&&e.__v===n.__v?(e.__k=n.__k,e.__e=n.__e):e.__e=function(t,e,n,r,i,o,s,a){var u,l,c,p,h=n.props,f=e.props,m=e.type,g=0;if("svg"===m&&(i=!0),null!=o)for(;g<o.length;g++)if((u=o[g])&&(u===t||(m?u.localName==m:3==u.nodeType))){t=u,o[g]=null;break}if(null==t){if(null===m)return document.createTextNode(f);t=i?document.createElementNS("http://www.w3.org/2000/svg",m):document.createElement(m,f.is&&f),o=null,a=!1}if(null===m)h===f||a&&t.data===f||(t.data=f);else{if(o=o&&_.slice.call(t.childNodes),l=(h=n.props||d).dangerouslySetInnerHTML,c=f.dangerouslySetInnerHTML,!a){if(null!=o)for(h={},p=0;p<t.attributes.length;p++)h[t.attributes[p].name]=t.attributes[p].value;(c||l)&&(c&&(l&&c.__html==l.__html||c.__html===t.innerHTML)||(t.innerHTML=c&&c.__html||""))}if(function(t,e,n,r,i){var o;for(o in n)"children"===o||"key"===o||o in e||R(t,o,null,n[o],r);for(o in e)i&&"function"!=typeof e[o]||"children"===o||"key"===o||"value"===o||"checked"===o||n[o]===e[o]||R(t,o,e[o],n[o],r)}(t,f,h,i,a),c)e.__k=[];else if(g=e.props.children,E(t,Array.isArray(g)?g:[g],e,n,r,i&&"foreignObject"!==m,o,s,t.firstChild,a),null!=o)for(g=o.length;g--;)null!=o[g]&&v(o[g]);a||("value"in f&&void 0!==(g=f.value)&&(g!==t.value||"progress"===m&&!g)&&R(t,"value",g,h.value,!1),"checked"in f&&void 0!==(g=f.checked)&&g!==t.checked&&R(t,"checked",g,h.checked,!1))}return t}(n.__e,e,n,r,i,o,s,l);(c=u.diffed)&&c(e)}catch(t){e.__v=null,(l||null!=o)&&(e.__e=a,e.__h=!!l,o[o.indexOf(a)]=null),u.__e(t,e,n)}}function U(t,e){u.__c&&u.__c(e,t),t.some(function(e){try{t=e.__h,e.__h=[],t.some(function(t){t.call(e)})}catch(t){u.__e(t,e.__v)}})}function H(t,e,n){try{"function"==typeof t?t(e):t.current=e}catch(t){u.__e(t,n)}}function M(t,e,n){var r,i,o;if(u.unmount&&u.unmount(t),(r=t.ref)&&(r.current&&r.current!==t.__e||H(r,null,e)),n||"function"==typeof t.type||(n=null!=(i=t.__e)),t.__e=t.__d=void 0,null!=(r=t.__c)){if(r.componentWillUnmount)try{r.componentWillUnmount()}catch(t){u.__e(t,e)}r.base=r.__P=null}if(r=t.__k)for(o=0;o<r.length;o++)r[o]&&M(r[o],e,n);null!=i&&v(i)}function O(t,e,n){return this.constructor(t,n)}function j(t,e,n){var r,i,o;u.__&&u.__(t,e),i=(r="function"==typeof n)?null:n&&n.__k||e.__k,o=[],A(e,t=(!r&&n||e).__k=y(k,null,[t]),i||d,d,void 0!==e.ownerSVGElement,!r&&n?[n]:i?null:e.firstChild?_.slice.call(e.childNodes):null,o,!r&&n?n:i?i.__e:e.firstChild,r),U(o,t)}function W(){return"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,function(t){var e=16*Math.random()|0;return("x"==t?e:3&e|8).toString(16)})}u={__e:function(t,e){for(var n,r,i;e=e.__;)if((n=e.__c)&&!n.__)try{if((r=n.constructor)&&null!=r.getDerivedStateFromError&&(n.setState(r.getDerivedStateFromError(t)),i=n.__d),null!=n.componentDidCatch&&(n.componentDidCatch(t),i=n.__d),i)return n.__E=n}catch(e){t=e}throw t},__v:0},l=function(t){return null!=t&&void 0===t.constructor},S.prototype.setState=function(t,e){var n;n=null!=this.__s&&this.__s!==this.state?this.__s:this.__s=g({},this.state),"function"==typeof t&&(t=t(g({},n),this.props)),t&&g(n,t),null!=t&&this.__v&&(e&&this.__h.push(e),x(this))},S.prototype.forceUpdate=function(t){this.__v&&(this.__e=!0,t&&this.__h.push(t),x(this))},S.prototype.render=k,c=[],p="function"==typeof Promise?Promise.prototype.then.bind(Promise.resolve()):setTimeout,N.__r=0,f=0;var B=function(){function t(t){this._id=void 0,this._id=t||W()}return e(t,[{key:"id",get:function(){return this._id}}]),t}(),z={search:{placeholder:"Type a keyword..."},sort:{sortAsc:"Sort column ascending",sortDesc:"Sort column descending"},pagination:{previous:"Previous",next:"Next",navigate:function(t,e){return"Page "+t+" of "+e},page:function(t){return"Page "+t},showing:"Showing",of:"of",to:"to",results:"results"},loading:"Loading...",noRecordsFound:"No matching records found",error:"An error happened while fetching the data"},q=function(){function t(t){this._language=void 0,this._defaultLanguage=void 0,this._language=t,this._defaultLanguage=z}var e=t.prototype;return e.getString=function(t,e){if(!e||!t)return null;var n=t.split("."),r=n[0];if(e[r]){var i=e[r];return"string"==typeof i?function(){return i}:"function"==typeof i?i:this.getString(n.slice(1).join("."),i)}return null},e.translate=function(t){var e,n=this.getString(t,this._language);return(e=n||this.getString(t,this._defaultLanguage))?e.apply(void 0,[].slice.call(arguments,1)):t},t}(),G=function(t){function e(e,n){var r,i;return(r=t.call(this,e,n)||this).config=void 0,r._=void 0,r.config=function(t){if(!t)return null;var e=Object.keys(t);return e.length?t[e[0]].props.value:null}(n),r.config&&(r._=(i=r.config.translator,function(t){return i.translate.apply(i,[t].concat([].slice.call(arguments,1)))})),r}return r(e,t),e}(S),X=function(t){function e(){return t.apply(this,arguments)||this}return r(e,t),e.prototype.render=function(){return y(this.props.parentElement,{dangerouslySetInnerHTML:{__html:this.props.content}})},e}(G);function $(t,e){return y(X,{content:t,parentElement:e})}X.defaultProps={parentElement:"span"};var K,V=function(t){function e(e){var n;return(n=t.call(this)||this).data=void 0,n.update(e),n}r(e,t);var n=e.prototype;return n.cast=function(t){return t instanceof HTMLElement?$(t.outerHTML):t},n.update=function(t){return this.data=this.cast(t),this},e}(B),Y=function(t){function n(e){var n;return(n=t.call(this)||this)._cells=void 0,n.cells=e||[],n}r(n,t);var i=n.prototype;return i.cell=function(t){return this._cells[t]},i.toArray=function(){return this.cells.map(function(t){return t.data})},n.fromCells=function(t){return new n(t.map(function(t){return new V(t.data)}))},e(n,[{key:"cells",get:function(){return this._cells},set:function(t){this._cells=t}},{key:"length",get:function(){return this.cells.length}}]),n}(B),Z=function(t){function n(e){var n;return(n=t.call(this)||this)._rows=void 0,n._length=void 0,n.rows=e instanceof Array?e:e instanceof Y?[e]:[],n}return r(n,t),n.prototype.toArray=function(){return this.rows.map(function(t){return t.toArray()})},n.fromRows=function(t){return new n(t.map(function(t){return Y.fromCells(t.cells)}))},n.fromArray=function(t){return new n((t=function(t){return!t[0]||t[0]instanceof Array?t:[t]}(t)).map(function(t){return new Y(t.map(function(t){return new V(t)}))}))},e(n,[{key:"rows",get:function(){return this._rows},set:function(t){this._rows=t}},{key:"length",get:function(){return this._length||this.rows.length},set:function(t){this._length=t}}]),n}(B),J=function(){function t(){this.callbacks=void 0}var e=t.prototype;return e.init=function(t){this.callbacks||(this.callbacks={}),t&&!this.callbacks[t]&&(this.callbacks[t]=[])},e.on=function(t,e){return this.init(t),this.callbacks[t].push(e),this},e.off=function(t,e){var n=t;return this.init(),this.callbacks[n]&&0!==this.callbacks[n].length?(this.callbacks[n]=this.callbacks[n].filter(function(t){return t!=e}),this):this},e.emit=function(t){var e=arguments,n=t;return this.init(n),this.callbacks[n].length>0&&(this.callbacks[n].forEach(function(t){return t.apply(void 0,[].slice.call(e,1))}),!0)},t}();!function(t){t[t.Initiator=0]="Initiator",t[t.ServerFilter=1]="ServerFilter",t[t.ServerSort=2]="ServerSort",t[t.ServerLimit=3]="ServerLimit",t[t.Extractor=4]="Extractor",t[t.Transformer=5]="Transformer",t[t.Filter=6]="Filter",t[t.Sort=7]="Sort",t[t.Limit=8]="Limit"}(K||(K={}));var Q=function(t){function n(e){var n;return(n=t.call(this)||this).id=void 0,n._props=void 0,n._props={},n.id=W(),e&&n.setProps(e),n}r(n,t);var i=n.prototype;return i.process=function(){var t=[].slice.call(arguments);this.validateProps instanceof Function&&this.validateProps.apply(this,t),this.emit.apply(this,["beforeProcess"].concat(t));var e=this._process.apply(this,t);return this.emit.apply(this,["afterProcess"].concat(t)),e},i.setProps=function(t){return Object.assign(this._props,t),this.emit("propsUpdated",this),this},e(n,[{key:"props",get:function(){return this._props}}]),n}(J),tt=function(t){function n(){return t.apply(this,arguments)||this}return r(n,t),n.prototype._process=function(t){return this.props.keyword?(e=String(this.props.keyword).trim(),n=this.props.columns,r=this.props.ignoreHiddenColumns,i=t,o=this.props.selector,e=e.replace(/[-[\]{}()*+?.,\\^$|#\s]/g,"\\$&"),new Z(i.rows.filter(function(t,i){return t.cells.some(function(t,s){if(!t)return!1;if(r&&n&&n[s]&&"object"==typeof n[s]&&n[s].hidden)return!1;var a="";if("function"==typeof o)a=o(t.data,i,s);else if("object"==typeof t.data){var u=t.data;u&&u.props&&u.props.content&&(a=u.props.content)}else a=String(t.data);return new RegExp(e,"gi").test(a)})}))):t;var e,n,r,i,o},e(n,[{key:"type",get:function(){return K.Filter}}]),n}(Q);function et(){var t="gridjs";return""+t+[].slice.call(arguments).reduce(function(t,e){return t+"-"+e},"")}function nt(){return[].slice.call(arguments).filter(function(t){return t}).reduce(function(t,e){return(t||"")+" "+e},"").trim()||null}var rt,it=function(t){function n(e){var n;return(n=t.call(this)||this)._state=void 0,n.dispatcher=void 0,n.dispatcher=e,n._state=n.getInitialState(),e.register(n._handle.bind(o(n))),n}r(n,t);var i=n.prototype;return i._handle=function(t){this.handle(t.type,t.payload)},i.setState=function(t){var e=this._state;this._state=t,this.emit("updated",t,e)},e(n,[{key:"state",get:function(){return this._state}}]),n}(J),ot=function(t){function e(){return t.apply(this,arguments)||this}r(e,t);var n=e.prototype;return n.getInitialState=function(){return{keyword:null}},n.handle=function(t,e){"SEARCH_KEYWORD"===t&&this.search(e.keyword)},n.search=function(t){this.setState({keyword:t})},e}(it),st=function(){function t(t){this.dispatcher=void 0,this.dispatcher=t}return t.prototype.dispatch=function(t,e){this.dispatcher.dispatch({type:t,payload:e})},t}(),at=function(t){function e(){return t.apply(this,arguments)||this}return r(e,t),e.prototype.search=function(t){this.dispatch("SEARCH_KEYWORD",{keyword:t})},e}(st),ut=function(t){function i(){return t.apply(this,arguments)||this}return r(i,t),i.prototype._process=function(t){if(!this.props.keyword)return t;var e={};return this.props.url&&(e.url=this.props.url(t.url,this.props.keyword)),this.props.body&&(e.body=this.props.body(t.body,this.props.keyword)),n({},t,e)},e(i,[{key:"type",get:function(){return K.ServerFilter}}]),i}(Q),lt=new(function(){function t(){}var e=t.prototype;return e.format=function(t,e){return"[Grid.js] ["+e.toUpperCase()+"]: "+t},e.error=function(t,e){void 0===e&&(e=!1);var n=this.format(t,"error");if(e)throw Error(n);console.error(n)},e.warn=function(t){console.warn(this.format(t,"warn"))},e.info=function(t){console.info(this.format(t,"info"))},t}()),ct=function(t){function e(){return t.apply(this,arguments)||this}return r(e,t),e}(G);!function(t){t[t.Header=0]="Header",t[t.Footer=1]="Footer",t[t.Cell=2]="Cell"}(rt||(rt={}));var pt=function(){function t(){this.plugins=void 0,this.plugins=[]}var e=t.prototype;return e.get=function(t){var e=this.plugins.filter(function(e){return e.id===t});return e.length>0?e[0]:null},e.add=function(t){return t.id?null!==this.get(t.id)?(lt.error("Duplicate plugin ID: "+t.id),this):(this.plugins.push(t),this):(lt.error("Plugin ID cannot be empty"),this)},e.remove=function(t){return this.plugins.splice(this.plugins.indexOf(this.get(t)),1),this},e.list=function(t){return(null!=t||null!=t?this.plugins.filter(function(e){return e.position===t}):this.plugins).sort(function(t,e){return t.order-e.order})},t}(),ht=function(t){function e(){return t.apply(this,arguments)||this}return r(e,t),e.prototype.render=function(){var t=this;if(this.props.pluginId){var e=this.config.plugin.get(this.props.pluginId);return e?y(k,{},y(e.component,n({plugin:e},e.props,this.props.props))):null}return void 0!==this.props.position?y(k,{},this.config.plugin.list(this.props.position).map(function(e){return y(e.component,n({plugin:e},e.props,t.props.props))})):null},e}(G),ft=function(t){function e(e,n){var r;(r=t.call(this,e,n)||this).searchProcessor=void 0,r.actions=void 0,r.store=void 0,r.storeUpdatedFn=void 0,r.actions=new at(r.config.dispatcher),r.store=new ot(r.config.dispatcher);var i,s=e.keyword;return e.enabled&&(s&&r.actions.search(s),r.storeUpdatedFn=r.storeUpdated.bind(o(r)),r.store.on("updated",r.storeUpdatedFn),i=e.server?new ut({keyword:e.keyword,url:e.server.url,body:e.server.body}):new tt({keyword:e.keyword,columns:r.config.header&&r.config.header.columns,ignoreHiddenColumns:e.ignoreHiddenColumns||void 0===e.ignoreHiddenColumns,selector:e.selector}),r.searchProcessor=i,r.config.pipeline.register(i)),r}r(e,t);var n=e.prototype;return n.componentWillUnmount=function(){this.config.pipeline.unregister(this.searchProcessor),this.store.off("updated",this.storeUpdatedFn)},n.storeUpdated=function(t){this.searchProcessor.setProps({keyword:t.keyword})},n.onChange=function(t){this.actions.search(t.target.value)},n.render=function(){if(!this.props.enabled)return null;var t,e,n,r=this.onChange.bind(this);return this.searchProcessor instanceof ut&&(t=r,e=this.props.debounceTimeout,r=function(){var r=arguments;return new Promise(function(i){n&&clearTimeout(n),n=setTimeout(function(){return i(t.apply(void 0,[].slice.call(r)))},e)})}),y("div",{className:et(nt("search",this.config.className.search))},y("input",{type:"search",placeholder:this._("search.placeholder"),"aria-label":this._("search.placeholder"),onInput:r,className:nt(et("input"),et("search","input")),value:this.store.state.keyword}))},e}(ct);ft.defaultProps={debounceTimeout:250};var dt=function(t){function n(){return t.apply(this,arguments)||this}r(n,t);var i=n.prototype;return i.validateProps=function(){if(isNaN(Number(this.props.limit))||isNaN(Number(this.props.page)))throw Error("Invalid parameters passed")},i._process=function(t){var e=this.props.page;return new Z(t.rows.slice(e*this.props.limit,(e+1)*this.props.limit))},e(n,[{key:"type",get:function(){return K.Limit}}]),n}(Q),_t=function(t){function i(){return t.apply(this,arguments)||this}return r(i,t),i.prototype._process=function(t){var e={};return this.props.url&&(e.url=this.props.url(t.url,this.props.page,this.props.limit)),this.props.body&&(e.body=this.props.body(t.body,this.props.page,this.props.limit)),n({},t,e)},e(i,[{key:"type",get:function(){return K.ServerLimit}}]),i}(Q),mt=function(t){function n(e,n){var r;return(r=t.call(this,e,n)||this).processor=void 0,r.onUpdateFn=void 0,r.setTotalFromTabularFn=void 0,r.state={limit:e.limit,page:e.page||0,total:0},r}r(n,t);var i=n.prototype;return i.componentWillMount=function(){var t,e=this;this.props.enabled&&(this.setTotalFromTabularFn=this.setTotalFromTabular.bind(this),this.props.server?(t=new _t({limit:this.state.limit,page:this.state.page,url:this.props.server.url,body:this.props.server.body}),this.config.pipeline.on("afterProcess",this.setTotalFromTabularFn)):(t=new dt({limit:this.state.limit,page:this.state.page})).on("beforeProcess",this.setTotalFromTabularFn),this.processor=t,this.config.pipeline.register(t),this.config.pipeline.on("error",function(){e.setState({total:0,page:0})}))},i.setTotalFromTabular=function(t){this.setTotal(t.length)},i.onUpdate=function(t){this.props.resetPageOnUpdate&&t!==this.processor&&this.setPage(0)},i.componentDidMount=function(){this.onUpdateFn=this.onUpdate.bind(this),this.config.pipeline.on("updated",this.onUpdateFn)},i.componentWillUnmount=function(){this.config.pipeline.unregister(this.processor),this.config.pipeline.off("updated",this.onUpdateFn)},i.setPage=function(t){if(t>=this.pages||t<0||t===this.state.page)return null;this.setState({page:t}),this.processor.setProps({page:t})},i.setTotal=function(t){this.setState({total:t})},i.renderPages=function(){var t=this;if(this.props.buttonsCount<=0)return null;var e=Math.min(this.pages,this.props.buttonsCount),n=Math.min(this.state.page,Math.floor(e/2));return this.state.page+Math.floor(e/2)>=this.pages&&(n=e-(this.pages-this.state.page)),y(k,null,this.pages>e&&this.state.page-n>0&&y(k,null,y("button",{tabIndex:0,role:"button",onClick:this.setPage.bind(this,0),title:this._("pagination.firstPage"),"aria-label":this._("pagination.firstPage"),className:this.config.className.paginationButton},this._("1")),y("button",{tabIndex:-1,className:nt(et("spread"),this.config.className.paginationButton)},"...")),Array.from(Array(e).keys()).map(function(e){return t.state.page+(e-n)}).map(function(e){return y("button",{tabIndex:0,role:"button",onClick:t.setPage.bind(t,e),className:nt(t.state.page===e?nt(et("currentPage"),t.config.className.paginationButtonCurrent):null,t.config.className.paginationButton),title:t._("pagination.page",e+1),"aria-label":t._("pagination.page",e+1)},t._(""+(e+1)))}),this.pages>e&&this.pages>this.state.page+n+1&&y(k,null,y("button",{tabIndex:-1,className:nt(et("spread"),this.config.className.paginationButton)},"..."),y("button",{tabIndex:0,role:"button",onClick:this.setPage.bind(this,this.pages-1),title:this._("pagination.page",this.pages),"aria-label":this._("pagination.page",this.pages),className:this.config.className.paginationButton},this._(""+this.pages))))},i.renderSummary=function(){return y(k,null,this.props.summary&&this.state.total>0&&y("div",{role:"status","aria-live":"polite",className:nt(et("summary"),this.config.className.paginationSummary),title:this._("pagination.navigate",this.state.page+1,this.pages)},this._("pagination.showing")," ",y("b",null,this._(""+(this.state.page*this.state.limit+1)))," ",this._("pagination.to")," ",y("b",null,this._(""+Math.min((this.state.page+1)*this.state.limit,this.state.total)))," ",this._("pagination.of")," ",y("b",null,this._(""+this.state.total))," ",this._("pagination.results")))},i.render=function(){return this.props.enabled?y("div",{className:nt(et("pagination"),this.config.className.pagination)},this.renderSummary(),y("div",{className:et("pages")},this.props.prevButton&&y("button",{tabIndex:0,role:"button",disabled:0===this.state.page,onClick:this.setPage.bind(this,this.state.page-1),title:this._("pagination.previous"),"aria-label":this._("pagination.previous"),className:nt(this.config.className.paginationButton,this.config.className.paginationButtonPrev)},this._("pagination.previous")),this.renderPages(),this.props.nextButton&&y("button",{tabIndex:0,role:"button",disabled:this.pages===this.state.page+1||0===this.pages,onClick:this.setPage.bind(this,this.state.page+1),title:this._("pagination.next"),"aria-label":this._("pagination.next"),className:nt(this.config.className.paginationButton,this.config.className.paginationButtonNext)},this._("pagination.next")))):null},e(n,[{key:"pages",get:function(){return Math.ceil(this.state.total/this.state.limit)}}]),n}(ct);function gt(t,e){return"string"==typeof t?t.indexOf("%")>-1?e/100*parseInt(t,10):parseInt(t,10):t}function vt(t){return t?Math.floor(t)+"px":""}mt.defaultProps={summary:!0,nextButton:!0,prevButton:!0,buttonsCount:3,limit:10,resetPageOnUpdate:!0};var yt=function(t){function e(e,n){var r;return(r=t.call(this,e,n)||this).tableElement=void 0,r.tableClassName=void 0,r.tableStyle=void 0,r.tableElement=r.props.tableRef.current.base.cloneNode(!0),r.tableElement.style.position="absolute",r.tableElement.style.width="100%",r.tableElement.style.zIndex="-2147483640",r.tableElement.style.visibility="hidden",r.tableClassName=r.tableElement.className,r.tableStyle=r.tableElement.style.cssText,r}r(e,t);var i=e.prototype;return i.widths=function(){this.tableElement.className=this.tableClassName+" "+et("shadowTable"),this.tableElement.style.tableLayout="auto",this.tableElement.style.width="auto",this.tableElement.style.padding="0",this.tableElement.style.margin="0",this.tableElement.style.border="none",this.tableElement.style.outline="none";var t=Array.from(this.base.parentNode.querySelectorAll("thead th")).reduce(function(t,e){var r;return e.style.width=e.clientWidth+"px",n(((r={})[e.getAttribute("data-column-id")]={minWidth:e.clientWidth},r),t)},{});return this.tableElement.className=this.tableClassName,this.tableElement.style.cssText=this.tableStyle,this.tableElement.style.tableLayout="auto",Array.from(this.base.parentNode.querySelectorAll("thead th")).reduce(function(t,e){return t[e.getAttribute("data-column-id")].width=e.clientWidth,t},t)},i.render=function(){var t=this;return this.props.tableRef.current?y("div",{ref:function(e){e&&e.appendChild(t.tableElement)}}):null},e}(G);function bt(t){if(!t)return"";var e=t.split(" ");return 1===e.length&&/([a-z][A-Z])+/g.test(t)?t:e.map(function(t,e){return 0==e?t.toLowerCase():t.charAt(0).toUpperCase()+t.slice(1).toLowerCase()}).join("")}var wt=function(t){function i(){var e;return(e=t.call(this)||this)._columns=void 0,e._columns=[],e}r(i,t);var o=i.prototype;return o.adjustWidth=function(t){var e=t.container,n=t.tableRef,r=t.tempRef,o=t.tempRef||!0;if(!e)return this;var s=e.clientWidth,u={current:null},l={};if(n.current&&o){var c=y(yt,{tableRef:n});c.ref=u,j(c,r.current),l=u.current.widths()}for(var p,h=a(i.tabularFormat(this.columns).reduce(function(t,e){return t.concat(e)},[]));!(p=h()).done;){var f=p.value;f.columns&&f.columns.length>0||(!f.width&&o?f.id in l&&(f.width=vt(l[f.id].width),f.minWidth=vt(l[f.id].minWidth)):f.width=vt(gt(f.width,s)))}return n.current&&o&&j(null,r.current),this},o.setSort=function(t,e){for(var r,i=a(e||this.columns||[]);!(r=i()).done;){var o=r.value;o.columns&&o.columns.length>0&&(o.sort={enabled:!1}),void 0===o.sort&&t.sort&&(o.sort={enabled:!0}),o.sort?"object"==typeof o.sort&&(o.sort=n({enabled:!0},o.sort)):o.sort={enabled:!1},o.columns&&this.setSort(t,o.columns)}},o.setFixedHeader=function(t,e){for(var n,r=a(e||this.columns||[]);!(n=r()).done;){var i=n.value;void 0===i.fixedHeader&&(i.fixedHeader=t.fixedHeader),i.columns&&this.setFixedHeader(t,i.columns)}},o.setResizable=function(t,e){for(var n,r=a(e||this.columns||[]);!(n=r()).done;){var i=n.value;void 0===i.resizable&&(i.resizable=t.resizable),i.columns&&this.setResizable(t,i.columns)}},o.setID=function(t){for(var e,n=a(t||this.columns||[]);!(e=n()).done;){var r=e.value;r.id||"string"!=typeof r.name||(r.id=bt(r.name)),r.id||lt.error('Could not find a valid ID for one of the columns. Make sure a valid "id" is set for all columns.'),r.columns&&this.setID(r.columns)}},o.populatePlugins=function(t,e){for(var r,i=a(e);!(r=i()).done;){var o=r.value;void 0!==o.plugin&&t.plugin.add(n({id:o.id,props:{}},o.plugin,{position:rt.Cell}))}},i.fromColumns=function(t){for(var e,n=new i,r=a(t);!(e=r()).done;){var o=e.value;if("string"==typeof o||l(o))n.columns.push({name:o});else if("object"==typeof o){var s=o;s.columns&&(s.columns=i.fromColumns(s.columns).columns),"object"==typeof s.plugin&&void 0===s.data&&(s.data=null),n.columns.push(o)}}return n},i.fromUserConfig=function(t){var e=new i;return t.from?e.columns=i.fromHTMLTable(t.from).columns:t.columns?e.columns=i.fromColumns(t.columns).columns:!t.data||"object"!=typeof t.data[0]||t.data[0]instanceof Array||(e.columns=Object.keys(t.data[0]).map(function(t){return{name:t}})),e.columns.length?(e.setID(),e.setSort(t),e.setFixedHeader(t),e.setResizable(t),e.populatePlugins(t,e.columns),e):null},i.fromHTMLTable=function(t){for(var e,n=new i,r=a(t.querySelector("thead").querySelectorAll("th"));!(e=r()).done;){var o=e.value;n.columns.push({name:o.innerHTML,width:o.width})}return n},i.tabularFormat=function(t){var e=[],n=t||[],r=[];if(n&&n.length){e.push(n);for(var i,o=a(n);!(i=o()).done;){var s=i.value;s.columns&&s.columns.length&&(r=r.concat(s.columns))}r.length&&(e=e.concat(this.tabularFormat(r)))}return e},i.leafColumns=function(t){var e=[],n=t||[];if(n&&n.length)for(var r,i=a(n);!(r=i()).done;){var o=r.value;o.columns&&0!==o.columns.length||e.push(o),o.columns&&(e=e.concat(this.leafColumns(o.columns)))}return e},i.maximumDepth=function(t){return this.tabularFormat([t]).length-1},e(i,[{key:"columns",get:function(){return this._columns},set:function(t){this._columns=t}},{key:"visibleColumns",get:function(){return this._columns.filter(function(t){return!t.hidden})}}]),i}(B),kt=function(){function t(){this._callbacks=void 0,this._isDispatching=void 0,this._isHandled=void 0,this._isPending=void 0,this._lastID=void 0,this._pendingPayload=void 0,this._callbacks={},this._isDispatching=!1,this._isHandled={},this._isPending={},this._lastID=1}var e=t.prototype;return e.register=function(t){var e="ID_"+this._lastID++;return this._callbacks[e]=t,e},e.unregister=function(t){if(!this._callbacks[t])throw Error("Dispatcher.unregister(...): "+t+" does not map to a registered callback.");delete this._callbacks[t]},e.waitFor=function(t){if(!this._isDispatching)throw Error("Dispatcher.waitFor(...): Must be invoked while dispatching.");for(var e=0;e<t.length;e++){var n=t[e];if(this._isPending[n]){if(!this._isHandled[n])throw Error("Dispatcher.waitFor(...): Circular dependency detected while ' +\n            'waiting for "+n+".")}else{if(!this._callbacks[n])throw Error("Dispatcher.waitFor(...): "+n+" does not map to a registered callback.");this._invokeCallback(n)}}},e.dispatch=function(t){if(this._isDispatching)throw Error("Dispatch.dispatch(...): Cannot dispatch in the middle of a dispatch.");this._startDispatching(t);try{for(var e in this._callbacks)this._isPending[e]||this._invokeCallback(e)}finally{this._stopDispatching()}},e.isDispatching=function(){return this._isDispatching},e._invokeCallback=function(t){this._isPending[t]=!0,this._callbacks[t](this._pendingPayload),this._isHandled[t]=!0},e._startDispatching=function(t){for(var e in this._callbacks)this._isPending[e]=!1,this._isHandled[e]=!1;this._pendingPayload=t,this._isDispatching=!0},e._stopDispatching=function(){delete this._pendingPayload,this._isDispatching=!1},t}(),St=function(){},Ct=function(t){function e(e){var n;return(n=t.call(this)||this).data=void 0,n.set(e),n}r(e,t);var n=e.prototype;return n.get=function(){try{return Promise.resolve(this.data()).then(function(t){return{data:t,total:t.length}})}catch(t){return Promise.reject(t)}},n.set=function(t){return t instanceof Array?this.data=function(){return t}:t instanceof Function&&(this.data=t),this},e}(St),Pt=function(t){function e(e){var n;return(n=t.call(this)||this).options=void 0,n.options=e,n}r(e,t);var i=e.prototype;return i.handler=function(t){return"function"==typeof this.options.handle?this.options.handle(t):t.ok?t.json():(lt.error("Could not fetch data: "+t.status+" - "+t.statusText,!0),null)},i.get=function(t){var e=n({},this.options,t);return"function"==typeof e.data?e.data(e):fetch(e.url,e).then(this.handler.bind(this)).then(function(t){return{data:e.then(t),total:"function"==typeof e.total?e.total(t):void 0}})},e}(St),xt=function(){function t(){}return t.createFromUserConfig=function(t){var e=null;return t.data&&(e=new Ct(t.data)),t.from&&(e=new Ct(this.tableElementToArray(t.from)),t.from.style.display="none"),t.server&&(e=new Pt(t.server)),e||lt.error("Could not determine the storage type",!0),e},t.tableElementToArray=function(t){for(var e,n,r=[],i=a(t.querySelector("tbody").querySelectorAll("tr"));!(e=i()).done;){for(var o,s=[],u=a(e.value.querySelectorAll("td"));!(o=u()).done;){var l=o.value;1===l.childNodes.length&&l.childNodes[0].nodeType===Node.TEXT_NODE?s.push((n=l.innerHTML,(new DOMParser).parseFromString(n,"text/html").documentElement.textContent)):s.push($(l.innerHTML))}r.push(s)}return r},t}(),Nt="undefined"!=typeof Symbol?Symbol.iterator||(Symbol.iterator=Symbol("Symbol.iterator")):"@@iterator";function Et(t,e,n){if(!t.s){if(n instanceof Ft){if(!n.s)return void(n.o=Et.bind(null,t,e));1&e&&(e=n.s),n=n.v}if(n&&n.then)return void n.then(Et.bind(null,t,e),Et.bind(null,t,2));t.s=e,t.v=n;var r=t.o;r&&r(t)}}var Ft=function(){function t(){}return t.prototype.then=function(e,n){var r=new t,i=this.s;if(i){var o=1&i?e:n;if(o){try{Et(r,1,o(this.v))}catch(t){Et(r,2,t)}return r}return this}return this.o=function(t){try{var i=t.v;1&t.s?Et(r,1,e?e(i):i):n?Et(r,1,n(i)):Et(r,2,i)}catch(t){Et(r,2,t)}},r},t}();function Tt(t){return t instanceof Ft&&1&t.s}var Dt,Rt=function(t){function n(e){var n;return(n=t.call(this)||this)._steps=new Map,n.cache=new Map,n.lastProcessorIndexUpdated=-1,e&&e.forEach(function(t){return n.register(t)}),n}r(n,t);var i=n.prototype;return i.clearCache=function(){this.cache=new Map,this.lastProcessorIndexUpdated=-1},i.register=function(t,e){if(void 0===e&&(e=null),null===t.type)throw Error("Processor type is not defined");t.on("propsUpdated",this.processorPropsUpdated.bind(this)),this.addProcessorByPriority(t,e),this.afterRegistered(t)},i.unregister=function(t){if(t){var e=this._steps.get(t.type);e&&e.length&&(this._steps.set(t.type,e.filter(function(e){return e!=t})),this.emit("updated",t))}},i.addProcessorByPriority=function(t,e){var n=this._steps.get(t.type);if(!n){var r=[];this._steps.set(t.type,r),n=r}if(null===e||e<0)n.push(t);else if(n[e]){var i=n.slice(0,e-1),o=n.slice(e+1);this._steps.set(t.type,i.concat(t).concat(o))}else n[e]=t},i.getStepsByType=function(t){return this.steps.filter(function(e){return e.type===t})},i.getSortedProcessorTypes=function(){return Object.keys(K).filter(function(t){return!isNaN(Number(t))}).map(function(t){return Number(t)})},i.process=function(t){try{var e=this,n=function(t){return e.lastProcessorIndexUpdated=i.length,e.emit("afterProcess",o),o},r=e.lastProcessorIndexUpdated,i=e.steps,o=t,s=function(t,n){try{var s=function(t,e,n){if("function"==typeof t[Nt]){var r,i,o,s=t[Nt]();if(function t(n){try{for(;!(r=s.next()).done;)if((n=e(r.value))&&n.then){if(!Tt(n))return void n.then(t,o||(o=Et.bind(null,i=new Ft,2)));n=n.v}i?Et(i,1,n):i=n}catch(t){Et(i||(i=new Ft),2,t)}}(),s.return){var a=function(t){try{r.done||s.return()}catch(t){}return t};if(i&&i.then)return i.then(a,function(t){throw a(t)});a()}return i}if(!("length"in t))throw new TypeError("Object is not iterable");for(var u=[],l=0;l<t.length;l++)u.push(t[l]);return function(t,e,n){var r,i,o=-1;return function n(s){try{for(;++o<t.length;)if((s=e(o))&&s.then){if(!Tt(s))return void s.then(n,i||(i=Et.bind(null,r=new Ft,2)));s=s.v}r?Et(r,1,s):r=s}catch(t){Et(r||(r=new Ft),2,t)}}(),r}(u,function(t){return e(u[t])})}(i,function(t){var n=e.findProcessorIndexByID(t.id),i=function(){if(n>=r)return Promise.resolve(t.process(o)).then(function(n){e.cache.set(t.id,o=n)});o=e.cache.get(t.id)}();if(i&&i.then)return i.then(function(){})})}catch(t){return n(t)}return s&&s.then?s.then(void 0,n):s}(0,function(t){throw lt.error(t),e.emit("error",o),t});return Promise.resolve(s&&s.then?s.then(n):n())}catch(t){return Promise.reject(t)}},i.findProcessorIndexByID=function(t){return this.steps.findIndex(function(e){return e.id==t})},i.setLastProcessorIndex=function(t){var e=this.findProcessorIndexByID(t.id);this.lastProcessorIndexUpdated>e&&(this.lastProcessorIndexUpdated=e)},i.processorPropsUpdated=function(t){this.setLastProcessorIndex(t),this.emit("propsUpdated"),this.emit("updated",t)},i.afterRegistered=function(t){this.setLastProcessorIndex(t),this.emit("afterRegister"),this.emit("updated",t)},e(n,[{key:"steps",get:function(){for(var t,e=[],n=a(this.getSortedProcessorTypes());!(t=n()).done;){var r=this._steps.get(t.value);r&&r.length&&(e=e.concat(r))}return e.filter(function(t){return t})}}]),n}(J),Lt=function(t){function n(){return t.apply(this,arguments)||this}return r(n,t),n.prototype._process=function(t){try{return Promise.resolve(this.props.storage.get(t))}catch(t){return Promise.reject(t)}},e(n,[{key:"type",get:function(){return K.Extractor}}]),n}(Q),It=function(t){function n(){return t.apply(this,arguments)||this}return r(n,t),n.prototype._process=function(t){var e=Z.fromArray(t.data);return e.length=t.total,e},e(n,[{key:"type",get:function(){return K.Transformer}}]),n}(Q),At=function(t){function i(){return t.apply(this,arguments)||this}return r(i,t),i.prototype._process=function(){return Object.entries(this.props.serverStorageOptions).filter(function(t){return"function"!=typeof t[1]}).reduce(function(t,e){var r;return n({},t,((r={})[e[0]]=e[1],r))},{})},e(i,[{key:"type",get:function(){return K.Initiator}}]),i}(Q),Ut=function(t){function n(){return t.apply(this,arguments)||this}r(n,t);var i=n.prototype;return i.castData=function(t){if(!t||!t.length)return[];if(!this.props.header||!this.props.header.columns)return t;var e=wt.leafColumns(this.props.header.columns);return t[0]instanceof Array?t.map(function(t){var n=0;return e.map(function(e,r){return void 0!==e.data?(n++,"function"==typeof e.data?e.data(t):e.data):t[r-n]})}):"object"!=typeof t[0]||t[0]instanceof Array?[]:t.map(function(t){return e.map(function(e,n){return void 0!==e.data?"function"==typeof e.data?e.data(t):e.data:e.id?t[e.id]:(lt.error("Could not find the correct cell for column at position "+n+".\n                          Make sure either 'id' or 'selector' is defined for all columns."),null)})})},i._process=function(t){return{data:this.castData(t.data),total:t.total}},e(n,[{key:"type",get:function(){return K.Transformer}}]),n}(Q),Ht=function(){function t(){}return t.createFromConfig=function(t){var e=new Rt;return t.storage instanceof Pt&&e.register(new At({serverStorageOptions:t.server})),e.register(new Lt({storage:t.storage})),e.register(new Ut({header:t.header})),e.register(new It),e},t}(),Mt=function(){function t(e){this._userConfig=void 0,Object.assign(this,n({},t.defaultConfig(),e)),this._userConfig={}}var e=t.prototype;return e.assign=function(t){for(var e=0,n=Object.keys(t);e<n.length;e++){var r=n[e];"_userConfig"!==r&&(this[r]=t[r])}return this},e.update=function(e){return e?(this._userConfig=n({},this._userConfig,e),this.assign(t.fromUserConfig(this._userConfig)),this):this},t.defaultConfig=function(){return{plugin:new pt,dispatcher:new kt,tableRef:{current:null},tempRef:{current:null},width:"100%",height:"auto",autoWidth:!0,style:{},className:{}}},t.fromUserConfig=function(e){var r=new t(e);return r._userConfig=e,"boolean"==typeof e.sort&&e.sort&&r.assign({sort:{multiColumn:!0}}),r.assign({header:wt.fromUserConfig(r)}),r.assign({storage:xt.createFromUserConfig(e)}),r.assign({pipeline:Ht.createFromConfig(r)}),r.assign({translator:new q(e.language)}),r.plugin.add({id:"search",position:rt.Header,component:ft,props:n({enabled:!0===e.search||e.search instanceof Object},e.search)}),r.plugin.add({id:"pagination",position:rt.Footer,component:mt,props:n({enabled:!0===e.pagination||e.pagination instanceof Object},e.pagination)}),e.plugins&&e.plugins.forEach(function(t){return r.plugin.add(t)}),r},t}();!function(t){t[t.Init=0]="Init",t[t.Loading=1]="Loading",t[t.Loaded=2]="Loaded",t[t.Rendered=3]="Rendered",t[t.Error=4]="Error"}(Dt||(Dt={}));var Ot,jt,Wt,Bt=function(t){function e(){return t.apply(this,arguments)||this}r(e,t);var i=e.prototype;return i.content=function(){return this.props.column&&"function"==typeof this.props.column.formatter?this.props.column.formatter(this.props.cell.data,this.props.row,this.props.column):this.props.column&&this.props.column.plugin?y(ht,{pluginId:this.props.column.id,props:{column:this.props.column,cell:this.props.cell,row:this.props.row}}):this.props.cell.data},i.handleClick=function(t){this.props.messageCell||this.config.eventEmitter.emit("cellClick",t,this.props.cell,this.props.column,this.props.row)},i.getCustomAttributes=function(t){return t?"function"==typeof t.attributes?t.attributes(this.props.cell.data,this.props.row,this.props.column):t.attributes:{}},i.render=function(){return y("td",n({role:this.props.role,colSpan:this.props.colSpan,"data-column-id":this.props.column&&this.props.column.id,className:nt(et("td"),this.props.className,this.config.className.td),style:n({},this.props.style,this.config.style.td),onClick:this.handleClick.bind(this)},this.getCustomAttributes(this.props.column)),this.content())},e}(G),zt=function(t){function e(){return t.apply(this,arguments)||this}r(e,t);var n=e.prototype;return n.getColumn=function(t){if(this.props.header){var e=wt.leafColumns(this.props.header.columns);if(e)return e[t]}return null},n.handleClick=function(t){this.props.messageRow||this.config.eventEmitter.emit("rowClick",t,this.props.row)},n.getChildren=function(){var t=this;return this.props.children?this.props.children:y(k,null,this.props.row.cells.map(function(e,n){var r=t.getColumn(n);return r&&r.hidden?null:y(Bt,{key:e.id,cell:e,row:t.props.row,column:r})}))},n.render=function(){return y("tr",{className:nt(et("tr"),this.config.className.tr),onClick:this.handleClick.bind(this)},this.getChildren())},e}(G),qt=function(t){function e(){return t.apply(this,arguments)||this}return r(e,t),e.prototype.render=function(){return y(zt,{messageRow:!0},y(Bt,{role:"alert",colSpan:this.props.colSpan,messageCell:!0,cell:new V(this.props.message),className:nt(et("message"),this.props.className?this.props.className:null)}))},e}(G),Gt=function(t){function e(){return t.apply(this,arguments)||this}r(e,t);var n=e.prototype;return n.headerLength=function(){return this.props.header?this.props.header.visibleColumns.length:0},n.render=function(){var t=this;return y("tbody",{className:nt(et("tbody"),this.config.className.tbody)},this.props.data&&this.props.data.rows.map(function(e){return y(zt,{key:e.id,row:e,header:t.props.header})}),this.props.status===Dt.Loading&&(!this.props.data||0===this.props.data.length)&&y(qt,{message:this._("loading"),colSpan:this.headerLength(),className:nt(et("loading"),this.config.className.loading)}),this.props.status===Dt.Rendered&&this.props.data&&0===this.props.data.length&&y(qt,{message:this._("noRecordsFound"),colSpan:this.headerLength(),className:nt(et("notfound"),this.config.className.notfound)}),this.props.status===Dt.Error&&y(qt,{message:this._("error"),colSpan:this.headerLength(),className:nt(et("error"),this.config.className.error)}))},e}(G),Xt=function(t){function n(){return t.apply(this,arguments)||this}r(n,t);var i=n.prototype;return i.validateProps=function(){for(var t,e=a(this.props.columns);!(t=e()).done;){var n=t.value;void 0===n.direction&&(n.direction=1),1!==n.direction&&-1!==n.direction&&lt.error("Invalid sort direction "+n.direction)}},i.compare=function(t,e){return t>e?1:t<e?-1:0},i.compareWrapper=function(t,e){for(var n,r=0,i=a(this.props.columns);!(n=i()).done;){var o=n.value;if(0!==r)break;var s=t.cells[o.index].data,u=e.cells[o.index].data;r|="function"==typeof o.compare?o.compare(s,u)*o.direction:this.compare(s,u)*o.direction}return r},i._process=function(t){var e=[].concat(t.rows);e.sort(this.compareWrapper.bind(this));var n=new Z(e);return n.length=t.length,n},e(n,[{key:"type",get:function(){return K.Sort}}]),n}(Q),$t=function(t){function e(){return t.apply(this,arguments)||this}r(e,t);var n=e.prototype;return n.getInitialState=function(){return[]},n.handle=function(t,e){"SORT_COLUMN"===t?this.sortColumn(e.index,e.direction,e.multi,e.compare):"SORT_COLUMN_TOGGLE"===t&&this.sortToggle(e.index,e.multi,e.compare)},n.sortToggle=function(t,e,n){var r=[].concat(this.state).find(function(e){return e.index===t});this.sortColumn(t,r&&1===r.direction?-1:1,e,n)},n.sortColumn=function(t,e,n,r){var i=[].concat(this.state),o=i.length,s=i.find(function(e){return e.index===t}),a=!1,u=!1,l=!1,c=!1;if(void 0!==s?n?-1===s.direction?l=!0:c=!0:1===o?c=!0:o>1&&(u=!0,a=!0):0===o?a=!0:o>0&&!n?(a=!0,u=!0):o>0&&n&&(a=!0),u&&(i=[]),a)i.push({index:t,direction:e,compare:r});else if(c){var p=i.indexOf(s);i[p].direction=e}else if(l){var h=i.indexOf(s);i.splice(h,1)}this.setState(i)},e}(it),Kt=function(t){function e(){return t.apply(this,arguments)||this}r(e,t);var n=e.prototype;return n.sortColumn=function(t,e,n,r){this.dispatch("SORT_COLUMN",{index:t,direction:e,multi:n,compare:r})},n.sortToggle=function(t,e,n){this.dispatch("SORT_COLUMN_TOGGLE",{index:t,multi:e,compare:n})},e}(st),Vt=function(t){function i(){return t.apply(this,arguments)||this}return r(i,t),i.prototype._process=function(t){var e={};return this.props.url&&(e.url=this.props.url(t.url,this.props.columns)),this.props.body&&(e.body=this.props.body(t.body,this.props.columns)),n({},t,e)},e(i,[{key:"type",get:function(){return K.ServerSort}}]),i}(Q),Yt=function(t){function e(e,n){var r;return(r=t.call(this,e,n)||this).sortProcessor=void 0,r.actions=void 0,r.store=void 0,r.updateStateFn=void 0,r.updateSortProcessorFn=void 0,r.actions=new Kt(r.config.dispatcher),r.store=new $t(r.config.dispatcher),e.enabled&&(r.sortProcessor=r.getOrCreateSortProcessor(),r.updateStateFn=r.updateState.bind(o(r)),r.store.on("updated",r.updateStateFn),r.state={direction:0}),r}r(e,t);var i=e.prototype;return i.componentWillUnmount=function(){this.config.pipeline.unregister(this.sortProcessor),this.store.off("updated",this.updateStateFn),this.updateSortProcessorFn&&this.store.off("updated",this.updateSortProcessorFn)},i.updateState=function(){var t=this,e=this.store.state.find(function(e){return e.index===t.props.index});this.setState(e?{direction:e.direction}:{direction:0})},i.updateSortProcessor=function(t){this.sortProcessor.setProps({columns:t})},i.getOrCreateSortProcessor=function(){var t=K.Sort;this.config.sort&&"object"==typeof this.config.sort.server&&(t=K.ServerSort);var e,r=this.config.pipeline.getStepsByType(t);return r.length>0?e=r[0]:(this.updateSortProcessorFn=this.updateSortProcessor.bind(this),this.store.on("updated",this.updateSortProcessorFn),e=t===K.ServerSort?new Vt(n({columns:this.store.state},this.config.sort.server)):new Xt({columns:this.store.state}),this.config.pipeline.register(e)),e},i.changeDirection=function(t){t.preventDefault(),t.stopPropagation(),this.actions.sortToggle(this.props.index,!0===t.shiftKey&&this.config.sort.multiColumn,this.props.compare)},i.render=function(){if(!this.props.enabled)return null;var t=this.state.direction,e="neutral";return 1===t?e="asc":-1===t&&(e="desc"),y("button",{tabIndex:-1,"aria-label":this._("sort.sort"+(1===t?"Desc":"Asc")),title:this._("sort.sort"+(1===t?"Desc":"Asc")),className:nt(et("sort"),et("sort",e),this.config.className.sort),onClick:this.changeDirection.bind(this)})},e}(G),Zt=function(t){function e(){for(var e,n=arguments.length,r=new Array(n),i=0;i<n;i++)r[i]=arguments[i];return(e=t.call.apply(t,[this].concat(r))||this).moveFn=void 0,e.upFn=void 0,e}r(e,t);var n=e.prototype;return n.getPageX=function(t){return t instanceof MouseEvent?Math.floor(t.pageX):Math.floor(t.changedTouches[0].pageX)},n.start=function(t){var e,n,r,i,o;t.stopPropagation(),this.setState({offsetStart:parseInt(this.props.thRef.current.style.width,10)-this.getPageX(t)}),this.upFn=this.end.bind(this),this.moveFn=(e=this.move.bind(this),void 0===(n=10)&&(n=100),function(){var t=[].slice.call(arguments);r?(clearTimeout(i),i=setTimeout(function(){Date.now()-o>=n&&(e.apply(void 0,t),o=Date.now())},Math.max(n-(Date.now()-o),0))):(e.apply(void 0,t),o=Date.now(),r=!0)}),document.addEventListener("mouseup",this.upFn),document.addEventListener("touchend",this.upFn),document.addEventListener("mousemove",this.moveFn),document.addEventListener("touchmove",this.moveFn)},n.move=function(t){t.stopPropagation();var e=this.props.thRef.current;this.state.offsetStart+this.getPageX(t)>=parseInt(e.style.minWidth,10)&&(e.style.width=this.state.offsetStart+this.getPageX(t)+"px")},n.end=function(t){t.stopPropagation(),document.removeEventListener("mouseup",this.upFn),document.removeEventListener("mousemove",this.moveFn),document.removeEventListener("touchmove",this.moveFn),document.removeEventListener("touchend",this.upFn)},n.render=function(){return y("div",{className:nt(et("th"),et("resizable")),onMouseDown:this.start.bind(this),onTouchStart:this.start.bind(this),onClick:function(t){return t.stopPropagation()}})},e}(G),Jt=function(t){function e(e,n){var r;return(r=t.call(this,e,n)||this).sortRef={current:null},r.thRef={current:null},r.state={style:{}},r}r(e,t);var i=e.prototype;return i.isSortable=function(){return this.props.column.sort.enabled},i.isResizable=function(){return this.props.column.resizable},i.onClick=function(t){t.stopPropagation(),this.isSortable()&&this.sortRef.current.changeDirection(t)},i.keyDown=function(t){this.isSortable()&&13===t.which&&this.onClick(t)},i.componentDidMount=function(){var t=this;setTimeout(function(){if(t.props.column.fixedHeader&&t.thRef.current){var e=t.thRef.current.offsetTop;"number"==typeof e&&t.setState({style:{top:e}})}},0)},i.content=function(){return void 0!==this.props.column.name?this.props.column.name:void 0!==this.props.column.plugin?y(ht,{pluginId:this.props.column.plugin.id,props:{column:this.props.column}}):null},i.getCustomAttributes=function(){var t=this.props.column;return t?"function"==typeof t.attributes?t.attributes(null,null,this.props.column):t.attributes:{}},i.render=function(){var t={};return this.isSortable()&&(t.tabIndex=0),y("th",n({ref:this.thRef,"data-column-id":this.props.column&&this.props.column.id,className:nt(et("th"),this.isSortable()?et("th","sort"):null,this.props.column.fixedHeader?et("th","fixed"):null,this.config.className.th),onClick:this.onClick.bind(this),style:n({},this.config.style.th,{minWidth:this.props.column.minWidth,width:this.props.column.width},this.state.style,this.props.style),onKeyDown:this.keyDown.bind(this),rowSpan:this.props.rowSpan>1?this.props.rowSpan:void 0,colSpan:this.props.colSpan>1?this.props.colSpan:void 0},this.getCustomAttributes(),t),y("div",{className:et("th","content")},this.content()),this.isSortable()&&y(Yt,n({ref:this.sortRef,index:this.props.index},this.props.column.sort)),this.isResizable()&&this.props.index<this.config.header.visibleColumns.length-1&&y(Zt,{column:this.props.column,thRef:this.thRef}))},e}(G),Qt=function(t){function e(){return t.apply(this,arguments)||this}r(e,t);var n=e.prototype;return n.renderColumn=function(t,e,n,r){var i=function(t,e,n){var r=wt.maximumDepth(t),i=n-e;return{rowSpan:Math.floor(i-r-r/i),colSpan:t.columns&&t.columns.length||1}}(t,e,r);return y(Jt,{column:t,index:n,colSpan:i.colSpan,rowSpan:i.rowSpan})},n.renderRow=function(t,e,n){var r=this,i=wt.leafColumns(this.props.header.columns);return y(zt,null,t.map(function(t){return t.hidden?null:r.renderColumn(t,e,i.indexOf(t),n)}))},n.renderRows=function(){var t=this,e=wt.tabularFormat(this.props.header.columns);return e.map(function(n,r){return t.renderRow(n,r,e.length)})},n.render=function(){return this.props.header?y("thead",{key:this.props.header.id,className:nt(et("thead"),this.config.className.thead)},this.renderRows()):null},e}(G),te=function(t){function e(){return t.apply(this,arguments)||this}return r(e,t),e.prototype.render=function(){return y("table",{role:"grid",className:nt(et("table"),this.config.className.table),style:n({},this.config.style.table,{height:this.props.height})},y(Qt,{header:this.props.header}),y(Gt,{data:this.props.data,status:this.props.status,header:this.props.header}))},e}(G),ee=function(t){function e(e,n){var r;return(r=t.call(this,e,n)||this).headerRef={current:null},r.state={isActive:!0},r}r(e,t);var i=e.prototype;return i.componentDidMount=function(){0===this.headerRef.current.children.length&&this.setState({isActive:!1})},i.render=function(){return this.state.isActive?y("div",{ref:this.headerRef,className:nt(et("head"),this.config.className.header),style:n({},this.config.style.header)},y(ht,{position:rt.Header})):null},e}(G),ne=function(t){function e(e,n){var r;return(r=t.call(this,e,n)||this).footerRef={current:null},r.state={isActive:!0},r}r(e,t);var i=e.prototype;return i.componentDidMount=function(){0===this.footerRef.current.children.length&&this.setState({isActive:!1})},i.render=function(){return this.state.isActive?y("div",{ref:this.footerRef,className:nt(et("footer"),this.config.className.footer),style:n({},this.config.style.footer)},y(ht,{position:rt.Footer})):null},e}(G),re=function(t){function e(e,n){var r;return(r=t.call(this,e,n)||this).configContext=void 0,r.processPipelineFn=void 0,r.configContext=function(t,e){var n={__c:e="__cC"+f++,__:null,Consumer:function(t,e){return t.children(e)},Provider:function(t){var n,r;return this.getChildContext||(n=[],(r={})[e]=this,this.getChildContext=function(){return r},this.shouldComponentUpdate=function(t){this.props.value!==t.value&&n.some(x)},this.sub=function(t){n.push(t);var e=t.componentWillUnmount;t.componentWillUnmount=function(){n.splice(n.indexOf(t),1),e&&e.call(t)}}),t.children}};return n.Provider.__=n.Consumer.contextType=n}(),r.state={status:Dt.Loading,header:e.header,data:null},r}r(e,t);var i=e.prototype;return i.processPipeline=function(){try{var t=this;t.props.config.eventEmitter.emit("beforeLoad"),t.setState({status:Dt.Loading});var e=function(e,n){try{var r=Promise.resolve(t.props.pipeline.process()).then(function(e){t.setState({data:e,status:Dt.Loaded}),t.props.config.eventEmitter.emit("load",e)})}catch(t){return n(t)}return r&&r.then?r.then(void 0,n):r}(0,function(e){lt.error(e),t.setState({status:Dt.Error,data:null})});return Promise.resolve(e&&e.then?e.then(function(){}):void 0)}catch(t){return Promise.reject(t)}},i.componentDidMount=function(){try{var t=this,e=t.props.config;return Promise.resolve(t.processPipeline()).then(function(){e.header&&t.state.data&&t.state.data.length&&t.setState({header:e.header.adjustWidth(e)}),t.processPipelineFn=t.processPipeline.bind(t),t.props.pipeline.on("updated",t.processPipelineFn)})}catch(t){return Promise.reject(t)}},i.componentWillUnmount=function(){this.props.pipeline.off("updated",this.processPipelineFn)},i.componentDidUpdate=function(t,e){e.status!=Dt.Rendered&&this.state.status==Dt.Loaded&&(this.setState({status:Dt.Rendered}),this.props.config.eventEmitter.emit("ready"))},i.render=function(){return y(this.configContext.Provider,{value:this.props.config},y("div",{role:"complementary",className:nt("gridjs",et("container"),this.state.status===Dt.Loading?et("loading"):null,this.props.config.className.container),style:n({},this.props.config.style.container,{width:this.props.width})},this.state.status===Dt.Loading&&y("div",{className:et("loading-bar")}),y(ee,null),y("div",{className:et("wrapper"),style:{height:this.props.height}},y(te,{ref:this.props.config.tableRef,data:this.state.data,header:this.state.header,width:this.props.width,height:this.props.height,status:this.state.status})),y(ne,null),y("div",{ref:this.props.config.tempRef,id:"gridjs-temp",className:et("temp")})))},e}(G),ie=function(t){function e(e){var n;return(n=t.call(this)||this).config=void 0,n.plugin=void 0,n.config=new Mt({instance:o(n),eventEmitter:o(n)}).update(e),n.plugin=n.config.plugin,n}r(e,t);var n=e.prototype;return n.updateConfig=function(t){return this.config.update(t),this},n.createElement=function(){return y(re,{config:this.config,pipeline:this.config.pipeline,header:this.config.header,width:this.config.width,height:this.config.height})},n.forceRender=function(){return this.config&&this.config.container||lt.error("Container is empty. Make sure you call render() before forceRender()",!0),this.config.pipeline.clearCache(),j(null,this.config.container),j(this.createElement(),this.config.container),this},n.render=function(t){return t||lt.error("Container element cannot be null",!0),t.childNodes.length>0?(lt.error("The container element "+t+" is not empty. Make sure the container is empty and call render() again"),this):(this.config.container=t,j(this.createElement(),t),this)},e}(J),oe=0,se=[],ae=u.__b,ue=u.__r,le=u.diffed,ce=u.__c,pe=u.unmount;function he(t,e){u.__h&&u.__h(jt,t,oe||e),oe=0;var n=jt.__H||(jt.__H={__:[],__h:[]});return t>=n.__.length&&n.__.push({}),n.__[t]}function fe(t,e){var n=he(Ot++,3);!u.__s&&ye(n.__H,e)&&(n.__=t,n.__H=e,jt.__H.__h.push(n))}function de(t){return oe=5,function(t,e){var n=he(Ot++,7);return ye(n.__H,e)&&(n.__=t(),n.__H=e,n.__h=t),n.__}(function(){return{current:t}},[])}function _e(){se.forEach(function(t){if(t.__P)try{t.__H.__h.forEach(ge),t.__H.__h.forEach(ve),t.__H.__h=[]}catch(e){t.__H.__h=[],u.__e(e,t.__v)}}),se=[]}u.__b=function(t){jt=null,ae&&ae(t)},u.__r=function(t){ue&&ue(t),Ot=0;var e=(jt=t.__c).__H;e&&(e.__h.forEach(ge),e.__h.forEach(ve),e.__h=[])},u.diffed=function(t){le&&le(t);var e=t.__c;e&&e.__H&&e.__H.__h.length&&(1!==se.push(e)&&Wt===u.requestAnimationFrame||((Wt=u.requestAnimationFrame)||function(t){var e,n=function(){clearTimeout(r),me&&cancelAnimationFrame(e),setTimeout(t)},r=setTimeout(n,100);me&&(e=requestAnimationFrame(n))})(_e)),jt=void 0},u.__c=function(t,e){e.some(function(t){try{t.__h.forEach(ge),t.__h=t.__h.filter(function(t){return!t.__||ve(t)})}catch(n){e.some(function(t){t.__h&&(t.__h=[])}),e=[],u.__e(n,t.__v)}}),ce&&ce(t,e)},u.unmount=function(t){pe&&pe(t);var e=t.__c;if(e&&e.__H)try{e.__H.__.forEach(ge)}catch(t){u.__e(t,e.__v)}};var me="function"==typeof requestAnimationFrame;function ge(t){var e=jt;"function"==typeof t.__c&&t.__c(),jt=e}function ve(t){var e=jt;t.__c=t.__(),jt=e}function ye(t,e){return!t||t.length!==e.length||e.some(function(e,n){return e!==t[n]})}
+//# sourceMappingURL=gridjs.module.js.map
 
 
 /***/ }),
@@ -32799,6 +36589,2225 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/react-hot-toast/dist/react-hot-toast.esm.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/react-hot-toast/dist/react-hot-toast.esm.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   "CheckmarkIcon": () => (/* binding */ CheckmarkIcon),
+/* harmony export */   "ErrorIcon": () => (/* binding */ ErrorIcon),
+/* harmony export */   "LoaderIcon": () => (/* binding */ LoaderIcon),
+/* harmony export */   "ToastBar": () => (/* binding */ ToastBar),
+/* harmony export */   "ToastIcon": () => (/* binding */ ToastIcon),
+/* harmony export */   "Toaster": () => (/* binding */ Toaster),
+/* harmony export */   "resolveValue": () => (/* binding */ resolveValue),
+/* harmony export */   "toast": () => (/* binding */ toast),
+/* harmony export */   "useToaster": () => (/* binding */ useToaster),
+/* harmony export */   "useToasterStore": () => (/* binding */ useStore)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var goober__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! goober */ "./node_modules/goober/dist/goober.modern.js");
+
+
+
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+function _taggedTemplateLiteralLoose(strings, raw) {
+  if (!raw) {
+    raw = strings.slice(0);
+  }
+
+  strings.raw = raw;
+  return strings;
+}
+
+var isFunction = function isFunction(valOrFunction) {
+  return typeof valOrFunction === 'function';
+};
+
+var resolveValue = function resolveValue(valOrFunction, arg) {
+  return isFunction(valOrFunction) ? valOrFunction(arg) : valOrFunction;
+};
+
+var genId = /*#__PURE__*/function () {
+  var count = 0;
+  return function () {
+    return (++count).toString();
+  };
+}();
+var createRectRef = function createRectRef(onRect) {
+  return function (el) {
+    if (el) {
+      setTimeout(function () {
+        var boundingRect = el.getBoundingClientRect();
+        onRect(boundingRect);
+      });
+    }
+  };
+};
+var prefersReducedMotion = /*#__PURE__*/function () {
+  // Cache result
+  var shouldReduceMotion = undefined;
+  return function () {
+    if (shouldReduceMotion === undefined && typeof window !== 'undefined') {
+      var mediaQuery = matchMedia('(prefers-reduced-motion: reduce)');
+      shouldReduceMotion = !mediaQuery || mediaQuery.matches;
+    }
+
+    return shouldReduceMotion;
+  };
+}();
+
+var TOAST_LIMIT = 20;
+var ActionType;
+
+(function (ActionType) {
+  ActionType[ActionType["ADD_TOAST"] = 0] = "ADD_TOAST";
+  ActionType[ActionType["UPDATE_TOAST"] = 1] = "UPDATE_TOAST";
+  ActionType[ActionType["UPSERT_TOAST"] = 2] = "UPSERT_TOAST";
+  ActionType[ActionType["DISMISS_TOAST"] = 3] = "DISMISS_TOAST";
+  ActionType[ActionType["REMOVE_TOAST"] = 4] = "REMOVE_TOAST";
+  ActionType[ActionType["START_PAUSE"] = 5] = "START_PAUSE";
+  ActionType[ActionType["END_PAUSE"] = 6] = "END_PAUSE";
+})(ActionType || (ActionType = {}));
+
+var toastTimeouts = /*#__PURE__*/new Map();
+
+var addToRemoveQueue = function addToRemoveQueue(toastId) {
+  if (toastTimeouts.has(toastId)) {
+    return;
+  }
+
+  var timeout = setTimeout(function () {
+    toastTimeouts["delete"](toastId);
+    dispatch({
+      type: ActionType.REMOVE_TOAST,
+      toastId: toastId
+    });
+  }, 1000);
+  toastTimeouts.set(toastId, timeout);
+};
+
+var clearFromRemoveQueue = function clearFromRemoveQueue(toastId) {
+  var timeout = toastTimeouts.get(toastId);
+
+  if (timeout) {
+    clearTimeout(timeout);
+  }
+};
+
+var reducer = function reducer(state, action) {
+  switch (action.type) {
+    case ActionType.ADD_TOAST:
+      return _extends({}, state, {
+        toasts: [action.toast].concat(state.toasts).slice(0, TOAST_LIMIT)
+      });
+
+    case ActionType.UPDATE_TOAST:
+      //  ! Side effects !
+      if (action.toast.id) {
+        clearFromRemoveQueue(action.toast.id);
+      }
+
+      return _extends({}, state, {
+        toasts: state.toasts.map(function (t) {
+          return t.id === action.toast.id ? _extends({}, t, action.toast) : t;
+        })
+      });
+
+    case ActionType.UPSERT_TOAST:
+      var toast = action.toast;
+      return state.toasts.find(function (t) {
+        return t.id === toast.id;
+      }) ? reducer(state, {
+        type: ActionType.UPDATE_TOAST,
+        toast: toast
+      }) : reducer(state, {
+        type: ActionType.ADD_TOAST,
+        toast: toast
+      });
+
+    case ActionType.DISMISS_TOAST:
+      var toastId = action.toastId; // ! Side effects ! - This could be execrated into a dismissToast() action, but I'll keep it here for simplicity
+
+      if (toastId) {
+        addToRemoveQueue(toastId);
+      } else {
+        state.toasts.forEach(function (toast) {
+          addToRemoveQueue(toast.id);
+        });
+      }
+
+      return _extends({}, state, {
+        toasts: state.toasts.map(function (t) {
+          return t.id === toastId || toastId === undefined ? _extends({}, t, {
+            visible: false
+          }) : t;
+        })
+      });
+
+    case ActionType.REMOVE_TOAST:
+      if (action.toastId === undefined) {
+        return _extends({}, state, {
+          toasts: []
+        });
+      }
+
+      return _extends({}, state, {
+        toasts: state.toasts.filter(function (t) {
+          return t.id !== action.toastId;
+        })
+      });
+
+    case ActionType.START_PAUSE:
+      return _extends({}, state, {
+        pausedAt: action.time
+      });
+
+    case ActionType.END_PAUSE:
+      var diff = action.time - (state.pausedAt || 0);
+      return _extends({}, state, {
+        pausedAt: undefined,
+        toasts: state.toasts.map(function (t) {
+          return _extends({}, t, {
+            pauseDuration: t.pauseDuration + diff
+          });
+        })
+      });
+  }
+};
+var listeners = [];
+var memoryState = {
+  toasts: [],
+  pausedAt: undefined
+};
+var dispatch = function dispatch(action) {
+  memoryState = reducer(memoryState, action);
+  listeners.forEach(function (listener) {
+    listener(memoryState);
+  });
+};
+var defaultTimeouts = {
+  blank: 4000,
+  error: 4000,
+  success: 2000,
+  loading: Infinity,
+  custom: 4000
+};
+var useStore = function useStore(toastOptions) {
+  if (toastOptions === void 0) {
+    toastOptions = {};
+  }
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(memoryState),
+      state = _useState[0],
+      setState = _useState[1];
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    listeners.push(setState);
+    return function () {
+      var index = listeners.indexOf(setState);
+
+      if (index > -1) {
+        listeners.splice(index, 1);
+      }
+    };
+  }, [state]);
+  var mergedToasts = state.toasts.map(function (t) {
+    var _toastOptions$t$type, _toastOptions, _toastOptions$t$type2;
+
+    return _extends({}, toastOptions, toastOptions[t.type], t, {
+      duration: t.duration || ((_toastOptions$t$type = toastOptions[t.type]) == null ? void 0 : _toastOptions$t$type.duration) || ((_toastOptions = toastOptions) == null ? void 0 : _toastOptions.duration) || defaultTimeouts[t.type],
+      style: _extends({}, toastOptions.style, (_toastOptions$t$type2 = toastOptions[t.type]) == null ? void 0 : _toastOptions$t$type2.style, t.style)
+    });
+  });
+  return _extends({}, state, {
+    toasts: mergedToasts
+  });
+};
+
+var createToast = function createToast(message, type, opts) {
+  if (type === void 0) {
+    type = 'blank';
+  }
+
+  return _extends({
+    createdAt: Date.now(),
+    visible: true,
+    type: type,
+    ariaProps: {
+      role: 'status',
+      'aria-live': 'polite'
+    },
+    message: message,
+    pauseDuration: 0
+  }, opts, {
+    id: (opts == null ? void 0 : opts.id) || genId()
+  });
+};
+
+var createHandler = function createHandler(type) {
+  return function (message, options) {
+    var toast = createToast(message, type, options);
+    dispatch({
+      type: ActionType.UPSERT_TOAST,
+      toast: toast
+    });
+    return toast.id;
+  };
+};
+
+var toast = function toast(message, opts) {
+  return createHandler('blank')(message, opts);
+};
+
+toast.error = /*#__PURE__*/createHandler('error');
+toast.success = /*#__PURE__*/createHandler('success');
+toast.loading = /*#__PURE__*/createHandler('loading');
+toast.custom = /*#__PURE__*/createHandler('custom');
+
+toast.dismiss = function (toastId) {
+  dispatch({
+    type: ActionType.DISMISS_TOAST,
+    toastId: toastId
+  });
+};
+
+toast.remove = function (toastId) {
+  return dispatch({
+    type: ActionType.REMOVE_TOAST,
+    toastId: toastId
+  });
+};
+
+toast.promise = function (promise, msgs, opts) {
+  var id = toast.loading(msgs.loading, _extends({}, opts, opts == null ? void 0 : opts.loading));
+  promise.then(function (p) {
+    toast.success(resolveValue(msgs.success, p), _extends({
+      id: id
+    }, opts, opts == null ? void 0 : opts.success));
+    return p;
+  })["catch"](function (e) {
+    toast.error(resolveValue(msgs.error, e), _extends({
+      id: id
+    }, opts, opts == null ? void 0 : opts.error));
+  });
+  return promise;
+};
+
+var useToaster = function useToaster(toastOptions) {
+  var _useStore = useStore(toastOptions),
+      toasts = _useStore.toasts,
+      pausedAt = _useStore.pausedAt;
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (pausedAt) {
+      return;
+    }
+
+    var now = Date.now();
+    var timeouts = toasts.map(function (t) {
+      if (t.duration === Infinity) {
+        return;
+      }
+
+      var durationLeft = (t.duration || 0) + t.pauseDuration - (now - t.createdAt);
+
+      if (durationLeft < 0) {
+        if (t.visible) {
+          toast.dismiss(t.id);
+        }
+
+        return;
+      }
+
+      return setTimeout(function () {
+        return toast.dismiss(t.id);
+      }, durationLeft);
+    });
+    return function () {
+      timeouts.forEach(function (timeout) {
+        return timeout && clearTimeout(timeout);
+      });
+    };
+  }, [toasts, pausedAt]);
+  var handlers = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+    return {
+      startPause: function startPause() {
+        dispatch({
+          type: ActionType.START_PAUSE,
+          time: Date.now()
+        });
+      },
+      endPause: function endPause() {
+        if (pausedAt) {
+          dispatch({
+            type: ActionType.END_PAUSE,
+            time: Date.now()
+          });
+        }
+      },
+      updateHeight: function updateHeight(toastId, height) {
+        return dispatch({
+          type: ActionType.UPDATE_TOAST,
+          toast: {
+            id: toastId,
+            height: height
+          }
+        });
+      },
+      calculateOffset: function calculateOffset(toast, opts) {
+        var _relevantToasts$filte;
+
+        var _ref = opts || {},
+            _ref$reverseOrder = _ref.reverseOrder,
+            reverseOrder = _ref$reverseOrder === void 0 ? false : _ref$reverseOrder,
+            _ref$gutter = _ref.gutter,
+            gutter = _ref$gutter === void 0 ? 8 : _ref$gutter,
+            defaultPosition = _ref.defaultPosition;
+
+        var relevantToasts = toasts.filter(function (t) {
+          return (t.position || defaultPosition) === (toast.position || defaultPosition) && t.height;
+        });
+        var toastIndex = relevantToasts.findIndex(function (t) {
+          return t.id === toast.id;
+        });
+        var toastsBefore = relevantToasts.filter(function (toast, i) {
+          return i < toastIndex && toast.visible;
+        }).length;
+
+        var offset = (_relevantToasts$filte = relevantToasts.filter(function (t) {
+          return t.visible;
+        })).slice.apply(_relevantToasts$filte, reverseOrder ? [toastsBefore + 1] : [0, toastsBefore]).reduce(function (acc, t) {
+          return acc + (t.height || 0) + gutter;
+        }, 0);
+
+        return offset;
+      }
+    };
+  }, [toasts, pausedAt]);
+  return {
+    toasts: toasts,
+    handlers: handlers
+  };
+};
+
+function _templateObject4() {
+  var data = _taggedTemplateLiteralLoose(["\n  width: 20px;\n  opacity: 0;\n  height: 20px;\n  border-radius: 10px;\n  background: ", ";\n  position: relative;\n  transform: rotate(45deg);\n\n  animation: ", " 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)\n    forwards;\n  animation-delay: 100ms;\n\n  &:after,\n  &:before {\n    content: '';\n    animation: ", " 0.15s ease-out forwards;\n    animation-delay: 150ms;\n    position: absolute;\n    border-radius: 3px;\n    opacity: 0;\n    background: ", ";\n    bottom: 9px;\n    left: 4px;\n    height: 2px;\n    width: 12px;\n  }\n\n  &:before {\n    animation: ", " 0.15s ease-out forwards;\n    animation-delay: 180ms;\n    transform: rotate(90deg);\n  }\n"]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteralLoose(["\nfrom {\n  transform: scale(0) rotate(90deg);\n\topacity: 0;\n}\nto {\n  transform: scale(1) rotate(90deg);\n\topacity: 1;\n}"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteralLoose(["\nfrom {\n  transform: scale(0);\n  opacity: 0;\n}\nto {\n  transform: scale(1);\n  opacity: 1;\n}"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteralLoose(["\nfrom {\n  transform: scale(0) rotate(45deg);\n\topacity: 0;\n}\nto {\n transform: scale(1) rotate(45deg);\n  opacity: 1;\n}"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var circleAnimation = /*#__PURE__*/(0,goober__WEBPACK_IMPORTED_MODULE_1__.keyframes)( /*#__PURE__*/_templateObject());
+var firstLineAnimation = /*#__PURE__*/(0,goober__WEBPACK_IMPORTED_MODULE_1__.keyframes)( /*#__PURE__*/_templateObject2());
+var secondLineAnimation = /*#__PURE__*/(0,goober__WEBPACK_IMPORTED_MODULE_1__.keyframes)( /*#__PURE__*/_templateObject3());
+var ErrorIcon = /*#__PURE__*/(0,goober__WEBPACK_IMPORTED_MODULE_1__.styled)('div')( /*#__PURE__*/_templateObject4(), function (p) {
+  return p.primary || '#ff4b4b';
+}, circleAnimation, firstLineAnimation, function (p) {
+  return p.secondary || '#fff';
+}, secondLineAnimation);
+
+function _templateObject2$1() {
+  var data = _taggedTemplateLiteralLoose(["\n  width: 12px;\n  height: 12px;\n  box-sizing: border-box;\n  border: 2px solid;\n  border-radius: 100%;\n  border-color: ", ";\n  border-right-color: ", ";\n  animation: ", " 1s linear infinite;\n"]);
+
+  _templateObject2$1 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject$1() {
+  var data = _taggedTemplateLiteralLoose(["\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n"]);
+
+  _templateObject$1 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var rotate = /*#__PURE__*/(0,goober__WEBPACK_IMPORTED_MODULE_1__.keyframes)( /*#__PURE__*/_templateObject$1());
+var LoaderIcon = /*#__PURE__*/(0,goober__WEBPACK_IMPORTED_MODULE_1__.styled)('div')( /*#__PURE__*/_templateObject2$1(), function (p) {
+  return p.secondary || '#e0e0e0';
+}, function (p) {
+  return p.primary || '#616161';
+}, rotate);
+
+function _templateObject3$1() {
+  var data = _taggedTemplateLiteralLoose(["\n  width: 20px;\n  opacity: 0;\n  height: 20px;\n  border-radius: 10px;\n  background: ", ";\n  position: relative;\n  transform: rotate(45deg);\n\n  animation: ", " 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)\n    forwards;\n  animation-delay: 100ms;\n  &:after {\n    content: '';\n    box-sizing: border-box;\n    animation: ", " 0.2s ease-out forwards;\n    opacity: 0;\n    animation-delay: 200ms;\n    position: absolute;\n    border-right: 2px solid;\n    border-bottom: 2px solid;\n    border-color: ", ";\n    bottom: 6px;\n    left: 6px;\n    height: 10px;\n    width: 6px;\n  }\n"]);
+
+  _templateObject3$1 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2$2() {
+  var data = _taggedTemplateLiteralLoose(["\n0% {\n\theight: 0;\n\twidth: 0;\n\topacity: 0;\n}\n40% {\n  height: 0;\n\twidth: 6px;\n\topacity: 1;\n}\n100% {\n  opacity: 1;\n  height: 10px;\n}"]);
+
+  _templateObject2$2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject$2() {
+  var data = _taggedTemplateLiteralLoose(["\nfrom {\n  transform: scale(0) rotate(45deg);\n\topacity: 0;\n}\nto {\n  transform: scale(1) rotate(45deg);\n\topacity: 1;\n}"]);
+
+  _templateObject$2 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var circleAnimation$1 = /*#__PURE__*/(0,goober__WEBPACK_IMPORTED_MODULE_1__.keyframes)( /*#__PURE__*/_templateObject$2());
+var checkmarkAnimation = /*#__PURE__*/(0,goober__WEBPACK_IMPORTED_MODULE_1__.keyframes)( /*#__PURE__*/_templateObject2$2());
+var CheckmarkIcon = /*#__PURE__*/(0,goober__WEBPACK_IMPORTED_MODULE_1__.styled)('div')( /*#__PURE__*/_templateObject3$1(), function (p) {
+  return p.primary || '#61d345';
+}, circleAnimation$1, checkmarkAnimation, function (p) {
+  return p.secondary || '#fff';
+});
+
+function _templateObject4$1() {
+  var data = _taggedTemplateLiteralLoose(["\n  position: relative;\n  transform: scale(0.6);\n  opacity: 0.4;\n  min-width: 20px;\n  animation: ", " 0.3s 0.12s cubic-bezier(0.175, 0.885, 0.32, 1.275)\n    forwards;\n"]);
+
+  _templateObject4$1 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3$2() {
+  var data = _taggedTemplateLiteralLoose(["\nfrom {\n  transform: scale(0.6);\n  opacity: 0.4;\n}\nto {\n  transform: scale(1);\n  opacity: 1;\n}"]);
+
+  _templateObject3$2 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2$3() {
+  var data = _taggedTemplateLiteralLoose(["\n  position: relative;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-width: 20px;\n  min-height: 20px;\n"]);
+
+  _templateObject2$3 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject$3() {
+  var data = _taggedTemplateLiteralLoose(["\n  position: absolute;\n"]);
+
+  _templateObject$3 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var StatusWrapper = /*#__PURE__*/(0,goober__WEBPACK_IMPORTED_MODULE_1__.styled)('div')( /*#__PURE__*/_templateObject$3());
+var IndicatorWrapper = /*#__PURE__*/(0,goober__WEBPACK_IMPORTED_MODULE_1__.styled)('div')( /*#__PURE__*/_templateObject2$3());
+var enter = /*#__PURE__*/(0,goober__WEBPACK_IMPORTED_MODULE_1__.keyframes)( /*#__PURE__*/_templateObject3$2());
+var AnimatedIconWrapper = /*#__PURE__*/(0,goober__WEBPACK_IMPORTED_MODULE_1__.styled)('div')( /*#__PURE__*/_templateObject4$1(), enter);
+var ToastIcon = function ToastIcon(_ref) {
+  var toast = _ref.toast;
+  var icon = toast.icon,
+      type = toast.type,
+      iconTheme = toast.iconTheme;
+
+  if (icon !== undefined) {
+    if (typeof icon === 'string') {
+      return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(AnimatedIconWrapper, null, icon);
+    } else {
+      return icon;
+    }
+  }
+
+  if (type === 'blank') {
+    return null;
+  }
+
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(IndicatorWrapper, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(LoaderIcon, Object.assign({}, iconTheme)), type !== 'loading' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(StatusWrapper, null, type === 'error' ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(ErrorIcon, Object.assign({}, iconTheme)) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(CheckmarkIcon, Object.assign({}, iconTheme))));
+};
+
+function _templateObject2$4() {
+  var data = _taggedTemplateLiteralLoose(["\n  display: flex;\n  justify-content: center;\n  margin: 4px 10px;\n  color: inherit;\n  flex: 1 1 auto;\n  white-space: pre-line;\n"]);
+
+  _templateObject2$4 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject$4() {
+  var data = _taggedTemplateLiteralLoose(["\n  display: flex;\n  align-items: center;\n  background: #fff;\n  color: #363636;\n  line-height: 1.3;\n  will-change: transform;\n  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1), 0 3px 3px rgba(0, 0, 0, 0.05);\n  max-width: 350px;\n  pointer-events: auto;\n  padding: 8px 10px;\n  border-radius: 8px;\n"]);
+
+  _templateObject$4 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+var enterAnimation = function enterAnimation(factor) {
+  return "\n0% {transform: translate3d(0," + factor * -200 + "%,0) scale(.6); opacity:.5;}\n100% {transform: translate3d(0,0,0) scale(1); opacity:1;}\n";
+};
+
+var exitAnimation = function exitAnimation(factor) {
+  return "\n0% {transform: translate3d(0,0,-1px) scale(1); opacity:1;}\n100% {transform: translate3d(0," + factor * -150 + "%,-1px) scale(.6); opacity:0;}\n";
+};
+
+var fadeInAnimation = "0%{opacity:0;} 100%{opacity:1;}";
+var fadeOutAnimation = "0%{opacity:1;} 100%{opacity:0;}";
+var ToastBarBase = /*#__PURE__*/(0,goober__WEBPACK_IMPORTED_MODULE_1__.styled)('div', react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)( /*#__PURE__*/_templateObject$4());
+var Message = /*#__PURE__*/(0,goober__WEBPACK_IMPORTED_MODULE_1__.styled)('div')( /*#__PURE__*/_templateObject2$4());
+
+var getAnimationStyle = function getAnimationStyle(position, visible) {
+  var top = position.includes('top');
+  var factor = top ? 1 : -1;
+
+  var _ref = prefersReducedMotion() ? [fadeInAnimation, fadeOutAnimation] : [enterAnimation(factor), exitAnimation(factor)],
+      enter = _ref[0],
+      exit = _ref[1];
+
+  return {
+    animation: visible ? (0,goober__WEBPACK_IMPORTED_MODULE_1__.keyframes)(enter) + " 0.35s cubic-bezier(.21,1.02,.73,1) forwards" : (0,goober__WEBPACK_IMPORTED_MODULE_1__.keyframes)(exit) + " 0.4s forwards cubic-bezier(.06,.71,.55,1)"
+  };
+};
+
+var ToastBar = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.memo)(function (_ref2) {
+  var toast = _ref2.toast,
+      position = _ref2.position,
+      style = _ref2.style,
+      children = _ref2.children;
+  var animationStyle = toast != null && toast.height ? getAnimationStyle(toast.position || position || 'top-center', toast.visible) : {
+    opacity: 0
+  };
+  var icon = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(ToastIcon, {
+    toast: toast
+  });
+  var message = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(Message, Object.assign({}, toast.ariaProps), resolveValue(toast.message, toast));
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(ToastBarBase, {
+    className: toast.className,
+    style: _extends({}, animationStyle, style, toast.style)
+  }, typeof children === 'function' ? children({
+    icon: icon,
+    message: message
+  }) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, icon, message));
+});
+
+function _templateObject$5() {
+  var data = _taggedTemplateLiteralLoose(["\n  z-index: 9999;\n  > * {\n    pointer-events: auto;\n  }\n"]);
+
+  _templateObject$5 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+(0,goober__WEBPACK_IMPORTED_MODULE_1__.setup)(react__WEBPACK_IMPORTED_MODULE_0__.createElement);
+
+var getPositionStyle = function getPositionStyle(position, offset) {
+  var top = position.includes('top');
+  var verticalStyle = top ? {
+    top: 0
+  } : {
+    bottom: 0
+  };
+  var horizontalStyle = position.includes('center') ? {
+    justifyContent: 'center'
+  } : position.includes('right') ? {
+    justifyContent: 'flex-end'
+  } : {};
+  return _extends({
+    left: 0,
+    right: 0,
+    display: 'flex',
+    position: 'absolute',
+    transition: prefersReducedMotion() ? undefined : "all 230ms cubic-bezier(.21,1.02,.73,1)",
+    transform: "translateY(" + offset * (top ? 1 : -1) + "px)"
+  }, verticalStyle, horizontalStyle);
+};
+
+var activeClass = /*#__PURE__*/(0,goober__WEBPACK_IMPORTED_MODULE_1__.css)( /*#__PURE__*/_templateObject$5());
+var DEFAULT_OFFSET = 16;
+var Toaster = function Toaster(_ref) {
+  var reverseOrder = _ref.reverseOrder,
+      _ref$position = _ref.position,
+      position = _ref$position === void 0 ? 'top-center' : _ref$position,
+      toastOptions = _ref.toastOptions,
+      gutter = _ref.gutter,
+      children = _ref.children,
+      containerStyle = _ref.containerStyle,
+      containerClassName = _ref.containerClassName;
+
+  var _useToaster = useToaster(toastOptions),
+      toasts = _useToaster.toasts,
+      handlers = _useToaster.handlers;
+
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    style: _extends({
+      position: 'fixed',
+      zIndex: 9999,
+      top: DEFAULT_OFFSET,
+      left: DEFAULT_OFFSET,
+      right: DEFAULT_OFFSET,
+      bottom: DEFAULT_OFFSET,
+      pointerEvents: 'none'
+    }, containerStyle),
+    className: containerClassName,
+    onMouseEnter: handlers.startPause,
+    onMouseLeave: handlers.endPause
+  }, toasts.map(function (t) {
+    var toastPosition = t.position || position;
+    var offset = handlers.calculateOffset(t, {
+      reverseOrder: reverseOrder,
+      gutter: gutter,
+      defaultPosition: position
+    });
+    var positionStyle = getPositionStyle(toastPosition, offset);
+    var ref = t.height ? undefined : createRectRef(function (rect) {
+      handlers.updateHeight(t.id, rect.height);
+    });
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      ref: ref,
+      className: t.visible ? activeClass : '',
+      key: t.id,
+      style: positionStyle
+    }, t.type === 'custom' ? resolveValue(t.message, t) : children ? children(t) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(ToastBar, {
+      toast: t,
+      position: toastPosition
+    }));
+  }));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (toast);
+
+//# sourceMappingURL=react-hot-toast.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/react-icons/fi/index.esm.js":
+/*!**************************************************!*\
+  !*** ./node_modules/react-icons/fi/index.esm.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "FiActivity": () => (/* binding */ FiActivity),
+/* harmony export */   "FiAirplay": () => (/* binding */ FiAirplay),
+/* harmony export */   "FiAlertCircle": () => (/* binding */ FiAlertCircle),
+/* harmony export */   "FiAlertOctagon": () => (/* binding */ FiAlertOctagon),
+/* harmony export */   "FiAlertTriangle": () => (/* binding */ FiAlertTriangle),
+/* harmony export */   "FiAlignCenter": () => (/* binding */ FiAlignCenter),
+/* harmony export */   "FiAlignJustify": () => (/* binding */ FiAlignJustify),
+/* harmony export */   "FiAlignLeft": () => (/* binding */ FiAlignLeft),
+/* harmony export */   "FiAlignRight": () => (/* binding */ FiAlignRight),
+/* harmony export */   "FiAnchor": () => (/* binding */ FiAnchor),
+/* harmony export */   "FiAperture": () => (/* binding */ FiAperture),
+/* harmony export */   "FiArchive": () => (/* binding */ FiArchive),
+/* harmony export */   "FiArrowDownCircle": () => (/* binding */ FiArrowDownCircle),
+/* harmony export */   "FiArrowDownLeft": () => (/* binding */ FiArrowDownLeft),
+/* harmony export */   "FiArrowDownRight": () => (/* binding */ FiArrowDownRight),
+/* harmony export */   "FiArrowDown": () => (/* binding */ FiArrowDown),
+/* harmony export */   "FiArrowLeftCircle": () => (/* binding */ FiArrowLeftCircle),
+/* harmony export */   "FiArrowLeft": () => (/* binding */ FiArrowLeft),
+/* harmony export */   "FiArrowRightCircle": () => (/* binding */ FiArrowRightCircle),
+/* harmony export */   "FiArrowRight": () => (/* binding */ FiArrowRight),
+/* harmony export */   "FiArrowUpCircle": () => (/* binding */ FiArrowUpCircle),
+/* harmony export */   "FiArrowUpLeft": () => (/* binding */ FiArrowUpLeft),
+/* harmony export */   "FiArrowUpRight": () => (/* binding */ FiArrowUpRight),
+/* harmony export */   "FiArrowUp": () => (/* binding */ FiArrowUp),
+/* harmony export */   "FiAtSign": () => (/* binding */ FiAtSign),
+/* harmony export */   "FiAward": () => (/* binding */ FiAward),
+/* harmony export */   "FiBarChart2": () => (/* binding */ FiBarChart2),
+/* harmony export */   "FiBarChart": () => (/* binding */ FiBarChart),
+/* harmony export */   "FiBatteryCharging": () => (/* binding */ FiBatteryCharging),
+/* harmony export */   "FiBattery": () => (/* binding */ FiBattery),
+/* harmony export */   "FiBellOff": () => (/* binding */ FiBellOff),
+/* harmony export */   "FiBell": () => (/* binding */ FiBell),
+/* harmony export */   "FiBluetooth": () => (/* binding */ FiBluetooth),
+/* harmony export */   "FiBold": () => (/* binding */ FiBold),
+/* harmony export */   "FiBookOpen": () => (/* binding */ FiBookOpen),
+/* harmony export */   "FiBook": () => (/* binding */ FiBook),
+/* harmony export */   "FiBookmark": () => (/* binding */ FiBookmark),
+/* harmony export */   "FiBox": () => (/* binding */ FiBox),
+/* harmony export */   "FiBriefcase": () => (/* binding */ FiBriefcase),
+/* harmony export */   "FiCalendar": () => (/* binding */ FiCalendar),
+/* harmony export */   "FiCameraOff": () => (/* binding */ FiCameraOff),
+/* harmony export */   "FiCamera": () => (/* binding */ FiCamera),
+/* harmony export */   "FiCast": () => (/* binding */ FiCast),
+/* harmony export */   "FiCheckCircle": () => (/* binding */ FiCheckCircle),
+/* harmony export */   "FiCheckSquare": () => (/* binding */ FiCheckSquare),
+/* harmony export */   "FiCheck": () => (/* binding */ FiCheck),
+/* harmony export */   "FiChevronDown": () => (/* binding */ FiChevronDown),
+/* harmony export */   "FiChevronLeft": () => (/* binding */ FiChevronLeft),
+/* harmony export */   "FiChevronRight": () => (/* binding */ FiChevronRight),
+/* harmony export */   "FiChevronUp": () => (/* binding */ FiChevronUp),
+/* harmony export */   "FiChevronsDown": () => (/* binding */ FiChevronsDown),
+/* harmony export */   "FiChevronsLeft": () => (/* binding */ FiChevronsLeft),
+/* harmony export */   "FiChevronsRight": () => (/* binding */ FiChevronsRight),
+/* harmony export */   "FiChevronsUp": () => (/* binding */ FiChevronsUp),
+/* harmony export */   "FiChrome": () => (/* binding */ FiChrome),
+/* harmony export */   "FiCircle": () => (/* binding */ FiCircle),
+/* harmony export */   "FiClipboard": () => (/* binding */ FiClipboard),
+/* harmony export */   "FiClock": () => (/* binding */ FiClock),
+/* harmony export */   "FiCloudDrizzle": () => (/* binding */ FiCloudDrizzle),
+/* harmony export */   "FiCloudLightning": () => (/* binding */ FiCloudLightning),
+/* harmony export */   "FiCloudOff": () => (/* binding */ FiCloudOff),
+/* harmony export */   "FiCloudRain": () => (/* binding */ FiCloudRain),
+/* harmony export */   "FiCloudSnow": () => (/* binding */ FiCloudSnow),
+/* harmony export */   "FiCloud": () => (/* binding */ FiCloud),
+/* harmony export */   "FiCode": () => (/* binding */ FiCode),
+/* harmony export */   "FiCodepen": () => (/* binding */ FiCodepen),
+/* harmony export */   "FiCodesandbox": () => (/* binding */ FiCodesandbox),
+/* harmony export */   "FiCoffee": () => (/* binding */ FiCoffee),
+/* harmony export */   "FiColumns": () => (/* binding */ FiColumns),
+/* harmony export */   "FiCommand": () => (/* binding */ FiCommand),
+/* harmony export */   "FiCompass": () => (/* binding */ FiCompass),
+/* harmony export */   "FiCopy": () => (/* binding */ FiCopy),
+/* harmony export */   "FiCornerDownLeft": () => (/* binding */ FiCornerDownLeft),
+/* harmony export */   "FiCornerDownRight": () => (/* binding */ FiCornerDownRight),
+/* harmony export */   "FiCornerLeftDown": () => (/* binding */ FiCornerLeftDown),
+/* harmony export */   "FiCornerLeftUp": () => (/* binding */ FiCornerLeftUp),
+/* harmony export */   "FiCornerRightDown": () => (/* binding */ FiCornerRightDown),
+/* harmony export */   "FiCornerRightUp": () => (/* binding */ FiCornerRightUp),
+/* harmony export */   "FiCornerUpLeft": () => (/* binding */ FiCornerUpLeft),
+/* harmony export */   "FiCornerUpRight": () => (/* binding */ FiCornerUpRight),
+/* harmony export */   "FiCpu": () => (/* binding */ FiCpu),
+/* harmony export */   "FiCreditCard": () => (/* binding */ FiCreditCard),
+/* harmony export */   "FiCrop": () => (/* binding */ FiCrop),
+/* harmony export */   "FiCrosshair": () => (/* binding */ FiCrosshair),
+/* harmony export */   "FiDatabase": () => (/* binding */ FiDatabase),
+/* harmony export */   "FiDelete": () => (/* binding */ FiDelete),
+/* harmony export */   "FiDisc": () => (/* binding */ FiDisc),
+/* harmony export */   "FiDivideCircle": () => (/* binding */ FiDivideCircle),
+/* harmony export */   "FiDivideSquare": () => (/* binding */ FiDivideSquare),
+/* harmony export */   "FiDivide": () => (/* binding */ FiDivide),
+/* harmony export */   "FiDollarSign": () => (/* binding */ FiDollarSign),
+/* harmony export */   "FiDownloadCloud": () => (/* binding */ FiDownloadCloud),
+/* harmony export */   "FiDownload": () => (/* binding */ FiDownload),
+/* harmony export */   "FiDribbble": () => (/* binding */ FiDribbble),
+/* harmony export */   "FiDroplet": () => (/* binding */ FiDroplet),
+/* harmony export */   "FiEdit2": () => (/* binding */ FiEdit2),
+/* harmony export */   "FiEdit3": () => (/* binding */ FiEdit3),
+/* harmony export */   "FiEdit": () => (/* binding */ FiEdit),
+/* harmony export */   "FiExternalLink": () => (/* binding */ FiExternalLink),
+/* harmony export */   "FiEyeOff": () => (/* binding */ FiEyeOff),
+/* harmony export */   "FiEye": () => (/* binding */ FiEye),
+/* harmony export */   "FiFacebook": () => (/* binding */ FiFacebook),
+/* harmony export */   "FiFastForward": () => (/* binding */ FiFastForward),
+/* harmony export */   "FiFeather": () => (/* binding */ FiFeather),
+/* harmony export */   "FiFigma": () => (/* binding */ FiFigma),
+/* harmony export */   "FiFileMinus": () => (/* binding */ FiFileMinus),
+/* harmony export */   "FiFilePlus": () => (/* binding */ FiFilePlus),
+/* harmony export */   "FiFileText": () => (/* binding */ FiFileText),
+/* harmony export */   "FiFile": () => (/* binding */ FiFile),
+/* harmony export */   "FiFilm": () => (/* binding */ FiFilm),
+/* harmony export */   "FiFilter": () => (/* binding */ FiFilter),
+/* harmony export */   "FiFlag": () => (/* binding */ FiFlag),
+/* harmony export */   "FiFolderMinus": () => (/* binding */ FiFolderMinus),
+/* harmony export */   "FiFolderPlus": () => (/* binding */ FiFolderPlus),
+/* harmony export */   "FiFolder": () => (/* binding */ FiFolder),
+/* harmony export */   "FiFramer": () => (/* binding */ FiFramer),
+/* harmony export */   "FiFrown": () => (/* binding */ FiFrown),
+/* harmony export */   "FiGift": () => (/* binding */ FiGift),
+/* harmony export */   "FiGitBranch": () => (/* binding */ FiGitBranch),
+/* harmony export */   "FiGitCommit": () => (/* binding */ FiGitCommit),
+/* harmony export */   "FiGitMerge": () => (/* binding */ FiGitMerge),
+/* harmony export */   "FiGitPullRequest": () => (/* binding */ FiGitPullRequest),
+/* harmony export */   "FiGithub": () => (/* binding */ FiGithub),
+/* harmony export */   "FiGitlab": () => (/* binding */ FiGitlab),
+/* harmony export */   "FiGlobe": () => (/* binding */ FiGlobe),
+/* harmony export */   "FiGrid": () => (/* binding */ FiGrid),
+/* harmony export */   "FiHardDrive": () => (/* binding */ FiHardDrive),
+/* harmony export */   "FiHash": () => (/* binding */ FiHash),
+/* harmony export */   "FiHeadphones": () => (/* binding */ FiHeadphones),
+/* harmony export */   "FiHeart": () => (/* binding */ FiHeart),
+/* harmony export */   "FiHelpCircle": () => (/* binding */ FiHelpCircle),
+/* harmony export */   "FiHexagon": () => (/* binding */ FiHexagon),
+/* harmony export */   "FiHome": () => (/* binding */ FiHome),
+/* harmony export */   "FiImage": () => (/* binding */ FiImage),
+/* harmony export */   "FiInbox": () => (/* binding */ FiInbox),
+/* harmony export */   "FiInfo": () => (/* binding */ FiInfo),
+/* harmony export */   "FiInstagram": () => (/* binding */ FiInstagram),
+/* harmony export */   "FiItalic": () => (/* binding */ FiItalic),
+/* harmony export */   "FiKey": () => (/* binding */ FiKey),
+/* harmony export */   "FiLayers": () => (/* binding */ FiLayers),
+/* harmony export */   "FiLayout": () => (/* binding */ FiLayout),
+/* harmony export */   "FiLifeBuoy": () => (/* binding */ FiLifeBuoy),
+/* harmony export */   "FiLink2": () => (/* binding */ FiLink2),
+/* harmony export */   "FiLink": () => (/* binding */ FiLink),
+/* harmony export */   "FiLinkedin": () => (/* binding */ FiLinkedin),
+/* harmony export */   "FiList": () => (/* binding */ FiList),
+/* harmony export */   "FiLoader": () => (/* binding */ FiLoader),
+/* harmony export */   "FiLock": () => (/* binding */ FiLock),
+/* harmony export */   "FiLogIn": () => (/* binding */ FiLogIn),
+/* harmony export */   "FiLogOut": () => (/* binding */ FiLogOut),
+/* harmony export */   "FiMail": () => (/* binding */ FiMail),
+/* harmony export */   "FiMapPin": () => (/* binding */ FiMapPin),
+/* harmony export */   "FiMap": () => (/* binding */ FiMap),
+/* harmony export */   "FiMaximize2": () => (/* binding */ FiMaximize2),
+/* harmony export */   "FiMaximize": () => (/* binding */ FiMaximize),
+/* harmony export */   "FiMeh": () => (/* binding */ FiMeh),
+/* harmony export */   "FiMenu": () => (/* binding */ FiMenu),
+/* harmony export */   "FiMessageCircle": () => (/* binding */ FiMessageCircle),
+/* harmony export */   "FiMessageSquare": () => (/* binding */ FiMessageSquare),
+/* harmony export */   "FiMicOff": () => (/* binding */ FiMicOff),
+/* harmony export */   "FiMic": () => (/* binding */ FiMic),
+/* harmony export */   "FiMinimize2": () => (/* binding */ FiMinimize2),
+/* harmony export */   "FiMinimize": () => (/* binding */ FiMinimize),
+/* harmony export */   "FiMinusCircle": () => (/* binding */ FiMinusCircle),
+/* harmony export */   "FiMinusSquare": () => (/* binding */ FiMinusSquare),
+/* harmony export */   "FiMinus": () => (/* binding */ FiMinus),
+/* harmony export */   "FiMonitor": () => (/* binding */ FiMonitor),
+/* harmony export */   "FiMoon": () => (/* binding */ FiMoon),
+/* harmony export */   "FiMoreHorizontal": () => (/* binding */ FiMoreHorizontal),
+/* harmony export */   "FiMoreVertical": () => (/* binding */ FiMoreVertical),
+/* harmony export */   "FiMousePointer": () => (/* binding */ FiMousePointer),
+/* harmony export */   "FiMove": () => (/* binding */ FiMove),
+/* harmony export */   "FiMusic": () => (/* binding */ FiMusic),
+/* harmony export */   "FiNavigation2": () => (/* binding */ FiNavigation2),
+/* harmony export */   "FiNavigation": () => (/* binding */ FiNavigation),
+/* harmony export */   "FiOctagon": () => (/* binding */ FiOctagon),
+/* harmony export */   "FiPackage": () => (/* binding */ FiPackage),
+/* harmony export */   "FiPaperclip": () => (/* binding */ FiPaperclip),
+/* harmony export */   "FiPauseCircle": () => (/* binding */ FiPauseCircle),
+/* harmony export */   "FiPause": () => (/* binding */ FiPause),
+/* harmony export */   "FiPenTool": () => (/* binding */ FiPenTool),
+/* harmony export */   "FiPercent": () => (/* binding */ FiPercent),
+/* harmony export */   "FiPhoneCall": () => (/* binding */ FiPhoneCall),
+/* harmony export */   "FiPhoneForwarded": () => (/* binding */ FiPhoneForwarded),
+/* harmony export */   "FiPhoneIncoming": () => (/* binding */ FiPhoneIncoming),
+/* harmony export */   "FiPhoneMissed": () => (/* binding */ FiPhoneMissed),
+/* harmony export */   "FiPhoneOff": () => (/* binding */ FiPhoneOff),
+/* harmony export */   "FiPhoneOutgoing": () => (/* binding */ FiPhoneOutgoing),
+/* harmony export */   "FiPhone": () => (/* binding */ FiPhone),
+/* harmony export */   "FiPieChart": () => (/* binding */ FiPieChart),
+/* harmony export */   "FiPlayCircle": () => (/* binding */ FiPlayCircle),
+/* harmony export */   "FiPlay": () => (/* binding */ FiPlay),
+/* harmony export */   "FiPlusCircle": () => (/* binding */ FiPlusCircle),
+/* harmony export */   "FiPlusSquare": () => (/* binding */ FiPlusSquare),
+/* harmony export */   "FiPlus": () => (/* binding */ FiPlus),
+/* harmony export */   "FiPocket": () => (/* binding */ FiPocket),
+/* harmony export */   "FiPower": () => (/* binding */ FiPower),
+/* harmony export */   "FiPrinter": () => (/* binding */ FiPrinter),
+/* harmony export */   "FiRadio": () => (/* binding */ FiRadio),
+/* harmony export */   "FiRefreshCcw": () => (/* binding */ FiRefreshCcw),
+/* harmony export */   "FiRefreshCw": () => (/* binding */ FiRefreshCw),
+/* harmony export */   "FiRepeat": () => (/* binding */ FiRepeat),
+/* harmony export */   "FiRewind": () => (/* binding */ FiRewind),
+/* harmony export */   "FiRotateCcw": () => (/* binding */ FiRotateCcw),
+/* harmony export */   "FiRotateCw": () => (/* binding */ FiRotateCw),
+/* harmony export */   "FiRss": () => (/* binding */ FiRss),
+/* harmony export */   "FiSave": () => (/* binding */ FiSave),
+/* harmony export */   "FiScissors": () => (/* binding */ FiScissors),
+/* harmony export */   "FiSearch": () => (/* binding */ FiSearch),
+/* harmony export */   "FiSend": () => (/* binding */ FiSend),
+/* harmony export */   "FiServer": () => (/* binding */ FiServer),
+/* harmony export */   "FiSettings": () => (/* binding */ FiSettings),
+/* harmony export */   "FiShare2": () => (/* binding */ FiShare2),
+/* harmony export */   "FiShare": () => (/* binding */ FiShare),
+/* harmony export */   "FiShieldOff": () => (/* binding */ FiShieldOff),
+/* harmony export */   "FiShield": () => (/* binding */ FiShield),
+/* harmony export */   "FiShoppingBag": () => (/* binding */ FiShoppingBag),
+/* harmony export */   "FiShoppingCart": () => (/* binding */ FiShoppingCart),
+/* harmony export */   "FiShuffle": () => (/* binding */ FiShuffle),
+/* harmony export */   "FiSidebar": () => (/* binding */ FiSidebar),
+/* harmony export */   "FiSkipBack": () => (/* binding */ FiSkipBack),
+/* harmony export */   "FiSkipForward": () => (/* binding */ FiSkipForward),
+/* harmony export */   "FiSlack": () => (/* binding */ FiSlack),
+/* harmony export */   "FiSlash": () => (/* binding */ FiSlash),
+/* harmony export */   "FiSliders": () => (/* binding */ FiSliders),
+/* harmony export */   "FiSmartphone": () => (/* binding */ FiSmartphone),
+/* harmony export */   "FiSmile": () => (/* binding */ FiSmile),
+/* harmony export */   "FiSpeaker": () => (/* binding */ FiSpeaker),
+/* harmony export */   "FiSquare": () => (/* binding */ FiSquare),
+/* harmony export */   "FiStar": () => (/* binding */ FiStar),
+/* harmony export */   "FiStopCircle": () => (/* binding */ FiStopCircle),
+/* harmony export */   "FiSun": () => (/* binding */ FiSun),
+/* harmony export */   "FiSunrise": () => (/* binding */ FiSunrise),
+/* harmony export */   "FiSunset": () => (/* binding */ FiSunset),
+/* harmony export */   "FiTablet": () => (/* binding */ FiTablet),
+/* harmony export */   "FiTag": () => (/* binding */ FiTag),
+/* harmony export */   "FiTarget": () => (/* binding */ FiTarget),
+/* harmony export */   "FiTerminal": () => (/* binding */ FiTerminal),
+/* harmony export */   "FiThermometer": () => (/* binding */ FiThermometer),
+/* harmony export */   "FiThumbsDown": () => (/* binding */ FiThumbsDown),
+/* harmony export */   "FiThumbsUp": () => (/* binding */ FiThumbsUp),
+/* harmony export */   "FiToggleLeft": () => (/* binding */ FiToggleLeft),
+/* harmony export */   "FiToggleRight": () => (/* binding */ FiToggleRight),
+/* harmony export */   "FiTool": () => (/* binding */ FiTool),
+/* harmony export */   "FiTrash2": () => (/* binding */ FiTrash2),
+/* harmony export */   "FiTrash": () => (/* binding */ FiTrash),
+/* harmony export */   "FiTrello": () => (/* binding */ FiTrello),
+/* harmony export */   "FiTrendingDown": () => (/* binding */ FiTrendingDown),
+/* harmony export */   "FiTrendingUp": () => (/* binding */ FiTrendingUp),
+/* harmony export */   "FiTriangle": () => (/* binding */ FiTriangle),
+/* harmony export */   "FiTruck": () => (/* binding */ FiTruck),
+/* harmony export */   "FiTv": () => (/* binding */ FiTv),
+/* harmony export */   "FiTwitch": () => (/* binding */ FiTwitch),
+/* harmony export */   "FiTwitter": () => (/* binding */ FiTwitter),
+/* harmony export */   "FiType": () => (/* binding */ FiType),
+/* harmony export */   "FiUmbrella": () => (/* binding */ FiUmbrella),
+/* harmony export */   "FiUnderline": () => (/* binding */ FiUnderline),
+/* harmony export */   "FiUnlock": () => (/* binding */ FiUnlock),
+/* harmony export */   "FiUploadCloud": () => (/* binding */ FiUploadCloud),
+/* harmony export */   "FiUpload": () => (/* binding */ FiUpload),
+/* harmony export */   "FiUserCheck": () => (/* binding */ FiUserCheck),
+/* harmony export */   "FiUserMinus": () => (/* binding */ FiUserMinus),
+/* harmony export */   "FiUserPlus": () => (/* binding */ FiUserPlus),
+/* harmony export */   "FiUserX": () => (/* binding */ FiUserX),
+/* harmony export */   "FiUser": () => (/* binding */ FiUser),
+/* harmony export */   "FiUsers": () => (/* binding */ FiUsers),
+/* harmony export */   "FiVideoOff": () => (/* binding */ FiVideoOff),
+/* harmony export */   "FiVideo": () => (/* binding */ FiVideo),
+/* harmony export */   "FiVoicemail": () => (/* binding */ FiVoicemail),
+/* harmony export */   "FiVolume1": () => (/* binding */ FiVolume1),
+/* harmony export */   "FiVolume2": () => (/* binding */ FiVolume2),
+/* harmony export */   "FiVolumeX": () => (/* binding */ FiVolumeX),
+/* harmony export */   "FiVolume": () => (/* binding */ FiVolume),
+/* harmony export */   "FiWatch": () => (/* binding */ FiWatch),
+/* harmony export */   "FiWifiOff": () => (/* binding */ FiWifiOff),
+/* harmony export */   "FiWifi": () => (/* binding */ FiWifi),
+/* harmony export */   "FiWind": () => (/* binding */ FiWind),
+/* harmony export */   "FiXCircle": () => (/* binding */ FiXCircle),
+/* harmony export */   "FiXOctagon": () => (/* binding */ FiXOctagon),
+/* harmony export */   "FiXSquare": () => (/* binding */ FiXSquare),
+/* harmony export */   "FiX": () => (/* binding */ FiX),
+/* harmony export */   "FiYoutube": () => (/* binding */ FiYoutube),
+/* harmony export */   "FiZapOff": () => (/* binding */ FiZapOff),
+/* harmony export */   "FiZap": () => (/* binding */ FiZap),
+/* harmony export */   "FiZoomIn": () => (/* binding */ FiZoomIn),
+/* harmony export */   "FiZoomOut": () => (/* binding */ FiZoomOut)
+/* harmony export */ });
+/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../lib */ "./node_modules/react-icons/lib/esm/index.js");
+// THIS FILE IS AUTO GENERATED
+
+function FiActivity (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"22 12 18 12 15 21 9 3 6 12 2 12"}}]})(props);
+};
+function FiAirplay (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"}},{"tag":"polygon","attr":{"points":"12 15 17 21 7 21 12 15"}}]})(props);
+};
+function FiAlertCircle (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"12","r":"10"}},{"tag":"line","attr":{"x1":"12","y1":"8","x2":"12","y2":"12"}},{"tag":"line","attr":{"x1":"12","y1":"16","x2":"12.01","y2":"16"}}]})(props);
+};
+function FiAlertOctagon (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polygon","attr":{"points":"7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"}},{"tag":"line","attr":{"x1":"12","y1":"8","x2":"12","y2":"12"}},{"tag":"line","attr":{"x1":"12","y1":"16","x2":"12.01","y2":"16"}}]})(props);
+};
+function FiAlertTriangle (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"}},{"tag":"line","attr":{"x1":"12","y1":"9","x2":"12","y2":"13"}},{"tag":"line","attr":{"x1":"12","y1":"17","x2":"12.01","y2":"17"}}]})(props);
+};
+function FiAlignCenter (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"line","attr":{"x1":"18","y1":"10","x2":"6","y2":"10"}},{"tag":"line","attr":{"x1":"21","y1":"6","x2":"3","y2":"6"}},{"tag":"line","attr":{"x1":"21","y1":"14","x2":"3","y2":"14"}},{"tag":"line","attr":{"x1":"18","y1":"18","x2":"6","y2":"18"}}]})(props);
+};
+function FiAlignJustify (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"line","attr":{"x1":"21","y1":"10","x2":"3","y2":"10"}},{"tag":"line","attr":{"x1":"21","y1":"6","x2":"3","y2":"6"}},{"tag":"line","attr":{"x1":"21","y1":"14","x2":"3","y2":"14"}},{"tag":"line","attr":{"x1":"21","y1":"18","x2":"3","y2":"18"}}]})(props);
+};
+function FiAlignLeft (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"line","attr":{"x1":"17","y1":"10","x2":"3","y2":"10"}},{"tag":"line","attr":{"x1":"21","y1":"6","x2":"3","y2":"6"}},{"tag":"line","attr":{"x1":"21","y1":"14","x2":"3","y2":"14"}},{"tag":"line","attr":{"x1":"17","y1":"18","x2":"3","y2":"18"}}]})(props);
+};
+function FiAlignRight (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"line","attr":{"x1":"21","y1":"10","x2":"7","y2":"10"}},{"tag":"line","attr":{"x1":"21","y1":"6","x2":"3","y2":"6"}},{"tag":"line","attr":{"x1":"21","y1":"14","x2":"3","y2":"14"}},{"tag":"line","attr":{"x1":"21","y1":"18","x2":"7","y2":"18"}}]})(props);
+};
+function FiAnchor (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"5","r":"3"}},{"tag":"line","attr":{"x1":"12","y1":"22","x2":"12","y2":"8"}},{"tag":"path","attr":{"d":"M5 12H2a10 10 0 0 0 20 0h-3"}}]})(props);
+};
+function FiAperture (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"12","r":"10"}},{"tag":"line","attr":{"x1":"14.31","y1":"8","x2":"20.05","y2":"17.94"}},{"tag":"line","attr":{"x1":"9.69","y1":"8","x2":"21.17","y2":"8"}},{"tag":"line","attr":{"x1":"7.38","y1":"12","x2":"13.12","y2":"2.06"}},{"tag":"line","attr":{"x1":"9.69","y1":"16","x2":"3.95","y2":"6.06"}},{"tag":"line","attr":{"x1":"14.31","y1":"16","x2":"2.83","y2":"16"}},{"tag":"line","attr":{"x1":"16.62","y1":"12","x2":"10.88","y2":"21.94"}}]})(props);
+};
+function FiArchive (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"21 8 21 21 3 21 3 8"}},{"tag":"rect","attr":{"x":"1","y":"3","width":"22","height":"5"}},{"tag":"line","attr":{"x1":"10","y1":"12","x2":"14","y2":"12"}}]})(props);
+};
+function FiArrowDownCircle (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"12","r":"10"}},{"tag":"polyline","attr":{"points":"8 12 12 16 16 12"}},{"tag":"line","attr":{"x1":"12","y1":"8","x2":"12","y2":"16"}}]})(props);
+};
+function FiArrowDownLeft (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"line","attr":{"x1":"17","y1":"7","x2":"7","y2":"17"}},{"tag":"polyline","attr":{"points":"17 17 7 17 7 7"}}]})(props);
+};
+function FiArrowDownRight (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"line","attr":{"x1":"7","y1":"7","x2":"17","y2":"17"}},{"tag":"polyline","attr":{"points":"17 7 17 17 7 17"}}]})(props);
+};
+function FiArrowDown (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"line","attr":{"x1":"12","y1":"5","x2":"12","y2":"19"}},{"tag":"polyline","attr":{"points":"19 12 12 19 5 12"}}]})(props);
+};
+function FiArrowLeftCircle (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"12","r":"10"}},{"tag":"polyline","attr":{"points":"12 8 8 12 12 16"}},{"tag":"line","attr":{"x1":"16","y1":"12","x2":"8","y2":"12"}}]})(props);
+};
+function FiArrowLeft (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"line","attr":{"x1":"19","y1":"12","x2":"5","y2":"12"}},{"tag":"polyline","attr":{"points":"12 19 5 12 12 5"}}]})(props);
+};
+function FiArrowRightCircle (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"12","r":"10"}},{"tag":"polyline","attr":{"points":"12 16 16 12 12 8"}},{"tag":"line","attr":{"x1":"8","y1":"12","x2":"16","y2":"12"}}]})(props);
+};
+function FiArrowRight (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"line","attr":{"x1":"5","y1":"12","x2":"19","y2":"12"}},{"tag":"polyline","attr":{"points":"12 5 19 12 12 19"}}]})(props);
+};
+function FiArrowUpCircle (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"12","r":"10"}},{"tag":"polyline","attr":{"points":"16 12 12 8 8 12"}},{"tag":"line","attr":{"x1":"12","y1":"16","x2":"12","y2":"8"}}]})(props);
+};
+function FiArrowUpLeft (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"line","attr":{"x1":"17","y1":"17","x2":"7","y2":"7"}},{"tag":"polyline","attr":{"points":"7 17 7 7 17 7"}}]})(props);
+};
+function FiArrowUpRight (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"line","attr":{"x1":"7","y1":"17","x2":"17","y2":"7"}},{"tag":"polyline","attr":{"points":"7 7 17 7 17 17"}}]})(props);
+};
+function FiArrowUp (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"line","attr":{"x1":"12","y1":"19","x2":"12","y2":"5"}},{"tag":"polyline","attr":{"points":"5 12 12 5 19 12"}}]})(props);
+};
+function FiAtSign (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"12","r":"4"}},{"tag":"path","attr":{"d":"M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"}}]})(props);
+};
+function FiAward (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"8","r":"7"}},{"tag":"polyline","attr":{"points":"8.21 13.89 7 23 12 20 17 23 15.79 13.88"}}]})(props);
+};
+function FiBarChart2 (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"line","attr":{"x1":"18","y1":"20","x2":"18","y2":"10"}},{"tag":"line","attr":{"x1":"12","y1":"20","x2":"12","y2":"4"}},{"tag":"line","attr":{"x1":"6","y1":"20","x2":"6","y2":"14"}}]})(props);
+};
+function FiBarChart (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"line","attr":{"x1":"12","y1":"20","x2":"12","y2":"10"}},{"tag":"line","attr":{"x1":"18","y1":"20","x2":"18","y2":"4"}},{"tag":"line","attr":{"x1":"6","y1":"20","x2":"6","y2":"16"}}]})(props);
+};
+function FiBatteryCharging (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M5 18H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h3.19M15 6h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-3.19"}},{"tag":"line","attr":{"x1":"23","y1":"13","x2":"23","y2":"11"}},{"tag":"polyline","attr":{"points":"11 6 7 12 13 12 9 18"}}]})(props);
+};
+function FiBattery (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"rect","attr":{"x":"1","y":"6","width":"18","height":"12","rx":"2","ry":"2"}},{"tag":"line","attr":{"x1":"23","y1":"13","x2":"23","y2":"11"}}]})(props);
+};
+function FiBellOff (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M13.73 21a2 2 0 0 1-3.46 0"}},{"tag":"path","attr":{"d":"M18.63 13A17.89 17.89 0 0 1 18 8"}},{"tag":"path","attr":{"d":"M6.26 6.26A5.86 5.86 0 0 0 6 8c0 7-3 9-3 9h14"}},{"tag":"path","attr":{"d":"M18 8a6 6 0 0 0-9.33-5"}},{"tag":"line","attr":{"x1":"1","y1":"1","x2":"23","y2":"23"}}]})(props);
+};
+function FiBell (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"}},{"tag":"path","attr":{"d":"M13.73 21a2 2 0 0 1-3.46 0"}}]})(props);
+};
+function FiBluetooth (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"6.5 6.5 17.5 17.5 12 23 12 1 17.5 6.5 6.5 17.5"}}]})(props);
+};
+function FiBold (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M6 4h8a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"}},{"tag":"path","attr":{"d":"M6 12h9a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"}}]})(props);
+};
+function FiBookOpen (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"}},{"tag":"path","attr":{"d":"M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"}}]})(props);
+};
+function FiBook (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M4 19.5A2.5 2.5 0 0 1 6.5 17H20"}},{"tag":"path","attr":{"d":"M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"}}]})(props);
+};
+function FiBookmark (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"}}]})(props);
+};
+function FiBox (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"}},{"tag":"polyline","attr":{"points":"3.27 6.96 12 12.01 20.73 6.96"}},{"tag":"line","attr":{"x1":"12","y1":"22.08","x2":"12","y2":"12"}}]})(props);
+};
+function FiBriefcase (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"rect","attr":{"x":"2","y":"7","width":"20","height":"14","rx":"2","ry":"2"}},{"tag":"path","attr":{"d":"M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"}}]})(props);
+};
+function FiCalendar (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"rect","attr":{"x":"3","y":"4","width":"18","height":"18","rx":"2","ry":"2"}},{"tag":"line","attr":{"x1":"16","y1":"2","x2":"16","y2":"6"}},{"tag":"line","attr":{"x1":"8","y1":"2","x2":"8","y2":"6"}},{"tag":"line","attr":{"x1":"3","y1":"10","x2":"21","y2":"10"}}]})(props);
+};
+function FiCameraOff (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"line","attr":{"x1":"1","y1":"1","x2":"23","y2":"23"}},{"tag":"path","attr":{"d":"M21 21H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h3m3-3h6l2 3h4a2 2 0 0 1 2 2v9.34m-7.72-2.06a4 4 0 1 1-5.56-5.56"}}]})(props);
+};
+function FiCamera (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"}},{"tag":"circle","attr":{"cx":"12","cy":"13","r":"4"}}]})(props);
+};
+function FiCast (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M2 16.1A5 5 0 0 1 5.9 20M2 12.05A9 9 0 0 1 9.95 20M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6"}},{"tag":"line","attr":{"x1":"2","y1":"20","x2":"2.01","y2":"20"}}]})(props);
+};
+function FiCheckCircle (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M22 11.08V12a10 10 0 1 1-5.93-9.14"}},{"tag":"polyline","attr":{"points":"22 4 12 14.01 9 11.01"}}]})(props);
+};
+function FiCheckSquare (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"9 11 12 14 22 4"}},{"tag":"path","attr":{"d":"M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"}}]})(props);
+};
+function FiCheck (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"20 6 9 17 4 12"}}]})(props);
+};
+function FiChevronDown (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"6 9 12 15 18 9"}}]})(props);
+};
+function FiChevronLeft (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"15 18 9 12 15 6"}}]})(props);
+};
+function FiChevronRight (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"9 18 15 12 9 6"}}]})(props);
+};
+function FiChevronUp (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"18 15 12 9 6 15"}}]})(props);
+};
+function FiChevronsDown (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"7 13 12 18 17 13"}},{"tag":"polyline","attr":{"points":"7 6 12 11 17 6"}}]})(props);
+};
+function FiChevronsLeft (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"11 17 6 12 11 7"}},{"tag":"polyline","attr":{"points":"18 17 13 12 18 7"}}]})(props);
+};
+function FiChevronsRight (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"13 17 18 12 13 7"}},{"tag":"polyline","attr":{"points":"6 17 11 12 6 7"}}]})(props);
+};
+function FiChevronsUp (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"17 11 12 6 7 11"}},{"tag":"polyline","attr":{"points":"17 18 12 13 7 18"}}]})(props);
+};
+function FiChrome (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"12","r":"10"}},{"tag":"circle","attr":{"cx":"12","cy":"12","r":"4"}},{"tag":"line","attr":{"x1":"21.17","y1":"8","x2":"12","y2":"8"}},{"tag":"line","attr":{"x1":"3.95","y1":"6.06","x2":"8.54","y2":"14"}},{"tag":"line","attr":{"x1":"10.88","y1":"21.94","x2":"15.46","y2":"14"}}]})(props);
+};
+function FiCircle (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"12","r":"10"}}]})(props);
+};
+function FiClipboard (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"}},{"tag":"rect","attr":{"x":"8","y":"2","width":"8","height":"4","rx":"1","ry":"1"}}]})(props);
+};
+function FiClock (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"12","r":"10"}},{"tag":"polyline","attr":{"points":"12 6 12 12 16 14"}}]})(props);
+};
+function FiCloudDrizzle (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"line","attr":{"x1":"8","y1":"19","x2":"8","y2":"21"}},{"tag":"line","attr":{"x1":"8","y1":"13","x2":"8","y2":"15"}},{"tag":"line","attr":{"x1":"16","y1":"19","x2":"16","y2":"21"}},{"tag":"line","attr":{"x1":"16","y1":"13","x2":"16","y2":"15"}},{"tag":"line","attr":{"x1":"12","y1":"21","x2":"12","y2":"23"}},{"tag":"line","attr":{"x1":"12","y1":"15","x2":"12","y2":"17"}},{"tag":"path","attr":{"d":"M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"}}]})(props);
+};
+function FiCloudLightning (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M19 16.9A5 5 0 0 0 18 7h-1.26a8 8 0 1 0-11.62 9"}},{"tag":"polyline","attr":{"points":"13 11 9 17 15 17 11 23"}}]})(props);
+};
+function FiCloudOff (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M22.61 16.95A5 5 0 0 0 18 10h-1.26a8 8 0 0 0-7.05-6M5 5a8 8 0 0 0 4 15h9a5 5 0 0 0 1.7-.3"}},{"tag":"line","attr":{"x1":"1","y1":"1","x2":"23","y2":"23"}}]})(props);
+};
+function FiCloudRain (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"line","attr":{"x1":"16","y1":"13","x2":"16","y2":"21"}},{"tag":"line","attr":{"x1":"8","y1":"13","x2":"8","y2":"21"}},{"tag":"line","attr":{"x1":"12","y1":"15","x2":"12","y2":"23"}},{"tag":"path","attr":{"d":"M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"}}]})(props);
+};
+function FiCloudSnow (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M20 17.58A5 5 0 0 0 18 8h-1.26A8 8 0 1 0 4 16.25"}},{"tag":"line","attr":{"x1":"8","y1":"16","x2":"8.01","y2":"16"}},{"tag":"line","attr":{"x1":"8","y1":"20","x2":"8.01","y2":"20"}},{"tag":"line","attr":{"x1":"12","y1":"18","x2":"12.01","y2":"18"}},{"tag":"line","attr":{"x1":"12","y1":"22","x2":"12.01","y2":"22"}},{"tag":"line","attr":{"x1":"16","y1":"16","x2":"16.01","y2":"16"}},{"tag":"line","attr":{"x1":"16","y1":"20","x2":"16.01","y2":"20"}}]})(props);
+};
+function FiCloud (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"}}]})(props);
+};
+function FiCode (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"16 18 22 12 16 6"}},{"tag":"polyline","attr":{"points":"8 6 2 12 8 18"}}]})(props);
+};
+function FiCodepen (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polygon","attr":{"points":"12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"}},{"tag":"line","attr":{"x1":"12","y1":"22","x2":"12","y2":"15.5"}},{"tag":"polyline","attr":{"points":"22 8.5 12 15.5 2 8.5"}},{"tag":"polyline","attr":{"points":"2 15.5 12 8.5 22 15.5"}},{"tag":"line","attr":{"x1":"12","y1":"2","x2":"12","y2":"8.5"}}]})(props);
+};
+function FiCodesandbox (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"}},{"tag":"polyline","attr":{"points":"7.5 4.21 12 6.81 16.5 4.21"}},{"tag":"polyline","attr":{"points":"7.5 19.79 7.5 14.6 3 12"}},{"tag":"polyline","attr":{"points":"21 12 16.5 14.6 16.5 19.79"}},{"tag":"polyline","attr":{"points":"3.27 6.96 12 12.01 20.73 6.96"}},{"tag":"line","attr":{"x1":"12","y1":"22.08","x2":"12","y2":"12"}}]})(props);
+};
+function FiCoffee (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M18 8h1a4 4 0 0 1 0 8h-1"}},{"tag":"path","attr":{"d":"M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"}},{"tag":"line","attr":{"x1":"6","y1":"1","x2":"6","y2":"4"}},{"tag":"line","attr":{"x1":"10","y1":"1","x2":"10","y2":"4"}},{"tag":"line","attr":{"x1":"14","y1":"1","x2":"14","y2":"4"}}]})(props);
+};
+function FiColumns (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7m0-18H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7m0-18v18"}}]})(props);
+};
+function FiCommand (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"}}]})(props);
+};
+function FiCompass (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"12","r":"10"}},{"tag":"polygon","attr":{"points":"16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"}}]})(props);
+};
+function FiCopy (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"rect","attr":{"x":"9","y":"9","width":"13","height":"13","rx":"2","ry":"2"}},{"tag":"path","attr":{"d":"M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"}}]})(props);
+};
+function FiCornerDownLeft (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"9 10 4 15 9 20"}},{"tag":"path","attr":{"d":"M20 4v7a4 4 0 0 1-4 4H4"}}]})(props);
+};
+function FiCornerDownRight (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"15 10 20 15 15 20"}},{"tag":"path","attr":{"d":"M4 4v7a4 4 0 0 0 4 4h12"}}]})(props);
+};
+function FiCornerLeftDown (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"14 15 9 20 4 15"}},{"tag":"path","attr":{"d":"M20 4h-7a4 4 0 0 0-4 4v12"}}]})(props);
+};
+function FiCornerLeftUp (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"14 9 9 4 4 9"}},{"tag":"path","attr":{"d":"M20 20h-7a4 4 0 0 1-4-4V4"}}]})(props);
+};
+function FiCornerRightDown (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"10 15 15 20 20 15"}},{"tag":"path","attr":{"d":"M4 4h7a4 4 0 0 1 4 4v12"}}]})(props);
+};
+function FiCornerRightUp (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"10 9 15 4 20 9"}},{"tag":"path","attr":{"d":"M4 20h7a4 4 0 0 0 4-4V4"}}]})(props);
+};
+function FiCornerUpLeft (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"9 14 4 9 9 4"}},{"tag":"path","attr":{"d":"M20 20v-7a4 4 0 0 0-4-4H4"}}]})(props);
+};
+function FiCornerUpRight (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"15 14 20 9 15 4"}},{"tag":"path","attr":{"d":"M4 20v-7a4 4 0 0 1 4-4h12"}}]})(props);
+};
+function FiCpu (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"rect","attr":{"x":"4","y":"4","width":"16","height":"16","rx":"2","ry":"2"}},{"tag":"rect","attr":{"x":"9","y":"9","width":"6","height":"6"}},{"tag":"line","attr":{"x1":"9","y1":"1","x2":"9","y2":"4"}},{"tag":"line","attr":{"x1":"15","y1":"1","x2":"15","y2":"4"}},{"tag":"line","attr":{"x1":"9","y1":"20","x2":"9","y2":"23"}},{"tag":"line","attr":{"x1":"15","y1":"20","x2":"15","y2":"23"}},{"tag":"line","attr":{"x1":"20","y1":"9","x2":"23","y2":"9"}},{"tag":"line","attr":{"x1":"20","y1":"14","x2":"23","y2":"14"}},{"tag":"line","attr":{"x1":"1","y1":"9","x2":"4","y2":"9"}},{"tag":"line","attr":{"x1":"1","y1":"14","x2":"4","y2":"14"}}]})(props);
+};
+function FiCreditCard (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"rect","attr":{"x":"1","y":"4","width":"22","height":"16","rx":"2","ry":"2"}},{"tag":"line","attr":{"x1":"1","y1":"10","x2":"23","y2":"10"}}]})(props);
+};
+function FiCrop (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M6.13 1L6 16a2 2 0 0 0 2 2h15"}},{"tag":"path","attr":{"d":"M1 6.13L16 6a2 2 0 0 1 2 2v15"}}]})(props);
+};
+function FiCrosshair (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"12","r":"10"}},{"tag":"line","attr":{"x1":"22","y1":"12","x2":"18","y2":"12"}},{"tag":"line","attr":{"x1":"6","y1":"12","x2":"2","y2":"12"}},{"tag":"line","attr":{"x1":"12","y1":"6","x2":"12","y2":"2"}},{"tag":"line","attr":{"x1":"12","y1":"22","x2":"12","y2":"18"}}]})(props);
+};
+function FiDatabase (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"ellipse","attr":{"cx":"12","cy":"5","rx":"9","ry":"3"}},{"tag":"path","attr":{"d":"M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"}},{"tag":"path","attr":{"d":"M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"}}]})(props);
+};
+function FiDelete (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"}},{"tag":"line","attr":{"x1":"18","y1":"9","x2":"12","y2":"15"}},{"tag":"line","attr":{"x1":"12","y1":"9","x2":"18","y2":"15"}}]})(props);
+};
+function FiDisc (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"12","r":"10"}},{"tag":"circle","attr":{"cx":"12","cy":"12","r":"3"}}]})(props);
+};
+function FiDivideCircle (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"line","attr":{"x1":"8","y1":"12","x2":"16","y2":"12"}},{"tag":"line","attr":{"x1":"12","y1":"16","x2":"12","y2":"16"}},{"tag":"line","attr":{"x1":"12","y1":"8","x2":"12","y2":"8"}},{"tag":"circle","attr":{"cx":"12","cy":"12","r":"10"}}]})(props);
+};
+function FiDivideSquare (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"rect","attr":{"x":"3","y":"3","width":"18","height":"18","rx":"2","ry":"2"}},{"tag":"line","attr":{"x1":"8","y1":"12","x2":"16","y2":"12"}},{"tag":"line","attr":{"x1":"12","y1":"16","x2":"12","y2":"16"}},{"tag":"line","attr":{"x1":"12","y1":"8","x2":"12","y2":"8"}}]})(props);
+};
+function FiDivide (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"6","r":"2"}},{"tag":"line","attr":{"x1":"5","y1":"12","x2":"19","y2":"12"}},{"tag":"circle","attr":{"cx":"12","cy":"18","r":"2"}}]})(props);
+};
+function FiDollarSign (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"line","attr":{"x1":"12","y1":"1","x2":"12","y2":"23"}},{"tag":"path","attr":{"d":"M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"}}]})(props);
+};
+function FiDownloadCloud (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"8 17 12 21 16 17"}},{"tag":"line","attr":{"x1":"12","y1":"12","x2":"12","y2":"21"}},{"tag":"path","attr":{"d":"M20.88 18.09A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.29"}}]})(props);
+};
+function FiDownload (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"}},{"tag":"polyline","attr":{"points":"7 10 12 15 17 10"}},{"tag":"line","attr":{"x1":"12","y1":"15","x2":"12","y2":"3"}}]})(props);
+};
+function FiDribbble (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"12","r":"10"}},{"tag":"path","attr":{"d":"M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"}}]})(props);
+};
+function FiDroplet (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"}}]})(props);
+};
+function FiEdit2 (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"}}]})(props);
+};
+function FiEdit3 (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M12 20h9"}},{"tag":"path","attr":{"d":"M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"}}]})(props);
+};
+function FiEdit (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"}},{"tag":"path","attr":{"d":"M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"}}]})(props);
+};
+function FiExternalLink (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"}},{"tag":"polyline","attr":{"points":"15 3 21 3 21 9"}},{"tag":"line","attr":{"x1":"10","y1":"14","x2":"21","y2":"3"}}]})(props);
+};
+function FiEyeOff (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"}},{"tag":"line","attr":{"x1":"1","y1":"1","x2":"23","y2":"23"}}]})(props);
+};
+function FiEye (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"}},{"tag":"circle","attr":{"cx":"12","cy":"12","r":"3"}}]})(props);
+};
+function FiFacebook (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"}}]})(props);
+};
+function FiFastForward (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polygon","attr":{"points":"13 19 22 12 13 5 13 19"}},{"tag":"polygon","attr":{"points":"2 19 11 12 2 5 2 19"}}]})(props);
+};
+function FiFeather (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"}},{"tag":"line","attr":{"x1":"16","y1":"8","x2":"2","y2":"22"}},{"tag":"line","attr":{"x1":"17.5","y1":"15","x2":"9","y2":"15"}}]})(props);
+};
+function FiFigma (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z"}},{"tag":"path","attr":{"d":"M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z"}},{"tag":"path","attr":{"d":"M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z"}},{"tag":"path","attr":{"d":"M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z"}},{"tag":"path","attr":{"d":"M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z"}}]})(props);
+};
+function FiFileMinus (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"}},{"tag":"polyline","attr":{"points":"14 2 14 8 20 8"}},{"tag":"line","attr":{"x1":"9","y1":"15","x2":"15","y2":"15"}}]})(props);
+};
+function FiFilePlus (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"}},{"tag":"polyline","attr":{"points":"14 2 14 8 20 8"}},{"tag":"line","attr":{"x1":"12","y1":"18","x2":"12","y2":"12"}},{"tag":"line","attr":{"x1":"9","y1":"15","x2":"15","y2":"15"}}]})(props);
+};
+function FiFileText (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"}},{"tag":"polyline","attr":{"points":"14 2 14 8 20 8"}},{"tag":"line","attr":{"x1":"16","y1":"13","x2":"8","y2":"13"}},{"tag":"line","attr":{"x1":"16","y1":"17","x2":"8","y2":"17"}},{"tag":"polyline","attr":{"points":"10 9 9 9 8 9"}}]})(props);
+};
+function FiFile (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"}},{"tag":"polyline","attr":{"points":"13 2 13 9 20 9"}}]})(props);
+};
+function FiFilm (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"rect","attr":{"x":"2","y":"2","width":"20","height":"20","rx":"2.18","ry":"2.18"}},{"tag":"line","attr":{"x1":"7","y1":"2","x2":"7","y2":"22"}},{"tag":"line","attr":{"x1":"17","y1":"2","x2":"17","y2":"22"}},{"tag":"line","attr":{"x1":"2","y1":"12","x2":"22","y2":"12"}},{"tag":"line","attr":{"x1":"2","y1":"7","x2":"7","y2":"7"}},{"tag":"line","attr":{"x1":"2","y1":"17","x2":"7","y2":"17"}},{"tag":"line","attr":{"x1":"17","y1":"17","x2":"22","y2":"17"}},{"tag":"line","attr":{"x1":"17","y1":"7","x2":"22","y2":"7"}}]})(props);
+};
+function FiFilter (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polygon","attr":{"points":"22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"}}]})(props);
+};
+function FiFlag (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"}},{"tag":"line","attr":{"x1":"4","y1":"22","x2":"4","y2":"15"}}]})(props);
+};
+function FiFolderMinus (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"}},{"tag":"line","attr":{"x1":"9","y1":"14","x2":"15","y2":"14"}}]})(props);
+};
+function FiFolderPlus (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"}},{"tag":"line","attr":{"x1":"12","y1":"11","x2":"12","y2":"17"}},{"tag":"line","attr":{"x1":"9","y1":"14","x2":"15","y2":"14"}}]})(props);
+};
+function FiFolder (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"}}]})(props);
+};
+function FiFramer (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M5 16V9h14V2H5l14 14h-7m-7 0l7 7v-7m-7 0h7"}}]})(props);
+};
+function FiFrown (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"12","r":"10"}},{"tag":"path","attr":{"d":"M16 16s-1.5-2-4-2-4 2-4 2"}},{"tag":"line","attr":{"x1":"9","y1":"9","x2":"9.01","y2":"9"}},{"tag":"line","attr":{"x1":"15","y1":"9","x2":"15.01","y2":"9"}}]})(props);
+};
+function FiGift (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"20 12 20 22 4 22 4 12"}},{"tag":"rect","attr":{"x":"2","y":"7","width":"20","height":"5"}},{"tag":"line","attr":{"x1":"12","y1":"22","x2":"12","y2":"7"}},{"tag":"path","attr":{"d":"M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"}},{"tag":"path","attr":{"d":"M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"}}]})(props);
+};
+function FiGitBranch (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"line","attr":{"x1":"6","y1":"3","x2":"6","y2":"15"}},{"tag":"circle","attr":{"cx":"18","cy":"6","r":"3"}},{"tag":"circle","attr":{"cx":"6","cy":"18","r":"3"}},{"tag":"path","attr":{"d":"M18 9a9 9 0 0 1-9 9"}}]})(props);
+};
+function FiGitCommit (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"12","r":"4"}},{"tag":"line","attr":{"x1":"1.05","y1":"12","x2":"7","y2":"12"}},{"tag":"line","attr":{"x1":"17.01","y1":"12","x2":"22.96","y2":"12"}}]})(props);
+};
+function FiGitMerge (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"18","cy":"18","r":"3"}},{"tag":"circle","attr":{"cx":"6","cy":"6","r":"3"}},{"tag":"path","attr":{"d":"M6 21V9a9 9 0 0 0 9 9"}}]})(props);
+};
+function FiGitPullRequest (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"18","cy":"18","r":"3"}},{"tag":"circle","attr":{"cx":"6","cy":"6","r":"3"}},{"tag":"path","attr":{"d":"M13 6h3a2 2 0 0 1 2 2v7"}},{"tag":"line","attr":{"x1":"6","y1":"9","x2":"6","y2":"21"}}]})(props);
+};
+function FiGithub (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"}}]})(props);
+};
+function FiGitlab (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M22.65 14.39L12 22.13 1.35 14.39a.84.84 0 0 1-.3-.94l1.22-3.78 2.44-7.51A.42.42 0 0 1 4.82 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.18l2.44 7.49h8.1l2.44-7.51A.42.42 0 0 1 18.6 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.18l2.44 7.51L23 13.45a.84.84 0 0 1-.35.94z"}}]})(props);
+};
+function FiGlobe (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"12","r":"10"}},{"tag":"line","attr":{"x1":"2","y1":"12","x2":"22","y2":"12"}},{"tag":"path","attr":{"d":"M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"}}]})(props);
+};
+function FiGrid (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"rect","attr":{"x":"3","y":"3","width":"7","height":"7"}},{"tag":"rect","attr":{"x":"14","y":"3","width":"7","height":"7"}},{"tag":"rect","attr":{"x":"14","y":"14","width":"7","height":"7"}},{"tag":"rect","attr":{"x":"3","y":"14","width":"7","height":"7"}}]})(props);
+};
+function FiHardDrive (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"line","attr":{"x1":"22","y1":"12","x2":"2","y2":"12"}},{"tag":"path","attr":{"d":"M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"}},{"tag":"line","attr":{"x1":"6","y1":"16","x2":"6.01","y2":"16"}},{"tag":"line","attr":{"x1":"10","y1":"16","x2":"10.01","y2":"16"}}]})(props);
+};
+function FiHash (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"line","attr":{"x1":"4","y1":"9","x2":"20","y2":"9"}},{"tag":"line","attr":{"x1":"4","y1":"15","x2":"20","y2":"15"}},{"tag":"line","attr":{"x1":"10","y1":"3","x2":"8","y2":"21"}},{"tag":"line","attr":{"x1":"16","y1":"3","x2":"14","y2":"21"}}]})(props);
+};
+function FiHeadphones (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M3 18v-6a9 9 0 0 1 18 0v6"}},{"tag":"path","attr":{"d":"M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"}}]})(props);
+};
+function FiHeart (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"}}]})(props);
+};
+function FiHelpCircle (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"12","r":"10"}},{"tag":"path","attr":{"d":"M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"}},{"tag":"line","attr":{"x1":"12","y1":"17","x2":"12.01","y2":"17"}}]})(props);
+};
+function FiHexagon (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"}}]})(props);
+};
+function FiHome (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"}},{"tag":"polyline","attr":{"points":"9 22 9 12 15 12 15 22"}}]})(props);
+};
+function FiImage (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"rect","attr":{"x":"3","y":"3","width":"18","height":"18","rx":"2","ry":"2"}},{"tag":"circle","attr":{"cx":"8.5","cy":"8.5","r":"1.5"}},{"tag":"polyline","attr":{"points":"21 15 16 10 5 21"}}]})(props);
+};
+function FiInbox (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"22 12 16 12 14 15 10 15 8 12 2 12"}},{"tag":"path","attr":{"d":"M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"}}]})(props);
+};
+function FiInfo (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"12","r":"10"}},{"tag":"line","attr":{"x1":"12","y1":"16","x2":"12","y2":"12"}},{"tag":"line","attr":{"x1":"12","y1":"8","x2":"12.01","y2":"8"}}]})(props);
+};
+function FiInstagram (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"rect","attr":{"x":"2","y":"2","width":"20","height":"20","rx":"5","ry":"5"}},{"tag":"path","attr":{"d":"M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"}},{"tag":"line","attr":{"x1":"17.5","y1":"6.5","x2":"17.51","y2":"6.5"}}]})(props);
+};
+function FiItalic (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"line","attr":{"x1":"19","y1":"4","x2":"10","y2":"4"}},{"tag":"line","attr":{"x1":"14","y1":"20","x2":"5","y2":"20"}},{"tag":"line","attr":{"x1":"15","y1":"4","x2":"9","y2":"20"}}]})(props);
+};
+function FiKey (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"}}]})(props);
+};
+function FiLayers (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polygon","attr":{"points":"12 2 2 7 12 12 22 7 12 2"}},{"tag":"polyline","attr":{"points":"2 17 12 22 22 17"}},{"tag":"polyline","attr":{"points":"2 12 12 17 22 12"}}]})(props);
+};
+function FiLayout (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"rect","attr":{"x":"3","y":"3","width":"18","height":"18","rx":"2","ry":"2"}},{"tag":"line","attr":{"x1":"3","y1":"9","x2":"21","y2":"9"}},{"tag":"line","attr":{"x1":"9","y1":"21","x2":"9","y2":"9"}}]})(props);
+};
+function FiLifeBuoy (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"12","r":"10"}},{"tag":"circle","attr":{"cx":"12","cy":"12","r":"4"}},{"tag":"line","attr":{"x1":"4.93","y1":"4.93","x2":"9.17","y2":"9.17"}},{"tag":"line","attr":{"x1":"14.83","y1":"14.83","x2":"19.07","y2":"19.07"}},{"tag":"line","attr":{"x1":"14.83","y1":"9.17","x2":"19.07","y2":"4.93"}},{"tag":"line","attr":{"x1":"14.83","y1":"9.17","x2":"18.36","y2":"5.64"}},{"tag":"line","attr":{"x1":"4.93","y1":"19.07","x2":"9.17","y2":"14.83"}}]})(props);
+};
+function FiLink2 (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"}},{"tag":"line","attr":{"x1":"8","y1":"12","x2":"16","y2":"12"}}]})(props);
+};
+function FiLink (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"}},{"tag":"path","attr":{"d":"M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"}}]})(props);
+};
+function FiLinkedin (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"}},{"tag":"rect","attr":{"x":"2","y":"9","width":"4","height":"12"}},{"tag":"circle","attr":{"cx":"4","cy":"4","r":"2"}}]})(props);
+};
+function FiList (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"line","attr":{"x1":"8","y1":"6","x2":"21","y2":"6"}},{"tag":"line","attr":{"x1":"8","y1":"12","x2":"21","y2":"12"}},{"tag":"line","attr":{"x1":"8","y1":"18","x2":"21","y2":"18"}},{"tag":"line","attr":{"x1":"3","y1":"6","x2":"3.01","y2":"6"}},{"tag":"line","attr":{"x1":"3","y1":"12","x2":"3.01","y2":"12"}},{"tag":"line","attr":{"x1":"3","y1":"18","x2":"3.01","y2":"18"}}]})(props);
+};
+function FiLoader (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"line","attr":{"x1":"12","y1":"2","x2":"12","y2":"6"}},{"tag":"line","attr":{"x1":"12","y1":"18","x2":"12","y2":"22"}},{"tag":"line","attr":{"x1":"4.93","y1":"4.93","x2":"7.76","y2":"7.76"}},{"tag":"line","attr":{"x1":"16.24","y1":"16.24","x2":"19.07","y2":"19.07"}},{"tag":"line","attr":{"x1":"2","y1":"12","x2":"6","y2":"12"}},{"tag":"line","attr":{"x1":"18","y1":"12","x2":"22","y2":"12"}},{"tag":"line","attr":{"x1":"4.93","y1":"19.07","x2":"7.76","y2":"16.24"}},{"tag":"line","attr":{"x1":"16.24","y1":"7.76","x2":"19.07","y2":"4.93"}}]})(props);
+};
+function FiLock (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"rect","attr":{"x":"3","y":"11","width":"18","height":"11","rx":"2","ry":"2"}},{"tag":"path","attr":{"d":"M7 11V7a5 5 0 0 1 10 0v4"}}]})(props);
+};
+function FiLogIn (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"}},{"tag":"polyline","attr":{"points":"10 17 15 12 10 7"}},{"tag":"line","attr":{"x1":"15","y1":"12","x2":"3","y2":"12"}}]})(props);
+};
+function FiLogOut (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"}},{"tag":"polyline","attr":{"points":"16 17 21 12 16 7"}},{"tag":"line","attr":{"x1":"21","y1":"12","x2":"9","y2":"12"}}]})(props);
+};
+function FiMail (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"}},{"tag":"polyline","attr":{"points":"22,6 12,13 2,6"}}]})(props);
+};
+function FiMapPin (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"}},{"tag":"circle","attr":{"cx":"12","cy":"10","r":"3"}}]})(props);
+};
+function FiMap (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polygon","attr":{"points":"1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"}},{"tag":"line","attr":{"x1":"8","y1":"2","x2":"8","y2":"18"}},{"tag":"line","attr":{"x1":"16","y1":"6","x2":"16","y2":"22"}}]})(props);
+};
+function FiMaximize2 (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"15 3 21 3 21 9"}},{"tag":"polyline","attr":{"points":"9 21 3 21 3 15"}},{"tag":"line","attr":{"x1":"21","y1":"3","x2":"14","y2":"10"}},{"tag":"line","attr":{"x1":"3","y1":"21","x2":"10","y2":"14"}}]})(props);
+};
+function FiMaximize (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"}}]})(props);
+};
+function FiMeh (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"12","r":"10"}},{"tag":"line","attr":{"x1":"8","y1":"15","x2":"16","y2":"15"}},{"tag":"line","attr":{"x1":"9","y1":"9","x2":"9.01","y2":"9"}},{"tag":"line","attr":{"x1":"15","y1":"9","x2":"15.01","y2":"9"}}]})(props);
+};
+function FiMenu (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"line","attr":{"x1":"3","y1":"12","x2":"21","y2":"12"}},{"tag":"line","attr":{"x1":"3","y1":"6","x2":"21","y2":"6"}},{"tag":"line","attr":{"x1":"3","y1":"18","x2":"21","y2":"18"}}]})(props);
+};
+function FiMessageCircle (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"}}]})(props);
+};
+function FiMessageSquare (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"}}]})(props);
+};
+function FiMicOff (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"line","attr":{"x1":"1","y1":"1","x2":"23","y2":"23"}},{"tag":"path","attr":{"d":"M9 9v3a3 3 0 0 0 5.12 2.12M15 9.34V4a3 3 0 0 0-5.94-.6"}},{"tag":"path","attr":{"d":"M17 16.95A7 7 0 0 1 5 12v-2m14 0v2a7 7 0 0 1-.11 1.23"}},{"tag":"line","attr":{"x1":"12","y1":"19","x2":"12","y2":"23"}},{"tag":"line","attr":{"x1":"8","y1":"23","x2":"16","y2":"23"}}]})(props);
+};
+function FiMic (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"}},{"tag":"path","attr":{"d":"M19 10v2a7 7 0 0 1-14 0v-2"}},{"tag":"line","attr":{"x1":"12","y1":"19","x2":"12","y2":"23"}},{"tag":"line","attr":{"x1":"8","y1":"23","x2":"16","y2":"23"}}]})(props);
+};
+function FiMinimize2 (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"4 14 10 14 10 20"}},{"tag":"polyline","attr":{"points":"20 10 14 10 14 4"}},{"tag":"line","attr":{"x1":"14","y1":"10","x2":"21","y2":"3"}},{"tag":"line","attr":{"x1":"3","y1":"21","x2":"10","y2":"14"}}]})(props);
+};
+function FiMinimize (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"}}]})(props);
+};
+function FiMinusCircle (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"12","r":"10"}},{"tag":"line","attr":{"x1":"8","y1":"12","x2":"16","y2":"12"}}]})(props);
+};
+function FiMinusSquare (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"rect","attr":{"x":"3","y":"3","width":"18","height":"18","rx":"2","ry":"2"}},{"tag":"line","attr":{"x1":"8","y1":"12","x2":"16","y2":"12"}}]})(props);
+};
+function FiMinus (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"line","attr":{"x1":"5","y1":"12","x2":"19","y2":"12"}}]})(props);
+};
+function FiMonitor (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"rect","attr":{"x":"2","y":"3","width":"20","height":"14","rx":"2","ry":"2"}},{"tag":"line","attr":{"x1":"8","y1":"21","x2":"16","y2":"21"}},{"tag":"line","attr":{"x1":"12","y1":"17","x2":"12","y2":"21"}}]})(props);
+};
+function FiMoon (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"}}]})(props);
+};
+function FiMoreHorizontal (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"12","r":"1"}},{"tag":"circle","attr":{"cx":"19","cy":"12","r":"1"}},{"tag":"circle","attr":{"cx":"5","cy":"12","r":"1"}}]})(props);
+};
+function FiMoreVertical (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"12","r":"1"}},{"tag":"circle","attr":{"cx":"12","cy":"5","r":"1"}},{"tag":"circle","attr":{"cx":"12","cy":"19","r":"1"}}]})(props);
+};
+function FiMousePointer (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"}},{"tag":"path","attr":{"d":"M13 13l6 6"}}]})(props);
+};
+function FiMove (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"5 9 2 12 5 15"}},{"tag":"polyline","attr":{"points":"9 5 12 2 15 5"}},{"tag":"polyline","attr":{"points":"15 19 12 22 9 19"}},{"tag":"polyline","attr":{"points":"19 9 22 12 19 15"}},{"tag":"line","attr":{"x1":"2","y1":"12","x2":"22","y2":"12"}},{"tag":"line","attr":{"x1":"12","y1":"2","x2":"12","y2":"22"}}]})(props);
+};
+function FiMusic (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M9 18V5l12-2v13"}},{"tag":"circle","attr":{"cx":"6","cy":"18","r":"3"}},{"tag":"circle","attr":{"cx":"18","cy":"16","r":"3"}}]})(props);
+};
+function FiNavigation2 (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polygon","attr":{"points":"12 2 19 21 12 17 5 21 12 2"}}]})(props);
+};
+function FiNavigation (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polygon","attr":{"points":"3 11 22 2 13 21 11 13 3 11"}}]})(props);
+};
+function FiOctagon (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polygon","attr":{"points":"7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"}}]})(props);
+};
+function FiPackage (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"line","attr":{"x1":"16.5","y1":"9.4","x2":"7.5","y2":"4.21"}},{"tag":"path","attr":{"d":"M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"}},{"tag":"polyline","attr":{"points":"3.27 6.96 12 12.01 20.73 6.96"}},{"tag":"line","attr":{"x1":"12","y1":"22.08","x2":"12","y2":"12"}}]})(props);
+};
+function FiPaperclip (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"}}]})(props);
+};
+function FiPauseCircle (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"12","r":"10"}},{"tag":"line","attr":{"x1":"10","y1":"15","x2":"10","y2":"9"}},{"tag":"line","attr":{"x1":"14","y1":"15","x2":"14","y2":"9"}}]})(props);
+};
+function FiPause (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"rect","attr":{"x":"6","y":"4","width":"4","height":"16"}},{"tag":"rect","attr":{"x":"14","y":"4","width":"4","height":"16"}}]})(props);
+};
+function FiPenTool (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M12 19l7-7 3 3-7 7-3-3z"}},{"tag":"path","attr":{"d":"M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"}},{"tag":"path","attr":{"d":"M2 2l7.586 7.586"}},{"tag":"circle","attr":{"cx":"11","cy":"11","r":"2"}}]})(props);
+};
+function FiPercent (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"line","attr":{"x1":"19","y1":"5","x2":"5","y2":"19"}},{"tag":"circle","attr":{"cx":"6.5","cy":"6.5","r":"2.5"}},{"tag":"circle","attr":{"cx":"17.5","cy":"17.5","r":"2.5"}}]})(props);
+};
+function FiPhoneCall (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"}}]})(props);
+};
+function FiPhoneForwarded (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"19 1 23 5 19 9"}},{"tag":"line","attr":{"x1":"15","y1":"5","x2":"23","y2":"5"}},{"tag":"path","attr":{"d":"M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"}}]})(props);
+};
+function FiPhoneIncoming (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"16 2 16 8 22 8"}},{"tag":"line","attr":{"x1":"23","y1":"1","x2":"16","y2":"8"}},{"tag":"path","attr":{"d":"M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"}}]})(props);
+};
+function FiPhoneMissed (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"line","attr":{"x1":"23","y1":"1","x2":"17","y2":"7"}},{"tag":"line","attr":{"x1":"17","y1":"1","x2":"23","y2":"7"}},{"tag":"path","attr":{"d":"M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"}}]})(props);
+};
+function FiPhoneOff (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M10.68 13.31a16 16 0 0 0 3.41 2.6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7 2 2 0 0 1 1.72 2v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.42 19.42 0 0 1-3.33-2.67m-2.67-3.34a19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91"}},{"tag":"line","attr":{"x1":"23","y1":"1","x2":"1","y2":"23"}}]})(props);
+};
+function FiPhoneOutgoing (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"23 7 23 1 17 1"}},{"tag":"line","attr":{"x1":"16","y1":"8","x2":"23","y2":"1"}},{"tag":"path","attr":{"d":"M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"}}]})(props);
+};
+function FiPhone (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"}}]})(props);
+};
+function FiPieChart (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M21.21 15.89A10 10 0 1 1 8 2.83"}},{"tag":"path","attr":{"d":"M22 12A10 10 0 0 0 12 2v10z"}}]})(props);
+};
+function FiPlayCircle (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"12","r":"10"}},{"tag":"polygon","attr":{"points":"10 8 16 12 10 16 10 8"}}]})(props);
+};
+function FiPlay (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polygon","attr":{"points":"5 3 19 12 5 21 5 3"}}]})(props);
+};
+function FiPlusCircle (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"12","r":"10"}},{"tag":"line","attr":{"x1":"12","y1":"8","x2":"12","y2":"16"}},{"tag":"line","attr":{"x1":"8","y1":"12","x2":"16","y2":"12"}}]})(props);
+};
+function FiPlusSquare (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"rect","attr":{"x":"3","y":"3","width":"18","height":"18","rx":"2","ry":"2"}},{"tag":"line","attr":{"x1":"12","y1":"8","x2":"12","y2":"16"}},{"tag":"line","attr":{"x1":"8","y1":"12","x2":"16","y2":"12"}}]})(props);
+};
+function FiPlus (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"line","attr":{"x1":"12","y1":"5","x2":"12","y2":"19"}},{"tag":"line","attr":{"x1":"5","y1":"12","x2":"19","y2":"12"}}]})(props);
+};
+function FiPocket (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M4 3h16a2 2 0 0 1 2 2v6a10 10 0 0 1-10 10A10 10 0 0 1 2 11V5a2 2 0 0 1 2-2z"}},{"tag":"polyline","attr":{"points":"8 10 12 14 16 10"}}]})(props);
+};
+function FiPower (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M18.36 6.64a9 9 0 1 1-12.73 0"}},{"tag":"line","attr":{"x1":"12","y1":"2","x2":"12","y2":"12"}}]})(props);
+};
+function FiPrinter (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"6 9 6 2 18 2 18 9"}},{"tag":"path","attr":{"d":"M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"}},{"tag":"rect","attr":{"x":"6","y":"14","width":"12","height":"8"}}]})(props);
+};
+function FiRadio (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"12","r":"2"}},{"tag":"path","attr":{"d":"M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"}}]})(props);
+};
+function FiRefreshCcw (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"1 4 1 10 7 10"}},{"tag":"polyline","attr":{"points":"23 20 23 14 17 14"}},{"tag":"path","attr":{"d":"M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"}}]})(props);
+};
+function FiRefreshCw (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"23 4 23 10 17 10"}},{"tag":"polyline","attr":{"points":"1 20 1 14 7 14"}},{"tag":"path","attr":{"d":"M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"}}]})(props);
+};
+function FiRepeat (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"17 1 21 5 17 9"}},{"tag":"path","attr":{"d":"M3 11V9a4 4 0 0 1 4-4h14"}},{"tag":"polyline","attr":{"points":"7 23 3 19 7 15"}},{"tag":"path","attr":{"d":"M21 13v2a4 4 0 0 1-4 4H3"}}]})(props);
+};
+function FiRewind (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polygon","attr":{"points":"11 19 2 12 11 5 11 19"}},{"tag":"polygon","attr":{"points":"22 19 13 12 22 5 22 19"}}]})(props);
+};
+function FiRotateCcw (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"1 4 1 10 7 10"}},{"tag":"path","attr":{"d":"M3.51 15a9 9 0 1 0 2.13-9.36L1 10"}}]})(props);
+};
+function FiRotateCw (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"23 4 23 10 17 10"}},{"tag":"path","attr":{"d":"M20.49 15a9 9 0 1 1-2.12-9.36L23 10"}}]})(props);
+};
+function FiRss (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M4 11a9 9 0 0 1 9 9"}},{"tag":"path","attr":{"d":"M4 4a16 16 0 0 1 16 16"}},{"tag":"circle","attr":{"cx":"5","cy":"19","r":"1"}}]})(props);
+};
+function FiSave (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"}},{"tag":"polyline","attr":{"points":"17 21 17 13 7 13 7 21"}},{"tag":"polyline","attr":{"points":"7 3 7 8 15 8"}}]})(props);
+};
+function FiScissors (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"6","cy":"6","r":"3"}},{"tag":"circle","attr":{"cx":"6","cy":"18","r":"3"}},{"tag":"line","attr":{"x1":"20","y1":"4","x2":"8.12","y2":"15.88"}},{"tag":"line","attr":{"x1":"14.47","y1":"14.48","x2":"20","y2":"20"}},{"tag":"line","attr":{"x1":"8.12","y1":"8.12","x2":"12","y2":"12"}}]})(props);
+};
+function FiSearch (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"11","cy":"11","r":"8"}},{"tag":"line","attr":{"x1":"21","y1":"21","x2":"16.65","y2":"16.65"}}]})(props);
+};
+function FiSend (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"line","attr":{"x1":"22","y1":"2","x2":"11","y2":"13"}},{"tag":"polygon","attr":{"points":"22 2 15 22 11 13 2 9 22 2"}}]})(props);
+};
+function FiServer (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"rect","attr":{"x":"2","y":"2","width":"20","height":"8","rx":"2","ry":"2"}},{"tag":"rect","attr":{"x":"2","y":"14","width":"20","height":"8","rx":"2","ry":"2"}},{"tag":"line","attr":{"x1":"6","y1":"6","x2":"6.01","y2":"6"}},{"tag":"line","attr":{"x1":"6","y1":"18","x2":"6.01","y2":"18"}}]})(props);
+};
+function FiSettings (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"12","r":"3"}},{"tag":"path","attr":{"d":"M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"}}]})(props);
+};
+function FiShare2 (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"18","cy":"5","r":"3"}},{"tag":"circle","attr":{"cx":"6","cy":"12","r":"3"}},{"tag":"circle","attr":{"cx":"18","cy":"19","r":"3"}},{"tag":"line","attr":{"x1":"8.59","y1":"13.51","x2":"15.42","y2":"17.49"}},{"tag":"line","attr":{"x1":"15.41","y1":"6.51","x2":"8.59","y2":"10.49"}}]})(props);
+};
+function FiShare (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"}},{"tag":"polyline","attr":{"points":"16 6 12 2 8 6"}},{"tag":"line","attr":{"x1":"12","y1":"2","x2":"12","y2":"15"}}]})(props);
+};
+function FiShieldOff (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M19.69 14a6.9 6.9 0 0 0 .31-2V5l-8-3-3.16 1.18"}},{"tag":"path","attr":{"d":"M4.73 4.73L4 5v7c0 6 8 10 8 10a20.29 20.29 0 0 0 5.62-4.38"}},{"tag":"line","attr":{"x1":"1","y1":"1","x2":"23","y2":"23"}}]})(props);
+};
+function FiShield (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"}}]})(props);
+};
+function FiShoppingBag (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"}},{"tag":"line","attr":{"x1":"3","y1":"6","x2":"21","y2":"6"}},{"tag":"path","attr":{"d":"M16 10a4 4 0 0 1-8 0"}}]})(props);
+};
+function FiShoppingCart (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"9","cy":"21","r":"1"}},{"tag":"circle","attr":{"cx":"20","cy":"21","r":"1"}},{"tag":"path","attr":{"d":"M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"}}]})(props);
+};
+function FiShuffle (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"16 3 21 3 21 8"}},{"tag":"line","attr":{"x1":"4","y1":"20","x2":"21","y2":"3"}},{"tag":"polyline","attr":{"points":"21 16 21 21 16 21"}},{"tag":"line","attr":{"x1":"15","y1":"15","x2":"21","y2":"21"}},{"tag":"line","attr":{"x1":"4","y1":"4","x2":"9","y2":"9"}}]})(props);
+};
+function FiSidebar (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"rect","attr":{"x":"3","y":"3","width":"18","height":"18","rx":"2","ry":"2"}},{"tag":"line","attr":{"x1":"9","y1":"3","x2":"9","y2":"21"}}]})(props);
+};
+function FiSkipBack (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polygon","attr":{"points":"19 20 9 12 19 4 19 20"}},{"tag":"line","attr":{"x1":"5","y1":"19","x2":"5","y2":"5"}}]})(props);
+};
+function FiSkipForward (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polygon","attr":{"points":"5 4 15 12 5 20 5 4"}},{"tag":"line","attr":{"x1":"19","y1":"5","x2":"19","y2":"19"}}]})(props);
+};
+function FiSlack (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"}},{"tag":"path","attr":{"d":"M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"}},{"tag":"path","attr":{"d":"M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"}},{"tag":"path","attr":{"d":"M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"}},{"tag":"path","attr":{"d":"M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"}},{"tag":"path","attr":{"d":"M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"}},{"tag":"path","attr":{"d":"M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"}},{"tag":"path","attr":{"d":"M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"}}]})(props);
+};
+function FiSlash (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"12","r":"10"}},{"tag":"line","attr":{"x1":"4.93","y1":"4.93","x2":"19.07","y2":"19.07"}}]})(props);
+};
+function FiSliders (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"line","attr":{"x1":"4","y1":"21","x2":"4","y2":"14"}},{"tag":"line","attr":{"x1":"4","y1":"10","x2":"4","y2":"3"}},{"tag":"line","attr":{"x1":"12","y1":"21","x2":"12","y2":"12"}},{"tag":"line","attr":{"x1":"12","y1":"8","x2":"12","y2":"3"}},{"tag":"line","attr":{"x1":"20","y1":"21","x2":"20","y2":"16"}},{"tag":"line","attr":{"x1":"20","y1":"12","x2":"20","y2":"3"}},{"tag":"line","attr":{"x1":"1","y1":"14","x2":"7","y2":"14"}},{"tag":"line","attr":{"x1":"9","y1":"8","x2":"15","y2":"8"}},{"tag":"line","attr":{"x1":"17","y1":"16","x2":"23","y2":"16"}}]})(props);
+};
+function FiSmartphone (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"rect","attr":{"x":"5","y":"2","width":"14","height":"20","rx":"2","ry":"2"}},{"tag":"line","attr":{"x1":"12","y1":"18","x2":"12.01","y2":"18"}}]})(props);
+};
+function FiSmile (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"12","r":"10"}},{"tag":"path","attr":{"d":"M8 14s1.5 2 4 2 4-2 4-2"}},{"tag":"line","attr":{"x1":"9","y1":"9","x2":"9.01","y2":"9"}},{"tag":"line","attr":{"x1":"15","y1":"9","x2":"15.01","y2":"9"}}]})(props);
+};
+function FiSpeaker (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"rect","attr":{"x":"4","y":"2","width":"16","height":"20","rx":"2","ry":"2"}},{"tag":"circle","attr":{"cx":"12","cy":"14","r":"4"}},{"tag":"line","attr":{"x1":"12","y1":"6","x2":"12.01","y2":"6"}}]})(props);
+};
+function FiSquare (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"rect","attr":{"x":"3","y":"3","width":"18","height":"18","rx":"2","ry":"2"}}]})(props);
+};
+function FiStar (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polygon","attr":{"points":"12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"}}]})(props);
+};
+function FiStopCircle (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"12","r":"10"}},{"tag":"rect","attr":{"x":"9","y":"9","width":"6","height":"6"}}]})(props);
+};
+function FiSun (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"12","r":"5"}},{"tag":"line","attr":{"x1":"12","y1":"1","x2":"12","y2":"3"}},{"tag":"line","attr":{"x1":"12","y1":"21","x2":"12","y2":"23"}},{"tag":"line","attr":{"x1":"4.22","y1":"4.22","x2":"5.64","y2":"5.64"}},{"tag":"line","attr":{"x1":"18.36","y1":"18.36","x2":"19.78","y2":"19.78"}},{"tag":"line","attr":{"x1":"1","y1":"12","x2":"3","y2":"12"}},{"tag":"line","attr":{"x1":"21","y1":"12","x2":"23","y2":"12"}},{"tag":"line","attr":{"x1":"4.22","y1":"19.78","x2":"5.64","y2":"18.36"}},{"tag":"line","attr":{"x1":"18.36","y1":"5.64","x2":"19.78","y2":"4.22"}}]})(props);
+};
+function FiSunrise (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M17 18a5 5 0 0 0-10 0"}},{"tag":"line","attr":{"x1":"12","y1":"2","x2":"12","y2":"9"}},{"tag":"line","attr":{"x1":"4.22","y1":"10.22","x2":"5.64","y2":"11.64"}},{"tag":"line","attr":{"x1":"1","y1":"18","x2":"3","y2":"18"}},{"tag":"line","attr":{"x1":"21","y1":"18","x2":"23","y2":"18"}},{"tag":"line","attr":{"x1":"18.36","y1":"11.64","x2":"19.78","y2":"10.22"}},{"tag":"line","attr":{"x1":"23","y1":"22","x2":"1","y2":"22"}},{"tag":"polyline","attr":{"points":"8 6 12 2 16 6"}}]})(props);
+};
+function FiSunset (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M17 18a5 5 0 0 0-10 0"}},{"tag":"line","attr":{"x1":"12","y1":"9","x2":"12","y2":"2"}},{"tag":"line","attr":{"x1":"4.22","y1":"10.22","x2":"5.64","y2":"11.64"}},{"tag":"line","attr":{"x1":"1","y1":"18","x2":"3","y2":"18"}},{"tag":"line","attr":{"x1":"21","y1":"18","x2":"23","y2":"18"}},{"tag":"line","attr":{"x1":"18.36","y1":"11.64","x2":"19.78","y2":"10.22"}},{"tag":"line","attr":{"x1":"23","y1":"22","x2":"1","y2":"22"}},{"tag":"polyline","attr":{"points":"16 5 12 9 8 5"}}]})(props);
+};
+function FiTablet (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"rect","attr":{"x":"4","y":"2","width":"16","height":"20","rx":"2","ry":"2"}},{"tag":"line","attr":{"x1":"12","y1":"18","x2":"12.01","y2":"18"}}]})(props);
+};
+function FiTag (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"}},{"tag":"line","attr":{"x1":"7","y1":"7","x2":"7.01","y2":"7"}}]})(props);
+};
+function FiTarget (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"12","r":"10"}},{"tag":"circle","attr":{"cx":"12","cy":"12","r":"6"}},{"tag":"circle","attr":{"cx":"12","cy":"12","r":"2"}}]})(props);
+};
+function FiTerminal (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"4 17 10 11 4 5"}},{"tag":"line","attr":{"x1":"12","y1":"19","x2":"20","y2":"19"}}]})(props);
+};
+function FiThermometer (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"}}]})(props);
+};
+function FiThumbsDown (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"}}]})(props);
+};
+function FiThumbsUp (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"}}]})(props);
+};
+function FiToggleLeft (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"rect","attr":{"x":"1","y":"5","width":"22","height":"14","rx":"7","ry":"7"}},{"tag":"circle","attr":{"cx":"8","cy":"12","r":"3"}}]})(props);
+};
+function FiToggleRight (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"rect","attr":{"x":"1","y":"5","width":"22","height":"14","rx":"7","ry":"7"}},{"tag":"circle","attr":{"cx":"16","cy":"12","r":"3"}}]})(props);
+};
+function FiTool (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"}}]})(props);
+};
+function FiTrash2 (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"3 6 5 6 21 6"}},{"tag":"path","attr":{"d":"M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"}},{"tag":"line","attr":{"x1":"10","y1":"11","x2":"10","y2":"17"}},{"tag":"line","attr":{"x1":"14","y1":"11","x2":"14","y2":"17"}}]})(props);
+};
+function FiTrash (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"3 6 5 6 21 6"}},{"tag":"path","attr":{"d":"M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"}}]})(props);
+};
+function FiTrello (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"rect","attr":{"x":"3","y":"3","width":"18","height":"18","rx":"2","ry":"2"}},{"tag":"rect","attr":{"x":"7","y":"7","width":"3","height":"9"}},{"tag":"rect","attr":{"x":"14","y":"7","width":"3","height":"5"}}]})(props);
+};
+function FiTrendingDown (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"23 18 13.5 8.5 8.5 13.5 1 6"}},{"tag":"polyline","attr":{"points":"17 18 23 18 23 12"}}]})(props);
+};
+function FiTrendingUp (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"23 6 13.5 15.5 8.5 10.5 1 18"}},{"tag":"polyline","attr":{"points":"17 6 23 6 23 12"}}]})(props);
+};
+function FiTriangle (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"}}]})(props);
+};
+function FiTruck (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"rect","attr":{"x":"1","y":"3","width":"15","height":"13"}},{"tag":"polygon","attr":{"points":"16 8 20 8 23 11 23 16 16 16 16 8"}},{"tag":"circle","attr":{"cx":"5.5","cy":"18.5","r":"2.5"}},{"tag":"circle","attr":{"cx":"18.5","cy":"18.5","r":"2.5"}}]})(props);
+};
+function FiTv (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"rect","attr":{"x":"2","y":"7","width":"20","height":"15","rx":"2","ry":"2"}},{"tag":"polyline","attr":{"points":"17 2 12 7 7 2"}}]})(props);
+};
+function FiTwitch (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7"}}]})(props);
+};
+function FiTwitter (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"}}]})(props);
+};
+function FiType (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"4 7 4 4 20 4 20 7"}},{"tag":"line","attr":{"x1":"9","y1":"20","x2":"15","y2":"20"}},{"tag":"line","attr":{"x1":"12","y1":"4","x2":"12","y2":"20"}}]})(props);
+};
+function FiUmbrella (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M23 12a11.05 11.05 0 0 0-22 0zm-5 7a3 3 0 0 1-6 0v-7"}}]})(props);
+};
+function FiUnderline (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M6 3v7a6 6 0 0 0 6 6 6 6 0 0 0 6-6V3"}},{"tag":"line","attr":{"x1":"4","y1":"21","x2":"20","y2":"21"}}]})(props);
+};
+function FiUnlock (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"rect","attr":{"x":"3","y":"11","width":"18","height":"11","rx":"2","ry":"2"}},{"tag":"path","attr":{"d":"M7 11V7a5 5 0 0 1 9.9-1"}}]})(props);
+};
+function FiUploadCloud (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"16 16 12 12 8 16"}},{"tag":"line","attr":{"x1":"12","y1":"12","x2":"12","y2":"21"}},{"tag":"path","attr":{"d":"M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"}},{"tag":"polyline","attr":{"points":"16 16 12 12 8 16"}}]})(props);
+};
+function FiUpload (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"}},{"tag":"polyline","attr":{"points":"17 8 12 3 7 8"}},{"tag":"line","attr":{"x1":"12","y1":"3","x2":"12","y2":"15"}}]})(props);
+};
+function FiUserCheck (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"}},{"tag":"circle","attr":{"cx":"8.5","cy":"7","r":"4"}},{"tag":"polyline","attr":{"points":"17 11 19 13 23 9"}}]})(props);
+};
+function FiUserMinus (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"}},{"tag":"circle","attr":{"cx":"8.5","cy":"7","r":"4"}},{"tag":"line","attr":{"x1":"23","y1":"11","x2":"17","y2":"11"}}]})(props);
+};
+function FiUserPlus (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"}},{"tag":"circle","attr":{"cx":"8.5","cy":"7","r":"4"}},{"tag":"line","attr":{"x1":"20","y1":"8","x2":"20","y2":"14"}},{"tag":"line","attr":{"x1":"23","y1":"11","x2":"17","y2":"11"}}]})(props);
+};
+function FiUserX (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"}},{"tag":"circle","attr":{"cx":"8.5","cy":"7","r":"4"}},{"tag":"line","attr":{"x1":"18","y1":"8","x2":"23","y2":"13"}},{"tag":"line","attr":{"x1":"23","y1":"8","x2":"18","y2":"13"}}]})(props);
+};
+function FiUser (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"}},{"tag":"circle","attr":{"cx":"12","cy":"7","r":"4"}}]})(props);
+};
+function FiUsers (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"}},{"tag":"circle","attr":{"cx":"9","cy":"7","r":"4"}},{"tag":"path","attr":{"d":"M23 21v-2a4 4 0 0 0-3-3.87"}},{"tag":"path","attr":{"d":"M16 3.13a4 4 0 0 1 0 7.75"}}]})(props);
+};
+function FiVideoOff (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2m5.66 0H14a2 2 0 0 1 2 2v3.34l1 1L23 7v10"}},{"tag":"line","attr":{"x1":"1","y1":"1","x2":"23","y2":"23"}}]})(props);
+};
+function FiVideo (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polygon","attr":{"points":"23 7 16 12 23 17 23 7"}},{"tag":"rect","attr":{"x":"1","y":"5","width":"15","height":"14","rx":"2","ry":"2"}}]})(props);
+};
+function FiVoicemail (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"5.5","cy":"11.5","r":"4.5"}},{"tag":"circle","attr":{"cx":"18.5","cy":"11.5","r":"4.5"}},{"tag":"line","attr":{"x1":"5.5","y1":"16","x2":"18.5","y2":"16"}}]})(props);
+};
+function FiVolume1 (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polygon","attr":{"points":"11 5 6 9 2 9 2 15 6 15 11 19 11 5"}},{"tag":"path","attr":{"d":"M15.54 8.46a5 5 0 0 1 0 7.07"}}]})(props);
+};
+function FiVolume2 (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polygon","attr":{"points":"11 5 6 9 2 9 2 15 6 15 11 19 11 5"}},{"tag":"path","attr":{"d":"M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"}}]})(props);
+};
+function FiVolumeX (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polygon","attr":{"points":"11 5 6 9 2 9 2 15 6 15 11 19 11 5"}},{"tag":"line","attr":{"x1":"23","y1":"9","x2":"17","y2":"15"}},{"tag":"line","attr":{"x1":"17","y1":"9","x2":"23","y2":"15"}}]})(props);
+};
+function FiVolume (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polygon","attr":{"points":"11 5 6 9 2 9 2 15 6 15 11 19 11 5"}}]})(props);
+};
+function FiWatch (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"12","r":"7"}},{"tag":"polyline","attr":{"points":"12 9 12 12 13.5 13.5"}},{"tag":"path","attr":{"d":"M16.51 17.35l-.35 3.83a2 2 0 0 1-2 1.82H9.83a2 2 0 0 1-2-1.82l-.35-3.83m.01-10.7l.35-3.83A2 2 0 0 1 9.83 1h4.35a2 2 0 0 1 2 1.82l.35 3.83"}}]})(props);
+};
+function FiWifiOff (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"line","attr":{"x1":"1","y1":"1","x2":"23","y2":"23"}},{"tag":"path","attr":{"d":"M16.72 11.06A10.94 10.94 0 0 1 19 12.55"}},{"tag":"path","attr":{"d":"M5 12.55a10.94 10.94 0 0 1 5.17-2.39"}},{"tag":"path","attr":{"d":"M10.71 5.05A16 16 0 0 1 22.58 9"}},{"tag":"path","attr":{"d":"M1.42 9a15.91 15.91 0 0 1 4.7-2.88"}},{"tag":"path","attr":{"d":"M8.53 16.11a6 6 0 0 1 6.95 0"}},{"tag":"line","attr":{"x1":"12","y1":"20","x2":"12.01","y2":"20"}}]})(props);
+};
+function FiWifi (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M5 12.55a11 11 0 0 1 14.08 0"}},{"tag":"path","attr":{"d":"M1.42 9a16 16 0 0 1 21.16 0"}},{"tag":"path","attr":{"d":"M8.53 16.11a6 6 0 0 1 6.95 0"}},{"tag":"line","attr":{"x1":"12","y1":"20","x2":"12.01","y2":"20"}}]})(props);
+};
+function FiWind (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"}}]})(props);
+};
+function FiXCircle (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"12","cy":"12","r":"10"}},{"tag":"line","attr":{"x1":"15","y1":"9","x2":"9","y2":"15"}},{"tag":"line","attr":{"x1":"9","y1":"9","x2":"15","y2":"15"}}]})(props);
+};
+function FiXOctagon (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polygon","attr":{"points":"7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"}},{"tag":"line","attr":{"x1":"15","y1":"9","x2":"9","y2":"15"}},{"tag":"line","attr":{"x1":"9","y1":"9","x2":"15","y2":"15"}}]})(props);
+};
+function FiXSquare (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"rect","attr":{"x":"3","y":"3","width":"18","height":"18","rx":"2","ry":"2"}},{"tag":"line","attr":{"x1":"9","y1":"9","x2":"15","y2":"15"}},{"tag":"line","attr":{"x1":"15","y1":"9","x2":"9","y2":"15"}}]})(props);
+};
+function FiX (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"line","attr":{"x1":"18","y1":"6","x2":"6","y2":"18"}},{"tag":"line","attr":{"x1":"6","y1":"6","x2":"18","y2":"18"}}]})(props);
+};
+function FiYoutube (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"}},{"tag":"polygon","attr":{"points":"9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"}}]})(props);
+};
+function FiZapOff (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"12.41 6.75 13 2 10.57 4.92"}},{"tag":"polyline","attr":{"points":"18.57 12.91 21 10 15.66 10"}},{"tag":"polyline","attr":{"points":"8 8 3 14 12 14 11 22 16 16"}},{"tag":"line","attr":{"x1":"1","y1":"1","x2":"23","y2":"23"}}]})(props);
+};
+function FiZap (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polygon","attr":{"points":"13 2 3 14 12 14 11 22 21 10 12 10 13 2"}}]})(props);
+};
+function FiZoomIn (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"11","cy":"11","r":"8"}},{"tag":"line","attr":{"x1":"21","y1":"21","x2":"16.65","y2":"16.65"}},{"tag":"line","attr":{"x1":"11","y1":"8","x2":"11","y2":"14"}},{"tag":"line","attr":{"x1":"8","y1":"11","x2":"14","y2":"11"}}]})(props);
+};
+function FiZoomOut (props) {
+  return (0,_lib__WEBPACK_IMPORTED_MODULE_0__.GenIcon)({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"circle","attr":{"cx":"11","cy":"11","r":"8"}},{"tag":"line","attr":{"x1":"21","y1":"21","x2":"16.65","y2":"16.65"}},{"tag":"line","attr":{"x1":"8","y1":"11","x2":"14","y2":"11"}}]})(props);
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-icons/lib/esm/iconBase.js":
+/*!******************************************************!*\
+  !*** ./node_modules/react-icons/lib/esm/iconBase.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "GenIcon": () => (/* binding */ GenIcon),
+/* harmony export */   "IconBase": () => (/* binding */ IconBase)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _iconContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./iconContext */ "./node_modules/react-icons/lib/esm/iconContext.js");
+var __assign = undefined && undefined.__assign || function () {
+  __assign = Object.assign || function (t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+      s = arguments[i];
+
+      for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+    }
+
+    return t;
+  };
+
+  return __assign.apply(this, arguments);
+};
+
+var __rest = undefined && undefined.__rest || function (s, e) {
+  var t = {};
+
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
+
+  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
+  }
+  return t;
+};
+
+
+
+
+function Tree2Element(tree) {
+  return tree && tree.map(function (node, i) {
+    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(node.tag, __assign({
+      key: i
+    }, node.attr), Tree2Element(node.child));
+  });
+}
+
+function GenIcon(data) {
+  return function (props) {
+    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(IconBase, __assign({
+      attr: __assign({}, data.attr)
+    }, props), Tree2Element(data.child));
+  };
+}
+function IconBase(props) {
+  var elem = function (conf) {
+    var attr = props.attr,
+        size = props.size,
+        title = props.title,
+        svgProps = __rest(props, ["attr", "size", "title"]);
+
+    var computedSize = size || conf.size || "1em";
+    var className;
+    if (conf.className) className = conf.className;
+    if (props.className) className = (className ? className + ' ' : '') + props.className;
+    return react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", __assign({
+      stroke: "currentColor",
+      fill: "currentColor",
+      strokeWidth: "0"
+    }, conf.attr, attr, svgProps, {
+      className: className,
+      style: __assign(__assign({
+        color: props.color || conf.color
+      }, conf.style), props.style),
+      height: computedSize,
+      width: computedSize,
+      xmlns: "http://www.w3.org/2000/svg"
+    }), title && react__WEBPACK_IMPORTED_MODULE_0__.createElement("title", null, title), props.children);
+  };
+
+  return _iconContext__WEBPACK_IMPORTED_MODULE_1__.IconContext !== undefined ? react__WEBPACK_IMPORTED_MODULE_0__.createElement(_iconContext__WEBPACK_IMPORTED_MODULE_1__.IconContext.Consumer, null, function (conf) {
+    return elem(conf);
+  }) : elem(_iconContext__WEBPACK_IMPORTED_MODULE_1__.DefaultContext);
+}
+
+/***/ }),
+
+/***/ "./node_modules/react-icons/lib/esm/iconContext.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/react-icons/lib/esm/iconContext.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "DefaultContext": () => (/* binding */ DefaultContext),
+/* harmony export */   "IconContext": () => (/* binding */ IconContext)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var DefaultContext = {
+  color: undefined,
+  size: undefined,
+  className: undefined,
+  style: undefined,
+  attr: undefined
+};
+var IconContext = react__WEBPACK_IMPORTED_MODULE_0__.createContext && react__WEBPACK_IMPORTED_MODULE_0__.createContext(DefaultContext);
+
+/***/ }),
+
+/***/ "./node_modules/react-icons/lib/esm/iconsManifest.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/react-icons/lib/esm/iconsManifest.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "IconsManifest": () => (/* binding */ IconsManifest)
+/* harmony export */ });
+var IconsManifest = [
+  {
+    "id": "fa",
+    "name": "Font Awesome",
+    "projectUrl": "https://fontawesome.com/",
+    "license": "CC BY 4.0 License",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "id": "io",
+    "name": "Ionicons 4",
+    "projectUrl": "https://ionicons.com/",
+    "license": "MIT",
+    "licenseUrl": "https://github.com/ionic-team/ionicons/blob/master/LICENSE"
+  },
+  {
+    "id": "io5",
+    "name": "Ionicons 5",
+    "projectUrl": "https://ionicons.com/",
+    "license": "MIT",
+    "licenseUrl": "https://github.com/ionic-team/ionicons/blob/master/LICENSE"
+  },
+  {
+    "id": "md",
+    "name": "Material Design icons",
+    "projectUrl": "http://google.github.io/material-design-icons/",
+    "license": "Apache License Version 2.0",
+    "licenseUrl": "https://github.com/google/material-design-icons/blob/master/LICENSE"
+  },
+  {
+    "id": "ti",
+    "name": "Typicons",
+    "projectUrl": "http://s-ings.com/typicons/",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "id": "go",
+    "name": "Github Octicons icons",
+    "projectUrl": "https://octicons.github.com/",
+    "license": "MIT",
+    "licenseUrl": "https://github.com/primer/octicons/blob/master/LICENSE"
+  },
+  {
+    "id": "fi",
+    "name": "Feather",
+    "projectUrl": "https://feathericons.com/",
+    "license": "MIT",
+    "licenseUrl": "https://github.com/feathericons/feather/blob/master/LICENSE"
+  },
+  {
+    "id": "gi",
+    "name": "Game Icons",
+    "projectUrl": "https://game-icons.net/",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
+  },
+  {
+    "id": "wi",
+    "name": "Weather Icons",
+    "projectUrl": "https://erikflowers.github.io/weather-icons/",
+    "license": "SIL OFL 1.1",
+    "licenseUrl": "http://scripts.sil.org/OFL"
+  },
+  {
+    "id": "di",
+    "name": "Devicons",
+    "projectUrl": "https://vorillaz.github.io/devicons/",
+    "license": "MIT",
+    "licenseUrl": "https://opensource.org/licenses/MIT"
+  },
+  {
+    "id": "ai",
+    "name": "Ant Design Icons",
+    "projectUrl": "https://github.com/ant-design/ant-design-icons",
+    "license": "MIT",
+    "licenseUrl": "https://opensource.org/licenses/MIT"
+  },
+  {
+    "id": "bs",
+    "name": "Bootstrap Icons",
+    "projectUrl": "https://github.com/twbs/icons",
+    "license": "MIT",
+    "licenseUrl": "https://opensource.org/licenses/MIT"
+  },
+  {
+    "id": "ri",
+    "name": "Remix Icon",
+    "projectUrl": "https://github.com/Remix-Design/RemixIcon",
+    "license": "Apache License Version 2.0",
+    "licenseUrl": "http://www.apache.org/licenses/"
+  },
+  {
+    "id": "fc",
+    "name": "Flat Color Icons",
+    "projectUrl": "https://github.com/icons8/flat-color-icons",
+    "license": "MIT",
+    "licenseUrl": "https://opensource.org/licenses/MIT"
+  },
+  {
+    "id": "gr",
+    "name": "Grommet-Icons",
+    "projectUrl": "https://github.com/grommet/grommet-icons",
+    "license": "Apache License Version 2.0",
+    "licenseUrl": "http://www.apache.org/licenses/"
+  },
+  {
+    "id": "hi",
+    "name": "Heroicons",
+    "projectUrl": "https://github.com/tailwindlabs/heroicons",
+    "license": "MIT",
+    "licenseUrl": "https://opensource.org/licenses/MIT"
+  },
+  {
+    "id": "si",
+    "name": "Simple Icons",
+    "projectUrl": "https://simpleicons.org/",
+    "license": "CC0 1.0 Universal",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "id": "im",
+    "name": "IcoMoon Free",
+    "projectUrl": "https://github.com/Keyamoon/IcoMoon-Free",
+    "license": "CC BY 4.0 License"
+  },
+  {
+    "id": "bi",
+    "name": "BoxIcons",
+    "projectUrl": "https://github.com/atisawd/boxicons",
+    "license": "CC BY 4.0 License"
+  },
+  {
+    "id": "cg",
+    "name": "css.gg",
+    "projectUrl": "https://github.com/astrit/css.gg",
+    "license": "MIT",
+    "licenseUrl": "https://opensource.org/licenses/MIT"
+  },
+  {
+    "id": "vsc",
+    "name": "VS Code Icons",
+    "projectUrl": "https://github.com/microsoft/vscode-codicons",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  }
+]
+
+/***/ }),
+
+/***/ "./node_modules/react-icons/lib/esm/index.js":
+/*!***************************************************!*\
+  !*** ./node_modules/react-icons/lib/esm/index.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "IconsManifest": () => (/* reexport safe */ _iconsManifest__WEBPACK_IMPORTED_MODULE_0__.IconsManifest),
+/* harmony export */   "GenIcon": () => (/* reexport safe */ _iconBase__WEBPACK_IMPORTED_MODULE_1__.GenIcon),
+/* harmony export */   "IconBase": () => (/* reexport safe */ _iconBase__WEBPACK_IMPORTED_MODULE_1__.IconBase),
+/* harmony export */   "DefaultContext": () => (/* reexport safe */ _iconContext__WEBPACK_IMPORTED_MODULE_2__.DefaultContext),
+/* harmony export */   "IconContext": () => (/* reexport safe */ _iconContext__WEBPACK_IMPORTED_MODULE_2__.IconContext)
+/* harmony export */ });
+/* harmony import */ var _iconsManifest__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./iconsManifest */ "./node_modules/react-icons/lib/esm/iconsManifest.js");
+/* harmony import */ var _iconBase__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./iconBase */ "./node_modules/react-icons/lib/esm/iconBase.js");
+/* harmony import */ var _iconContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./iconContext */ "./node_modules/react-icons/lib/esm/iconContext.js");
+
+
+
+
+/***/ }),
+
 /***/ "./node_modules/react/cjs/react-jsx-runtime.development.js":
 /*!*****************************************************************!*\
   !*** ./node_modules/react/cjs/react-jsx-runtime.development.js ***!
@@ -36407,6 +42416,9011 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/recoil/es/recoil.js":
+/*!******************************************!*\
+  !*** ./node_modules/recoil/es/recoil.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   "DefaultValue": () => (/* binding */ Recoil_index_1),
+/* harmony export */   "RecoilLoadable": () => (/* binding */ Recoil_index_3),
+/* harmony export */   "RecoilRoot": () => (/* binding */ Recoil_index_4),
+/* harmony export */   "atom": () => (/* binding */ Recoil_index_7),
+/* harmony export */   "atomFamily": () => (/* binding */ Recoil_index_9),
+/* harmony export */   "constSelector": () => (/* binding */ Recoil_index_11),
+/* harmony export */   "errorSelector": () => (/* binding */ Recoil_index_12),
+/* harmony export */   "isRecoilValue": () => (/* binding */ Recoil_index_2),
+/* harmony export */   "noWait": () => (/* binding */ Recoil_index_14),
+/* harmony export */   "readOnlySelector": () => (/* binding */ Recoil_index_13),
+/* harmony export */   "retentionZone": () => (/* binding */ Recoil_index_37),
+/* harmony export */   "selector": () => (/* binding */ Recoil_index_8),
+/* harmony export */   "selectorFamily": () => (/* binding */ Recoil_index_10),
+/* harmony export */   "snapshot_UNSTABLE": () => (/* binding */ Recoil_index_35),
+/* harmony export */   "useGetRecoilValueInfo_UNSTABLE": () => (/* binding */ Recoil_index_25),
+/* harmony export */   "useGotoRecoilSnapshot": () => (/* binding */ Recoil_index_32),
+/* harmony export */   "useRecoilBridgeAcrossReactRoots_UNSTABLE": () => (/* binding */ Recoil_index_6),
+/* harmony export */   "useRecoilCallback": () => (/* binding */ Recoil_index_30),
+/* harmony export */   "useRecoilRefresher_UNSTABLE": () => (/* binding */ Recoil_index_26),
+/* harmony export */   "useRecoilSnapshot": () => (/* binding */ Recoil_index_33),
+/* harmony export */   "useRecoilState": () => (/* binding */ Recoil_index_21),
+/* harmony export */   "useRecoilStateLoadable": () => (/* binding */ Recoil_index_22),
+/* harmony export */   "useRecoilState_TRANSITION_SUPPORT_UNSTABLE": () => (/* binding */ Recoil_index_29),
+/* harmony export */   "useRecoilStoreID": () => (/* binding */ Recoil_index_5),
+/* harmony export */   "useRecoilTransactionObserver_UNSTABLE": () => (/* binding */ Recoil_index_34),
+/* harmony export */   "useRecoilTransaction_UNSTABLE": () => (/* binding */ Recoil_index_31),
+/* harmony export */   "useRecoilValue": () => (/* binding */ Recoil_index_19),
+/* harmony export */   "useRecoilValueLoadable": () => (/* binding */ Recoil_index_20),
+/* harmony export */   "useRecoilValueLoadable_TRANSITION_SUPPORT_UNSTABLE": () => (/* binding */ Recoil_index_27),
+/* harmony export */   "useRecoilValue_TRANSITION_SUPPORT_UNSTABLE": () => (/* binding */ Recoil_index_28),
+/* harmony export */   "useResetRecoilState": () => (/* binding */ Recoil_index_24),
+/* harmony export */   "useRetain": () => (/* binding */ Recoil_index_36),
+/* harmony export */   "useSetRecoilState": () => (/* binding */ Recoil_index_23),
+/* harmony export */   "waitForAll": () => (/* binding */ Recoil_index_17),
+/* harmony export */   "waitForAllSettled": () => (/* binding */ Recoil_index_18),
+/* harmony export */   "waitForAny": () => (/* binding */ Recoil_index_16),
+/* harmony export */   "waitForNone": () => (/* binding */ Recoil_index_15)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+
+
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @emails oncall+recoil
+ * 
+ * @format
+ */
+
+function err(message) {
+  const error = new Error(message); // In V8, Error objects keep the closure scope chain alive until the
+  // err.stack property is accessed.
+
+  if (error.stack === undefined) {
+    // IE sets the stack only if error is thrown
+    try {
+      throw error;
+    } catch (_) {} // eslint-disable-line fb-www/no-unused-catch-bindings, no-empty
+
+  }
+
+  return error;
+}
+
+var err_1 = err;
+
+// @oss-only
+
+
+var Recoil_err = err_1;
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @emails oncall+recoil
+ * 
+ * @format
+ */
+
+// Split declaration and implementation to allow this function to pretend to
+// check for actual instance of Promise instead of something with a `then`
+// method.
+// eslint-disable-next-line no-redeclare
+function isPromise(p) {
+  return !!p && typeof p.then === 'function';
+}
+
+var Recoil_isPromise = isPromise;
+
+function nullthrows(x, message) {
+  if (x != null) {
+    return x;
+  }
+
+  throw Recoil_err(message !== null && message !== void 0 ? message : 'Got unexpected null or undefined');
+}
+
+var Recoil_nullthrows = nullthrows;
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+class BaseLoadable {
+  getValue() {
+    throw Recoil_err('BaseLoadable');
+  }
+
+  toPromise() {
+    throw Recoil_err('BaseLoadable');
+  }
+
+  valueMaybe() {
+    throw Recoil_err('BaseLoadable');
+  }
+
+  valueOrThrow() {
+    // $FlowFixMe[prop-missing]
+    throw Recoil_err(`Loadable expected value, but in "${this.state}" state`);
+  }
+
+  promiseMaybe() {
+    throw Recoil_err('BaseLoadable');
+  }
+
+  promiseOrThrow() {
+    // $FlowFixMe[prop-missing]
+    throw Recoil_err(`Loadable expected promise, but in "${this.state}" state`);
+  }
+
+  errorMaybe() {
+    throw Recoil_err('BaseLoadable');
+  }
+
+  errorOrThrow() {
+    // $FlowFixMe[prop-missing]
+    throw Recoil_err(`Loadable expected error, but in "${this.state}" state`);
+  }
+
+  is(other) {
+    // $FlowFixMe[prop-missing]
+    return other.state === this.state && other.contents === this.contents;
+  }
+
+  map(_map) {
+    throw Recoil_err('BaseLoadable');
+  }
+
+}
+
+class ValueLoadable extends BaseLoadable {
+  constructor(value) {
+    super();
+
+    _defineProperty(this, "state", 'hasValue');
+
+    _defineProperty(this, "contents", void 0);
+
+    this.contents = value;
+  }
+
+  getValue() {
+    return this.contents;
+  }
+
+  toPromise() {
+    return Promise.resolve(this.contents);
+  }
+
+  valueMaybe() {
+    return this.contents;
+  }
+
+  valueOrThrow() {
+    return this.contents;
+  }
+
+  promiseMaybe() {
+    return undefined;
+  }
+
+  errorMaybe() {
+    return undefined;
+  }
+
+  map(map) {
+    try {
+      const next = map(this.contents);
+      return Recoil_isPromise(next) ? loadableWithPromise(next) : isLoadable(next) ? next : loadableWithValue(next);
+    } catch (e) {
+      return Recoil_isPromise(e) ? // If we "suspended", then try again.
+      // errors and subsequent retries will be handled in 'loading' case
+      loadableWithPromise(e.next(() => this.map(map))) : loadableWithError(e);
+    }
+  }
+
+}
+
+class ErrorLoadable extends BaseLoadable {
+  constructor(error) {
+    super();
+
+    _defineProperty(this, "state", 'hasError');
+
+    _defineProperty(this, "contents", void 0);
+
+    this.contents = error;
+  }
+
+  getValue() {
+    throw this.contents;
+  }
+
+  toPromise() {
+    return Promise.reject(this.contents);
+  }
+
+  valueMaybe() {
+    return undefined;
+  }
+
+  promiseMaybe() {
+    return undefined;
+  }
+
+  errorMaybe() {
+    return this.contents;
+  }
+
+  errorOrThrow() {
+    return this.contents;
+  }
+
+  map(_map) {
+    // $FlowIssue[incompatible-return]
+    return this;
+  }
+
+}
+
+class LoadingLoadable extends BaseLoadable {
+  constructor(promise) {
+    super();
+
+    _defineProperty(this, "state", 'loading');
+
+    _defineProperty(this, "contents", void 0);
+
+    this.contents = promise;
+  }
+
+  getValue() {
+    throw this.contents;
+  }
+
+  toPromise() {
+    return this.contents;
+  }
+
+  valueMaybe() {
+    return undefined;
+  }
+
+  promiseMaybe() {
+    return this.contents;
+  }
+
+  promiseOrThrow() {
+    return this.contents;
+  }
+
+  errorMaybe() {
+    return undefined;
+  }
+
+  map(map) {
+    return loadableWithPromise(this.contents.then(value => {
+      const next = map(value);
+
+      if (isLoadable(next)) {
+        const nextLoadable = next;
+
+        switch (nextLoadable.state) {
+          case 'hasValue':
+            return nextLoadable.contents;
+
+          case 'hasError':
+            throw nextLoadable.contents;
+
+          case 'loading':
+            return nextLoadable.contents;
+        }
+      } // $FlowIssue[incompatible-return]
+
+
+      return next;
+    }).catch(e => {
+      if (Recoil_isPromise(e)) {
+        // we were "suspended," try again
+        return e.then(() => this.map(map).contents);
+      }
+
+      throw e;
+    }));
+  }
+
+}
+
+function loadableWithValue(value) {
+  return Object.freeze(new ValueLoadable(value));
+}
+
+function loadableWithError(error) {
+  return Object.freeze(new ErrorLoadable(error));
+}
+
+function loadableWithPromise(promise) {
+  return Object.freeze(new LoadingLoadable(promise));
+}
+
+function loadableLoading() {
+  return Object.freeze(new LoadingLoadable(new Promise(() => {})));
+}
+
+function loadableAllArray(inputs) {
+  return inputs.every(i => i.state === 'hasValue') ? loadableWithValue(inputs.map(i => i.contents)) : inputs.some(i => i.state === 'hasError') ? loadableWithError(Recoil_nullthrows(inputs.find(i => i.state === 'hasError'), 'Invalid loadable passed to loadableAll').contents) : loadableWithPromise(Promise.all(inputs.map(i => i.contents)));
+}
+
+function loadableAll(inputs) {
+  const unwrapedInputs = Array.isArray(inputs) ? inputs : Object.getOwnPropertyNames(inputs).map(key => inputs[key]);
+  const normalizedInputs = unwrapedInputs.map(x => isLoadable(x) ? x : Recoil_isPromise(x) ? loadableWithPromise(x) : loadableWithValue(x));
+  const output = loadableAllArray(normalizedInputs);
+  return Array.isArray(inputs) ? // $FlowIssue[incompatible-return]
+  output : // Object.getOwnPropertyNames() has consistent key ordering with ES6
+  // $FlowIssue[incompatible-call]
+  output.map(outputs => Object.getOwnPropertyNames(inputs).reduce((out, key, idx) => ({ ...out,
+    [key]: outputs[idx]
+  }), {}));
+}
+
+function isLoadable(x) {
+  return x instanceof BaseLoadable;
+}
+
+const LoadableStaticInterface = {
+  of: value => Recoil_isPromise(value) ? loadableWithPromise(value) : isLoadable(value) ? value : loadableWithValue(value),
+  error: error => loadableWithError(error),
+  // $FlowIssue[unclear-type]
+  all: loadableAll,
+  isLoadable
+};
+var Recoil_Loadable = {
+  loadableWithValue,
+  loadableWithError,
+  loadableWithPromise,
+  loadableLoading,
+  loadableAll,
+  isLoadable,
+  RecoilLoadable: LoadableStaticInterface
+};
+
+var Recoil_Loadable_1 = Recoil_Loadable.loadableWithValue;
+var Recoil_Loadable_2 = Recoil_Loadable.loadableWithError;
+var Recoil_Loadable_3 = Recoil_Loadable.loadableWithPromise;
+var Recoil_Loadable_4 = Recoil_Loadable.loadableLoading;
+var Recoil_Loadable_5 = Recoil_Loadable.loadableAll;
+var Recoil_Loadable_6 = Recoil_Loadable.isLoadable;
+var Recoil_Loadable_7 = Recoil_Loadable.RecoilLoadable;
+
+var Recoil_Loadable$1 = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  loadableWithValue: Recoil_Loadable_1,
+  loadableWithError: Recoil_Loadable_2,
+  loadableWithPromise: Recoil_Loadable_3,
+  loadableLoading: Recoil_Loadable_4,
+  loadableAll: Recoil_Loadable_5,
+  isLoadable: Recoil_Loadable_6,
+  RecoilLoadable: Recoil_Loadable_7
+});
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @emails oncall+recoil
+ * 
+ * @format
+ */
+
+// eslint-disable-next-line no-unused-vars
+class AbstractRecoilValue {
+  constructor(newKey) {
+    _defineProperty(this, "key", void 0);
+
+    this.key = newKey;
+  }
+
+}
+
+class RecoilState extends AbstractRecoilValue {}
+
+class RecoilValueReadOnly extends AbstractRecoilValue {}
+
+function isRecoilValue(x) {
+  return x instanceof RecoilState || x instanceof RecoilValueReadOnly;
+}
+
+var Recoil_RecoilValue = {
+  AbstractRecoilValue,
+  RecoilState,
+  RecoilValueReadOnly,
+  isRecoilValue
+};
+
+var Recoil_RecoilValue_1 = Recoil_RecoilValue.AbstractRecoilValue;
+var Recoil_RecoilValue_2 = Recoil_RecoilValue.RecoilState;
+var Recoil_RecoilValue_3 = Recoil_RecoilValue.RecoilValueReadOnly;
+var Recoil_RecoilValue_4 = Recoil_RecoilValue.isRecoilValue;
+
+var Recoil_RecoilValue$1 = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  AbstractRecoilValue: Recoil_RecoilValue_1,
+  RecoilState: Recoil_RecoilValue_2,
+  RecoilValueReadOnly: Recoil_RecoilValue_3,
+  isRecoilValue: Recoil_RecoilValue_4
+});
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @emails oncall+recoil
+ * 
+ * @format
+ */
+
+function sprintf(format, ...args) {
+  let index = 0;
+  return format.replace(/%s/g, () => String(args[index++]));
+}
+
+var sprintf_1 = sprintf;
+
+function expectationViolation(format, ...args) {
+  if (true) {
+    const message = sprintf_1.call(null, format, ...args);
+    const error = new Error(message);
+    error.name = 'Expectation Violation';
+    console.error(error);
+  }
+}
+
+var expectationViolation_1 = expectationViolation;
+
+// @oss-only
+
+
+var Recoil_expectationViolation = expectationViolation_1;
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @emails oncall+recoil
+ * 
+ * @format
+ */
+
+const gks = new Map().set('recoil_hamt_2020', true).set('recoil_sync_external_store', true).set('recoil_suppress_rerender_in_callback', true).set('recoil_memory_managament_2020', true);
+
+function Recoil_gkx_OSS(gk) {
+  var _gks$get;
+
+  return (_gks$get = gks.get(gk)) !== null && _gks$get !== void 0 ? _gks$get : false;
+}
+
+Recoil_gkx_OSS.setPass = gk => {
+  gks.set(gk, true);
+};
+
+Recoil_gkx_OSS.setFail = gk => {
+  gks.set(gk, false);
+};
+
+Recoil_gkx_OSS.clear = () => {
+  gks.clear();
+};
+
+var Recoil_gkx = Recoil_gkx_OSS; // @oss-only
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @emails oncall+recoil
+ * 
+ * @format
+ */
+/**
+ * Creates a new iterable whose output is generated by passing the input
+ * iterable's values through the mapper function.
+ */
+
+function mapIterable(iterable, callback) {
+  // Use generator to create iterable/iterator
+  return function* () {
+    let index = 0;
+
+    for (const value of iterable) {
+      yield callback(value, index++);
+    }
+  }();
+}
+
+var Recoil_mapIterable = mapIterable;
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @emails oncall+recoil
+ * 
+ * @format
+ */
+
+function recoverableViolation(message, projectName, {
+  error
+} = {}) {
+  if (true) {
+    console.error(message, error);
+  }
+
+  return null;
+}
+
+var recoverableViolation_1 = recoverableViolation;
+
+// @oss-only
+
+
+var Recoil_recoverableViolation = recoverableViolation_1;
+
+class DefaultValue {}
+
+const DEFAULT_VALUE = new DefaultValue();
+
+class RecoilValueNotReady extends Error {
+  constructor(key) {
+    super(`Tried to set the value of Recoil selector ${key} using an updater function, but it is an async selector in a pending or error state; this is not supported.`);
+  }
+
+}
+
+// flowlint-next-line unclear-type:off
+const nodes = new Map(); // flowlint-next-line unclear-type:off
+
+const recoilValues = new Map();
+/* eslint-disable no-redeclare */
+
+function recoilValuesForKeys(keys) {
+  return Recoil_mapIterable(keys, key => Recoil_nullthrows(recoilValues.get(key)));
+}
+
+function registerNode(node) {
+  if (nodes.has(node.key)) {
+    const message = `Duplicate atom key "${node.key}". This is a FATAL ERROR in
+      production. But it is safe to ignore this warning if it occurred because of
+      hot module replacement.`; // TODO Need to figure out if there is a standard/open-source equivalent to see if hot module replacement is happening:
+    // prettier-ignore
+    // @fb-only: if (__DEV__) {
+    // @fb-only: const isAcceptingUpdate = require('__debug').isAcceptingUpdate;
+    // prettier-ignore
+    // @fb-only: if (typeof isAcceptingUpdate !== 'function' || !isAcceptingUpdate()) {
+    // @fb-only: expectationViolation(message, 'recoil');
+    // @fb-only: }
+    // prettier-ignore
+    // @fb-only: } else {
+    // @fb-only: recoverableViolation(message, 'recoil');
+    // @fb-only: }
+
+    console.warn(message); // @oss-only
+  }
+
+  nodes.set(node.key, node);
+  const recoilValue = node.set == null ? new Recoil_RecoilValue$1.RecoilValueReadOnly(node.key) : new Recoil_RecoilValue$1.RecoilState(node.key);
+  recoilValues.set(node.key, recoilValue);
+  return recoilValue;
+}
+/* eslint-enable no-redeclare */
+
+
+class NodeMissingError extends Error {} // flowlint-next-line unclear-type:off
+
+
+function getNode(key) {
+  const node = nodes.get(key);
+
+  if (node == null) {
+    throw new NodeMissingError(`Missing definition for RecoilValue: "${key}""`);
+  }
+
+  return node;
+} // flowlint-next-line unclear-type:off
+
+
+function getNodeMaybe(key) {
+  return nodes.get(key);
+}
+
+const configDeletionHandlers = new Map();
+
+function deleteNodeConfigIfPossible(key) {
+  var _node$shouldDeleteCon;
+
+  if (!Recoil_gkx('recoil_memory_managament_2020')) {
+    return;
+  }
+
+  const node = nodes.get(key);
+
+  if (node !== null && node !== void 0 && (_node$shouldDeleteCon = node.shouldDeleteConfigOnRelease) !== null && _node$shouldDeleteCon !== void 0 && _node$shouldDeleteCon.call(node)) {
+    var _getConfigDeletionHan;
+
+    nodes.delete(key);
+    (_getConfigDeletionHan = getConfigDeletionHandler(key)) === null || _getConfigDeletionHan === void 0 ? void 0 : _getConfigDeletionHan();
+    configDeletionHandlers.delete(key);
+  }
+}
+
+function setConfigDeletionHandler(key, fn) {
+  if (!Recoil_gkx('recoil_memory_managament_2020')) {
+    return;
+  }
+
+  if (fn === undefined) {
+    configDeletionHandlers.delete(key);
+  } else {
+    configDeletionHandlers.set(key, fn);
+  }
+}
+
+function getConfigDeletionHandler(key) {
+  return configDeletionHandlers.get(key);
+}
+
+var Recoil_Node = {
+  nodes,
+  recoilValues,
+  registerNode,
+  getNode,
+  getNodeMaybe,
+  deleteNodeConfigIfPossible,
+  setConfigDeletionHandler,
+  getConfigDeletionHandler,
+  recoilValuesForKeys,
+  NodeMissingError,
+  DefaultValue,
+  DEFAULT_VALUE,
+  RecoilValueNotReady
+};
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @emails oncall+recoil
+ * 
+ * @format
+ */
+
+function enqueueExecution(s, f) {
+  f();
+}
+
+var Recoil_Queue = {
+  enqueueExecution
+};
+
+function createCommonjsModule(fn, module) {
+	return module = { exports: {} }, fn(module, module.exports), module.exports;
+}
+
+var hamt_1 = createCommonjsModule(function (module) {
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
+  return typeof obj;
+} : function (obj) {
+  return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+};
+/**
+    @fileOverview Hash Array Mapped Trie.
+
+    Code based on: https://github.com/exclipy/pdata
+*/
+
+
+var hamt = {}; // export
+
+/* Configuration
+ ******************************************************************************/
+
+var SIZE = 5;
+var BUCKET_SIZE = Math.pow(2, SIZE);
+var MASK = BUCKET_SIZE - 1;
+var MAX_INDEX_NODE = BUCKET_SIZE / 2;
+var MIN_ARRAY_NODE = BUCKET_SIZE / 4;
+/*
+ ******************************************************************************/
+
+var nothing = {};
+
+var constant = function constant(x) {
+  return function () {
+    return x;
+  };
+};
+/**
+    Get 32 bit hash of string.
+
+    Based on:
+    http://stackoverflow.com/questions/7616461/generate-a-hash-from-string-in-javascript-jquery
+*/
+
+
+var hash = hamt.hash = function (str) {
+  var type = typeof str === 'undefined' ? 'undefined' : _typeof(str);
+  if (type === 'number') return str;
+  if (type !== 'string') str += '';
+  var hash = 0;
+
+  for (var i = 0, len = str.length; i < len; ++i) {
+    var c = str.charCodeAt(i);
+    hash = (hash << 5) - hash + c | 0;
+  }
+
+  return hash;
+};
+/* Bit Ops
+ ******************************************************************************/
+
+/**
+    Hamming weight.
+
+    Taken from: http://jsperf.com/hamming-weight
+*/
+
+
+var popcount = function popcount(x) {
+  x -= x >> 1 & 0x55555555;
+  x = (x & 0x33333333) + (x >> 2 & 0x33333333);
+  x = x + (x >> 4) & 0x0f0f0f0f;
+  x += x >> 8;
+  x += x >> 16;
+  return x & 0x7f;
+};
+
+var hashFragment = function hashFragment(shift, h) {
+  return h >>> shift & MASK;
+};
+
+var toBitmap = function toBitmap(x) {
+  return 1 << x;
+};
+
+var fromBitmap = function fromBitmap(bitmap, bit) {
+  return popcount(bitmap & bit - 1);
+};
+/* Array Ops
+ ******************************************************************************/
+
+/**
+    Set a value in an array.
+
+    @param mutate Should the input array be mutated?
+    @param at Index to change.
+    @param v New value
+    @param arr Array.
+*/
+
+
+var arrayUpdate = function arrayUpdate(mutate, at, v, arr) {
+  var out = arr;
+
+  if (!mutate) {
+    var len = arr.length;
+    out = new Array(len);
+
+    for (var i = 0; i < len; ++i) {
+      out[i] = arr[i];
+    }
+  }
+
+  out[at] = v;
+  return out;
+};
+/**
+    Remove a value from an array.
+
+    @param mutate Should the input array be mutated?
+    @param at Index to remove.
+    @param arr Array.
+*/
+
+
+var arraySpliceOut = function arraySpliceOut(mutate, at, arr) {
+  var newLen = arr.length - 1;
+  var i = 0;
+  var g = 0;
+  var out = arr;
+
+  if (mutate) {
+    i = g = at;
+  } else {
+    out = new Array(newLen);
+
+    while (i < at) {
+      out[g++] = arr[i++];
+    }
+  }
+
+  ++i;
+
+  while (i <= newLen) {
+    out[g++] = arr[i++];
+  }
+
+  if (mutate) {
+    out.length = newLen;
+  }
+
+  return out;
+};
+/**
+    Insert a value into an array.
+
+    @param mutate Should the input array be mutated?
+    @param at Index to insert at.
+    @param v Value to insert,
+    @param arr Array.
+*/
+
+
+var arraySpliceIn = function arraySpliceIn(mutate, at, v, arr) {
+  var len = arr.length;
+
+  if (mutate) {
+    var _i = len;
+
+    while (_i >= at) {
+      arr[_i--] = arr[_i];
+    }
+
+    arr[at] = v;
+    return arr;
+  }
+
+  var i = 0,
+      g = 0;
+  var out = new Array(len + 1);
+
+  while (i < at) {
+    out[g++] = arr[i++];
+  }
+
+  out[at] = v;
+
+  while (i < len) {
+    out[++g] = arr[i++];
+  }
+
+  return out;
+};
+/* Node Structures
+ ******************************************************************************/
+
+
+var LEAF = 1;
+var COLLISION = 2;
+var INDEX = 3;
+var ARRAY = 4;
+/**
+    Empty node.
+*/
+
+var empty = {
+  __hamt_isEmpty: true
+};
+
+var isEmptyNode = function isEmptyNode(x) {
+  return x === empty || x && x.__hamt_isEmpty;
+};
+/**
+    Leaf holding a value.
+
+    @member edit Edit of the node.
+    @member hash Hash of key.
+    @member key Key.
+    @member value Value stored.
+*/
+
+
+var Leaf = function Leaf(edit, hash, key, value) {
+  return {
+    type: LEAF,
+    edit: edit,
+    hash: hash,
+    key: key,
+    value: value,
+    _modify: Leaf__modify
+  };
+};
+/**
+    Leaf holding multiple values with the same hash but different keys.
+
+    @member edit Edit of the node.
+    @member hash Hash of key.
+    @member children Array of collision children node.
+*/
+
+
+var Collision = function Collision(edit, hash, children) {
+  return {
+    type: COLLISION,
+    edit: edit,
+    hash: hash,
+    children: children,
+    _modify: Collision__modify
+  };
+};
+/**
+    Internal node with a sparse set of children.
+
+    Uses a bitmap and array to pack children.
+
+  @member edit Edit of the node.
+    @member mask Bitmap that encode the positions of children in the array.
+    @member children Array of child nodes.
+*/
+
+
+var IndexedNode = function IndexedNode(edit, mask, children) {
+  return {
+    type: INDEX,
+    edit: edit,
+    mask: mask,
+    children: children,
+    _modify: IndexedNode__modify
+  };
+};
+/**
+    Internal node with many children.
+
+    @member edit Edit of the node.
+    @member size Number of children.
+    @member children Array of child nodes.
+*/
+
+
+var ArrayNode = function ArrayNode(edit, size, children) {
+  return {
+    type: ARRAY,
+    edit: edit,
+    size: size,
+    children: children,
+    _modify: ArrayNode__modify
+  };
+};
+/**
+    Is `node` a leaf node?
+*/
+
+
+var isLeaf = function isLeaf(node) {
+  return node === empty || node.type === LEAF || node.type === COLLISION;
+};
+/* Internal node operations.
+ ******************************************************************************/
+
+/**
+    Expand an indexed node into an array node.
+
+  @param edit Current edit.
+    @param frag Index of added child.
+    @param child Added child.
+    @param mask Index node mask before child added.
+    @param subNodes Index node children before child added.
+*/
+
+
+var expand = function expand(edit, frag, child, bitmap, subNodes) {
+  var arr = [];
+  var bit = bitmap;
+  var count = 0;
+
+  for (var i = 0; bit; ++i) {
+    if (bit & 1) arr[i] = subNodes[count++];
+    bit >>>= 1;
+  }
+
+  arr[frag] = child;
+  return ArrayNode(edit, count + 1, arr);
+};
+/**
+    Collapse an array node into a indexed node.
+
+  @param edit Current edit.
+    @param count Number of elements in new array.
+    @param removed Index of removed element.
+    @param elements Array node children before remove.
+*/
+
+
+var pack = function pack(edit, count, removed, elements) {
+  var children = new Array(count - 1);
+  var g = 0;
+  var bitmap = 0;
+
+  for (var i = 0, len = elements.length; i < len; ++i) {
+    if (i !== removed) {
+      var elem = elements[i];
+
+      if (elem && !isEmptyNode(elem)) {
+        children[g++] = elem;
+        bitmap |= 1 << i;
+      }
+    }
+  }
+
+  return IndexedNode(edit, bitmap, children);
+};
+/**
+    Merge two leaf nodes.
+
+    @param shift Current shift.
+    @param h1 Node 1 hash.
+    @param n1 Node 1.
+    @param h2 Node 2 hash.
+    @param n2 Node 2.
+*/
+
+
+var mergeLeaves = function mergeLeaves(edit, shift, h1, n1, h2, n2) {
+  if (h1 === h2) return Collision(edit, h1, [n2, n1]);
+  var subH1 = hashFragment(shift, h1);
+  var subH2 = hashFragment(shift, h2);
+  return IndexedNode(edit, toBitmap(subH1) | toBitmap(subH2), subH1 === subH2 ? [mergeLeaves(edit, shift + SIZE, h1, n1, h2, n2)] : subH1 < subH2 ? [n1, n2] : [n2, n1]);
+};
+/**
+    Update an entry in a collision list.
+
+    @param mutate Should mutation be used?
+    @param edit Current edit.
+    @param keyEq Key compare function.
+    @param hash Hash of collision.
+    @param list Collision list.
+    @param f Update function.
+    @param k Key to update.
+    @param size Size ref.
+*/
+
+
+var updateCollisionList = function updateCollisionList(mutate, edit, keyEq, h, list, f, k, size) {
+  var len = list.length;
+
+  for (var i = 0; i < len; ++i) {
+    var child = list[i];
+
+    if (keyEq(k, child.key)) {
+      var value = child.value;
+
+      var _newValue = f(value);
+
+      if (_newValue === value) return list;
+
+      if (_newValue === nothing) {
+        --size.value;
+        return arraySpliceOut(mutate, i, list);
+      }
+
+      return arrayUpdate(mutate, i, Leaf(edit, h, k, _newValue), list);
+    }
+  }
+
+  var newValue = f();
+  if (newValue === nothing) return list;
+  ++size.value;
+  return arrayUpdate(mutate, len, Leaf(edit, h, k, newValue), list);
+};
+
+var canEditNode = function canEditNode(edit, node) {
+  return edit === node.edit;
+};
+/* Editing
+ ******************************************************************************/
+
+
+var Leaf__modify = function Leaf__modify(edit, keyEq, shift, f, h, k, size) {
+  if (keyEq(k, this.key)) {
+    var _v = f(this.value);
+
+    if (_v === this.value) return this;else if (_v === nothing) {
+      --size.value;
+      return empty;
+    }
+
+    if (canEditNode(edit, this)) {
+      this.value = _v;
+      return this;
+    }
+
+    return Leaf(edit, h, k, _v);
+  }
+
+  var v = f();
+  if (v === nothing) return this;
+  ++size.value;
+  return mergeLeaves(edit, shift, this.hash, this, h, Leaf(edit, h, k, v));
+};
+
+var Collision__modify = function Collision__modify(edit, keyEq, shift, f, h, k, size) {
+  if (h === this.hash) {
+    var canEdit = canEditNode(edit, this);
+    var list = updateCollisionList(canEdit, edit, keyEq, this.hash, this.children, f, k, size);
+    if (list === this.children) return this;
+    return list.length > 1 ? Collision(edit, this.hash, list) : list[0]; // collapse single element collision list
+  }
+
+  var v = f();
+  if (v === nothing) return this;
+  ++size.value;
+  return mergeLeaves(edit, shift, this.hash, this, h, Leaf(edit, h, k, v));
+};
+
+var IndexedNode__modify = function IndexedNode__modify(edit, keyEq, shift, f, h, k, size) {
+  var mask = this.mask;
+  var children = this.children;
+  var frag = hashFragment(shift, h);
+  var bit = toBitmap(frag);
+  var indx = fromBitmap(mask, bit);
+  var exists = mask & bit;
+  var current = exists ? children[indx] : empty;
+
+  var child = current._modify(edit, keyEq, shift + SIZE, f, h, k, size);
+
+  if (current === child) return this;
+  var canEdit = canEditNode(edit, this);
+  var bitmap = mask;
+  var newChildren = void 0;
+
+  if (exists && isEmptyNode(child)) {
+    // remove
+    bitmap &= ~bit;
+    if (!bitmap) return empty;
+    if (children.length <= 2 && isLeaf(children[indx ^ 1])) return children[indx ^ 1]; // collapse
+
+    newChildren = arraySpliceOut(canEdit, indx, children);
+  } else if (!exists && !isEmptyNode(child)) {
+    // add
+    if (children.length >= MAX_INDEX_NODE) return expand(edit, frag, child, mask, children);
+    bitmap |= bit;
+    newChildren = arraySpliceIn(canEdit, indx, child, children);
+  } else {
+    // modify
+    newChildren = arrayUpdate(canEdit, indx, child, children);
+  }
+
+  if (canEdit) {
+    this.mask = bitmap;
+    this.children = newChildren;
+    return this;
+  }
+
+  return IndexedNode(edit, bitmap, newChildren);
+};
+
+var ArrayNode__modify = function ArrayNode__modify(edit, keyEq, shift, f, h, k, size) {
+  var count = this.size;
+  var children = this.children;
+  var frag = hashFragment(shift, h);
+  var child = children[frag];
+
+  var newChild = (child || empty)._modify(edit, keyEq, shift + SIZE, f, h, k, size);
+
+  if (child === newChild) return this;
+  var canEdit = canEditNode(edit, this);
+  var newChildren = void 0;
+
+  if (isEmptyNode(child) && !isEmptyNode(newChild)) {
+    // add
+    ++count;
+    newChildren = arrayUpdate(canEdit, frag, newChild, children);
+  } else if (!isEmptyNode(child) && isEmptyNode(newChild)) {
+    // remove
+    --count;
+    if (count <= MIN_ARRAY_NODE) return pack(edit, count, frag, children);
+    newChildren = arrayUpdate(canEdit, frag, empty, children);
+  } else {
+    // modify
+    newChildren = arrayUpdate(canEdit, frag, newChild, children);
+  }
+
+  if (canEdit) {
+    this.size = count;
+    this.children = newChildren;
+    return this;
+  }
+
+  return ArrayNode(edit, count, newChildren);
+};
+
+empty._modify = function (edit, keyEq, shift, f, h, k, size) {
+  var v = f();
+  if (v === nothing) return empty;
+  ++size.value;
+  return Leaf(edit, h, k, v);
+};
+/*
+ ******************************************************************************/
+
+
+function Map(editable, edit, config, root, size) {
+  this._editable = editable;
+  this._edit = edit;
+  this._config = config;
+  this._root = root;
+  this._size = size;
+}
+
+Map.prototype.setTree = function (newRoot, newSize) {
+  if (this._editable) {
+    this._root = newRoot;
+    this._size = newSize;
+    return this;
+  }
+
+  return newRoot === this._root ? this : new Map(this._editable, this._edit, this._config, newRoot, newSize);
+};
+/* Queries
+ ******************************************************************************/
+
+/**
+    Lookup the value for `key` in `map` using a custom `hash`.
+
+    Returns the value or `alt` if none.
+*/
+
+
+var tryGetHash = hamt.tryGetHash = function (alt, hash, key, map) {
+  var node = map._root;
+  var shift = 0;
+  var keyEq = map._config.keyEq;
+
+  while (true) {
+    switch (node.type) {
+      case LEAF:
+        {
+          return keyEq(key, node.key) ? node.value : alt;
+        }
+
+      case COLLISION:
+        {
+          if (hash === node.hash) {
+            var children = node.children;
+
+            for (var i = 0, len = children.length; i < len; ++i) {
+              var child = children[i];
+              if (keyEq(key, child.key)) return child.value;
+            }
+          }
+
+          return alt;
+        }
+
+      case INDEX:
+        {
+          var frag = hashFragment(shift, hash);
+          var bit = toBitmap(frag);
+
+          if (node.mask & bit) {
+            node = node.children[fromBitmap(node.mask, bit)];
+            shift += SIZE;
+            break;
+          }
+
+          return alt;
+        }
+
+      case ARRAY:
+        {
+          node = node.children[hashFragment(shift, hash)];
+
+          if (node) {
+            shift += SIZE;
+            break;
+          }
+
+          return alt;
+        }
+
+      default:
+        return alt;
+    }
+  }
+};
+
+Map.prototype.tryGetHash = function (alt, hash, key) {
+  return tryGetHash(alt, hash, key, this);
+};
+/**
+    Lookup the value for `key` in `map` using internal hash function.
+
+    @see `tryGetHash`
+*/
+
+
+var tryGet = hamt.tryGet = function (alt, key, map) {
+  return tryGetHash(alt, map._config.hash(key), key, map);
+};
+
+Map.prototype.tryGet = function (alt, key) {
+  return tryGet(alt, key, this);
+};
+/**
+    Lookup the value for `key` in `map` using a custom `hash`.
+
+    Returns the value or `undefined` if none.
+*/
+
+
+var getHash = hamt.getHash = function (hash, key, map) {
+  return tryGetHash(undefined, hash, key, map);
+};
+
+Map.prototype.getHash = function (hash, key) {
+  return getHash(hash, key, this);
+};
+/**
+    Lookup the value for `key` in `map` using internal hash function.
+
+    @see `get`
+*/
+
+
+var get = hamt.get = function (key, map) {
+  return tryGetHash(undefined, map._config.hash(key), key, map);
+};
+
+Map.prototype.get = function (key, alt) {
+  return tryGet(alt, key, this);
+};
+/**
+    Does an entry exist for `key` in `map`? Uses custom `hash`.
+*/
+
+
+var hasHash = hamt.has = function (hash, key, map) {
+  return tryGetHash(nothing, hash, key, map) !== nothing;
+};
+
+Map.prototype.hasHash = function (hash, key) {
+  return hasHash(hash, key, this);
+};
+/**
+    Does an entry exist for `key` in `map`? Uses internal hash function.
+*/
+
+
+var has = hamt.has = function (key, map) {
+  return hasHash(map._config.hash(key), key, map);
+};
+
+Map.prototype.has = function (key) {
+  return has(key, this);
+};
+
+var defKeyCompare = function defKeyCompare(x, y) {
+  return x === y;
+};
+/**
+    Create an empty map.
+
+    @param config Configuration.
+*/
+
+
+hamt.make = function (config) {
+  return new Map(0, 0, {
+    keyEq: config && config.keyEq || defKeyCompare,
+    hash: config && config.hash || hash
+  }, empty, 0);
+};
+/**
+    Empty map.
+*/
+
+
+hamt.empty = hamt.make();
+/**
+    Does `map` contain any elements?
+*/
+
+var isEmpty = hamt.isEmpty = function (map) {
+  return map && !!isEmptyNode(map._root);
+};
+
+Map.prototype.isEmpty = function () {
+  return isEmpty(this);
+};
+/* Updates
+ ******************************************************************************/
+
+/**
+    Alter the value stored for `key` in `map` using function `f` using
+    custom hash.
+
+    `f` is invoked with the current value for `k` if it exists,
+    or no arguments if no such value exists. `modify` will always either
+    update or insert a value into the map.
+
+    Returns a map with the modified value. Does not alter `map`.
+*/
+
+
+var modifyHash = hamt.modifyHash = function (f, hash, key, map) {
+  var size = {
+    value: map._size
+  };
+
+  var newRoot = map._root._modify(map._editable ? map._edit : NaN, map._config.keyEq, 0, f, hash, key, size);
+
+  return map.setTree(newRoot, size.value);
+};
+
+Map.prototype.modifyHash = function (hash, key, f) {
+  return modifyHash(f, hash, key, this);
+};
+/**
+    Alter the value stored for `key` in `map` using function `f` using
+    internal hash function.
+
+    @see `modifyHash`
+*/
+
+
+var modify = hamt.modify = function (f, key, map) {
+  return modifyHash(f, map._config.hash(key), key, map);
+};
+
+Map.prototype.modify = function (key, f) {
+  return modify(f, key, this);
+};
+/**
+    Store `value` for `key` in `map` using custom `hash`.
+
+    Returns a map with the modified value. Does not alter `map`.
+*/
+
+
+var setHash = hamt.setHash = function (hash, key, value, map) {
+  return modifyHash(constant(value), hash, key, map);
+};
+
+Map.prototype.setHash = function (hash, key, value) {
+  return setHash(hash, key, value, this);
+};
+/**
+    Store `value` for `key` in `map` using internal hash function.
+
+    @see `setHash`
+*/
+
+
+var set = hamt.set = function (key, value, map) {
+  return setHash(map._config.hash(key), key, value, map);
+};
+
+Map.prototype.set = function (key, value) {
+  return set(key, value, this);
+};
+/**
+    Remove the entry for `key` in `map`.
+
+    Returns a map with the value removed. Does not alter `map`.
+*/
+
+
+var del = constant(nothing);
+
+var removeHash = hamt.removeHash = function (hash, key, map) {
+  return modifyHash(del, hash, key, map);
+};
+
+Map.prototype.removeHash = Map.prototype.deleteHash = function (hash, key) {
+  return removeHash(hash, key, this);
+};
+/**
+    Remove the entry for `key` in `map` using internal hash function.
+
+    @see `removeHash`
+*/
+
+
+var remove = hamt.remove = function (key, map) {
+  return removeHash(map._config.hash(key), key, map);
+};
+
+Map.prototype.remove = Map.prototype.delete = function (key) {
+  return remove(key, this);
+};
+/* Mutation
+ ******************************************************************************/
+
+/**
+    Mark `map` as mutable.
+ */
+
+
+var beginMutation = hamt.beginMutation = function (map) {
+  return new Map(map._editable + 1, map._edit + 1, map._config, map._root, map._size);
+};
+
+Map.prototype.beginMutation = function () {
+  return beginMutation(this);
+};
+/**
+    Mark `map` as immutable.
+ */
+
+
+var endMutation = hamt.endMutation = function (map) {
+  map._editable = map._editable && map._editable - 1;
+  return map;
+};
+
+Map.prototype.endMutation = function () {
+  return endMutation(this);
+};
+/**
+    Mutate `map` within the context of `f`.
+    @param f
+    @param map HAMT
+*/
+
+
+var mutate = hamt.mutate = function (f, map) {
+  var transient = beginMutation(map);
+  f(transient);
+  return endMutation(transient);
+};
+
+Map.prototype.mutate = function (f) {
+  return mutate(f, this);
+};
+/* Traversal
+ ******************************************************************************/
+
+/**
+    Apply a continuation.
+*/
+
+
+var appk = function appk(k) {
+  return k && lazyVisitChildren(k[0], k[1], k[2], k[3], k[4]);
+};
+/**
+    Recursively visit all values stored in an array of nodes lazily.
+*/
+
+
+var lazyVisitChildren = function lazyVisitChildren(len, children, i, f, k) {
+  while (i < len) {
+    var child = children[i++];
+    if (child && !isEmptyNode(child)) return lazyVisit(child, f, [len, children, i, f, k]);
+  }
+
+  return appk(k);
+};
+/**
+    Recursively visit all values stored in `node` lazily.
+*/
+
+
+var lazyVisit = function lazyVisit(node, f, k) {
+  switch (node.type) {
+    case LEAF:
+      return {
+        value: f(node),
+        rest: k
+      };
+
+    case COLLISION:
+    case ARRAY:
+    case INDEX:
+      var children = node.children;
+      return lazyVisitChildren(children.length, children, 0, f, k);
+
+    default:
+      return appk(k);
+  }
+};
+
+var DONE = {
+  done: true
+};
+/**
+    Javascript iterator over a map.
+*/
+
+function MapIterator(v) {
+  this.v = v;
+}
+
+MapIterator.prototype.next = function () {
+  if (!this.v) return DONE;
+  var v0 = this.v;
+  this.v = appk(v0.rest);
+  return v0;
+};
+
+MapIterator.prototype[Symbol.iterator] = function () {
+  return this;
+};
+/**
+    Lazily visit each value in map with function `f`.
+*/
+
+
+var visit = function visit(map, f) {
+  return new MapIterator(lazyVisit(map._root, f));
+};
+/**
+    Get a Javascsript iterator of `map`.
+
+    Iterates over `[key, value]` arrays.
+*/
+
+
+var buildPairs = function buildPairs(x) {
+  return [x.key, x.value];
+};
+
+var entries = hamt.entries = function (map) {
+  return visit(map, buildPairs);
+};
+
+Map.prototype.entries = Map.prototype[Symbol.iterator] = function () {
+  return entries(this);
+};
+/**
+    Get array of all keys in `map`.
+
+    Order is not guaranteed.
+*/
+
+
+var buildKeys = function buildKeys(x) {
+  return x.key;
+};
+
+var keys = hamt.keys = function (map) {
+  return visit(map, buildKeys);
+};
+
+Map.prototype.keys = function () {
+  return keys(this);
+};
+/**
+    Get array of all values in `map`.
+
+    Order is not guaranteed, duplicates are preserved.
+*/
+
+
+var buildValues = function buildValues(x) {
+  return x.value;
+};
+
+var values = hamt.values = Map.prototype.values = function (map) {
+  return visit(map, buildValues);
+};
+
+Map.prototype.values = function () {
+  return values(this);
+};
+/* Fold
+ ******************************************************************************/
+
+/**
+    Visit every entry in the map, aggregating data.
+
+    Order of nodes is not guaranteed.
+
+    @param f Function mapping accumulated value, value, and key to new value.
+    @param z Starting value.
+    @param m HAMT
+*/
+
+
+var fold = hamt.fold = function (f, z, m) {
+  var root = m._root;
+  if (root.type === LEAF) return f(z, root.value, root.key);
+  var toVisit = [root.children];
+  var children = void 0;
+
+  while (children = toVisit.pop()) {
+    for (var i = 0, len = children.length; i < len;) {
+      var child = children[i++];
+
+      if (child && child.type) {
+        if (child.type === LEAF) z = f(z, child.value, child.key);else toVisit.push(child.children);
+      }
+    }
+  }
+
+  return z;
+};
+
+Map.prototype.fold = function (f, z) {
+  return fold(f, z, this);
+};
+/**
+    Visit every entry in the map, aggregating data.
+
+    Order of nodes is not guaranteed.
+
+    @param f Function invoked with value and key
+    @param map HAMT
+*/
+
+
+var forEach = hamt.forEach = function (f, map) {
+  return fold(function (_, value, key) {
+    return f(value, key, map);
+  }, null, map);
+};
+
+Map.prototype.forEach = function (f) {
+  return forEach(f, this);
+};
+/* Aggregate
+ ******************************************************************************/
+
+/**
+    Get the number of entries in `map`.
+*/
+
+
+var count = hamt.count = function (map) {
+  return map._size;
+};
+
+Map.prototype.count = function () {
+  return count(this);
+};
+
+Object.defineProperty(Map.prototype, 'size', {
+  get: Map.prototype.count
+});
+/* Export
+ ******************************************************************************/
+
+if ( module.exports) {
+  module.exports = hamt;
+} else {
+  undefined.hamt = hamt;
+}
+});
+
+class BuiltInMap {
+  constructor(existing) {
+    _defineProperty(this, "_map", void 0);
+
+    this._map = new Map(existing === null || existing === void 0 ? void 0 : existing.entries());
+  }
+
+  keys() {
+    return this._map.keys();
+  }
+
+  entries() {
+    return this._map.entries();
+  }
+
+  get(k) {
+    return this._map.get(k);
+  }
+
+  has(k) {
+    return this._map.has(k);
+  }
+
+  set(k, v) {
+    this._map.set(k, v);
+
+    return this;
+  }
+
+  delete(k) {
+    this._map.delete(k);
+
+    return this;
+  }
+
+  clone() {
+    return persistentMap(this);
+  }
+
+  toMap() {
+    return new Map(this._map);
+  }
+
+}
+
+class HashArrayMappedTrieMap {
+  // Because hamt.empty is not a function there is no way to introduce type
+  // parameters on it, so empty is typed as HAMTPlusMap<string, mixed>.
+  // $FlowIssue
+  constructor(existing) {
+    _defineProperty(this, "_hamt", hamt_1.empty.beginMutation());
+
+    if (existing instanceof HashArrayMappedTrieMap) {
+      const h = existing._hamt.endMutation();
+
+      existing._hamt = h.beginMutation();
+      this._hamt = h.beginMutation();
+    } else if (existing) {
+      for (const [k, v] of existing.entries()) {
+        this._hamt.set(k, v);
+      }
+    }
+  }
+
+  keys() {
+    return this._hamt.keys();
+  }
+
+  entries() {
+    return this._hamt.entries();
+  }
+
+  get(k) {
+    return this._hamt.get(k);
+  }
+
+  has(k) {
+    return this._hamt.has(k);
+  }
+
+  set(k, v) {
+    this._hamt.set(k, v);
+
+    return this;
+  }
+
+  delete(k) {
+    this._hamt.delete(k);
+
+    return this;
+  }
+
+  clone() {
+    return persistentMap(this);
+  }
+
+  toMap() {
+    return new Map(this._hamt);
+  }
+
+}
+
+function persistentMap(existing) {
+  if (Recoil_gkx('recoil_hamt_2020')) {
+    return new HashArrayMappedTrieMap(existing);
+  } else {
+    return new BuiltInMap(existing);
+  }
+}
+
+var Recoil_PersistentMap = {
+  persistentMap
+};
+
+var Recoil_PersistentMap_1 = Recoil_PersistentMap.persistentMap;
+
+var Recoil_PersistentMap$1 = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  persistentMap: Recoil_PersistentMap_1
+});
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @emails oncall+recoil
+ * 
+ * @format
+ */
+/**
+ * Returns a set containing all of the values from the first set that are not
+ * present in any of the subsequent sets.
+ *
+ * Note: this is written procedurally (i.e., without filterSet) for performant
+ * use in tight loops.
+ */
+
+function differenceSets(set, ...setsWithValuesToRemove) {
+  const ret = new Set();
+
+  FIRST: for (const value of set) {
+    for (const otherSet of setsWithValuesToRemove) {
+      if (otherSet.has(value)) {
+        continue FIRST;
+      }
+    }
+
+    ret.add(value);
+  }
+
+  return ret;
+}
+
+var Recoil_differenceSets = differenceSets;
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @emails oncall+recoil
+ * 
+ * @format
+ */
+/**
+ * Returns a new Map object with the same keys as the original, but with the
+ * values replaced with the output of the given callback function.
+ */
+
+function mapMap(map, callback) {
+  const result = new Map();
+  map.forEach((value, key) => {
+    result.set(key, callback(value, key));
+  });
+  return result;
+}
+
+var Recoil_mapMap = mapMap;
+
+function makeGraph() {
+  return {
+    nodeDeps: new Map(),
+    nodeToNodeSubscriptions: new Map()
+  };
+}
+
+function cloneGraph(graph) {
+  return {
+    nodeDeps: Recoil_mapMap(graph.nodeDeps, s => new Set(s)),
+    nodeToNodeSubscriptions: Recoil_mapMap(graph.nodeToNodeSubscriptions, s => new Set(s))
+  };
+} // Note that this overwrites the deps of existing nodes, rather than unioning
+// the new deps with the old deps.
+
+
+function mergeDependencyMapIntoGraph(deps, graph, // If olderGraph is given then we will not overwrite changes made to the given
+// graph compared with olderGraph:
+olderGraph) {
+  const {
+    nodeDeps,
+    nodeToNodeSubscriptions
+  } = graph;
+  deps.forEach((upstreams, downstream) => {
+    const existingUpstreams = nodeDeps.get(downstream);
+
+    if (existingUpstreams && olderGraph && existingUpstreams !== olderGraph.nodeDeps.get(downstream)) {
+      return;
+    } // Update nodeDeps:
+
+
+    nodeDeps.set(downstream, new Set(upstreams)); // Add new deps to nodeToNodeSubscriptions:
+
+    const addedUpstreams = existingUpstreams == null ? upstreams : Recoil_differenceSets(upstreams, existingUpstreams);
+    addedUpstreams.forEach(upstream => {
+      if (!nodeToNodeSubscriptions.has(upstream)) {
+        nodeToNodeSubscriptions.set(upstream, new Set());
+      }
+
+      const existing = Recoil_nullthrows(nodeToNodeSubscriptions.get(upstream));
+      existing.add(downstream);
+    }); // Remove removed deps from nodeToNodeSubscriptions:
+
+    if (existingUpstreams) {
+      const removedUpstreams = Recoil_differenceSets(existingUpstreams, upstreams);
+      removedUpstreams.forEach(upstream => {
+        if (!nodeToNodeSubscriptions.has(upstream)) {
+          return;
+        }
+
+        const existing = Recoil_nullthrows(nodeToNodeSubscriptions.get(upstream));
+        existing.delete(downstream);
+
+        if (existing.size === 0) {
+          nodeToNodeSubscriptions.delete(upstream);
+        }
+      });
+    }
+  });
+}
+
+function saveDependencyMapToStore(dependencyMap, store, version) {
+  var _storeState$nextTree, _storeState$previousT, _storeState$previousT2, _storeState$previousT3;
+
+  const storeState = store.getState();
+
+  if (!(version === storeState.currentTree.version || version === ((_storeState$nextTree = storeState.nextTree) === null || _storeState$nextTree === void 0 ? void 0 : _storeState$nextTree.version) || version === ((_storeState$previousT = storeState.previousTree) === null || _storeState$previousT === void 0 ? void 0 : _storeState$previousT.version))) {
+    Recoil_recoverableViolation('Tried to save dependencies to a discarded tree');
+  } // Merge the dependencies discovered into the store's dependency map
+  // for the version that was read:
+
+
+  const graph = store.getGraph(version);
+  mergeDependencyMapIntoGraph(dependencyMap, graph); // If this version is not the latest version, also write these dependencies
+  // into later versions if they don't already have their own:
+
+  if (version === ((_storeState$previousT2 = storeState.previousTree) === null || _storeState$previousT2 === void 0 ? void 0 : _storeState$previousT2.version)) {
+    const currentGraph = store.getGraph(storeState.currentTree.version);
+    mergeDependencyMapIntoGraph(dependencyMap, currentGraph, graph);
+  }
+
+  if (version === ((_storeState$previousT3 = storeState.previousTree) === null || _storeState$previousT3 === void 0 ? void 0 : _storeState$previousT3.version) || version === storeState.currentTree.version) {
+    var _storeState$nextTree2;
+
+    const nextVersion = (_storeState$nextTree2 = storeState.nextTree) === null || _storeState$nextTree2 === void 0 ? void 0 : _storeState$nextTree2.version;
+
+    if (nextVersion !== undefined) {
+      const nextGraph = store.getGraph(nextVersion);
+      mergeDependencyMapIntoGraph(dependencyMap, nextGraph, graph);
+    }
+  }
+}
+
+function mergeDepsIntoDependencyMap(from, into) {
+  from.forEach((upstreamDeps, downstreamNode) => {
+    if (!into.has(downstreamNode)) {
+      into.set(downstreamNode, new Set());
+    }
+
+    const deps = Recoil_nullthrows(into.get(downstreamNode));
+    upstreamDeps.forEach(dep => deps.add(dep));
+  });
+}
+
+function addToDependencyMap(downstream, upstream, dependencyMap) {
+  if (!dependencyMap.has(downstream)) {
+    dependencyMap.set(downstream, new Set());
+  }
+
+  Recoil_nullthrows(dependencyMap.get(downstream)).add(upstream);
+}
+
+var Recoil_Graph = {
+  addToDependencyMap,
+  cloneGraph,
+  graph: makeGraph,
+  mergeDepsIntoDependencyMap,
+  saveDependencyMapToStore
+};
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @emails oncall+recoil
+ * 
+ * @format
+ */
+
+let nextTreeStateVersion = 0;
+
+const getNextTreeStateVersion = () => nextTreeStateVersion++;
+
+let nextStoreID = 0;
+
+const getNextStoreID = () => nextStoreID++;
+
+let nextComponentID = 0;
+
+const getNextComponentID = () => nextComponentID++;
+
+var Recoil_Keys = {
+  getNextTreeStateVersion,
+  getNextStoreID,
+  getNextComponentID
+};
+
+const {
+  persistentMap: persistentMap$1
+} = Recoil_PersistentMap$1;
+
+const {
+  graph
+} = Recoil_Graph;
+
+const {
+  getNextTreeStateVersion: getNextTreeStateVersion$1
+} = Recoil_Keys;
+
+function makeEmptyTreeState() {
+  const version = getNextTreeStateVersion$1();
+  return {
+    version,
+    stateID: version,
+    transactionMetadata: {},
+    dirtyAtoms: new Set(),
+    atomValues: persistentMap$1(),
+    nonvalidatedAtoms: persistentMap$1()
+  };
+}
+
+function makeEmptyStoreState() {
+  const currentTree = makeEmptyTreeState();
+  return {
+    currentTree,
+    nextTree: null,
+    previousTree: null,
+    commitDepth: 0,
+    knownAtoms: new Set(),
+    knownSelectors: new Set(),
+    transactionSubscriptions: new Map(),
+    nodeTransactionSubscriptions: new Map(),
+    nodeToComponentSubscriptions: new Map(),
+    queuedComponentCallbacks_DEPRECATED: [],
+    suspendedComponentResolvers: new Set(),
+    graphsByVersion: new Map().set(currentTree.version, graph()),
+    retention: {
+      referenceCounts: new Map(),
+      nodesRetainedByZone: new Map(),
+      retainablesToCheckForRelease: new Set()
+    },
+    nodeCleanupFunctions: new Map()
+  };
+}
+
+var Recoil_State = {
+  makeEmptyTreeState,
+  makeEmptyStoreState,
+  getNextTreeStateVersion: getNextTreeStateVersion$1
+};
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @emails oncall+recoil
+ * 
+ * @format
+ */
+
+class RetentionZone {}
+
+function retentionZone() {
+  return new RetentionZone();
+}
+
+var Recoil_RetentionZone = {
+  RetentionZone,
+  retentionZone
+};
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * Utilities for working with built-in Maps and Sets without mutating them.
+ *
+ * @emails oncall+recoil
+ * 
+ * @format
+ */
+
+function setByAddingToSet(set, v) {
+  const next = new Set(set);
+  next.add(v);
+  return next;
+}
+
+function setByDeletingFromSet(set, v) {
+  const next = new Set(set);
+  next.delete(v);
+  return next;
+}
+
+function mapBySettingInMap(map, k, v) {
+  const next = new Map(map);
+  next.set(k, v);
+  return next;
+}
+
+function mapByUpdatingInMap(map, k, updater) {
+  const next = new Map(map);
+  next.set(k, updater(next.get(k)));
+  return next;
+}
+
+function mapByDeletingFromMap(map, k) {
+  const next = new Map(map);
+  next.delete(k);
+  return next;
+}
+
+function mapByDeletingMultipleFromMap(map, ks) {
+  const next = new Map(map);
+  ks.forEach(k => next.delete(k));
+  return next;
+}
+
+var Recoil_CopyOnWrite = {
+  setByAddingToSet,
+  setByDeletingFromSet,
+  mapBySettingInMap,
+  mapByUpdatingInMap,
+  mapByDeletingFromMap,
+  mapByDeletingMultipleFromMap
+};
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @emails oncall+recoil
+ * 
+ * @format
+ */
+/**
+ * Creates a new iterable whose output is generated by passing the input
+ * iterable's values through the filter function.
+ */
+
+function* filterIterable(iterable, predicate) {
+  // Use generator to create iterable/iterator
+  let index = 0;
+
+  for (const value of iterable) {
+    if (predicate(value, index++)) {
+      yield value;
+    }
+  }
+}
+
+var Recoil_filterIterable = filterIterable;
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @emails oncall+recoil
+ * 
+ * @format
+ */
+/**
+ * Return a proxy object based on the provided base and factories objects.
+ * The proxy will include all properties of the base object as-is.
+ * The factories object contains callbacks to obtain the values of the properies
+ * for its keys.
+ *
+ * This is useful for providing users an object where some properties may be
+ * lazily computed only on first access.
+ */
+// $FlowIssue[unclear-type]
+
+function lazyProxy(base, factories) {
+  const proxy = new Proxy(base, {
+    // Compute and cache lazy property if not already done.
+    get: (target, prop) => {
+      if (!(prop in target) && prop in factories) {
+        target[prop] = factories[prop]();
+      }
+
+      return target[prop];
+    },
+    // This method allows user to iterate keys as normal
+    ownKeys: target => {
+
+      return Object.keys(target);
+    }
+  }); // $FlowIssue[incompatible-return]
+
+  return proxy;
+}
+
+var Recoil_lazyProxy = lazyProxy;
+
+const {
+  getNode: getNode$1,
+  getNodeMaybe: getNodeMaybe$1,
+  recoilValuesForKeys: recoilValuesForKeys$1
+} = Recoil_Node;
+
+const {
+  RetentionZone: RetentionZone$1
+} = Recoil_RetentionZone;
+
+const {
+  setByAddingToSet: setByAddingToSet$1
+} = Recoil_CopyOnWrite;
+
+
+
+
+
+
+
+ // flowlint-next-line unclear-type:off
+
+
+const emptySet = Object.freeze(new Set());
+
+class ReadOnlyRecoilValueError extends Error {}
+
+function initializeRetentionForNode(store, nodeKey, retainedBy) {
+  if (!Recoil_gkx('recoil_memory_managament_2020')) {
+    return () => undefined;
+  }
+
+  const {
+    nodesRetainedByZone
+  } = store.getState().retention;
+
+  function addToZone(zone) {
+    let set = nodesRetainedByZone.get(zone);
+
+    if (!set) {
+      nodesRetainedByZone.set(zone, set = new Set());
+    }
+
+    set.add(nodeKey);
+  }
+
+  if (retainedBy instanceof RetentionZone$1) {
+    addToZone(retainedBy);
+  } else if (Array.isArray(retainedBy)) {
+    for (const zone of retainedBy) {
+      addToZone(zone);
+    }
+  }
+
+  return () => {
+    if (!Recoil_gkx('recoil_memory_managament_2020')) {
+      return;
+    }
+
+    const {
+      retention
+    } = store.getState();
+
+    function deleteFromZone(zone) {
+      const set = retention.nodesRetainedByZone.get(zone);
+      set === null || set === void 0 ? void 0 : set.delete(nodeKey);
+
+      if (set && set.size === 0) {
+        retention.nodesRetainedByZone.delete(zone);
+      }
+    }
+
+    if (retainedBy instanceof RetentionZone$1) {
+      deleteFromZone(retainedBy);
+    } else if (Array.isArray(retainedBy)) {
+      for (const zone of retainedBy) {
+        deleteFromZone(zone);
+      }
+    }
+  };
+}
+
+function initializeNodeIfNewToStore(store, treeState, key, trigger) {
+  const storeState = store.getState();
+
+  if (storeState.nodeCleanupFunctions.has(key)) {
+    return;
+  }
+
+  const node = getNode$1(key);
+  const retentionCleanup = initializeRetentionForNode(store, key, node.retainedBy);
+  const nodeCleanup = node.init(store, treeState, trigger);
+  storeState.nodeCleanupFunctions.set(key, () => {
+    nodeCleanup();
+    retentionCleanup();
+  });
+}
+
+function initializeNode(store, key, trigger) {
+  initializeNodeIfNewToStore(store, store.getState().currentTree, key, trigger);
+}
+
+function cleanUpNode(store, key) {
+  var _state$nodeCleanupFun;
+
+  const state = store.getState();
+  (_state$nodeCleanupFun = state.nodeCleanupFunctions.get(key)) === null || _state$nodeCleanupFun === void 0 ? void 0 : _state$nodeCleanupFun();
+  state.nodeCleanupFunctions.delete(key);
+} // Get the current value loadable of a node and update the state.
+// Update dependencies and subscriptions for selectors.
+// Update saved value validation for atoms.
+
+
+function getNodeLoadable(store, state, key) {
+  initializeNodeIfNewToStore(store, state, key, 'get');
+  return getNode$1(key).get(store, state);
+} // Peek at the current value loadable for a node without any evaluation or state change
+
+
+function peekNodeLoadable(store, state, key) {
+  return getNode$1(key).peek(store, state);
+} // Write value directly to state bypassing the Node interface as the node
+// definitions may not have been loaded yet when processing the initial snapshot.
+
+
+function setUnvalidatedAtomValue_DEPRECATED(state, key, newValue) {
+  var _node$invalidate;
+
+  const node = getNodeMaybe$1(key);
+  node === null || node === void 0 ? void 0 : (_node$invalidate = node.invalidate) === null || _node$invalidate === void 0 ? void 0 : _node$invalidate.call(node, state);
+  return { ...state,
+    atomValues: state.atomValues.clone().delete(key),
+    nonvalidatedAtoms: state.nonvalidatedAtoms.clone().set(key, newValue),
+    dirtyAtoms: setByAddingToSet$1(state.dirtyAtoms, key)
+  };
+} // Return the discovered dependencies and values to be written by setting
+// a node value. (Multiple values may be written due to selectors getting to
+// set upstreams; deps may be discovered because of reads in updater functions.)
+
+
+function setNodeValue(store, state, key, newValue) {
+  const node = getNode$1(key);
+
+  if (node.set == null) {
+    throw new ReadOnlyRecoilValueError(`Attempt to set read-only RecoilValue: ${key}`);
+  }
+
+  const set = node.set; // so flow doesn't lose the above refinement.
+
+  initializeNodeIfNewToStore(store, state, key, 'set');
+  return set(store, state, newValue);
+}
+
+function peekNodeInfo(store, state, key) {
+  const storeState = store.getState();
+  const graph = store.getGraph(state.version);
+  const type = getNode$1(key).nodeType;
+  return Recoil_lazyProxy({
+    type
+  }, {
+    loadable: () => peekNodeLoadable(store, state, key),
+    isActive: () => storeState.knownAtoms.has(key) || storeState.knownSelectors.has(key),
+    isSet: () => type === 'selector' ? false : state.atomValues.has(key),
+    isModified: () => state.dirtyAtoms.has(key),
+    // Report current dependencies.  If the node hasn't been evaluated, then
+    // dependencies may be missing based on the current state.
+    deps: () => {
+      var _graph$nodeDeps$get;
+
+      return recoilValuesForKeys$1((_graph$nodeDeps$get = graph.nodeDeps.get(key)) !== null && _graph$nodeDeps$get !== void 0 ? _graph$nodeDeps$get : []);
+    },
+    // Reports all "current" subscribers.  Evaluating other nodes or
+    // previous in-progress async evaluations may introduce new subscribers.
+    subscribers: () => {
+      var _storeState$nodeToCom, _storeState$nodeToCom2;
+
+      return {
+        nodes: recoilValuesForKeys$1(Recoil_filterIterable(getDownstreamNodes(store, state, new Set([key])), nodeKey => nodeKey !== key)),
+        components: Recoil_mapIterable((_storeState$nodeToCom = (_storeState$nodeToCom2 = storeState.nodeToComponentSubscriptions.get(key)) === null || _storeState$nodeToCom2 === void 0 ? void 0 : _storeState$nodeToCom2.values()) !== null && _storeState$nodeToCom !== void 0 ? _storeState$nodeToCom : [], ([name]) => ({
+          name
+        }))
+      };
+    }
+  });
+} // Find all of the recursively dependent nodes
+
+
+function getDownstreamNodes(store, state, keys) {
+  const visitedNodes = new Set();
+  const visitingNodes = Array.from(keys);
+  const graph = store.getGraph(state.version);
+
+  for (let key = visitingNodes.pop(); key; key = visitingNodes.pop()) {
+    var _graph$nodeToNodeSubs;
+
+    visitedNodes.add(key);
+    const subscribedNodes = (_graph$nodeToNodeSubs = graph.nodeToNodeSubscriptions.get(key)) !== null && _graph$nodeToNodeSubs !== void 0 ? _graph$nodeToNodeSubs : emptySet;
+
+    for (const downstreamNode of subscribedNodes) {
+      if (!visitedNodes.has(downstreamNode)) {
+        visitingNodes.push(downstreamNode);
+      }
+    }
+  }
+
+  return visitedNodes;
+}
+
+var Recoil_FunctionalCore = {
+  getNodeLoadable,
+  peekNodeLoadable,
+  setNodeValue,
+  initializeNode,
+  cleanUpNode,
+  setUnvalidatedAtomValue_DEPRECATED,
+  peekNodeInfo,
+  getDownstreamNodes
+};
+
+var _createMutableSource, _useMutableSource, _useSyncExternalStore;
+
+
+
+
+
+const createMutableSource = // flowlint-next-line unclear-type:off
+(_createMutableSource = react__WEBPACK_IMPORTED_MODULE_0__.createMutableSource) !== null && _createMutableSource !== void 0 ? _createMutableSource : react__WEBPACK_IMPORTED_MODULE_0__.unstable_createMutableSource;
+const useMutableSource = // flowlint-next-line unclear-type:off
+(_useMutableSource = react__WEBPACK_IMPORTED_MODULE_0__.useMutableSource) !== null && _useMutableSource !== void 0 ? _useMutableSource : react__WEBPACK_IMPORTED_MODULE_0__.unstable_useMutableSource; // https://github.com/reactwg/react-18/discussions/86
+
+const useSyncExternalStore = // flowlint-next-line unclear-type:off
+(_useSyncExternalStore = react__WEBPACK_IMPORTED_MODULE_0__.useSyncExternalStore) !== null && _useSyncExternalStore !== void 0 ? _useSyncExternalStore : // flowlint-next-line unclear-type:off
+react__WEBPACK_IMPORTED_MODULE_0__.unstable_useSyncExternalStore;
+
+/**
+ * mode: The React API and approach to use for syncing state with React
+ * early: Re-renders from Recoil updates occur:
+ *    1) earlier
+ *    2) in sync with React updates in the same batch
+ *    3) before transaction observers instead of after.
+ * concurrent: Is the current mode compatible with Concurrent Mode and useTransition()
+ */
+function reactMode() {
+  // NOTE: This mode is currently broken with some Suspense cases
+  // see Recoil_selector-test.js
+  if (Recoil_gkx('recoil_transition_support')) {
+    return {
+      mode: 'TRANSITION_SUPPORT',
+      early: true,
+      concurrent: true
+    };
+  }
+
+  if (Recoil_gkx('recoil_sync_external_store') && useSyncExternalStore != null) {
+    return {
+      mode: 'SYNC_EXTERNAL_STORE',
+      early: true,
+      concurrent: false
+    };
+  }
+
+  if (Recoil_gkx('recoil_mutable_source') && useMutableSource != null && typeof window !== 'undefined' && !window.$disableRecoilValueMutableSource_TEMP_HACK_DO_NOT_USE) {
+    return Recoil_gkx('recoil_suppress_rerender_in_callback') ? {
+      mode: 'MUTABLE_SOURCE',
+      early: true,
+      concurrent: true
+    } : {
+      mode: 'MUTABLE_SOURCE',
+      early: false,
+      concurrent: false
+    };
+  }
+
+  return Recoil_gkx('recoil_suppress_rerender_in_callback') ? {
+    mode: 'LEGACY',
+    early: true,
+    concurrent: false
+  } : {
+    mode: 'LEGACY',
+    early: false,
+    concurrent: false
+  };
+}
+
+var Recoil_ReactMode = {
+  createMutableSource,
+  useMutableSource,
+  useSyncExternalStore,
+  reactMode
+};
+
+const {
+  getDownstreamNodes: getDownstreamNodes$1,
+  getNodeLoadable: getNodeLoadable$1,
+  setNodeValue: setNodeValue$1
+} = Recoil_FunctionalCore;
+
+const {
+  getNextComponentID: getNextComponentID$1
+} = Recoil_Keys;
+
+const {
+  getNode: getNode$2,
+  getNodeMaybe: getNodeMaybe$2
+} = Recoil_Node;
+
+const {
+  DefaultValue: DefaultValue$1,
+  RecoilValueNotReady: RecoilValueNotReady$1
+} = Recoil_Node;
+
+const {
+  reactMode: reactMode$1
+} = Recoil_ReactMode;
+
+const {
+  AbstractRecoilValue: AbstractRecoilValue$1,
+  RecoilState: RecoilState$1,
+  RecoilValueReadOnly: RecoilValueReadOnly$1,
+  isRecoilValue: isRecoilValue$1
+} = Recoil_RecoilValue$1;
+
+
+
+
+
+function getRecoilValueAsLoadable(store, {
+  key
+}, treeState = store.getState().currentTree) {
+  var _storeState$nextTree, _storeState$previousT;
+
+  // Reading from an older tree can cause bugs because the dependencies that we
+  // discover during the read are lost.
+  const storeState = store.getState();
+
+  if (!(treeState.version === storeState.currentTree.version || treeState.version === ((_storeState$nextTree = storeState.nextTree) === null || _storeState$nextTree === void 0 ? void 0 : _storeState$nextTree.version) || treeState.version === ((_storeState$previousT = storeState.previousTree) === null || _storeState$previousT === void 0 ? void 0 : _storeState$previousT.version))) {
+    Recoil_recoverableViolation('Tried to read from a discarded tree');
+  }
+
+  const loadable = getNodeLoadable$1(store, treeState, key);
+
+  if (loadable.state === 'loading') {
+    loadable.contents.catch(() => {
+      /**
+       * HACK: intercept thrown error here to prevent an uncaught promise exception. Ideally this would happen closer to selector
+       * execution (perhaps introducing a new ERROR class to be resolved by async selectors that are in an error state)
+       */
+      return;
+    });
+  }
+
+  return loadable;
+}
+
+function applyAtomValueWrites(atomValues, writes) {
+  const result = atomValues.clone();
+  writes.forEach((v, k) => {
+    if (v.state === 'hasValue' && v.contents instanceof DefaultValue$1) {
+      result.delete(k);
+    } else {
+      result.set(k, v);
+    }
+  });
+  return result;
+}
+
+function valueFromValueOrUpdater(store, state, {
+  key
+}, valueOrUpdater) {
+  if (typeof valueOrUpdater === 'function') {
+    // Updater form: pass in the current value. Throw if the current value
+    // is unavailable (namely when updating an async selector that's
+    // pending or errored):
+    const current = getNodeLoadable$1(store, state, key);
+
+    if (current.state === 'loading') {
+      throw new RecoilValueNotReady$1(key);
+    } else if (current.state === 'hasError') {
+      throw current.contents;
+    } // T itself may be a function, so our refinement is not sufficient:
+
+
+    return valueOrUpdater(current.contents); // flowlint-line unclear-type:off
+  } else {
+    return valueOrUpdater;
+  }
+}
+
+function applyAction(store, state, action) {
+  if (action.type === 'set') {
+    const {
+      recoilValue,
+      valueOrUpdater
+    } = action;
+    const newValue = valueFromValueOrUpdater(store, state, recoilValue, valueOrUpdater);
+    const writes = setNodeValue$1(store, state, recoilValue.key, newValue);
+
+    for (const [key, loadable] of writes.entries()) {
+      writeLoadableToTreeState(state, key, loadable);
+    }
+  } else if (action.type === 'setLoadable') {
+    const {
+      recoilValue: {
+        key
+      },
+      loadable
+    } = action;
+    writeLoadableToTreeState(state, key, loadable);
+  } else if (action.type === 'markModified') {
+    const {
+      recoilValue: {
+        key
+      }
+    } = action;
+    state.dirtyAtoms.add(key);
+  } else if (action.type === 'setUnvalidated') {
+    var _node$invalidate;
+
+    // Write value directly to state bypassing the Node interface as the node
+    // definitions may not have been loaded yet when processing the initial snapshot.
+    const {
+      recoilValue: {
+        key
+      },
+      unvalidatedValue
+    } = action;
+    const node = getNodeMaybe$2(key);
+    node === null || node === void 0 ? void 0 : (_node$invalidate = node.invalidate) === null || _node$invalidate === void 0 ? void 0 : _node$invalidate.call(node, state);
+    state.atomValues.delete(key);
+    state.nonvalidatedAtoms.set(key, unvalidatedValue);
+    state.dirtyAtoms.add(key);
+  } else {
+    Recoil_recoverableViolation(`Unknown action ${action.type}`);
+  }
+}
+
+function writeLoadableToTreeState(state, key, loadable) {
+  if (loadable.state === 'hasValue' && loadable.contents instanceof DefaultValue$1) {
+    state.atomValues.delete(key);
+  } else {
+    state.atomValues.set(key, loadable);
+  }
+
+  state.dirtyAtoms.add(key);
+  state.nonvalidatedAtoms.delete(key);
+}
+
+function applyActionsToStore(store, actions) {
+  store.replaceState(state => {
+    const newState = copyTreeState(state);
+
+    for (const action of actions) {
+      applyAction(store, newState, action);
+    }
+
+    invalidateDownstreams(store, newState);
+    return newState;
+  });
+}
+
+function queueOrPerformStateUpdate(store, action) {
+  if (batchStack.length) {
+    const actionsByStore = batchStack[batchStack.length - 1];
+    let actions = actionsByStore.get(store);
+
+    if (!actions) {
+      actionsByStore.set(store, actions = []);
+    }
+
+    actions.push(action);
+  } else {
+    applyActionsToStore(store, [action]);
+  }
+}
+
+const batchStack = [];
+
+function batchStart() {
+  const actionsByStore = new Map();
+  batchStack.push(actionsByStore);
+  return () => {
+    for (const [store, actions] of actionsByStore) {
+      applyActionsToStore(store, actions);
+    }
+
+    const popped = batchStack.pop();
+
+    if (popped !== actionsByStore) {
+      Recoil_recoverableViolation('Incorrect order of batch popping');
+    }
+  };
+}
+
+function copyTreeState(state) {
+  return { ...state,
+    atomValues: state.atomValues.clone(),
+    nonvalidatedAtoms: state.nonvalidatedAtoms.clone(),
+    dirtyAtoms: new Set(state.dirtyAtoms)
+  };
+}
+
+function invalidateDownstreams(store, state) {
+  // Inform any nodes that were changed or downstream of changes so that they
+  // can clear out any caches as needed due to the update:
+  const downstreams = getDownstreamNodes$1(store, state, state.dirtyAtoms);
+
+  for (const key of downstreams) {
+    var _getNodeMaybe, _getNodeMaybe$invalid;
+
+    (_getNodeMaybe = getNodeMaybe$2(key)) === null || _getNodeMaybe === void 0 ? void 0 : (_getNodeMaybe$invalid = _getNodeMaybe.invalidate) === null || _getNodeMaybe$invalid === void 0 ? void 0 : _getNodeMaybe$invalid.call(_getNodeMaybe, state);
+  }
+}
+
+function setRecoilValue(store, recoilValue, valueOrUpdater) {
+  queueOrPerformStateUpdate(store, {
+    type: 'set',
+    recoilValue,
+    valueOrUpdater
+  });
+}
+
+function setRecoilValueLoadable(store, recoilValue, loadable) {
+  if (loadable instanceof DefaultValue$1) {
+    return setRecoilValue(store, recoilValue, loadable);
+  }
+
+  queueOrPerformStateUpdate(store, {
+    type: 'setLoadable',
+    recoilValue,
+    loadable: loadable
+  });
+}
+
+function markRecoilValueModified(store, recoilValue) {
+  queueOrPerformStateUpdate(store, {
+    type: 'markModified',
+    recoilValue
+  });
+}
+
+function setUnvalidatedRecoilValue(store, recoilValue, unvalidatedValue) {
+  queueOrPerformStateUpdate(store, {
+    type: 'setUnvalidated',
+    recoilValue,
+    unvalidatedValue
+  });
+}
+
+function subscribeToRecoilValue(store, {
+  key
+}, callback, componentDebugName = null) {
+  const subID = getNextComponentID$1();
+  const storeState = store.getState();
+
+  if (!storeState.nodeToComponentSubscriptions.has(key)) {
+    storeState.nodeToComponentSubscriptions.set(key, new Map());
+  }
+
+  Recoil_nullthrows(storeState.nodeToComponentSubscriptions.get(key)).set(subID, [componentDebugName !== null && componentDebugName !== void 0 ? componentDebugName : '<not captured>', callback]); // Handle the case that, during the same tick that we are subscribing, an atom
+  // has been updated by some effect handler. Otherwise we will miss the update.
+
+  const mode = reactMode$1();
+
+  if (mode.early && (mode.mode === 'LEGACY' || mode.mode === 'MUTABLE_SOURCE')) {
+    const nextTree = store.getState().nextTree;
+
+    if (nextTree && nextTree.dirtyAtoms.has(key)) {
+      callback(nextTree);
+    }
+  }
+
+  return {
+    release: () => {
+      const releaseStoreState = store.getState();
+      const subs = releaseStoreState.nodeToComponentSubscriptions.get(key);
+
+      if (subs === undefined || !subs.has(subID)) {
+        Recoil_recoverableViolation(`Subscription missing at release time for atom ${key}. This is a bug in Recoil.`);
+        return;
+      }
+
+      subs.delete(subID);
+
+      if (subs.size === 0) {
+        releaseStoreState.nodeToComponentSubscriptions.delete(key);
+      }
+    }
+  };
+}
+
+function refreshRecoilValue(store, recoilValue) {
+  var _node$clearCache;
+
+  const {
+    currentTree
+  } = store.getState();
+  const node = getNode$2(recoilValue.key);
+  (_node$clearCache = node.clearCache) === null || _node$clearCache === void 0 ? void 0 : _node$clearCache.call(node, store, currentTree);
+}
+
+var Recoil_RecoilValueInterface = {
+  RecoilValueReadOnly: RecoilValueReadOnly$1,
+  AbstractRecoilValue: AbstractRecoilValue$1,
+  RecoilState: RecoilState$1,
+  getRecoilValueAsLoadable,
+  setRecoilValue,
+  setRecoilValueLoadable,
+  markRecoilValueModified,
+  setUnvalidatedRecoilValue,
+  subscribeToRecoilValue,
+  isRecoilValue: isRecoilValue$1,
+  applyAtomValueWrites,
+  // TODO Remove export when deprecating initialStoreState_DEPRECATED in RecoilRoot
+  batchStart,
+  writeLoadableToTreeState,
+  invalidateDownstreams,
+  copyTreeState,
+  refreshRecoilValue,
+  invalidateDownstreams_FOR_TESTING: invalidateDownstreams
+};
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @emails oncall+recoil
+ * 
+ * @format
+ */
+/**
+ * The someSet() method tests whether some elements in the given Set pass the
+ * test implemented by the provided function.
+ */
+
+function someSet(set, callback, context) {
+  const iterator = set.entries();
+  let current = iterator.next();
+
+  while (!current.done) {
+    const entry = current.value;
+
+    if (callback.call(context, entry[1], entry[0], set)) {
+      return true;
+    }
+
+    current = iterator.next();
+  }
+
+  return false;
+}
+
+var Recoil_someSet = someSet;
+
+const {
+  cleanUpNode: cleanUpNode$1
+} = Recoil_FunctionalCore;
+
+const {
+  deleteNodeConfigIfPossible: deleteNodeConfigIfPossible$1,
+  getNode: getNode$3
+} = Recoil_Node;
+
+const {
+  RetentionZone: RetentionZone$2
+} = Recoil_RetentionZone;
+
+
+
+
+
+
+
+ // Components that aren't mounted after suspending for this long will be assumed
+// to be discarded and their resources released.
+
+
+const SUSPENSE_TIMEOUT_MS = 120000;
+const emptySet$1 = new Set();
+
+function releaseRetainablesNowOnCurrentTree(store, retainables) {
+  const storeState = store.getState();
+  const treeState = storeState.currentTree;
+
+  if (storeState.nextTree) {
+    Recoil_recoverableViolation('releaseNodesNowOnCurrentTree should only be called at the end of a batch');
+    return; // leak memory rather than erase something that's about to be used.
+  }
+
+  const nodes = new Set();
+
+  for (const r of retainables) {
+    if (r instanceof RetentionZone$2) {
+      for (const n of nodesRetainedByZone(storeState, r)) {
+        nodes.add(n);
+      }
+    } else {
+      nodes.add(r);
+    }
+  }
+
+  const releasableNodes = findReleasableNodes(store, nodes);
+
+  for (const node of releasableNodes) {
+    releaseNode(store, treeState, node);
+  }
+}
+
+function findReleasableNodes(store, searchFromNodes) {
+  const storeState = store.getState();
+  const treeState = storeState.currentTree;
+  const graph = store.getGraph(treeState.version);
+  const releasableNodes = new Set(); // mutated to collect answer
+
+  const nonReleasableNodes = new Set();
+  findReleasableNodesInner(searchFromNodes);
+  return releasableNodes;
+
+  function findReleasableNodesInner(searchFromNodes) {
+    const releasableNodesFoundThisIteration = new Set();
+    const downstreams = getDownstreamNodesInTopologicalOrder(store, treeState, searchFromNodes, releasableNodes, // don't descend into these
+    nonReleasableNodes // don't descend into these
+    ); // Find which of the downstream nodes are releasable and which are not:
+
+    for (const node of downstreams) {
+      var _storeState$retention;
+
+      // Not releasable if configured to be retained forever:
+      if (getNode$3(node).retainedBy === 'recoilRoot') {
+        nonReleasableNodes.add(node);
+        continue;
+      } // Not releasable if retained directly by a component:
+
+
+      if (((_storeState$retention = storeState.retention.referenceCounts.get(node)) !== null && _storeState$retention !== void 0 ? _storeState$retention : 0) > 0) {
+        nonReleasableNodes.add(node);
+        continue;
+      } // Not releasable if retained by a zone:
+
+
+      if (zonesThatCouldRetainNode(node).some(z => storeState.retention.referenceCounts.get(z))) {
+        nonReleasableNodes.add(node);
+        continue;
+      } // Not releasable if it has a non-releasable child (which will already be in
+      // nonReleasableNodes because we are going in topological order):
+
+
+      const nodeChildren = graph.nodeToNodeSubscriptions.get(node);
+
+      if (nodeChildren && Recoil_someSet(nodeChildren, child => nonReleasableNodes.has(child))) {
+        nonReleasableNodes.add(node);
+        continue;
+      }
+
+      releasableNodes.add(node);
+      releasableNodesFoundThisIteration.add(node);
+    } // If we found any releasable nodes, we need to walk UP from those nodes to
+    // find whether their parents can now be released as well:
+
+
+    const parents = new Set();
+
+    for (const node of releasableNodesFoundThisIteration) {
+      for (const parent of (_graph$nodeDeps$get = graph.nodeDeps.get(node)) !== null && _graph$nodeDeps$get !== void 0 ? _graph$nodeDeps$get : emptySet$1) {
+        var _graph$nodeDeps$get;
+
+        if (!releasableNodes.has(parent)) {
+          parents.add(parent);
+        }
+      }
+    }
+
+    if (parents.size) {
+      findReleasableNodesInner(parents);
+    }
+  }
+} // Children before parents
+
+
+function getDownstreamNodesInTopologicalOrder(store, treeState, nodes, // Mutable set is destroyed in place
+doNotDescendInto1, doNotDescendInto2) {
+  const graph = store.getGraph(treeState.version);
+  const answer = [];
+  const visited = new Set();
+
+  while (nodes.size > 0) {
+    visit(Recoil_nullthrows(nodes.values().next().value));
+  }
+
+  return answer;
+
+  function visit(node) {
+    if (doNotDescendInto1.has(node) || doNotDescendInto2.has(node)) {
+      nodes.delete(node);
+      return;
+    }
+
+    if (visited.has(node)) {
+      return;
+    }
+
+    const children = graph.nodeToNodeSubscriptions.get(node);
+
+    if (children) {
+      for (const child of children) {
+        visit(child);
+      }
+    }
+
+    visited.add(node);
+    nodes.delete(node);
+    answer.push(node);
+  }
+}
+
+function releaseNode(store, treeState, node) {
+  if (!Recoil_gkx('recoil_memory_managament_2020')) {
+    return;
+  } // Atom effects, in-closure caches, etc.:
+
+
+  cleanUpNode$1(store, node); // Delete from store state:
+
+  const storeState = store.getState();
+  storeState.knownAtoms.delete(node);
+  storeState.knownSelectors.delete(node);
+  storeState.nodeTransactionSubscriptions.delete(node);
+  storeState.retention.referenceCounts.delete(node);
+  const zones = zonesThatCouldRetainNode(node);
+
+  for (const zone of zones) {
+    var _storeState$retention2;
+
+    (_storeState$retention2 = storeState.retention.nodesRetainedByZone.get(zone)) === null || _storeState$retention2 === void 0 ? void 0 : _storeState$retention2.delete(node);
+  } // Note that we DO NOT delete from nodeToComponentSubscriptions because this
+  // already happens when the last component that was retaining the node unmounts,
+  // and this could happen either before or after that.
+  // Delete from TreeState and dep graph:
+
+
+  treeState.atomValues.delete(node);
+  treeState.dirtyAtoms.delete(node);
+  treeState.nonvalidatedAtoms.delete(node);
+  const graph = storeState.graphsByVersion.get(treeState.version);
+
+  if (graph) {
+    const deps = graph.nodeDeps.get(node);
+
+    if (deps !== undefined) {
+      graph.nodeDeps.delete(node);
+
+      for (const dep of deps) {
+        var _graph$nodeToNodeSubs;
+
+        (_graph$nodeToNodeSubs = graph.nodeToNodeSubscriptions.get(dep)) === null || _graph$nodeToNodeSubs === void 0 ? void 0 : _graph$nodeToNodeSubs.delete(node);
+      }
+    } // No need to delete sub's deps as there should be no subs at this point.
+    // But an invariant would require deleting nodes in topological order.
+
+
+    graph.nodeToNodeSubscriptions.delete(node);
+  } // Node config (for family members only as their configs can be recreated, and
+  // only if they are not retained within any other Stores):
+
+
+  deleteNodeConfigIfPossible$1(node);
+}
+
+function nodesRetainedByZone(storeState, zone) {
+  var _storeState$retention3;
+
+  return (_storeState$retention3 = storeState.retention.nodesRetainedByZone.get(zone)) !== null && _storeState$retention3 !== void 0 ? _storeState$retention3 : emptySet$1;
+}
+
+function zonesThatCouldRetainNode(node) {
+  const retainedBy = getNode$3(node).retainedBy;
+
+  if (retainedBy === undefined || retainedBy === 'components' || retainedBy === 'recoilRoot') {
+    return [];
+  } else if (retainedBy instanceof RetentionZone$2) {
+    return [retainedBy];
+  } else {
+    return retainedBy; // it's an array of zones
+  }
+}
+
+function scheduleOrPerformPossibleReleaseOfRetainable(store, retainable) {
+  const state = store.getState();
+
+  if (state.nextTree) {
+    state.retention.retainablesToCheckForRelease.add(retainable);
+  } else {
+    releaseRetainablesNowOnCurrentTree(store, new Set([retainable]));
+  }
+}
+
+function updateRetainCount(store, retainable, delta) {
+  var _map$get;
+
+  if (!Recoil_gkx('recoil_memory_managament_2020')) {
+    return;
+  }
+
+  const map = store.getState().retention.referenceCounts;
+  const newCount = ((_map$get = map.get(retainable)) !== null && _map$get !== void 0 ? _map$get : 0) + delta;
+
+  if (newCount === 0) {
+    updateRetainCountToZero(store, retainable);
+  } else {
+    map.set(retainable, newCount);
+  }
+}
+
+function updateRetainCountToZero(store, retainable) {
+  if (!Recoil_gkx('recoil_memory_managament_2020')) {
+    return;
+  }
+
+  const map = store.getState().retention.referenceCounts;
+  map.delete(retainable);
+  scheduleOrPerformPossibleReleaseOfRetainable(store, retainable);
+}
+
+function releaseScheduledRetainablesNow(store) {
+  if (!Recoil_gkx('recoil_memory_managament_2020')) {
+    return;
+  }
+
+  const state = store.getState();
+  releaseRetainablesNowOnCurrentTree(store, state.retention.retainablesToCheckForRelease);
+  state.retention.retainablesToCheckForRelease.clear();
+}
+
+function retainedByOptionWithDefault(r) {
+  // The default will change from 'recoilRoot' to 'components' in the future.
+  return r === undefined ? 'recoilRoot' : r;
+}
+
+var Recoil_Retention = {
+  SUSPENSE_TIMEOUT_MS,
+  updateRetainCount,
+  updateRetainCountToZero,
+  releaseScheduledRetainablesNow,
+  retainedByOptionWithDefault
+};
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @emails oncall+recoil
+ * 
+ * @format
+ *
+ * This is to export esstiential functions from react-dom
+ * for our web build
+ */
+const {
+  unstable_batchedUpdates
+} = react_dom__WEBPACK_IMPORTED_MODULE_1__;
+
+var ReactBatchedUpdates = {
+  unstable_batchedUpdates
+};
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @emails oncall+recoil
+ * 
+ * @format
+ *
+ * This is to export esstiential functions from react-dom
+ * for our web build
+ */
+// @fb-only: const {unstable_batchedUpdates} = require('ReactDOMComet');
+// prettier-ignore
+const {
+  unstable_batchedUpdates: unstable_batchedUpdates$1
+} = ReactBatchedUpdates; // @oss-only
+
+
+var Recoil_ReactBatchedUpdates = {
+  unstable_batchedUpdates: unstable_batchedUpdates$1
+};
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @emails oncall+recoil
+ * 
+ * @format
+ */
+const {
+  batchStart: batchStart$1
+} = Recoil_RecoilValueInterface;
+
+const {
+  unstable_batchedUpdates: unstable_batchedUpdates$2
+} = Recoil_ReactBatchedUpdates;
+
+let batcher = unstable_batchedUpdates$2; // flowlint-next-line unclear-type:off
+
+/**
+ * Sets the provided batcher function as the batcher function used by Recoil.
+ *
+ * Set the batcher to a custom batcher for your renderer,
+ * if you use a renderer other than React DOM or React Native.
+ */
+const setBatcher = newBatcher => {
+  batcher = newBatcher;
+};
+/**
+ * Returns the current batcher function.
+ */
+
+
+const getBatcher = () => batcher;
+/**
+ * Calls the current batcher function and passes the
+ * provided callback function.
+ */
+
+
+const batchUpdates = callback => {
+  batcher(() => {
+    let batchEnd = () => undefined;
+
+    try {
+      batchEnd = batchStart$1();
+      callback();
+    } finally {
+      batchEnd();
+    }
+  });
+};
+
+var Recoil_Batching = {
+  getBatcher,
+  setBatcher,
+  batchUpdates
+};
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @emails oncall+recoil
+ * 
+ * @format
+ */
+/**
+ * Combines multiple Iterables into a single Iterable.
+ * Traverses the input Iterables in the order provided and maintains the order
+ * of their elements.
+ *
+ * Example:
+ * ```
+ * const r = Array.from(concatIterables(['a', 'b'], ['c'], ['d', 'e', 'f']));
+ * r == ['a', 'b', 'c', 'd', 'e', 'f'];
+ * ```
+ */
+
+function* concatIterables(iters) {
+  for (const iter of iters) {
+    for (const val of iter) {
+      yield val;
+    }
+  }
+}
+
+var Recoil_concatIterables = concatIterables;
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @emails oncall+recoil
+ * 
+ * @format
+ */
+
+const isSSR = typeof window === 'undefined';
+const isReactNative = typeof navigator !== 'undefined' && navigator.product === 'ReactNative'; // eslint-disable-line fb-www/typeof-undefined
+
+var Recoil_Environment = {
+  isSSR,
+  isReactNative
+};
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @emails oncall+recoil
+ * 
+ * @format
+ */
+/**
+ * Caches a function's results based on the key returned by the passed
+ * hashFunction.
+ */
+
+function memoizeWithArgsHash(fn, hashFunction) {
+  let cache;
+
+  const memoizedFn = (...args) => {
+    if (!cache) {
+      cache = {};
+    }
+
+    const key = hashFunction(...args);
+
+    if (!Object.hasOwnProperty.call(cache, key)) {
+      cache[key] = fn.apply(this, args);
+    }
+
+    return cache[key];
+  };
+
+  return memoizedFn;
+}
+/**
+ * Caches a function's results based on a comparison of the arguments.
+ * Only caches the last return of the function.
+ * Defaults to reference equality
+ */
+
+
+function memoizeOneWithArgsHash(fn, hashFunction) {
+  let lastKey;
+  let lastResult; // breaking cache when arguments change
+
+  const memoizedFn = (...args) => {
+    const key = hashFunction(...args);
+
+    if (lastKey === key) {
+      return lastResult;
+    }
+
+    lastKey = key;
+    lastResult = fn.apply(this, args);
+    return lastResult;
+  };
+
+  return memoizedFn;
+}
+/**
+ * Caches a function's results based on a comparison of the arguments.
+ * Only caches the last return of the function.
+ * Defaults to reference equality
+ */
+
+
+function memoizeOneWithArgsHashAndInvalidation(fn, hashFunction) {
+  let lastKey;
+  let lastResult; // breaking cache when arguments change
+
+  const memoizedFn = (...args) => {
+    const key = hashFunction(...args);
+
+    if (lastKey === key) {
+      return lastResult;
+    }
+
+    lastKey = key;
+    lastResult = fn.apply(this, args);
+    return lastResult;
+  };
+
+  const invalidate = () => {
+    lastKey = null;
+  };
+
+  return [memoizedFn, invalidate];
+}
+
+var Recoil_Memoize = {
+  memoizeWithArgsHash,
+  memoizeOneWithArgsHash,
+  memoizeOneWithArgsHashAndInvalidation
+};
+
+const {
+  batchUpdates: batchUpdates$1
+} = Recoil_Batching;
+
+const {
+  initializeNode: initializeNode$1,
+  peekNodeInfo: peekNodeInfo$1
+} = Recoil_FunctionalCore;
+
+const {
+  graph: graph$1
+} = Recoil_Graph;
+
+const {
+  getNextStoreID: getNextStoreID$1
+} = Recoil_Keys;
+
+const {
+  DEFAULT_VALUE: DEFAULT_VALUE$1,
+  recoilValues: recoilValues$1,
+  recoilValuesForKeys: recoilValuesForKeys$2
+} = Recoil_Node;
+
+const {
+  AbstractRecoilValue: AbstractRecoilValue$2,
+  getRecoilValueAsLoadable: getRecoilValueAsLoadable$1,
+  setRecoilValue: setRecoilValue$1,
+  setUnvalidatedRecoilValue: setUnvalidatedRecoilValue$1
+} = Recoil_RecoilValueInterface;
+
+const {
+  updateRetainCount: updateRetainCount$1
+} = Recoil_Retention;
+
+const {
+  getNextTreeStateVersion: getNextTreeStateVersion$2,
+  makeEmptyStoreState: makeEmptyStoreState$1
+} = Recoil_State;
+
+
+
+const {
+  isSSR: isSSR$1
+} = Recoil_Environment;
+
+
+
+
+
+
+
+
+
+const {
+  memoizeOneWithArgsHashAndInvalidation: memoizeOneWithArgsHashAndInvalidation$1
+} = Recoil_Memoize;
+
+
+
+ // Opaque at this surface because it's part of the public API from here.
+
+
+const retainWarning = `
+Recoil Snapshots only last for the duration of the callback they are provided to. To keep a Snapshot longer, do this:
+
+  const release = snapshot.retain();
+  try {
+    await doSomethingWithSnapshot(snapshot);
+  } finally {
+    release();
+  }
+
+This is currently a DEV-only warning but will become a thrown exception in the next release of Recoil.
+`; // A "Snapshot" is "read-only" and captures a specific set of values of atoms.
+// However, the data-flow-graph and selector values may evolve as selector
+// evaluation functions are executed and async selectors resolve.
+
+class Snapshot {
+  // eslint-disable-next-line fb-www/no-uninitialized-properties
+  constructor(storeState) {
+    _defineProperty(this, "_store", void 0);
+
+    _defineProperty(this, "_refCount", 1);
+
+    _defineProperty(this, "getLoadable", recoilValue => {
+      this.checkRefCount_INTERNAL();
+      return getRecoilValueAsLoadable$1(this._store, recoilValue);
+    });
+
+    _defineProperty(this, "getPromise", recoilValue => {
+      this.checkRefCount_INTERNAL();
+      return this.getLoadable(recoilValue).toPromise();
+    });
+
+    _defineProperty(this, "getNodes_UNSTABLE", opt => {
+      this.checkRefCount_INTERNAL(); // TODO Deal with modified selectors
+
+      if ((opt === null || opt === void 0 ? void 0 : opt.isModified) === true) {
+        if ((opt === null || opt === void 0 ? void 0 : opt.isInitialized) === false) {
+          return [];
+        }
+
+        const state = this._store.getState().currentTree;
+
+        return recoilValuesForKeys$2(state.dirtyAtoms);
+      }
+
+      const knownAtoms = this._store.getState().knownAtoms;
+
+      const knownSelectors = this._store.getState().knownSelectors;
+
+      return (opt === null || opt === void 0 ? void 0 : opt.isInitialized) == null ? recoilValues$1.values() : opt.isInitialized === true ? recoilValuesForKeys$2(Recoil_concatIterables([this._store.getState().knownAtoms, this._store.getState().knownSelectors])) : Recoil_filterIterable(recoilValues$1.values(), ({
+        key
+      }) => !knownAtoms.has(key) && !knownSelectors.has(key));
+    });
+
+    _defineProperty(this, "getInfo_UNSTABLE", ({
+      key
+    }) => {
+      this.checkRefCount_INTERNAL(); // $FlowFixMe[escaped-generic]
+
+      return peekNodeInfo$1(this._store, this._store.getState().currentTree, key);
+    });
+
+    _defineProperty(this, "map", mapper => {
+      this.checkRefCount_INTERNAL();
+      const mutableSnapshot = new MutableSnapshot(this, batchUpdates$1);
+      mapper(mutableSnapshot); // if removing batchUpdates from `set` add it here
+
+      return mutableSnapshot;
+    });
+
+    _defineProperty(this, "asyncMap", async mapper => {
+      this.checkRefCount_INTERNAL();
+      const mutableSnapshot = new MutableSnapshot(this, batchUpdates$1);
+      mutableSnapshot.retain(); // Retain new snapshot during async mapper
+
+      await mapper(mutableSnapshot); // Continue to retain the new snapshot for the user, but auto-release it
+      // after the next tick, the same as a new synchronous snapshot.
+
+      mutableSnapshot.autoRelease_INTERNAL();
+      return mutableSnapshot;
+    });
+
+    this._store = {
+      storeID: getNextStoreID$1(),
+      getState: () => storeState,
+      replaceState: replacer => {
+        storeState.currentTree = replacer(storeState.currentTree); // no batching so nextTree is never active
+      },
+      getGraph: version => {
+        const graphs = storeState.graphsByVersion;
+
+        if (graphs.has(version)) {
+          return Recoil_nullthrows(graphs.get(version));
+        }
+
+        const newGraph = graph$1();
+        graphs.set(version, newGraph);
+        return newGraph;
+      },
+      subscribeToTransactions: () => ({
+        release: () => {}
+      }),
+      addTransactionMetadata: () => {
+        throw Recoil_err('Cannot subscribe to Snapshots');
+      }
+    }; // Initialize any nodes that are live in the parent store (primarily so that
+    // this snapshot gets counted towards the node's live stores count).
+    // TODO Optimize this when cloning snapshots for callbacks
+
+    for (const nodeKey of this._store.getState().knownAtoms) {
+      initializeNode$1(this._store, nodeKey, 'get');
+      updateRetainCount$1(this._store, nodeKey, 1);
+    }
+
+    this.autoRelease_INTERNAL();
+  }
+
+  retain() {
+    if (this._refCount <= 0) {
+      if (true) {
+        throw Recoil_err('Snapshot has already been released.');
+      } else {}
+    }
+
+    this._refCount++;
+    let released = false;
+    return () => {
+      if (!released) {
+        released = true;
+
+        this._release();
+      }
+    };
+  }
+  /**
+   * Release the snapshot on the next tick.  This means the snapshot is retained
+   * during the execution of the current function using it.
+   */
+
+
+  autoRelease_INTERNAL() {
+    if (!isSSR$1) {
+      window.setTimeout(() => this._release(), 0);
+    }
+  }
+
+  _release() {
+    this._refCount--;
+
+    if (this._refCount === 0) {
+      this._store.getState().nodeCleanupFunctions.forEach(cleanup => cleanup());
+
+      this._store.getState().nodeCleanupFunctions.clear();
+
+      if (!Recoil_gkx('recoil_memory_managament_2020')) {
+        return;
+      } // Temporarily nerfing this to allow us to find broken call sites without
+      // actually breaking anybody yet.
+      // for (const k of this._store.getState().knownAtoms) {
+      //   updateRetainCountToZero(this._store, k);
+      // }
+
+    } else if (this._refCount < 0) {
+      if (true) {
+        Recoil_recoverableViolation('Snapshot released an extra time.');
+      }
+    }
+  }
+
+  isRetained() {
+    return this._refCount > 0;
+  }
+
+  checkRefCount_INTERNAL() {
+    if (Recoil_gkx('recoil_memory_managament_2020') && this._refCount <= 0) {
+      if (true) {
+        Recoil_recoverableViolation(retainWarning);
+      } // What we will ship later:
+      // throw err(retainWarning);
+
+    }
+  }
+
+  getStore_INTERNAL() {
+    this.checkRefCount_INTERNAL();
+    return this._store;
+  }
+
+  getID() {
+    this.checkRefCount_INTERNAL();
+    return this._store.getState().currentTree.stateID;
+  } // We want to allow the methods to be destructured and used as accessors
+  // eslint-disable-next-line fb-www/extra-arrow-initializer
+
+
+}
+
+function cloneStoreState(store, treeState, bumpVersion = false) {
+  const storeState = store.getState();
+  const version = bumpVersion ? getNextTreeStateVersion$2() : treeState.version;
+  return {
+    currentTree: bumpVersion ? {
+      // TODO snapshots shouldn't really have versions because a new version number
+      // is always assigned when the snapshot is gone to.
+      version,
+      stateID: version,
+      transactionMetadata: { ...treeState.transactionMetadata
+      },
+      dirtyAtoms: new Set(treeState.dirtyAtoms),
+      atomValues: treeState.atomValues.clone(),
+      nonvalidatedAtoms: treeState.nonvalidatedAtoms.clone()
+    } : treeState,
+    commitDepth: 0,
+    nextTree: null,
+    previousTree: null,
+    knownAtoms: new Set(storeState.knownAtoms),
+    // FIXME here's a copy
+    knownSelectors: new Set(storeState.knownSelectors),
+    // FIXME here's a copy
+    transactionSubscriptions: new Map(),
+    nodeTransactionSubscriptions: new Map(),
+    nodeToComponentSubscriptions: new Map(),
+    queuedComponentCallbacks_DEPRECATED: [],
+    suspendedComponentResolvers: new Set(),
+    graphsByVersion: new Map().set(version, store.getGraph(treeState.version)),
+    retention: {
+      referenceCounts: new Map(),
+      nodesRetainedByZone: new Map(),
+      retainablesToCheckForRelease: new Set()
+    },
+    // FIXME here's a copy
+    // Create blank cleanup handlers for atoms so snapshots don't re-run
+    // atom effects.
+    nodeCleanupFunctions: new Map(Recoil_mapIterable(storeState.nodeCleanupFunctions.entries(), ([key]) => [key, () => {}]))
+  };
+} // Factory to build a fresh snapshot
+
+
+function freshSnapshot(initializeState) {
+  const snapshot = new Snapshot(makeEmptyStoreState$1());
+  return initializeState != null ? snapshot.map(initializeState) : snapshot;
+} // Factory to clone a snapahot state
+
+
+const [memoizedCloneSnapshot, invalidateMemoizedSnapshot] = memoizeOneWithArgsHashAndInvalidation$1((store, version) => {
+  const storeState = store.getState();
+  const treeState = version === 'current' ? storeState.currentTree : Recoil_nullthrows(storeState.previousTree);
+  return new Snapshot(cloneStoreState(store, treeState));
+}, (store, version) => {
+  var _store$getState$previ;
+
+  return String(version) + String(store.storeID) + String(store.getState().currentTree.version) + String((_store$getState$previ = store.getState().previousTree) === null || _store$getState$previ === void 0 ? void 0 : _store$getState$previ.version);
+});
+
+function cloneSnapshot(store, version = 'current') {
+  const snapshot = memoizedCloneSnapshot(store, version);
+
+  if (!snapshot.isRetained()) {
+    invalidateMemoizedSnapshot();
+    return memoizedCloneSnapshot(store, version);
+  }
+
+  return snapshot;
+}
+
+class MutableSnapshot extends Snapshot {
+  constructor(snapshot, batch) {
+    super(cloneStoreState(snapshot.getStore_INTERNAL(), snapshot.getStore_INTERNAL().getState().currentTree, true));
+
+    _defineProperty(this, "_batch", void 0);
+
+    _defineProperty(this, "set", (recoilState, newValueOrUpdater) => {
+      this.checkRefCount_INTERNAL();
+      const store = this.getStore_INTERNAL(); // This batchUpdates ensures this `set` is applied immediately and you can
+      // read the written value after calling `set`. I would like to remove this
+      // behavior and only batch in `Snapshot.map`, but this would be a breaking
+      // change potentially.
+
+      this._batch(() => {
+        updateRetainCount$1(store, recoilState.key, 1);
+        setRecoilValue$1(this.getStore_INTERNAL(), recoilState, newValueOrUpdater);
+      });
+    });
+
+    _defineProperty(this, "reset", recoilState => {
+      this.checkRefCount_INTERNAL();
+      const store = this.getStore_INTERNAL(); // See note at `set` about batched updates.
+
+      this._batch(() => {
+        updateRetainCount$1(store, recoilState.key, 1);
+        setRecoilValue$1(this.getStore_INTERNAL(), recoilState, DEFAULT_VALUE$1);
+      });
+    });
+
+    _defineProperty(this, "setUnvalidatedAtomValues_DEPRECATED", values => {
+      this.checkRefCount_INTERNAL();
+      const store = this.getStore_INTERNAL(); // See note at `set` about batched updates.
+
+      batchUpdates$1(() => {
+        for (const [k, v] of values.entries()) {
+          updateRetainCount$1(store, k, 1);
+          setUnvalidatedRecoilValue$1(store, new AbstractRecoilValue$2(k), v);
+        }
+      });
+    });
+
+    this._batch = batch;
+  } // We want to allow the methods to be destructured and used as accessors
+  // eslint-disable-next-line fb-www/extra-arrow-initializer
+
+
+}
+
+var Recoil_Snapshot = {
+  Snapshot,
+  MutableSnapshot,
+  freshSnapshot,
+  cloneSnapshot
+};
+
+var Recoil_Snapshot_1 = Recoil_Snapshot.Snapshot;
+var Recoil_Snapshot_2 = Recoil_Snapshot.MutableSnapshot;
+var Recoil_Snapshot_3 = Recoil_Snapshot.freshSnapshot;
+var Recoil_Snapshot_4 = Recoil_Snapshot.cloneSnapshot;
+
+var Recoil_Snapshot$1 = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  Snapshot: Recoil_Snapshot_1,
+  MutableSnapshot: Recoil_Snapshot_2,
+  freshSnapshot: Recoil_Snapshot_3,
+  cloneSnapshot: Recoil_Snapshot_4
+});
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @emails oncall+recoil
+ * 
+ * @format
+ */
+
+function unionSets(...sets) {
+  const result = new Set();
+
+  for (const set of sets) {
+    for (const value of set) {
+      result.add(value);
+    }
+  }
+
+  return result;
+}
+
+var Recoil_unionSets = unionSets;
+
+const {
+  useRef
+} = react__WEBPACK_IMPORTED_MODULE_0__;
+/**
+ * The same as `useRef()` except that if a function is specified then it will
+ * call that function to get the value to initialize the reference with.
+ * This is similar to how `useState()` behaves when given a function.  It allows
+ * the user to avoid generating the initial value for subsequent renders.
+ * The tradeoff is that to set the reference to a function itself you need to
+ * nest it: useRefInitOnce(() => () => {...});
+ */
+
+
+function useRefInitOnce(initialValue) {
+  // $FlowExpectedError[incompatible-call]
+  const ref = useRef(initialValue);
+
+  if (ref.current === initialValue && typeof initialValue === 'function') {
+    // $FlowExpectedError[incompatible-use]
+    ref.current = initialValue();
+  }
+
+  return ref;
+}
+
+var Recoil_useRefInitOnce = useRefInitOnce;
+
+// @fb-only: const RecoilusagelogEvent = require('RecoilusagelogEvent');
+// @fb-only: const RecoilUsageLogFalcoEvent = require('RecoilUsageLogFalcoEvent');
+// @fb-only: const URI = require('URI');
+
+
+const {
+  getNextTreeStateVersion: getNextTreeStateVersion$3,
+  makeEmptyStoreState: makeEmptyStoreState$2
+} = Recoil_State;
+
+const {
+  cleanUpNode: cleanUpNode$2,
+  getDownstreamNodes: getDownstreamNodes$2,
+  initializeNode: initializeNode$2,
+  setNodeValue: setNodeValue$2,
+  setUnvalidatedAtomValue_DEPRECATED: setUnvalidatedAtomValue_DEPRECATED$1
+} = Recoil_FunctionalCore;
+
+const {
+  graph: graph$2
+} = Recoil_Graph;
+
+const {
+  cloneGraph: cloneGraph$1
+} = Recoil_Graph;
+
+const {
+  getNextStoreID: getNextStoreID$2
+} = Recoil_Keys;
+
+const {
+  createMutableSource: createMutableSource$1,
+  reactMode: reactMode$2
+} = Recoil_ReactMode;
+
+const {
+  applyAtomValueWrites: applyAtomValueWrites$1
+} = Recoil_RecoilValueInterface;
+
+const {
+  releaseScheduledRetainablesNow: releaseScheduledRetainablesNow$1
+} = Recoil_Retention;
+
+const {
+  freshSnapshot: freshSnapshot$1
+} = Recoil_Snapshot$1;
+
+
+
+const {
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef: useRef$1,
+  useState
+} = react__WEBPACK_IMPORTED_MODULE_0__;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function notInAContext() {
+  throw Recoil_err('This component must be used inside a <RecoilRoot> component.');
+}
+
+const defaultStore = Object.freeze({
+  storeID: getNextStoreID$2(),
+  getState: notInAContext,
+  replaceState: notInAContext,
+  getGraph: notInAContext,
+  subscribeToTransactions: notInAContext,
+  addTransactionMetadata: notInAContext
+});
+let stateReplacerIsBeingExecuted = false;
+
+function startNextTreeIfNeeded(store) {
+  if (stateReplacerIsBeingExecuted) {
+    throw Recoil_err('An atom update was triggered within the execution of a state updater function. State updater functions provided to Recoil must be pure functions.');
+  }
+
+  const storeState = store.getState();
+
+  if (storeState.nextTree === null) {
+    if (Recoil_gkx('recoil_memory_managament_2020') && Recoil_gkx('recoil_release_on_cascading_update_killswitch_2021')) {
+      // If this is a cascading update (that is, rendering due to one state change
+      // invokes a second state change), we won't have cleaned up retainables yet
+      // because this normally happens after notifying components. Do it before
+      // proceeding with the cascading update so that it remains predictable:
+      if (storeState.commitDepth > 0) {
+        releaseScheduledRetainablesNow$1(store);
+      }
+    }
+
+    const version = storeState.currentTree.version;
+    const nextVersion = getNextTreeStateVersion$3();
+    storeState.nextTree = { ...storeState.currentTree,
+      version: nextVersion,
+      stateID: nextVersion,
+      dirtyAtoms: new Set(),
+      transactionMetadata: {}
+    };
+    storeState.graphsByVersion.set(nextVersion, cloneGraph$1(Recoil_nullthrows(storeState.graphsByVersion.get(version))));
+  }
+}
+
+const AppContext = react__WEBPACK_IMPORTED_MODULE_0__.createContext({
+  current: defaultStore
+});
+
+const useStoreRef = () => useContext(AppContext); // $FlowExpectedError[incompatible-call]
+
+
+const MutableSourceContext = react__WEBPACK_IMPORTED_MODULE_0__.createContext(null);
+
+function useRecoilMutableSource() {
+  const mutableSource = useContext(MutableSourceContext);
+
+  if (mutableSource == null) {
+    Recoil_expectationViolation('Attempted to use a Recoil hook outside of a <RecoilRoot>. ' + '<RecoilRoot> must be an ancestor of any component that uses ' + 'Recoil hooks.');
+  }
+
+  return mutableSource;
+}
+
+function notifyComponents(store, storeState, treeState) {
+  const dependentNodes = getDownstreamNodes$2(store, treeState, treeState.dirtyAtoms);
+
+  for (const key of dependentNodes) {
+    const comps = storeState.nodeToComponentSubscriptions.get(key);
+
+    if (comps) {
+      for (const [_subID, [_debugName, callback]] of comps) {
+        callback(treeState);
+      }
+    }
+  }
+}
+
+function sendEndOfBatchNotifications(store) {
+  const storeState = store.getState();
+  const treeState = storeState.currentTree; // Inform transaction subscribers of the transaction:
+
+  const dirtyAtoms = treeState.dirtyAtoms;
+
+  if (dirtyAtoms.size) {
+    // Execute Node-specific subscribers before global subscribers
+    for (const [key, subscriptions] of storeState.nodeTransactionSubscriptions) {
+      if (dirtyAtoms.has(key)) {
+        for (const [_, subscription] of subscriptions) {
+          subscription(store);
+        }
+      }
+    }
+
+    for (const [_, subscription] of storeState.transactionSubscriptions) {
+      subscription(store);
+    }
+
+    if (!reactMode$2().early || storeState.suspendedComponentResolvers.size > 0) {
+      // Notifying components is needed to wake from suspense, even when using
+      // early rendering.
+      notifyComponents(store, storeState, treeState); // Wake all suspended components so the right one(s) can try to re-render.
+      // We need to wake up components not just when some asynchronous selector
+      // resolved, but also when changing synchronous values because this may cause
+      // a selector to change from asynchronous to synchronous, in which case there
+      // would be no follow-up asynchronous resolution to wake us up.
+      // TODO OPTIMIZATION Only wake up related downstream components
+
+      storeState.suspendedComponentResolvers.forEach(cb => cb());
+      storeState.suspendedComponentResolvers.clear();
+    }
+  } // Special behavior ONLY invoked by useInterface.
+  // FIXME delete queuedComponentCallbacks_DEPRECATED when deleting useInterface.
+
+
+  storeState.queuedComponentCallbacks_DEPRECATED.forEach(cb => cb(treeState));
+  storeState.queuedComponentCallbacks_DEPRECATED.splice(0, storeState.queuedComponentCallbacks_DEPRECATED.length);
+}
+
+function endBatch(store) {
+  const storeState = store.getState();
+  storeState.commitDepth++;
+
+  try {
+    const {
+      nextTree
+    } = storeState; // Ignore commits that are not because of Recoil transactions -- namely,
+    // because something above RecoilRoot re-rendered:
+
+    if (nextTree === null) {
+      return;
+    } // nextTree is now committed -- note that copying and reset occurs when
+    // a transaction begins, in startNextTreeIfNeeded:
+
+
+    storeState.previousTree = storeState.currentTree;
+    storeState.currentTree = nextTree;
+    storeState.nextTree = null;
+    sendEndOfBatchNotifications(store);
+
+    if (storeState.previousTree != null) {
+      storeState.graphsByVersion.delete(storeState.previousTree.version);
+    } else {
+      Recoil_recoverableViolation('Ended batch with no previous state, which is unexpected', 'recoil');
+    }
+
+    storeState.previousTree = null;
+
+    if (Recoil_gkx('recoil_memory_managament_2020')) {
+      releaseScheduledRetainablesNow$1(store);
+    }
+  } finally {
+    storeState.commitDepth--;
+  }
+}
+/*
+ * The purpose of the Batcher is to observe when React batches end so that
+ * Recoil state changes can be batched. Whenever Recoil state changes, we call
+ * setState on the batcher. Then we wait for that change to be committed, which
+ * signifies the end of the batch. That's when we respond to the Recoil change.
+ */
+
+
+function Batcher({
+  setNotifyBatcherOfChange
+}) {
+  const storeRef = useStoreRef();
+  const [, setState] = useState([]);
+  setNotifyBatcherOfChange(() => setState({}));
+  useEffect(() => {
+    setNotifyBatcherOfChange(() => setState({})); // If an asynchronous selector resolves after the Batcher is unmounted,
+    // notifyBatcherOfChange will still be called. An error gets thrown whenever
+    // setState is called after a component is already unmounted, so this sets
+    // notifyBatcherOfChange to be a no-op.
+
+    return () => {
+      setNotifyBatcherOfChange(() => {});
+    };
+  }, [setNotifyBatcherOfChange]);
+  useEffect(() => {
+    // enqueueExecution runs this function immediately; it is only used to
+    // manipulate the order of useEffects during tests, since React seems to
+    // call useEffect in an unpredictable order sometimes.
+    Recoil_Queue.enqueueExecution('Batcher', () => {
+      endBatch(storeRef.current);
+    });
+  });
+  return null;
+}
+
+if (true) {
+  if (typeof window !== 'undefined' && !window.$recoilDebugStates) {
+    window.$recoilDebugStates = [];
+  }
+} // When removing this deprecated function, remove stateBySettingRecoilValue
+// which will no longer be needed.
+
+
+function initialStoreState_DEPRECATED(store, initializeState) {
+  const initial = makeEmptyStoreState$2();
+  initializeState({
+    // $FlowFixMe[escaped-generic]
+    set: (atom, value) => {
+      const state = initial.currentTree;
+      const writes = setNodeValue$2(store, state, atom.key, value);
+      const writtenNodes = new Set(writes.keys());
+      const nonvalidatedAtoms = state.nonvalidatedAtoms.clone();
+
+      for (const n of writtenNodes) {
+        nonvalidatedAtoms.delete(n);
+      }
+
+      initial.currentTree = { ...state,
+        dirtyAtoms: Recoil_unionSets(state.dirtyAtoms, writtenNodes),
+        atomValues: applyAtomValueWrites$1(state.atomValues, writes),
+        // NB: PLEASE un-export applyAtomValueWrites when deleting this code
+        nonvalidatedAtoms
+      };
+    },
+    setUnvalidatedAtomValues: atomValues => {
+      // FIXME replace this with a mutative loop
+      atomValues.forEach((v, k) => {
+        initial.currentTree = setUnvalidatedAtomValue_DEPRECATED$1(initial.currentTree, k, v);
+      });
+    }
+  });
+  return initial;
+} // Initialize state snapshot for <RecoilRoot> for the initializeState prop.
+// Atom effect initialization takes precedence over this prop.
+// Any atom effects will be run before initialization, but then cleaned up,
+// they are then re-run when used as part of rendering.  These semantics are
+// compatible with React StrictMode where effects may be re-run multiple times
+// but state initialization only happens once the first time.
+
+
+function initialStoreState(initializeState) {
+  // Initialize a snapshot and get its store
+  const snapshot = freshSnapshot$1().map(initializeState);
+  const storeState = snapshot.getStore_INTERNAL().getState(); // Counteract the snapshot auto-release
+
+  snapshot.retain(); // Cleanup any effects run during initialization and clear the handlers so
+  // they will re-initialize if used during rendering.  This allows atom effect
+  // initialization to take precedence over initializeState and be compatible
+  // with StrictMode semantics.
+
+  storeState.nodeCleanupFunctions.forEach(cleanup => cleanup());
+  storeState.nodeCleanupFunctions.clear();
+  return storeState;
+}
+
+let nextID = 0;
+
+function RecoilRoot_INTERNAL({
+  initializeState_DEPRECATED,
+  initializeState,
+  store_INTERNAL: storeProp,
+  // For use with React "context bridging"
+  children
+}) {
+  // prettier-ignore
+  // @fb-only: useEffect(() => {
+  // @fb-only: if (gkx('recoil_usage_logging')) {
+  // @fb-only: try {
+  // @fb-only: RecoilUsageLogFalcoEvent.log(() => ({
+  // @fb-only: type: RecoilusagelogEvent.RECOIL_ROOT_MOUNTED,
+  // @fb-only: path: URI.getRequestURI().getPath(),
+  // @fb-only: }));
+  // @fb-only: } catch {
+  // @fb-only: recoverableViolation(
+  // @fb-only: 'Error when logging Recoil Usage event',
+  // @fb-only: 'recoil',
+  // @fb-only: );
+  // @fb-only: }
+  // @fb-only: }
+  // @fb-only: }, []);
+  let storeStateRef; // eslint-disable-line prefer-const
+
+  const getGraph = version => {
+    const graphs = storeStateRef.current.graphsByVersion;
+
+    if (graphs.has(version)) {
+      return Recoil_nullthrows(graphs.get(version));
+    }
+
+    const newGraph = graph$2();
+    graphs.set(version, newGraph);
+    return newGraph;
+  };
+
+  const subscribeToTransactions = (callback, key) => {
+    if (key == null) {
+      // Global transaction subscriptions
+      const {
+        transactionSubscriptions
+      } = storeRef.current.getState();
+      const id = nextID++;
+      transactionSubscriptions.set(id, callback);
+      return {
+        release: () => {
+          transactionSubscriptions.delete(id);
+        }
+      };
+    } else {
+      // Node-specific transaction subscriptions:
+      const {
+        nodeTransactionSubscriptions
+      } = storeRef.current.getState();
+
+      if (!nodeTransactionSubscriptions.has(key)) {
+        nodeTransactionSubscriptions.set(key, new Map());
+      }
+
+      const id = nextID++;
+      Recoil_nullthrows(nodeTransactionSubscriptions.get(key)).set(id, callback);
+      return {
+        release: () => {
+          const subs = nodeTransactionSubscriptions.get(key);
+
+          if (subs) {
+            subs.delete(id);
+
+            if (subs.size === 0) {
+              nodeTransactionSubscriptions.delete(key);
+            }
+          }
+        }
+      };
+    }
+  };
+
+  const addTransactionMetadata = metadata => {
+    startNextTreeIfNeeded(storeRef.current);
+
+    for (const k of Object.keys(metadata)) {
+      Recoil_nullthrows(storeRef.current.getState().nextTree).transactionMetadata[k] = metadata[k];
+    }
+  };
+
+  const replaceState = replacer => {
+    startNextTreeIfNeeded(storeRef.current); // Use replacer to get the next state:
+
+    const nextTree = Recoil_nullthrows(storeStateRef.current.nextTree);
+    let replaced;
+
+    try {
+      stateReplacerIsBeingExecuted = true;
+      replaced = replacer(nextTree);
+    } finally {
+      stateReplacerIsBeingExecuted = false;
+    }
+
+    if (replaced === nextTree) {
+      return;
+    }
+
+    if (true) {
+      if (typeof window !== 'undefined') {
+        window.$recoilDebugStates.push(replaced); // TODO this shouldn't happen here because it's not batched
+      }
+    } // Save changes to nextTree and schedule a React update:
+
+
+    storeStateRef.current.nextTree = replaced;
+
+    if (reactMode$2().early) {
+      notifyComponents(storeRef.current, storeStateRef.current, replaced);
+    }
+
+    Recoil_nullthrows(notifyBatcherOfChange.current)();
+  };
+
+  const notifyBatcherOfChange = useRef$1(null);
+  const setNotifyBatcherOfChange = useCallback(x => {
+    notifyBatcherOfChange.current = x;
+  }, [notifyBatcherOfChange]);
+  const storeRef = Recoil_useRefInitOnce(() => storeProp !== null && storeProp !== void 0 ? storeProp : {
+    storeID: getNextStoreID$2(),
+    getState: () => storeStateRef.current,
+    replaceState,
+    getGraph,
+    subscribeToTransactions,
+    addTransactionMetadata
+  });
+
+  if (storeProp != null) {
+    storeRef.current = storeProp;
+  }
+
+  storeStateRef = Recoil_useRefInitOnce(() => initializeState_DEPRECATED != null ? initialStoreState_DEPRECATED(storeRef.current, initializeState_DEPRECATED) : initializeState != null ? initialStoreState(initializeState) : makeEmptyStoreState$2());
+  const mutableSource = useMemo(() => createMutableSource$1 === null || createMutableSource$1 === void 0 ? void 0 : createMutableSource$1(storeStateRef, () => storeStateRef.current.currentTree.version), [storeStateRef]); // Cleanup when the <RecoilRoot> is unmounted
+
+  useEffect(() => {
+    // React is free to call effect cleanup handlers and effects at will, the
+    // deps array is only an optimization.  For example, React strict mode
+    // will execute each effect twice for testing.  Therefore, we need symmetry
+    // to re-initialize all known atoms after they were cleaned up.
+    const store = storeRef.current;
+
+    for (const atomKey of new Set(store.getState().knownAtoms)) {
+      initializeNode$2(store, atomKey, 'get');
+    }
+
+    return () => {
+      for (const atomKey of store.getState().knownAtoms) {
+        cleanUpNode$2(store, atomKey);
+      }
+    };
+  }, [storeRef]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(AppContext.Provider, {
+    value: storeRef
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(MutableSourceContext.Provider, {
+    value: mutableSource
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Batcher, {
+    setNotifyBatcherOfChange: setNotifyBatcherOfChange
+  }), children));
+}
+
+function RecoilRoot(props) {
+  const {
+    override,
+    ...propsExceptOverride
+  } = props;
+  const ancestorStoreRef = useStoreRef();
+
+  if (override === false && ancestorStoreRef.current !== defaultStore) {
+    // If ancestorStoreRef.current !== defaultStore, it means that this
+    // RecoilRoot is not nested within another.
+    return props.children;
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(RecoilRoot_INTERNAL, propsExceptOverride);
+}
+
+function useRecoilStoreID() {
+  return useStoreRef().current.storeID;
+}
+
+var Recoil_RecoilRoot = {
+  RecoilRoot,
+  useStoreRef,
+  useRecoilMutableSource,
+  useRecoilStoreID,
+  notifyComponents_FOR_TESTING: notifyComponents,
+  sendEndOfBatchNotifications_FOR_TESTING: sendEndOfBatchNotifications
+};
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @emails oncall+recoil
+ * 
+ * @format
+ */
+
+function shallowArrayEqual(a, b) {
+  if (a === b) {
+    return true;
+  }
+
+  if (a.length !== b.length) {
+    return false;
+  }
+
+  for (let i = 0, l = a.length; i < l; i++) {
+    if (a[i] !== b[i]) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+var Recoil_shallowArrayEqual = shallowArrayEqual;
+
+const {
+  useEffect: useEffect$1,
+  useRef: useRef$2
+} = react__WEBPACK_IMPORTED_MODULE_0__;
+
+function usePrevious(value) {
+  const ref = useRef$2();
+  useEffect$1(() => {
+    ref.current = value;
+  });
+  return ref.current;
+}
+
+var Recoil_usePrevious = usePrevious;
+
+const {
+  useStoreRef: useStoreRef$1
+} = Recoil_RecoilRoot;
+
+const {
+  SUSPENSE_TIMEOUT_MS: SUSPENSE_TIMEOUT_MS$1
+} = Recoil_Retention;
+
+const {
+  updateRetainCount: updateRetainCount$2
+} = Recoil_Retention;
+
+const {
+  RetentionZone: RetentionZone$3
+} = Recoil_RetentionZone;
+
+const {
+  useEffect: useEffect$2,
+  useRef: useRef$3
+} = react__WEBPACK_IMPORTED_MODULE_0__;
+
+const {
+  isSSR: isSSR$2
+} = Recoil_Environment;
+
+
+
+
+
+ // I don't see a way to avoid the any type here because we want to accept readable
+// and writable values with any type parameter, but normally with writable ones
+// RecoilState<SomeT> is not a subtype of RecoilState<mixed>.
+
+
+// flowlint-line unclear-type:off
+function useRetain(toRetain) {
+  if (!Recoil_gkx('recoil_memory_managament_2020')) {
+    return;
+  } // eslint-disable-next-line fb-www/react-hooks
+
+
+  return useRetain_ACTUAL(toRetain);
+}
+
+function useRetain_ACTUAL(toRetain) {
+  const array = Array.isArray(toRetain) ? toRetain : [toRetain];
+  const retainables = array.map(a => a instanceof RetentionZone$3 ? a : a.key);
+  const storeRef = useStoreRef$1();
+  useEffect$2(() => {
+    if (!Recoil_gkx('recoil_memory_managament_2020')) {
+      return;
+    }
+
+    const store = storeRef.current;
+
+    if (timeoutID.current && !isSSR$2) {
+      // Already performed a temporary retain on render, simply cancel the release
+      // of that temporary retain.
+      window.clearTimeout(timeoutID.current);
+      timeoutID.current = null;
+    } else {
+      for (const r of retainables) {
+        updateRetainCount$2(store, r, 1);
+      }
+    }
+
+    return () => {
+      for (const r of retainables) {
+        updateRetainCount$2(store, r, -1);
+      }
+    }; // eslint-disable-next-line fb-www/react-hooks-deps
+  }, [storeRef, ...retainables]); // We want to retain if the component suspends. This is terrible but the Suspense
+  // API affords us no better option. If we suspend and never commit after some
+  // seconds, then release. The 'actual' retain/release in the effect above
+  // cancels this.
+
+  const timeoutID = useRef$3();
+  const previousRetainables = Recoil_usePrevious(retainables);
+
+  if (!isSSR$2 && (previousRetainables === undefined || !Recoil_shallowArrayEqual(previousRetainables, retainables))) {
+    const store = storeRef.current;
+
+    for (const r of retainables) {
+      updateRetainCount$2(store, r, 1);
+    }
+
+    if (previousRetainables) {
+      for (const r of previousRetainables) {
+        updateRetainCount$2(store, r, -1);
+      }
+    }
+
+    if (timeoutID.current) {
+      window.clearTimeout(timeoutID.current);
+    }
+
+    timeoutID.current = window.setTimeout(() => {
+      timeoutID.current = null;
+
+      for (const r of retainables) {
+        updateRetainCount$2(store, r, -1);
+      }
+    }, SUSPENSE_TIMEOUT_MS$1);
+  }
+}
+
+var Recoil_useRetain = useRetain;
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * MIT License
+ *
+ * Copyright (c) 2014-2019 Georg Tavonius
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ *
+ * @emails oncall+recoil
+ * 
+ * @format
+ */
+
+const UNKNOWN_FUNCTION = '<unknown>';
+/**
+ * This parses the different stack traces and puts them into one format
+ * This borrows heavily from TraceKit (https://github.com/csnover/TraceKit)
+ */
+
+function stackTraceParser(stackString) {
+  const lines = stackString.split('\n');
+  return lines.reduce((stack, line) => {
+    const parseResult = parseChrome(line) || parseWinjs(line) || parseGecko(line) || parseNode(line) || parseJSC(line);
+
+    if (parseResult) {
+      stack.push(parseResult);
+    }
+
+    return stack;
+  }, []);
+}
+
+const chromeRe = /^\s*at (.*?) ?\(((?:file|https?|blob|chrome-extension|native|eval|webpack|<anonymous>|\/|[a-z]:\\|\\\\).*?)(?::(\d+))?(?::(\d+))?\)?\s*$/i;
+const chromeEvalRe = /\((\S*)(?::(\d+))(?::(\d+))\)/;
+
+function parseChrome(line) {
+  const parts = chromeRe.exec(line);
+
+  if (!parts) {
+    return null;
+  }
+
+  const isNative = parts[2] && parts[2].indexOf('native') === 0; // start of line
+
+  const isEval = parts[2] && parts[2].indexOf('eval') === 0; // start of line
+
+  const submatch = chromeEvalRe.exec(parts[2]);
+
+  if (isEval && submatch != null) {
+    // throw out eval line/column and use top-most line/column number
+    parts[2] = submatch[1]; // url
+
+    parts[3] = submatch[2]; // line
+
+    parts[4] = submatch[3]; // column
+  }
+
+  return {
+    file: !isNative ? parts[2] : null,
+    methodName: parts[1] || UNKNOWN_FUNCTION,
+    arguments: isNative ? [parts[2]] : [],
+    lineNumber: parts[3] ? +parts[3] : null,
+    column: parts[4] ? +parts[4] : null
+  };
+}
+
+const winjsRe = /^\s*at (?:((?:\[object object\])?.+) )?\(?((?:file|ms-appx|https?|webpack|blob):.*?):(\d+)(?::(\d+))?\)?\s*$/i;
+
+function parseWinjs(line) {
+  const parts = winjsRe.exec(line);
+
+  if (!parts) {
+    return null;
+  }
+
+  return {
+    file: parts[2],
+    methodName: parts[1] || UNKNOWN_FUNCTION,
+    arguments: [],
+    lineNumber: +parts[3],
+    column: parts[4] ? +parts[4] : null
+  };
+}
+
+const geckoRe = /^\s*(.*?)(?:\((.*?)\))?(?:^|@)((?:file|https?|blob|chrome|webpack|resource|\[native).*?|[^@]*bundle)(?::(\d+))?(?::(\d+))?\s*$/i;
+const geckoEvalRe = /(\S+) line (\d+)(?: > eval line \d+)* > eval/i;
+
+function parseGecko(line) {
+  const parts = geckoRe.exec(line);
+
+  if (!parts) {
+    return null;
+  }
+
+  const isEval = parts[3] && parts[3].indexOf(' > eval') > -1;
+  const submatch = geckoEvalRe.exec(parts[3]);
+
+  if (isEval && submatch != null) {
+    // throw out eval line/column and use top-most line number
+    parts[3] = submatch[1];
+    parts[4] = submatch[2];
+    parts[5] = null; // no column when eval
+  }
+
+  return {
+    file: parts[3],
+    methodName: parts[1] || UNKNOWN_FUNCTION,
+    arguments: parts[2] ? parts[2].split(',') : [],
+    lineNumber: parts[4] ? +parts[4] : null,
+    column: parts[5] ? +parts[5] : null
+  };
+}
+
+const javaScriptCoreRe = /^\s*(?:([^@]*)(?:\((.*?)\))?@)?(\S.*?):(\d+)(?::(\d+))?\s*$/i;
+
+function parseJSC(line) {
+  const parts = javaScriptCoreRe.exec(line);
+
+  if (!parts) {
+    return null;
+  }
+
+  return {
+    file: parts[3],
+    methodName: parts[1] || UNKNOWN_FUNCTION,
+    arguments: [],
+    lineNumber: +parts[4],
+    column: parts[5] ? +parts[5] : null
+  };
+}
+
+const nodeRe = /^\s*at (?:((?:\[object object\])?[^\\/]+(?: \[as \S+\])?) )?\(?(.*?):(\d+)(?::(\d+))?\)?\s*$/i;
+
+function parseNode(line) {
+  const parts = nodeRe.exec(line);
+
+  if (!parts) {
+    return null;
+  }
+
+  return {
+    file: parts[2],
+    methodName: parts[1] || UNKNOWN_FUNCTION,
+    arguments: [],
+    lineNumber: +parts[3],
+    column: parts[4] ? +parts[4] : null
+  };
+}
+
+var Recoil_stackTraceParser = stackTraceParser;
+
+const {
+  useRef: useRef$4
+} = react__WEBPACK_IMPORTED_MODULE_0__;
+
+
+
+
+
+function useComponentName() {
+  const nameRef = useRef$4();
+
+  if (true) {
+    if (Recoil_gkx('recoil_infer_component_names')) {
+      var _nameRef$current;
+
+      if (nameRef.current === undefined) {
+        // There is no blessed way to determine the calling React component from
+        // within a hook. This hack uses the fact that hooks must start with 'use'
+        // and that hooks are either called by React Components or other hooks. It
+        // follows therefore, that to find the calling component, you simply need
+        // to look down the stack and find the first function which doesn't start
+        // with 'use'. We are only enabling this in dev for now, since once the
+        // codebase is minified, the naming assumptions no longer hold true.
+        // eslint-disable-next-line fb-www/no-new-error
+        const frames = Recoil_stackTraceParser(new Error().stack);
+
+        for (const {
+          methodName
+        } of frames) {
+          // I observed cases where the frame was of the form 'Object.useXXX'
+          // hence why I'm searching for hooks following a word boundary
+          if (!methodName.match(/\buse[^\b]+$/)) {
+            return nameRef.current = methodName;
+          }
+        }
+
+        nameRef.current = null;
+      }
+
+      return (_nameRef$current = nameRef.current) !== null && _nameRef$current !== void 0 ? _nameRef$current : '<unable to determine component name>';
+    }
+  } // @fb-only: return "<component name only available when both in dev mode and when passing GK 'recoil_infer_component_names'>";
+
+
+  return '<component name not available>'; // @oss-only
+}
+
+var Recoil_useComponentName = useComponentName;
+
+const {
+  batchUpdates: batchUpdates$2
+} = Recoil_Batching;
+
+const {
+  DEFAULT_VALUE: DEFAULT_VALUE$2
+} = Recoil_Node;
+
+const {
+  reactMode: reactMode$3,
+  useMutableSource: useMutableSource$1,
+  useSyncExternalStore: useSyncExternalStore$1
+} = Recoil_ReactMode;
+
+const {
+  useRecoilMutableSource: useRecoilMutableSource$1,
+  useStoreRef: useStoreRef$2
+} = Recoil_RecoilRoot;
+
+const {
+  isRecoilValue: isRecoilValue$2
+} = Recoil_RecoilValue$1;
+
+const {
+  AbstractRecoilValue: AbstractRecoilValue$3,
+  getRecoilValueAsLoadable: getRecoilValueAsLoadable$2,
+  setRecoilValue: setRecoilValue$2,
+  setUnvalidatedRecoilValue: setUnvalidatedRecoilValue$2,
+  subscribeToRecoilValue: subscribeToRecoilValue$1
+} = Recoil_RecoilValueInterface;
+
+
+
+const {
+  useCallback: useCallback$1,
+  useEffect: useEffect$3,
+  useMemo: useMemo$1,
+  useRef: useRef$5,
+  useState: useState$1
+} = react__WEBPACK_IMPORTED_MODULE_0__;
+
+const {
+  setByAddingToSet: setByAddingToSet$2
+} = Recoil_CopyOnWrite;
+
+
+
+
+
+
+
+
+
+
+
+
+
+function handleLoadable(loadable, recoilValue, storeRef) {
+  // We can't just throw the promise we are waiting on to Suspense.  If the
+  // upstream dependencies change it may produce a state in which the component
+  // can render, but it would still be suspended on a Promise that may never resolve.
+  if (loadable.state === 'hasValue') {
+    return loadable.contents;
+  } else if (loadable.state === 'loading') {
+    const promise = new Promise(resolve => {
+      storeRef.current.getState().suspendedComponentResolvers.add(resolve);
+    }); // $FlowFixMe Flow(prop-missing) for integrating with tools that inspect thrown promises @fb-only
+    // @fb-only: promise.displayName = `Recoil State: ${recoilValue.key}`;
+
+    throw promise;
+  } else if (loadable.state === 'hasError') {
+    throw loadable.contents;
+  } else {
+    throw Recoil_err(`Invalid value of loadable atom "${recoilValue.key}"`);
+  }
+}
+
+function validateRecoilValue(recoilValue, hookName) {
+  if (!isRecoilValue$2(recoilValue)) {
+    throw Recoil_err(`Invalid argument to ${hookName}: expected an atom or selector but got ${String(recoilValue)}`);
+  }
+}
+
+/**
+ * Various things are broken with useRecoilInterface, particularly concurrent
+ * mode, React strict mode, and memory management. They will not be fixed.
+ * */
+function useRecoilInterface_DEPRECATED() {
+  const componentName = Recoil_useComponentName();
+  const storeRef = useStoreRef$2();
+  const [, forceUpdate] = useState$1([]);
+  const recoilValuesUsed = useRef$5(new Set());
+  recoilValuesUsed.current = new Set(); // Track the RecoilValues used just during this render
+
+  const previousSubscriptions = useRef$5(new Set());
+  const subscriptions = useRef$5(new Map());
+  const unsubscribeFrom = useCallback$1(key => {
+    const sub = subscriptions.current.get(key);
+
+    if (sub) {
+      sub.release();
+      subscriptions.current.delete(key);
+    }
+  }, [subscriptions]);
+  const updateState = useCallback$1((_state, key) => {
+    if (subscriptions.current.has(key)) {
+      forceUpdate([]);
+    }
+  }, []); // Effect to add/remove subscriptions as nodes are used
+
+  useEffect$3(() => {
+    const store = storeRef.current;
+    Recoil_differenceSets(recoilValuesUsed.current, previousSubscriptions.current).forEach(key => {
+      if (subscriptions.current.has(key)) {
+        Recoil_expectationViolation(`Double subscription to RecoilValue "${key}"`);
+        return;
+      }
+
+      const sub = subscribeToRecoilValue$1(store, new AbstractRecoilValue$3(key), state => updateState(state, key), componentName);
+      subscriptions.current.set(key, sub);
+      /**
+       * Since we're subscribing in an effect we need to update to the latest
+       * value of the atom since it may have changed since we rendered. We can
+       * go ahead and do that now, unless we're in the middle of a batch --
+       * in which case we should do it at the end of the batch, due to the
+       * following edge case: Suppose an atom is updated in another useEffect
+       * of this same component. Then the following sequence of events occur:
+       * 1. Atom is updated and subs fired (but we may not be subscribed
+       *    yet depending on order of effects, so we miss this) Updated value
+       *    is now in nextTree, but not currentTree.
+       * 2. This effect happens. We subscribe and update.
+       * 3. From the update we re-render and read currentTree, with old value.
+       * 4. Batcher's effect sets currentTree to nextTree.
+       * In this sequence we miss the update. To avoid that, add the update
+       * to queuedComponentCallback if a batch is in progress.
+       */
+      // FIXME delete queuedComponentCallbacks_DEPRECATED when deleting useInterface.
+
+      const state = store.getState();
+
+      if (state.nextTree) {
+        store.getState().queuedComponentCallbacks_DEPRECATED.push(() => {
+          updateState(store.getState(), key);
+        });
+      } else {
+        updateState(store.getState(), key);
+      }
+    });
+    Recoil_differenceSets(previousSubscriptions.current, recoilValuesUsed.current).forEach(key => {
+      unsubscribeFrom(key);
+    });
+    previousSubscriptions.current = recoilValuesUsed.current;
+  }); // Effect to unsubscribe from all when unmounting
+
+  useEffect$3(() => {
+    const currentSubscriptions = subscriptions.current; // Restore subscriptions that were cleared due to StrictMode running this effect twice
+
+    Recoil_differenceSets(recoilValuesUsed.current, new Set(currentSubscriptions.keys())).forEach(key => {
+      const sub = subscribeToRecoilValue$1(storeRef.current, new AbstractRecoilValue$3(key), state => updateState(state, key), componentName);
+      currentSubscriptions.set(key, sub);
+    });
+    return () => currentSubscriptions.forEach((_, key) => unsubscribeFrom(key));
+  }, [componentName, storeRef, unsubscribeFrom, updateState]);
+  return useMemo$1(() => {
+    // eslint-disable-next-line no-shadow
+    function useSetRecoilState(recoilState) {
+      if (true) {
+        validateRecoilValue(recoilState, 'useSetRecoilState');
+      }
+
+      return newValueOrUpdater => {
+        setRecoilValue$2(storeRef.current, recoilState, newValueOrUpdater);
+      };
+    } // eslint-disable-next-line no-shadow
+
+
+    function useResetRecoilState(recoilState) {
+      if (true) {
+        validateRecoilValue(recoilState, 'useResetRecoilState');
+      }
+
+      return () => setRecoilValue$2(storeRef.current, recoilState, DEFAULT_VALUE$2);
+    } // eslint-disable-next-line no-shadow
+
+
+    function useRecoilValueLoadable(recoilValue) {
+      var _storeState$nextTree;
+
+      if (true) {
+        validateRecoilValue(recoilValue, 'useRecoilValueLoadable');
+      }
+
+      if (!recoilValuesUsed.current.has(recoilValue.key)) {
+        recoilValuesUsed.current = setByAddingToSet$2(recoilValuesUsed.current, recoilValue.key);
+      } // TODO Restore optimization to memoize lookup
+
+
+      const storeState = storeRef.current.getState();
+      return getRecoilValueAsLoadable$2(storeRef.current, recoilValue, reactMode$3().early ? (_storeState$nextTree = storeState.nextTree) !== null && _storeState$nextTree !== void 0 ? _storeState$nextTree : storeState.currentTree : storeState.currentTree);
+    } // eslint-disable-next-line no-shadow
+
+
+    function useRecoilValue(recoilValue) {
+      if (true) {
+        validateRecoilValue(recoilValue, 'useRecoilValue');
+      }
+
+      const loadable = useRecoilValueLoadable(recoilValue);
+      return handleLoadable(loadable, recoilValue, storeRef);
+    } // eslint-disable-next-line no-shadow
+
+
+    function useRecoilState(recoilState) {
+      if (true) {
+        validateRecoilValue(recoilState, 'useRecoilState');
+      }
+
+      return [useRecoilValue(recoilState), useSetRecoilState(recoilState)];
+    } // eslint-disable-next-line no-shadow
+
+
+    function useRecoilStateLoadable(recoilState) {
+      if (true) {
+        validateRecoilValue(recoilState, 'useRecoilStateLoadable');
+      }
+
+      return [useRecoilValueLoadable(recoilState), useSetRecoilState(recoilState)];
+    }
+
+    return {
+      getRecoilValue: useRecoilValue,
+      getRecoilValueLoadable: useRecoilValueLoadable,
+      getRecoilState: useRecoilState,
+      getRecoilStateLoadable: useRecoilStateLoadable,
+      getSetRecoilState: useSetRecoilState,
+      getResetRecoilState: useResetRecoilState
+    };
+  }, [recoilValuesUsed, storeRef]);
+}
+
+const recoilComponentGetRecoilValueCount_FOR_TESTING = {
+  current: 0
+};
+
+function useRecoilValueLoadable_SYNC_EXTERNAL_STORE(recoilValue) {
+  const storeRef = useStoreRef$2();
+  const componentName = Recoil_useComponentName();
+  const getSnapshot = useCallback$1(() => {
+    var _storeState$nextTree2;
+
+    if (true) {
+      recoilComponentGetRecoilValueCount_FOR_TESTING.current++;
+    }
+
+    const store = storeRef.current;
+    const storeState = store.getState();
+    const treeState = reactMode$3().early ? (_storeState$nextTree2 = storeState.nextTree) !== null && _storeState$nextTree2 !== void 0 ? _storeState$nextTree2 : storeState.currentTree : storeState.currentTree;
+    const loadable = getRecoilValueAsLoadable$2(store, recoilValue, treeState);
+    return {
+      loadable,
+      key: recoilValue.key
+    };
+  }, [storeRef, recoilValue]); // Memoize the state to avoid unnecessary rerenders
+
+  const memoizePreviousSnapshot = useCallback$1(getState => {
+    let prevState;
+    return () => {
+      var _prevState, _prevState2;
+
+      const nextState = getState();
+
+      if ((_prevState = prevState) !== null && _prevState !== void 0 && _prevState.loadable.is(nextState.loadable) && ((_prevState2 = prevState) === null || _prevState2 === void 0 ? void 0 : _prevState2.key) === nextState.key) {
+        return prevState;
+      }
+
+      prevState = nextState;
+      return nextState;
+    };
+  }, []);
+  const getMemoizedSnapshot = useMemo$1(() => memoizePreviousSnapshot(getSnapshot), [getSnapshot, memoizePreviousSnapshot]);
+  const subscribe = useCallback$1(notify => {
+    const store = storeRef.current;
+    const subscription = subscribeToRecoilValue$1(store, recoilValue, notify, componentName);
+    return subscription.release;
+  }, [storeRef, recoilValue, componentName]);
+  return useSyncExternalStore$1(subscribe, getMemoizedSnapshot, // getSnapshot()
+  getMemoizedSnapshot // getServerSnapshot() for SSR support
+  ).loadable;
+}
+
+function useRecoilValueLoadable_MUTABLE_SOURCE(recoilValue) {
+  const storeRef = useStoreRef$2();
+  const getLoadable = useCallback$1(() => {
+    var _storeState$nextTree3;
+
+    const store = storeRef.current;
+    const storeState = store.getState();
+    const treeState = reactMode$3().early ? (_storeState$nextTree3 = storeState.nextTree) !== null && _storeState$nextTree3 !== void 0 ? _storeState$nextTree3 : storeState.currentTree : storeState.currentTree;
+    return getRecoilValueAsLoadable$2(store, recoilValue, treeState);
+  }, [storeRef, recoilValue]);
+  const getLoadableWithTesting = useCallback$1(() => {
+    if (true) {
+      recoilComponentGetRecoilValueCount_FOR_TESTING.current++;
+    }
+
+    return getLoadable();
+  }, [getLoadable]);
+  const componentName = Recoil_useComponentName();
+  const subscribe = useCallback$1((_storeState, notify) => {
+    const store = storeRef.current;
+    const subscription = subscribeToRecoilValue$1(store, recoilValue, () => {
+      if (!Recoil_gkx('recoil_suppress_rerender_in_callback')) {
+        return notify();
+      } // Only re-render if the value has changed.
+      // This will evaluate the atom/selector now as well as when the
+      // component renders, but that may help with prefetching.
+
+
+      const newLoadable = getLoadable();
+
+      if (!prevLoadableRef.current.is(newLoadable)) {
+        notify();
+      } // If the component is suspended then the effect setting prevLoadableRef
+      // will not run.  So, set the previous value here when its subscription
+      // is fired to wake it up.  We can't just rely on this, though, because
+      // this only executes when an atom/selector is dirty and the atom/selector
+      // passed to the hook can dynamically change.
+
+
+      prevLoadableRef.current = newLoadable;
+    }, componentName);
+    return subscription.release;
+  }, [storeRef, recoilValue, componentName, getLoadable]);
+  const source = useRecoilMutableSource$1();
+
+  if (source == null) {
+    throw Recoil_err('Recoil hooks must be used in components contained within a <RecoilRoot> component.');
+  }
+
+  const loadable = useMutableSource$1(source, getLoadableWithTesting, subscribe);
+  const prevLoadableRef = useRef$5(loadable);
+  useEffect$3(() => {
+    prevLoadableRef.current = loadable;
+  });
+  return loadable;
+}
+
+function useRecoilValueLoadable_TRANSITION_SUPPORT(recoilValue) {
+  const storeRef = useStoreRef$2();
+  const componentName = Recoil_useComponentName(); // Accessors to get the current state
+
+  const getLoadable = useCallback$1(() => {
+    var _storeState$nextTree4;
+
+    if (true) {
+      recoilComponentGetRecoilValueCount_FOR_TESTING.current++;
+    }
+
+    const store = storeRef.current;
+    const storeState = store.getState();
+    const treeState = reactMode$3().early ? (_storeState$nextTree4 = storeState.nextTree) !== null && _storeState$nextTree4 !== void 0 ? _storeState$nextTree4 : storeState.currentTree : storeState.currentTree;
+    return getRecoilValueAsLoadable$2(store, recoilValue, treeState);
+  }, [storeRef, recoilValue]);
+  const getState = useCallback$1(() => ({
+    loadable: getLoadable(),
+    key: recoilValue.key
+  }), [getLoadable, recoilValue.key]); // Memoize state snapshots
+
+  const updateState = useCallback$1(prevState => {
+    const nextState = getState();
+    return prevState.loadable.is(nextState.loadable) && prevState.key === nextState.key ? prevState : nextState;
+  }, [getState]); // Subscribe to Recoil state changes
+
+  useEffect$3(() => {
+    const subscription = subscribeToRecoilValue$1(storeRef.current, recoilValue, _state => {
+      setState(updateState);
+    }, componentName); // Update state in case we are using a different key
+
+    setState(updateState);
+    return subscription.release;
+  }, [componentName, recoilValue, storeRef, updateState]); // Get the current state
+
+  const [state, setState] = useState$1(getState); // If we changed keys, then return the state for the new key.
+  // This is important in case the old key would cause the component to suspend.
+  // We don't have to set the new state here since the subscribing effect above
+  // will do that.
+
+  return state.key !== recoilValue.key ? getState().loadable : state.loadable;
+}
+
+function useRecoilValueLoadable_LEGACY(recoilValue) {
+  const storeRef = useStoreRef$2();
+  const [, forceUpdate] = useState$1([]);
+  const componentName = Recoil_useComponentName();
+  const getLoadable = useCallback$1(() => {
+    var _storeState$nextTree5;
+
+    if (true) {
+      recoilComponentGetRecoilValueCount_FOR_TESTING.current++;
+    }
+
+    const store = storeRef.current;
+    const storeState = store.getState();
+    const treeState = reactMode$3().early ? (_storeState$nextTree5 = storeState.nextTree) !== null && _storeState$nextTree5 !== void 0 ? _storeState$nextTree5 : storeState.currentTree : storeState.currentTree;
+    return getRecoilValueAsLoadable$2(store, recoilValue, treeState);
+  }, [storeRef, recoilValue]);
+  const loadable = getLoadable();
+  const prevLoadableRef = useRef$5(loadable);
+  useEffect$3(() => {
+    prevLoadableRef.current = loadable;
+  });
+  useEffect$3(() => {
+    const store = storeRef.current;
+    const storeState = store.getState();
+    const subscription = subscribeToRecoilValue$1(store, recoilValue, _state => {
+      var _prevLoadableRef$curr;
+
+      if (!Recoil_gkx('recoil_suppress_rerender_in_callback')) {
+        return forceUpdate([]);
+      }
+
+      const newLoadable = getLoadable();
+
+      if (!((_prevLoadableRef$curr = prevLoadableRef.current) !== null && _prevLoadableRef$curr !== void 0 && _prevLoadableRef$curr.is(newLoadable))) {
+        forceUpdate(newLoadable);
+      }
+
+      prevLoadableRef.current = newLoadable;
+    }, componentName);
+    /**
+     * Since we're subscribing in an effect we need to update to the latest
+     * value of the atom since it may have changed since we rendered. We can
+     * go ahead and do that now, unless we're in the middle of a batch --
+     * in which case we should do it at the end of the batch, due to the
+     * following edge case: Suppose an atom is updated in another useEffect
+     * of this same component. Then the following sequence of events occur:
+     * 1. Atom is updated and subs fired (but we may not be subscribed
+     *    yet depending on order of effects, so we miss this) Updated value
+     *    is now in nextTree, but not currentTree.
+     * 2. This effect happens. We subscribe and update.
+     * 3. From the update we re-render and read currentTree, with old value.
+     * 4. Batcher's effect sets currentTree to nextTree.
+     * In this sequence we miss the update. To avoid that, add the update
+     * to queuedComponentCallback if a batch is in progress.
+     */
+
+    if (storeState.nextTree) {
+      store.getState().queuedComponentCallbacks_DEPRECATED.push(() => {
+        prevLoadableRef.current = null;
+        forceUpdate([]);
+      });
+    } else {
+      var _prevLoadableRef$curr2;
+
+      if (!Recoil_gkx('recoil_suppress_rerender_in_callback')) {
+        return forceUpdate([]);
+      }
+
+      const newLoadable = getLoadable();
+
+      if (!((_prevLoadableRef$curr2 = prevLoadableRef.current) !== null && _prevLoadableRef$curr2 !== void 0 && _prevLoadableRef$curr2.is(newLoadable))) {
+        forceUpdate(newLoadable);
+      }
+
+      prevLoadableRef.current = newLoadable;
+    }
+
+    return subscription.release;
+  }, [componentName, getLoadable, recoilValue, storeRef]);
+  return loadable;
+}
+/**
+  Like useRecoilValue(), but either returns the value if available or
+  just undefined if not available for any reason, such as pending or error.
+*/
+
+
+function useRecoilValueLoadable(recoilValue) {
+  if (true) {
+    validateRecoilValue(recoilValue, 'useRecoilValueLoadable');
+  }
+
+  if (Recoil_gkx('recoil_memory_managament_2020')) {
+    // eslint-disable-next-line fb-www/react-hooks
+    Recoil_useRetain(recoilValue);
+  }
+
+  return {
+    TRANSITION_SUPPORT: useRecoilValueLoadable_TRANSITION_SUPPORT,
+    SYNC_EXTERNAL_STORE: useRecoilValueLoadable_SYNC_EXTERNAL_STORE,
+    MUTABLE_SOURCE: useRecoilValueLoadable_MUTABLE_SOURCE,
+    LEGACY: useRecoilValueLoadable_LEGACY
+  }[reactMode$3().mode](recoilValue);
+}
+/**
+  Returns the value represented by the RecoilValue.
+  If the value is pending, it will throw a Promise to suspend the component,
+  if the value is an error it will throw it for the nearest React error boundary.
+  This will also subscribe the component for any updates in the value.
+  */
+
+
+function useRecoilValue(recoilValue) {
+  if (true) {
+    validateRecoilValue(recoilValue, 'useRecoilValue');
+  }
+
+  const storeRef = useStoreRef$2();
+  const loadable = useRecoilValueLoadable(recoilValue);
+  return handleLoadable(loadable, recoilValue, storeRef);
+}
+/**
+  Returns a function that allows the value of a RecoilState to be updated, but does
+  not subscribe the component to changes to that RecoilState.
+*/
+
+
+function useSetRecoilState(recoilState) {
+  if (true) {
+    validateRecoilValue(recoilState, 'useSetRecoilState');
+  }
+
+  const storeRef = useStoreRef$2();
+  return useCallback$1(newValueOrUpdater => {
+    setRecoilValue$2(storeRef.current, recoilState, newValueOrUpdater);
+  }, [storeRef, recoilState]);
+}
+/**
+  Returns a function that will reset the value of a RecoilState to its default
+*/
+
+
+function useResetRecoilState(recoilState) {
+  if (true) {
+    validateRecoilValue(recoilState, 'useResetRecoilState');
+  }
+
+  const storeRef = useStoreRef$2();
+  return useCallback$1(() => {
+    setRecoilValue$2(storeRef.current, recoilState, DEFAULT_VALUE$2);
+  }, [storeRef, recoilState]);
+}
+/**
+  Equivalent to useState(). Allows the value of the RecoilState to be read and written.
+  Subsequent updates to the RecoilState will cause the component to re-render. If the
+  RecoilState is pending, this will suspend the component and initiate the
+  retrieval of the value. If evaluating the RecoilState resulted in an error, this will
+  throw the error so that the nearest React error boundary can catch it.
+*/
+
+
+function useRecoilState(recoilState) {
+  if (true) {
+    validateRecoilValue(recoilState, 'useRecoilState');
+  }
+
+  return [useRecoilValue(recoilState), useSetRecoilState(recoilState)];
+}
+/**
+  Like useRecoilState(), but does not cause Suspense or React error handling. Returns
+  an object that indicates whether the RecoilState is available, pending, or
+  unavailable due to an error.
+*/
+
+
+function useRecoilStateLoadable(recoilState) {
+  if (true) {
+    validateRecoilValue(recoilState, 'useRecoilStateLoadable');
+  }
+
+  return [useRecoilValueLoadable(recoilState), useSetRecoilState(recoilState)];
+}
+
+function useSetUnvalidatedAtomValues() {
+  const storeRef = useStoreRef$2();
+  return (values, transactionMetadata = {}) => {
+    batchUpdates$2(() => {
+      storeRef.current.addTransactionMetadata(transactionMetadata);
+      values.forEach((value, key) => setUnvalidatedRecoilValue$2(storeRef.current, new AbstractRecoilValue$3(key), value));
+    });
+  };
+}
+/**
+ * Experimental variants of hooks with support for useTransition()
+ */
+
+
+function useRecoilValueLoadable_TRANSITION_SUPPORT_UNSTABLE(recoilValue) {
+  if (true) {
+    validateRecoilValue(recoilValue, 'useRecoilValueLoadable_TRANSITION_SUPPORT_UNSTABLE');
+
+    if (!reactMode$3().early) {
+      Recoil_recoverableViolation('Attepmt to use a hook with UNSTABLE_TRANSITION_SUPPORT in a rendering mode incompatible with concurrent rendering.  Try enabling the recoil_sync_external_store or recoil_transition_support GKs.');
+    }
+  }
+
+  if (Recoil_gkx('recoil_memory_managament_2020')) {
+    // eslint-disable-next-line fb-www/react-hooks
+    Recoil_useRetain(recoilValue);
+  }
+
+  return useRecoilValueLoadable_TRANSITION_SUPPORT(recoilValue);
+}
+
+function useRecoilValue_TRANSITION_SUPPORT_UNSTABLE(recoilValue) {
+  if (true) {
+    validateRecoilValue(recoilValue, 'useRecoilValue_TRANSITION_SUPPORT_UNSTABLE');
+  }
+
+  const storeRef = useStoreRef$2();
+  const loadable = useRecoilValueLoadable_TRANSITION_SUPPORT_UNSTABLE(recoilValue);
+  return handleLoadable(loadable, recoilValue, storeRef);
+}
+
+function useRecoilState_TRANSITION_SUPPORT_UNSTABLE(recoilState) {
+  if (true) {
+    validateRecoilValue(recoilState, 'useRecoilState_TRANSITION_SUPPORT_UNSTABLE');
+  }
+
+  return [useRecoilValue_TRANSITION_SUPPORT_UNSTABLE(recoilState), useSetRecoilState(recoilState)];
+}
+
+var Recoil_Hooks = {
+  recoilComponentGetRecoilValueCount_FOR_TESTING,
+  useRecoilInterface: useRecoilInterface_DEPRECATED,
+  useRecoilState,
+  useRecoilStateLoadable,
+  useRecoilValue,
+  useRecoilValueLoadable,
+  useResetRecoilState,
+  useSetRecoilState,
+  useSetUnvalidatedAtomValues,
+  useRecoilValueLoadable_TRANSITION_SUPPORT_UNSTABLE,
+  useRecoilValue_TRANSITION_SUPPORT_UNSTABLE,
+  useRecoilState_TRANSITION_SUPPORT_UNSTABLE
+};
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @emails oncall+recoil
+ * 
+ * @format
+ */
+/**
+ * Returns a map containing all of the keys + values from the original map where
+ * the given callback returned true.
+ */
+
+function filterMap(map, callback) {
+  const result = new Map();
+
+  for (const [key, value] of map) {
+    if (callback(value, key)) {
+      result.set(key, value);
+    }
+  }
+
+  return result;
+}
+
+var Recoil_filterMap = filterMap;
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @emails oncall+recoil
+ * 
+ * @format
+ */
+/**
+ * Returns a set containing all of the values from the original set where
+ * the given callback returned true.
+ */
+
+function filterSet(set, callback) {
+  const result = new Set();
+
+  for (const value of set) {
+    if (callback(value)) {
+      result.add(value);
+    }
+  }
+
+  return result;
+}
+
+var Recoil_filterSet = filterSet;
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @emails oncall+recoil
+ * 
+ * @format
+ */
+
+function mergeMaps(...maps) {
+  const result = new Map();
+
+  for (let i = 0; i < maps.length; i++) {
+    const iterator = maps[i].keys();
+    let nextKey;
+
+    while (!(nextKey = iterator.next()).done) {
+      // $FlowFixMe[incompatible-call] - map/iterator knows nothing about flow types
+      result.set(nextKey.value, maps[i].get(nextKey.value));
+    }
+  }
+  /* $FlowFixMe[incompatible-return] (>=0.66.0 site=www,mobile) This comment
+   * suppresses an error found when Flow v0.66 was deployed. To see the error
+   * delete this comment and run Flow. */
+
+
+  return result;
+}
+
+var Recoil_mergeMaps = mergeMaps;
+
+const {
+  batchUpdates: batchUpdates$3
+} = Recoil_Batching;
+
+const {
+  DEFAULT_VALUE: DEFAULT_VALUE$3,
+  getNode: getNode$4,
+  nodes: nodes$1
+} = Recoil_Node;
+
+const {
+  useStoreRef: useStoreRef$3
+} = Recoil_RecoilRoot;
+
+const {
+  AbstractRecoilValue: AbstractRecoilValue$4,
+  setRecoilValueLoadable: setRecoilValueLoadable$1
+} = Recoil_RecoilValueInterface;
+
+const {
+  SUSPENSE_TIMEOUT_MS: SUSPENSE_TIMEOUT_MS$2
+} = Recoil_Retention;
+
+const {
+  cloneSnapshot: cloneSnapshot$1
+} = Recoil_Snapshot$1;
+
+const {
+  useCallback: useCallback$2,
+  useEffect: useEffect$4,
+  useRef: useRef$6,
+  useState: useState$2
+} = react__WEBPACK_IMPORTED_MODULE_0__;
+
+const {
+  isSSR: isSSR$3
+} = Recoil_Environment;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function useTransactionSubscription(callback) {
+  const storeRef = useStoreRef$3();
+  useEffect$4(() => {
+    const sub = storeRef.current.subscribeToTransactions(callback);
+    return sub.release;
+  }, [callback, storeRef]);
+}
+
+function externallyVisibleAtomValuesInState(state) {
+  const atomValues = state.atomValues.toMap();
+  const persistedAtomContentsValues = Recoil_mapMap(Recoil_filterMap(atomValues, (v, k) => {
+    const node = getNode$4(k);
+    const persistence = node.persistence_UNSTABLE;
+    return persistence != null && persistence.type !== 'none' && v.state === 'hasValue';
+  }), v => v.contents); // Merge in nonvalidated atoms; we may not have defs for them but they will
+  // all have persistence on or they wouldn't be there in the first place.
+
+  return Recoil_mergeMaps(state.nonvalidatedAtoms.toMap(), persistedAtomContentsValues);
+}
+
+/**
+  Calls the given callback after any atoms have been modified and the consequent
+  component re-renders have been committed. This is intended for persisting
+  the values of the atoms to storage. The stored values can then be restored
+  using the useSetUnvalidatedAtomValues hook.
+
+  The callback receives the following info:
+
+  atomValues: The current value of every atom that is both persistable (persistence
+              type not set to 'none') and whose value is available (not in an
+              error or loading state).
+
+  previousAtomValues: The value of every persistable and available atom before
+               the transaction began.
+
+  atomInfo: A map containing the persistence settings for each atom. Every key
+            that exists in atomValues will also exist in atomInfo.
+
+  modifiedAtoms: The set of atoms that were written to during the transaction.
+
+  transactionMetadata: Arbitrary information that was added via the
+          useSetUnvalidatedAtomValues hook. Useful for ignoring the useSetUnvalidatedAtomValues
+          transaction, to avoid loops.
+*/
+function useTransactionObservation_DEPRECATED(callback) {
+  useTransactionSubscription(useCallback$2(store => {
+    let previousTree = store.getState().previousTree;
+    const currentTree = store.getState().currentTree;
+
+    if (!previousTree) {
+      Recoil_recoverableViolation('Transaction subscribers notified without a previous tree being present -- this is a bug in Recoil');
+      previousTree = store.getState().currentTree; // attempt to trundle on
+    }
+
+    const atomValues = externallyVisibleAtomValuesInState(currentTree);
+    const previousAtomValues = externallyVisibleAtomValuesInState(previousTree);
+    const atomInfo = Recoil_mapMap(nodes$1, node => {
+      var _node$persistence_UNS, _node$persistence_UNS2, _node$persistence_UNS3, _node$persistence_UNS4;
+
+      return {
+        persistence_UNSTABLE: {
+          type: (_node$persistence_UNS = (_node$persistence_UNS2 = node.persistence_UNSTABLE) === null || _node$persistence_UNS2 === void 0 ? void 0 : _node$persistence_UNS2.type) !== null && _node$persistence_UNS !== void 0 ? _node$persistence_UNS : 'none',
+          backButton: (_node$persistence_UNS3 = (_node$persistence_UNS4 = node.persistence_UNSTABLE) === null || _node$persistence_UNS4 === void 0 ? void 0 : _node$persistence_UNS4.backButton) !== null && _node$persistence_UNS3 !== void 0 ? _node$persistence_UNS3 : false
+        }
+      };
+    }); // Filter on existance in atomValues so that externally-visible rules
+    // are also applied to modified atoms (specifically exclude selectors):
+
+    const modifiedAtoms = Recoil_filterSet(currentTree.dirtyAtoms, k => atomValues.has(k) || previousAtomValues.has(k));
+    callback({
+      atomValues,
+      previousAtomValues,
+      atomInfo,
+      modifiedAtoms,
+      transactionMetadata: { ...currentTree.transactionMetadata
+      }
+    });
+  }, [callback]));
+}
+
+function useRecoilTransactionObserver(callback) {
+  useTransactionSubscription(useCallback$2(store => {
+    const snapshot = cloneSnapshot$1(store, 'current');
+    const previousSnapshot = cloneSnapshot$1(store, 'previous');
+    callback({
+      snapshot,
+      previousSnapshot
+    });
+  }, [callback]));
+} // Return a snapshot of the current state and subscribe to all state changes
+
+
+function useRecoilSnapshot() {
+  const storeRef = useStoreRef$3();
+  const [snapshot, setSnapshot] = useState$2(() => cloneSnapshot$1(storeRef.current));
+  const previousSnapshot = Recoil_usePrevious(snapshot);
+  const timeoutID = useRef$6();
+  const releaseRef = useRef$6();
+  useTransactionSubscription(useCallback$2(store => setSnapshot(cloneSnapshot$1(store)), [])); // Retain snapshot for duration component is mounted
+
+  useEffect$4(() => {
+    const release = snapshot.retain(); // Release the retain from the rendering call
+
+    if (timeoutID.current && !isSSR$3) {
+      var _releaseRef$current;
+
+      window.clearTimeout(timeoutID.current);
+      timeoutID.current = null;
+      (_releaseRef$current = releaseRef.current) === null || _releaseRef$current === void 0 ? void 0 : _releaseRef$current.call(releaseRef);
+      releaseRef.current = null;
+    }
+
+    return release;
+  }, [snapshot]); // Retain snapshot until above effect is run.
+  // Release after a threshold in case component is suspended.
+
+  if (previousSnapshot !== snapshot && !isSSR$3) {
+    // Release the previous snapshot
+    if (timeoutID.current) {
+      var _releaseRef$current2;
+
+      window.clearTimeout(timeoutID.current);
+      timeoutID.current = null;
+      (_releaseRef$current2 = releaseRef.current) === null || _releaseRef$current2 === void 0 ? void 0 : _releaseRef$current2.call(releaseRef);
+      releaseRef.current = null;
+    }
+
+    releaseRef.current = snapshot.retain();
+    timeoutID.current = window.setTimeout(() => {
+      var _releaseRef$current3;
+
+      timeoutID.current = null;
+      (_releaseRef$current3 = releaseRef.current) === null || _releaseRef$current3 === void 0 ? void 0 : _releaseRef$current3.call(releaseRef);
+      releaseRef.current = null;
+    }, SUSPENSE_TIMEOUT_MS$2);
+  }
+
+  return snapshot;
+}
+
+function gotoSnapshot(store, snapshot) {
+  var _storeState$nextTree;
+
+  const storeState = store.getState();
+  const prev = (_storeState$nextTree = storeState.nextTree) !== null && _storeState$nextTree !== void 0 ? _storeState$nextTree : storeState.currentTree;
+  const next = snapshot.getStore_INTERNAL().getState().currentTree;
+  batchUpdates$3(() => {
+    const keysToUpdate = new Set();
+
+    for (const keys of [prev.atomValues.keys(), next.atomValues.keys()]) {
+      for (const key of keys) {
+        var _prev$atomValues$get, _next$atomValues$get;
+
+        if (((_prev$atomValues$get = prev.atomValues.get(key)) === null || _prev$atomValues$get === void 0 ? void 0 : _prev$atomValues$get.contents) !== ((_next$atomValues$get = next.atomValues.get(key)) === null || _next$atomValues$get === void 0 ? void 0 : _next$atomValues$get.contents) && getNode$4(key).shouldRestoreFromSnapshots) {
+          keysToUpdate.add(key);
+        }
+      }
+    }
+
+    keysToUpdate.forEach(key => {
+      setRecoilValueLoadable$1(store, new AbstractRecoilValue$4(key), next.atomValues.has(key) ? Recoil_nullthrows(next.atomValues.get(key)) : DEFAULT_VALUE$3);
+    });
+    store.replaceState(state => ({ ...state,
+      stateID: snapshot.getID()
+    }));
+  });
+}
+
+function useGotoRecoilSnapshot() {
+  const storeRef = useStoreRef$3();
+  return useCallback$2(snapshot => gotoSnapshot(storeRef.current, snapshot), [storeRef]);
+}
+
+var Recoil_SnapshotHooks = {
+  useRecoilSnapshot,
+  gotoSnapshot,
+  useGotoRecoilSnapshot,
+  useRecoilTransactionObserver,
+  useTransactionObservation_DEPRECATED,
+  useTransactionSubscription_DEPRECATED: useTransactionSubscription
+};
+
+const {
+  peekNodeInfo: peekNodeInfo$2
+} = Recoil_FunctionalCore;
+
+const {
+  useStoreRef: useStoreRef$4
+} = Recoil_RecoilRoot;
+
+function useGetRecoilValueInfo() {
+  const storeRef = useStoreRef$4();
+  return ({
+    key
+  }) => peekNodeInfo$2(storeRef.current, storeRef.current.getState().currentTree, key);
+}
+
+var Recoil_useGetRecoilValueInfo = useGetRecoilValueInfo;
+
+const {
+  reactMode: reactMode$4
+} = Recoil_ReactMode;
+
+const {
+  RecoilRoot: RecoilRoot$1,
+  useStoreRef: useStoreRef$5
+} = Recoil_RecoilRoot;
+
+
+
+const {
+  useMemo: useMemo$2
+} = react__WEBPACK_IMPORTED_MODULE_0__;
+
+function useRecoilBridgeAcrossReactRoots() {
+  // The test fails when using useMutableSource(), but only if act() is used
+  // for the nested root.  So, this may only be a testing environment issue.
+  if (reactMode$4().mode === 'MUTABLE_SOURCE') {
+    // eslint-disable-next-line fb-www/no-console
+    console.warn('Warning: There are known issues using useRecoilBridgeAcrossReactRoots() in recoil_mutable_source rendering mode.  Please consider upgrading to recoil_sync_external_store mode.');
+  }
+
+  const store = useStoreRef$5().current;
+  return useMemo$2(() => {
+    // eslint-disable-next-line no-shadow
+    function RecoilBridge({
+      children
+    }) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(RecoilRoot$1, {
+        store_INTERNAL: store
+      }, children);
+    }
+
+    return RecoilBridge;
+  }, [store]);
+}
+
+var Recoil_useRecoilBridgeAcrossReactRoots = useRecoilBridgeAcrossReactRoots;
+
+const {
+  loadableWithValue: loadableWithValue$1
+} = Recoil_Loadable$1;
+
+const {
+  initializeNode: initializeNode$3
+} = Recoil_FunctionalCore;
+
+const {
+  DEFAULT_VALUE: DEFAULT_VALUE$4,
+  getNode: getNode$5
+} = Recoil_Node;
+
+const {
+  copyTreeState: copyTreeState$1,
+  getRecoilValueAsLoadable: getRecoilValueAsLoadable$3,
+  invalidateDownstreams: invalidateDownstreams$1,
+  writeLoadableToTreeState: writeLoadableToTreeState$1
+} = Recoil_RecoilValueInterface;
+
+
+
+function isAtom(recoilValue) {
+  return getNode$5(recoilValue.key).nodeType === 'atom';
+}
+
+class TransactionInterfaceImpl {
+  constructor(store, treeState) {
+    _defineProperty(this, "_store", void 0);
+
+    _defineProperty(this, "_treeState", void 0);
+
+    _defineProperty(this, "_changes", void 0);
+
+    _defineProperty(this, "get", recoilValue => {
+      if (this._changes.has(recoilValue.key)) {
+        // $FlowFixMe[incompatible-return]
+        return this._changes.get(recoilValue.key);
+      }
+
+      if (!isAtom(recoilValue)) {
+        throw Recoil_err('Reading selectors within atomicUpdate is not supported');
+      }
+
+      const loadable = getRecoilValueAsLoadable$3(this._store, recoilValue, this._treeState);
+
+      if (loadable.state === 'hasValue') {
+        return loadable.contents;
+      } else if (loadable.state === 'hasError') {
+        throw loadable.contents;
+      } else {
+        throw Recoil_err(`Expected Recoil atom ${recoilValue.key} to have a value, but it is in a loading state.`);
+      }
+    });
+
+    _defineProperty(this, "set", (recoilState, valueOrUpdater) => {
+      if (!isAtom(recoilState)) {
+        throw Recoil_err('Setting selectors within atomicUpdate is not supported');
+      }
+
+      if (typeof valueOrUpdater === 'function') {
+        const current = this.get(recoilState);
+
+        this._changes.set(recoilState.key, valueOrUpdater(current)); // flowlint-line unclear-type:off
+
+      } else {
+        // Initialize atom and run effects if not initialized yet
+        initializeNode$3(this._store, recoilState.key, 'set');
+
+        this._changes.set(recoilState.key, valueOrUpdater);
+      }
+    });
+
+    _defineProperty(this, "reset", recoilState => {
+      this.set(recoilState, DEFAULT_VALUE$4);
+    });
+
+    this._store = store;
+    this._treeState = treeState;
+    this._changes = new Map();
+  } // Allow destructing
+  // eslint-disable-next-line fb-www/extra-arrow-initializer
+
+
+  newTreeState_INTERNAL() {
+    if (this._changes.size === 0) {
+      return this._treeState;
+    }
+
+    const newState = copyTreeState$1(this._treeState);
+
+    for (const [k, v] of this._changes) {
+      writeLoadableToTreeState$1(newState, k, loadableWithValue$1(v));
+    }
+
+    invalidateDownstreams$1(this._store, newState);
+    return newState;
+  }
+
+}
+
+function atomicUpdater(store) {
+  return fn => {
+    store.replaceState(treeState => {
+      const changeset = new TransactionInterfaceImpl(store, treeState);
+      fn(changeset);
+      return changeset.newTreeState_INTERNAL();
+    });
+  };
+}
+
+var Recoil_AtomicUpdates = {
+  atomicUpdater
+};
+
+var Recoil_AtomicUpdates_1 = Recoil_AtomicUpdates.atomicUpdater;
+
+var Recoil_AtomicUpdates$1 = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  atomicUpdater: Recoil_AtomicUpdates_1
+});
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @emails oncall+recoil
+ * 
+ * @format
+ */
+
+function invariant(condition, message) {
+  if (!condition) {
+    throw new Error(message);
+  }
+}
+
+var invariant_1 = invariant;
+
+// @oss-only
+
+
+var Recoil_invariant = invariant_1;
+
+const {
+  atomicUpdater: atomicUpdater$1
+} = Recoil_AtomicUpdates$1;
+
+const {
+  batchUpdates: batchUpdates$4
+} = Recoil_Batching;
+
+const {
+  DEFAULT_VALUE: DEFAULT_VALUE$5
+} = Recoil_Node;
+
+const {
+  useStoreRef: useStoreRef$6
+} = Recoil_RecoilRoot;
+
+const {
+  refreshRecoilValue: refreshRecoilValue$1,
+  setRecoilValue: setRecoilValue$3
+} = Recoil_RecoilValueInterface;
+
+const {
+  Snapshot: Snapshot$1,
+  cloneSnapshot: cloneSnapshot$2
+} = Recoil_Snapshot$1;
+
+const {
+  gotoSnapshot: gotoSnapshot$1
+} = Recoil_SnapshotHooks;
+
+const {
+  useCallback: useCallback$3
+} = react__WEBPACK_IMPORTED_MODULE_0__;
+
+
+
+
+
+
+
+class Sentinel {}
+
+const SENTINEL = new Sentinel();
+
+function recoilCallback(store, fn, args, extraInterface) {
+  let ret = SENTINEL;
+  batchUpdates$4(() => {
+    const errMsg = 'useRecoilCallback() expects a function that returns a function: ' + 'it accepts a function of the type (RecoilInterface) => (Args) => ReturnType ' + 'and returns a callback function (Args) => ReturnType, where RecoilInterface is ' + 'an object {snapshot, set, ...} and Args and ReturnType are the argument and return ' + 'types of the callback you want to create.  Please see the docs ' + 'at recoiljs.org for details.';
+
+    if (typeof fn !== 'function') {
+      throw Recoil_err(errMsg);
+    } // Clone the snapshot lazily to avoid overhead if the callback does not use it.
+    // Note that this means the snapshot may represent later state from when
+    // the callback was called if it first accesses the snapshot asynchronously.
+
+
+    const callbackInterface = Recoil_lazyProxy({ ...(extraInterface !== null && extraInterface !== void 0 ? extraInterface : {}),
+      // flowlint-line unclear-type:off
+      set: (node, newValue) => setRecoilValue$3(store, node, newValue),
+      reset: node => setRecoilValue$3(store, node, DEFAULT_VALUE$5),
+      refresh: node => refreshRecoilValue$1(store, node),
+      gotoSnapshot: snapshot => gotoSnapshot$1(store, snapshot),
+      transact_UNSTABLE: transaction => atomicUpdater$1(store)(transaction)
+    }, {
+      snapshot: () => cloneSnapshot$2(store)
+    });
+    const callback = fn(callbackInterface);
+
+    if (typeof callback !== 'function') {
+      throw Recoil_err(errMsg);
+    }
+
+    ret = callback(...args);
+  });
+  !!(ret instanceof Sentinel) ?  true ? Recoil_invariant(false, 'batchUpdates should return immediately') : 0 : void 0;
+  return ret;
+}
+
+function useRecoilCallback(fn, deps) {
+  const storeRef = useStoreRef$6();
+  return useCallback$3( // $FlowIssue[incompatible-call]
+  (...args) => {
+    return recoilCallback(storeRef.current, fn, args);
+  }, deps != null ? [...deps, storeRef] : undefined // eslint-disable-line fb-www/react-hooks-deps
+  );
+}
+
+var Recoil_useRecoilCallback = {
+  recoilCallback,
+  useRecoilCallback
+};
+
+const {
+  useStoreRef: useStoreRef$7
+} = Recoil_RecoilRoot;
+
+const {
+  refreshRecoilValue: refreshRecoilValue$2
+} = Recoil_RecoilValueInterface;
+
+const {
+  useCallback: useCallback$4
+} = react__WEBPACK_IMPORTED_MODULE_0__;
+
+function useRecoilRefresher(recoilValue) {
+  const storeRef = useStoreRef$7();
+  return useCallback$4(() => {
+    const store = storeRef.current;
+    refreshRecoilValue$2(store, recoilValue);
+  }, [recoilValue, storeRef]);
+}
+
+var Recoil_useRecoilRefresher = useRecoilRefresher;
+
+const {
+  atomicUpdater: atomicUpdater$2
+} = Recoil_AtomicUpdates$1;
+
+const {
+  useStoreRef: useStoreRef$8
+} = Recoil_RecoilRoot;
+
+const {
+  useMemo: useMemo$3
+} = react__WEBPACK_IMPORTED_MODULE_0__;
+
+function useRecoilTransaction(fn, deps) {
+  const storeRef = useStoreRef$8();
+  return useMemo$3(() => (...args) => {
+    const atomicUpdate = atomicUpdater$2(storeRef.current);
+    atomicUpdate(transactionInterface => {
+      fn(transactionInterface)(...args);
+    });
+  }, deps != null ? [...deps, storeRef] : undefined // eslint-disable-line fb-www/react-hooks-deps
+  );
+}
+
+var Recoil_useRecoilTransaction = useRecoilTransaction;
+
+class TreeCache {
+  constructor(options) {
+    var _options$onHit, _options$onSet, _options$mapNodeValue;
+
+    _defineProperty(this, "_numLeafs", void 0);
+
+    _defineProperty(this, "_root", void 0);
+
+    _defineProperty(this, "_onHit", void 0);
+
+    _defineProperty(this, "_onSet", void 0);
+
+    _defineProperty(this, "_mapNodeValue", void 0);
+
+    this._numLeafs = 0;
+    this._root = null;
+    this._onHit = (_options$onHit = options === null || options === void 0 ? void 0 : options.onHit) !== null && _options$onHit !== void 0 ? _options$onHit : () => {};
+    this._onSet = (_options$onSet = options === null || options === void 0 ? void 0 : options.onSet) !== null && _options$onSet !== void 0 ? _options$onSet : () => {};
+    this._mapNodeValue = (_options$mapNodeValue = options === null || options === void 0 ? void 0 : options.mapNodeValue) !== null && _options$mapNodeValue !== void 0 ? _options$mapNodeValue : val => val;
+  }
+
+  size() {
+    return this._numLeafs;
+  } // TODO: nodeCount(): number
+
+
+  root() {
+    return this._root;
+  }
+
+  get(getNodeValue, handlers) {
+    var _this$getLeafNode;
+
+    return (_this$getLeafNode = this.getLeafNode(getNodeValue, handlers)) === null || _this$getLeafNode === void 0 ? void 0 : _this$getLeafNode.value;
+  }
+
+  getLeafNode(getNodeValue, handlers) {
+    return findLeaf(this.root(), nodeKey => this._mapNodeValue(getNodeValue(nodeKey)), {
+      onNodeVisit: node => {
+        handlers === null || handlers === void 0 ? void 0 : handlers.onNodeVisit(node);
+
+        if (node.type === 'leaf') {
+          this._onHit(node);
+        }
+      }
+    });
+  }
+
+  set(route, value, handlers) {
+    let leafNode;
+    let newRoot = null;
+
+    const setRetryablePart = () => {
+      newRoot = addLeaf(this.root(), route.map(([nodeKey, nodeValue]) => [nodeKey, this._mapNodeValue(nodeValue)]), null, value, null, {
+        onNodeVisit: node => {
+          handlers === null || handlers === void 0 ? void 0 : handlers.onNodeVisit(node);
+
+          if (node.type === 'leaf') {
+            leafNode = node;
+          }
+        }
+      }, () => {
+        this.clear();
+        setRetryablePart();
+      });
+    };
+
+    setRetryablePart();
+
+    if (!this.root()) {
+      this._root = newRoot;
+    }
+
+    this._numLeafs++;
+
+    this._onSet(Recoil_nullthrows(leafNode));
+  }
+
+  delete(node) {
+    if (!this.root()) {
+      return false;
+    }
+
+    const root = Recoil_nullthrows(this.root());
+    const existsInTree = pruneNodeFromTree(root, node, node.parent);
+
+    if (!existsInTree) {
+      return false;
+    }
+
+    if (node === root || root.type === 'branch' && !root.branches.size) {
+      this._root = null;
+      this._numLeafs = 0;
+      return true;
+    }
+
+    this._numLeafs -= countDownstreamLeaves(node);
+    return true;
+  }
+
+  clear() {
+    this._numLeafs = 0;
+    this._root = null;
+  }
+
+}
+
+const findLeaf = (root, getNodeValue, handlers) => {
+  var _handlers$onNodeVisit;
+
+  if (root == null) {
+    return undefined;
+  }
+
+  handlers === null || handlers === void 0 ? void 0 : (_handlers$onNodeVisit = handlers.onNodeVisit) === null || _handlers$onNodeVisit === void 0 ? void 0 : _handlers$onNodeVisit.call(handlers, root);
+
+  if (root.type === 'leaf') {
+    return root;
+  }
+
+  const nodeValue = getNodeValue(root.nodeKey);
+  return findLeaf(root.branches.get(nodeValue), getNodeValue, handlers);
+};
+
+const addLeaf = (root, route, parent, value, branchKey, handlers, onAbort) => {
+  var _handlers$onNodeVisit2;
+
+  let node;
+
+  if (root == null) {
+    if (route.length === 0) {
+      node = {
+        type: 'leaf',
+        value,
+        parent,
+        branchKey
+      };
+    } else {
+      const [path, ...rest] = route;
+      const [nodeKey, nodeValue] = path;
+      node = {
+        type: 'branch',
+        nodeKey,
+        parent,
+        branches: new Map(),
+        branchKey
+      };
+      node.branches.set(nodeValue, addLeaf(null, rest, node, value, nodeValue, handlers, onAbort));
+    }
+  } else {
+    node = root;
+
+    if (route.length) {
+      const [path, ...rest] = route;
+      const [nodeKey, nodeValue] = path;
+
+      if (root.type !== 'branch' || root.nodeKey !== nodeKey) {
+        Recoil_recoverableViolation('Existing cache must have a branch midway through the ' + 'route with matching node key. Resetting cache.');
+        onAbort();
+        return node; // ignored
+      }
+
+      root.branches.set(nodeValue, addLeaf(root.branches.get(nodeValue), rest, root, value, nodeValue, handlers, onAbort));
+    }
+  }
+
+  handlers === null || handlers === void 0 ? void 0 : (_handlers$onNodeVisit2 = handlers.onNodeVisit) === null || _handlers$onNodeVisit2 === void 0 ? void 0 : _handlers$onNodeVisit2.call(handlers, node);
+  return node;
+};
+
+const pruneNodeFromTree = (root, node, parent) => {
+  if (!parent) {
+    return root === node;
+  }
+
+  parent.branches.delete(node.branchKey);
+  return pruneUpstreamBranches(root, parent, parent.parent);
+};
+
+const pruneUpstreamBranches = (root, branchNode, parent) => {
+  if (!parent) {
+    return root === branchNode;
+  }
+
+  if (branchNode.branches.size === 0) {
+    parent.branches.delete(branchNode.branchKey);
+  }
+
+  return pruneUpstreamBranches(root, parent, parent.parent);
+};
+
+const countDownstreamLeaves = node => node.type === 'leaf' ? 1 : Array.from(node.branches.values()).reduce((sum, currNode) => sum + countDownstreamLeaves(currNode), 0);
+
+var Recoil_TreeCache = {
+  TreeCache
+};
+
+var Recoil_TreeCache_1 = Recoil_TreeCache.TreeCache;
+
+var Recoil_TreeCache$1 = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  TreeCache: Recoil_TreeCache_1
+});
+
+class LRUCache {
+  constructor(options) {
+    var _options$mapKey;
+
+    _defineProperty(this, "_maxSize", void 0);
+
+    _defineProperty(this, "_size", void 0);
+
+    _defineProperty(this, "_head", void 0);
+
+    _defineProperty(this, "_tail", void 0);
+
+    _defineProperty(this, "_map", void 0);
+
+    _defineProperty(this, "_keyMapper", void 0);
+
+    this._maxSize = options.maxSize;
+    this._size = 0;
+    this._head = null;
+    this._tail = null;
+    this._map = new Map();
+    this._keyMapper = (_options$mapKey = options.mapKey) !== null && _options$mapKey !== void 0 ? _options$mapKey : v => v;
+  }
+
+  head() {
+    return this._head;
+  }
+
+  tail() {
+    return this._tail;
+  }
+
+  size() {
+    return this._size;
+  }
+
+  maxSize() {
+    return this._maxSize;
+  }
+
+  has(key) {
+    return this._map.has(this._keyMapper(key));
+  }
+
+  get(key) {
+    const mappedKey = this._keyMapper(key);
+
+    const node = this._map.get(mappedKey);
+
+    if (!node) {
+      return undefined;
+    }
+
+    this.set(key, node.value);
+    return node.value;
+  }
+
+  set(key, val) {
+    const mappedKey = this._keyMapper(key);
+
+    const existingNode = this._map.get(mappedKey);
+
+    if (existingNode) {
+      this.delete(key);
+    }
+
+    const head = this.head();
+    const node = {
+      key,
+      right: head,
+      left: null,
+      value: val
+    };
+
+    if (head) {
+      head.left = node;
+    } else {
+      this._tail = node;
+    }
+
+    this._map.set(mappedKey, node);
+
+    this._head = node;
+    this._size++;
+
+    this._maybeDeleteLRU();
+  }
+
+  _maybeDeleteLRU() {
+    if (this.size() > this.maxSize()) {
+      this.deleteLru();
+    }
+  }
+
+  deleteLru() {
+    const tail = this.tail();
+
+    if (tail) {
+      this.delete(tail.key);
+    }
+  }
+
+  delete(key) {
+    const mappedKey = this._keyMapper(key);
+
+    if (!this._size || !this._map.has(mappedKey)) {
+      return;
+    }
+
+    const node = Recoil_nullthrows(this._map.get(mappedKey));
+    const right = node.right;
+    const left = node.left;
+
+    if (right) {
+      right.left = node.left;
+    }
+
+    if (left) {
+      left.right = node.right;
+    }
+
+    if (node === this.head()) {
+      this._head = right;
+    }
+
+    if (node === this.tail()) {
+      this._tail = left;
+    }
+
+    this._map.delete(mappedKey);
+
+    this._size--;
+  }
+
+  clear() {
+    this._size = 0;
+    this._head = null;
+    this._tail = null;
+    this._map = new Map();
+  }
+
+}
+
+var Recoil_LRUCache = {
+  LRUCache
+};
+
+var Recoil_LRUCache_1 = Recoil_LRUCache.LRUCache;
+
+var Recoil_LRUCache$1 = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  LRUCache: Recoil_LRUCache_1
+});
+
+const {
+  LRUCache: LRUCache$1
+} = Recoil_LRUCache$1;
+
+const {
+  TreeCache: TreeCache$1
+} = Recoil_TreeCache$1;
+
+function treeCacheLRU(maxSize, mapNodeValue = v => v) {
+  const lruCache = new LRUCache$1({
+    maxSize
+  });
+  const cache = new TreeCache$1({
+    mapNodeValue,
+    onHit: node => {
+      lruCache.set(node, true);
+    },
+    onSet: node => {
+      const lruNode = lruCache.tail();
+      lruCache.set(node, true);
+
+      if (lruNode && cache.size() > maxSize) {
+        cache.delete(lruNode.key);
+      }
+    }
+  }); // $FlowFixMe[method-unbinding]
+
+  return cache;
+}
+
+var Recoil_treeCacheLRU = treeCacheLRU;
+
+const TIME_WARNING_THRESHOLD_MS = 15;
+
+function stringify(x, opt, key) {
+  // A optimization to avoid the more expensive JSON.stringify() for simple strings
+  // This may lose protection for u2028 and u2029, though.
+  if (typeof x === 'string' && !x.includes('"') && !x.includes('\\')) {
+    return `"${x}"`;
+  } // Handle primitive types
+
+
+  switch (typeof x) {
+    case 'undefined':
+      return '';
+    // JSON.stringify(undefined) returns undefined, but we always want to return a string
+
+    case 'boolean':
+      return x ? 'true' : 'false';
+
+    case 'number':
+    case 'symbol':
+      // case 'bigint': // BigInt is not supported in www
+      return String(x);
+
+    case 'string':
+      // Add surrounding quotes and escape internal quotes
+      return JSON.stringify(x);
+
+    case 'function':
+      if ((opt === null || opt === void 0 ? void 0 : opt.allowFunctions) !== true) {
+        throw Recoil_err('Attempt to serialize function in a Recoil cache key');
+      }
+
+      return `__FUNCTION(${x.name})__`;
+  }
+
+  if (x === null) {
+    return 'null';
+  } // Fallback case for unknown types
+
+
+  if (typeof x !== 'object') {
+    var _JSON$stringify;
+
+    return (_JSON$stringify = JSON.stringify(x)) !== null && _JSON$stringify !== void 0 ? _JSON$stringify : '';
+  } // Deal with all promises as equivalent for now.
+
+
+  if (Recoil_isPromise(x)) {
+    return '__PROMISE__';
+  } // Arrays handle recursive stringification
+
+
+  if (Array.isArray(x)) {
+    return `[${x.map((v, i) => stringify(v, opt, i.toString()))}]`;
+  } // If an object defines a toJSON() method, then use that to override the
+  // serialization.  This matches the behavior of JSON.stringify().
+  // Pass the key for compatibility.
+  // Immutable.js collections define this method to allow us to serialize them.
+
+
+  if (typeof x.toJSON === 'function') {
+    // flowlint-next-line unclear-type: off
+    return stringify(x.toJSON(key), opt, key);
+  } // For built-in Maps, sort the keys in a stable order instead of the
+  // default insertion order.  Support non-string keys.
+
+
+  if (x instanceof Map) {
+    const obj = {};
+
+    for (const [k, v] of x) {
+      // Stringify will escape any nested quotes
+      obj[typeof k === 'string' ? k : stringify(k, opt)] = v;
+    }
+
+    return stringify(obj, opt, key);
+  } // For built-in Sets, sort the keys in a stable order instead of the
+  // default insertion order.
+
+
+  if (x instanceof Set) {
+    return stringify(Array.from(x).sort((a, b) => stringify(a, opt).localeCompare(stringify(b, opt))), opt, key);
+  } // Anything else that is iterable serialize as an Array.
+
+
+  if (Symbol !== undefined && x[Symbol.iterator] != null && typeof x[Symbol.iterator] === 'function') {
+    // flowlint-next-line unclear-type: off
+    return stringify(Array.from(x), opt, key);
+  } // For all other Objects, sort the keys in a stable order.
+
+
+  return `{${Object.keys(x).filter(k => x[k] !== undefined).sort() // stringify the key to add quotes and escape any nested slashes or quotes.
+  .map(k => `${stringify(k, opt)}:${stringify(x[k], opt, k)}`).join(',')}}`;
+} // Utility similar to JSON.stringify() except:
+// * Serialize built-in Sets as an Array
+// * Serialize built-in Maps as an Object.  Supports non-string keys.
+// * Serialize other iterables as arrays
+// * Sort the keys of Objects and Maps to have a stable order based on string conversion.
+//    This overrides their default insertion order.
+// * Still uses toJSON() of any object to override serialization
+// * Support Symbols (though don't guarantee uniqueness)
+// * We could support BigInt, but Flow doesn't seem to like it.
+// See Recoil_stableStringify-test.js for examples
+
+
+function stableStringify(x, opt = {
+  allowFunctions: false
+}) {
+  if (true) {
+    if (typeof window !== 'undefined') {
+      const startTime = window.performance ? window.performance.now() : 0;
+      const str = stringify(x, opt);
+      const endTime = window.performance ? window.performance.now() : 0;
+
+      if (endTime - startTime > TIME_WARNING_THRESHOLD_MS) {
+        /* eslint-disable fb-www/no-console */
+        console.groupCollapsed(`Recoil: Spent ${endTime - startTime}ms computing a cache key`);
+        console.warn(x, str);
+        console.groupEnd();
+        /* eslint-enable fb-www/no-console */
+      }
+
+      return str;
+    }
+  }
+
+  return stringify(x, opt);
+}
+
+var Recoil_stableStringify = stableStringify;
+
+const {
+  TreeCache: TreeCache$2
+} = Recoil_TreeCache$1;
+
+
+
+
+
+
+
+
+
+const defaultPolicy = {
+  equality: 'reference',
+  eviction: 'keep-all',
+  maxSize: Infinity
+};
+
+function treeCacheFromPolicy({
+  equality = defaultPolicy.equality,
+  eviction = defaultPolicy.eviction,
+  maxSize = defaultPolicy.maxSize
+} = defaultPolicy) {
+  const valueMapper = getValueMapper(equality);
+  const treeCache = getTreeCache(eviction, maxSize, valueMapper);
+  return treeCache;
+}
+
+function getValueMapper(equality) {
+  switch (equality) {
+    case 'reference':
+      return val => val;
+
+    case 'value':
+      return val => Recoil_stableStringify(val);
+  }
+
+  throw Recoil_err(`Unrecognized equality policy ${equality}`);
+}
+
+function getTreeCache(eviction, maxSize, mapNodeValue) {
+  switch (eviction) {
+    case 'keep-all':
+      // $FlowFixMe[method-unbinding]
+      return new TreeCache$2({
+        mapNodeValue
+      });
+
+    case 'lru':
+      return Recoil_treeCacheLRU(Recoil_nullthrows(maxSize), mapNodeValue);
+
+    case 'most-recent':
+      return Recoil_treeCacheLRU(1, mapNodeValue);
+  }
+
+  throw Recoil_err(`Unrecognized eviction policy ${eviction}`);
+}
+
+var Recoil_treeCacheFromPolicy = treeCacheFromPolicy;
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @emails oncall+recoil
+ * 
+ * @format
+ */
+
+function isNode(object) {
+  var _ownerDocument, _doc$defaultView;
+
+  if (typeof window === 'undefined') {
+    return false;
+  }
+
+  const doc = object != null ? (_ownerDocument = object.ownerDocument) !== null && _ownerDocument !== void 0 ? _ownerDocument : object : document;
+  const defaultView = (_doc$defaultView = doc.defaultView) !== null && _doc$defaultView !== void 0 ? _doc$defaultView : window;
+  return !!(object != null && (typeof defaultView.Node === 'function' ? object instanceof defaultView.Node : typeof object === 'object' && typeof object.nodeType === 'number' && typeof object.nodeName === 'string'));
+}
+
+var Recoil_isNode = isNode;
+
+const {
+  isReactNative: isReactNative$1,
+  isSSR: isSSR$4
+} = Recoil_Environment;
+
+
+
+
+
+function shouldNotBeFrozen(value) {
+  // Primitives and functions:
+  if (value === null || typeof value !== 'object') {
+    return true;
+  } // React elements:
+
+
+  switch (typeof value.$$typeof) {
+    case 'symbol':
+      return true;
+
+    case 'number':
+      return true;
+  } // Immutable structures:
+
+
+  if (value['@@__IMMUTABLE_ITERABLE__@@'] != null || value['@@__IMMUTABLE_KEYED__@@'] != null || value['@@__IMMUTABLE_INDEXED__@@'] != null || value['@@__IMMUTABLE_ORDERED__@@'] != null || value['@@__IMMUTABLE_RECORD__@@'] != null) {
+    return true;
+  } // DOM nodes:
+
+
+  if (Recoil_isNode(value)) {
+    return true;
+  }
+
+  if (Recoil_isPromise(value)) {
+    return true;
+  }
+
+  if (value instanceof Error) {
+    return true;
+  }
+
+  if (ArrayBuffer.isView(value)) {
+    return true;
+  } // Some environments, just as Jest, don't work with the instanceof check
+
+
+  if (!isSSR$4 && !isReactNative$1 && ( // $FlowFixMe(site=recoil) Window does not have a FlowType definition https://github.com/facebook/flow/issues/6709
+  value === window || value instanceof Window)) {
+    return true;
+  }
+
+  return false;
+} // Recursively freeze a value to enforce it is read-only.
+// This may also have minimal performance improvements for enumerating
+// objects (based on browser implementations, of course)
+
+
+function deepFreezeValue(value) {
+  if (typeof value !== 'object' || shouldNotBeFrozen(value)) {
+    return;
+  }
+
+  Object.freeze(value); // Make all properties read-only
+
+  for (const key in value) {
+    // $FlowFixMe[method-unbinding] added when improving typing for this parameters
+    if (Object.prototype.hasOwnProperty.call(value, key)) {
+      const prop = value[key]; // Prevent infinite recurssion for circular references.
+
+      if (typeof prop === 'object' && prop != null && !Object.isFrozen(prop)) {
+        deepFreezeValue(prop);
+      }
+    }
+  }
+
+  Object.seal(value); // This also makes existing properties non-configurable.
+}
+
+var Recoil_deepFreezeValue = deepFreezeValue;
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @emails oncall+recoil
+ * 
+ * @format
+ *
+ * This is a stub for some integration into FB internal stuff
+ */
+function startPerfBlock(_id) {
+  return () => null;
+}
+
+var Recoil_PerformanceTimings = {
+  startPerfBlock
+};
+
+const {
+  loadableWithError: loadableWithError$1,
+  loadableWithPromise: loadableWithPromise$1,
+  loadableWithValue: loadableWithValue$2
+} = Recoil_Loadable$1;
+
+
+
+const {
+  getNodeLoadable: getNodeLoadable$2,
+  peekNodeLoadable: peekNodeLoadable$1,
+  setNodeValue: setNodeValue$3
+} = Recoil_FunctionalCore;
+
+const {
+  saveDependencyMapToStore: saveDependencyMapToStore$1
+} = Recoil_Graph;
+
+const {
+  DEFAULT_VALUE: DEFAULT_VALUE$6,
+  RecoilValueNotReady: RecoilValueNotReady$2,
+  getConfigDeletionHandler: getConfigDeletionHandler$1,
+  getNode: getNode$6,
+  registerNode: registerNode$1
+} = Recoil_Node;
+
+const {
+  isRecoilValue: isRecoilValue$3
+} = Recoil_RecoilValue$1;
+
+const {
+  markRecoilValueModified: markRecoilValueModified$1
+} = Recoil_RecoilValueInterface;
+
+const {
+  retainedByOptionWithDefault: retainedByOptionWithDefault$1
+} = Recoil_Retention;
+
+const {
+  recoilCallback: recoilCallback$1
+} = Recoil_useRecoilCallback;
+
+
+
+
+
+
+
+
+
+
+
+
+
+const {
+  startPerfBlock: startPerfBlock$1
+} = Recoil_PerformanceTimings;
+
+class Canceled {}
+
+const CANCELED = new Canceled();
+/**
+ * An ExecutionId is an arbitrary ID that lets us distinguish executions from
+ * each other. This is necessary as we need a way of solving this problem:
+ * "given 3 async executions, only update state for the 'latest' execution when
+ * it finishes running regardless of when the other 2 finish". ExecutionIds
+ * provide a convenient way of identifying executions so that we can track and
+ * manage them over time.
+ */
+
+const dependencyStack = []; // for detecting circular dependencies.
+
+const waitingStores = new Map();
+
+const getNewExecutionId = (() => {
+  let executionId = 0;
+  return () => executionId++;
+})();
+/* eslint-disable no-redeclare */
+
+
+function selector(options) {
+  let recoilValue = null;
+  const {
+    key,
+    get,
+    cachePolicy_UNSTABLE: cachePolicy
+  } = options;
+  const set = options.set != null ? options.set : undefined; // flow
+
+  if (true) {
+    if (typeof key !== 'string') {
+      throw Recoil_err('A key option with a unique string value must be provided when creating a selector.');
+    }
+
+    if (typeof get !== 'function') {
+      throw Recoil_err('Selectors must specify a get callback option to get the selector value.');
+    }
+  } // This is every discovered dependency across all executions
+
+
+  const discoveredDependencyNodeKeys = new Set();
+  const cache = Recoil_treeCacheFromPolicy(cachePolicy !== null && cachePolicy !== void 0 ? cachePolicy : {
+    equality: 'reference',
+    eviction: 'keep-all'
+  });
+  const retainedBy = retainedByOptionWithDefault$1(options.retainedBy_UNSTABLE);
+  const executionInfoMap = new Map();
+  let liveStoresCount = 0;
+
+  function selectorIsLive() {
+    return !Recoil_gkx('recoil_memory_managament_2020') || liveStoresCount > 0;
+  }
+
+  function selectorInit(store) {
+    store.getState().knownSelectors.add(key);
+    liveStoresCount++;
+    return () => {
+      liveStoresCount--;
+    };
+  }
+
+  function selectorShouldDeleteConfigOnRelease() {
+    return getConfigDeletionHandler$1(key) !== undefined && !selectorIsLive();
+  }
+
+  function resolveAsync(store, state, executionId, loadable, depValues) {
+    setCache(state, loadable, depValues);
+    setDepsInStore(store, state, new Set(depValues.keys()), executionId);
+    notifyStoresOfResolvedAsync(store, executionId);
+  }
+
+  function notifyStoresOfResolvedAsync(store, executionId) {
+    if (isLatestExecution(store, executionId)) {
+      clearExecutionInfo(store);
+    }
+
+    const stores = waitingStores.get(executionId);
+
+    if (stores !== undefined) {
+      for (const waitingStore of stores) {
+        markRecoilValueModified$1(waitingStore, Recoil_nullthrows(recoilValue));
+      }
+
+      waitingStores.delete(executionId);
+    }
+  }
+
+  function markStoreWaitingForResolvedAsync(store, executionId) {
+    let stores = waitingStores.get(executionId);
+
+    if (stores == null) {
+      waitingStores.set(executionId, stores = new Set());
+    }
+
+    stores.add(store);
+  }
+
+  function getCachedNodeLoadable(store, state, nodeKey) {
+    const isKeyPointingToSelector = store.getState().knownSelectors.has(nodeKey);
+    /**
+     * It's important that we don't bypass calling getNodeLoadable for atoms
+     * as getNodeLoadable has side effects in state
+     */
+
+    if (isKeyPointingToSelector && state.atomValues.has(nodeKey)) {
+      return Recoil_nullthrows(state.atomValues.get(nodeKey));
+    }
+
+    const loadable = getNodeLoadable$2(store, state, nodeKey);
+
+    if (loadable.state !== 'loading' && isKeyPointingToSelector) {
+      state.atomValues.set(nodeKey, loadable);
+    }
+
+    return loadable;
+  }
+  /**
+   * This function attaches a then() and a catch() to a promise that was
+   * returned from a selector's get() (either explicitly or implicitly by
+   * running a function that uses the "async" keyword). If a selector's get()
+   * returns a promise, we have two possibilities:
+   *
+   * 1. The promise will resolve, in which case it will have completely finished
+   *    executing without any remaining pending dependencies. No more retries
+   *    are needed and we can proceed with updating the cache and notifying
+   *    subscribers (if it is the latest execution, otherwise only the cache
+   *    will be updated and subscriptions will not be fired). This is the case
+   *    handled by the attached then() handler.
+   *
+   * 2. The promise will throw because it either has an error or it came across
+   *    an async dependency that has not yet resolved, in which case we will
+   *    call wrapDepdencyPromise(), whose responsibility is to handle dependency
+   *    promises. This case is handled by the attached catch() handler.
+   *
+   * Both branches will eventually resolve to the final result of the selector
+   * (or an error if a real error occurred).
+   *
+   * The execution will run to completion even if it is stale, and its value
+   * will be cached. But stale executions will not update global state or update
+   * executionInfo as that is the responsibility of the 'latest' execution.
+   *
+   * Note this function should not be passed a promise that was thrown--AKA a
+   * dependency promise. Dependency promises should be passed to
+   * wrapPendingDependencyPromise()).
+   */
+
+
+  function wrapPendingPromise(store, promise, state, depValues, executionId, loadingDepsState) {
+    return promise.then(value => {
+      if (!selectorIsLive()) {
+        // The selector was released since the request began; ignore the response.
+        clearExecutionInfo(store);
+        throw CANCELED;
+      }
+
+      const loadable = loadableWithValue$2(value);
+      resolveAsync(store, state, executionId, loadable, depValues);
+      return value;
+    }).catch(errorOrPromise => {
+      if (!selectorIsLive()) {
+        // The selector was released since the request began; ignore the response.
+        clearExecutionInfo(store);
+        throw CANCELED;
+      }
+
+      updateExecutionInfoDepValues(store, executionId, depValues);
+
+      if (Recoil_isPromise(errorOrPromise)) {
+        return wrapPendingDependencyPromise(store, errorOrPromise, state, depValues, executionId, loadingDepsState);
+      }
+
+      const loadable = loadableWithError$1(errorOrPromise);
+      resolveAsync(store, state, executionId, loadable, depValues);
+      throw errorOrPromise;
+    });
+  }
+  /**
+   * This function attaches a then() and a catch() to a promise that was
+   * thrown from a selector's get(). If a selector's get() throws a promise,
+   * we have two possibilities:
+   *
+   * 1. The promise will resolve, meaning one of our selector's dependencies is
+   *    now available and we should "retry" our get() by running it again. This
+   *    is the case handled by the attached then() handler.
+   *
+   * 2. The promise will throw because something went wrong with the dependency
+   *    promise (in other words a real error occurred). This case is handled by
+   *    the attached catch() handler. If the dependency promise throws, it is
+   *    _always_ a real error and not another dependency promise (any dependency
+   *    promises would have been handled upstream).
+   *
+   * The then() branch will eventually resolve to the final result of the
+   * selector (or an error if a real error occurs), and the catch() will always
+   * resolve to an error because the dependency promise is a promise that was
+   * wrapped upstream, meaning it will only resolve to its real value or to a
+   * real error.
+   *
+   * The execution will run to completion even if it is stale, and its value
+   * will be cached. But stale executions will not update global state or update
+   * executionInfo as that is the responsibility of the 'latest' execution.
+   *
+   * Note this function should not be passed a promise that was returned from
+   * get(). The intention is that this function is only passed promises that
+   * were thrown due to a pending dependency. Promises returned by get() should
+   * be passed to wrapPendingPromise() instead.
+   */
+
+
+  function wrapPendingDependencyPromise(store, promise, state, existingDeps, executionId, loadingDepsState) {
+    return promise.then(resolvedDep => {
+      if (!selectorIsLive()) {
+        // The selector was released since the request began; ignore the response.
+        clearExecutionInfo(store);
+        throw CANCELED;
+      } // Check if we are handling a pending Recoil dependency or if the user
+      // threw their own Promise to "suspend" a selector evaluation.  We need
+      // to check that the loadingDepPromise actually matches the promise that
+      // we caught in case the selector happened to catch the promise we threw
+      // for a pending Recoil dependency from `getRecoilValue()` and threw
+      // their own promise instead.
+
+
+      if (loadingDepsState.loadingDepKey != null && loadingDepsState.loadingDepPromise === promise) {
+        /**
+         * Note for async atoms, this means we are changing the atom's value
+         * in the store for the given version. This should be alright because
+         * the version of state is now stale and a new version will have
+         * already been triggered by the atom being resolved (see this logic
+         * in Recoil_atom.js)
+         */
+        state.atomValues.set(loadingDepsState.loadingDepKey, loadableWithValue$2(resolvedDep));
+      } else {
+        /**
+         * If resolvedDepKey is not defined, the promise was a user-thrown
+         * promise. User-thrown promises are an advanced feature and they
+         * should be avoided in almost all cases. Using `loadable.map()` inside
+         * of selectors for loading loadables and then throwing that mapped
+         * loadable's promise is an example of a user-thrown promise.
+         *
+         * When we hit a user-thrown promise, we have to bail out of an optimization
+         * where we bypass calculating selector cache keys for selectors that
+         * have been previously seen for a given state (these selectors are saved in
+         * state.atomValues) to avoid stale state as we have no way of knowing
+         * what state changes happened (if any) in result to the promise resolving.
+         *
+         * Ideally we would only bail out selectors that are in the chain of
+         * dependencies for this selector, but there's currently no way to get
+         * a full list of a selector's downstream nodes because the state that
+         * is executing may be a discarded tree (so store.getGraph(state.version)
+         * will be empty), and the full dep tree may not be in the selector
+         * caches in the case where the selector's cache was cleared. To solve
+         * for this we would have to keep track of all running selector
+         * executions and their downstream deps. Because this only covers edge
+         * cases, that complexity might not be justifyable.
+         */
+        store.getState().knownSelectors.forEach(nodeKey => {
+          state.atomValues.delete(nodeKey);
+        });
+      }
+      /**
+       * Optimization: Now that the dependency has resolved, let's try hitting
+       * the cache in case the dep resolved to a value we have previously seen.
+       *
+       * TODO:
+       * Note this optimization is not perfect because it only prevents re-executions
+       * _after_ the point where an async dependency is found. Any code leading
+       * up to the async dependency may have run unnecessarily. The ideal case
+       * would be to wait for the async dependency to resolve first, check the
+       * cache, and prevent _any_ execution of the selector if the resulting
+       * value of the dependency leads to a path that is found in the cache.
+       * The ideal case is more difficult to implement as it would require that
+       * we capture and wait for the the async dependency right after checking
+       * the cache. The current approach takes advantage of the fact that running
+       * the selector already has a code path that lets us exit early when
+       * an async dep resolves.
+       */
+
+
+      const cachedLoadable = getValFromCacheAndUpdatedDownstreamDeps(store, state);
+
+      if (cachedLoadable && cachedLoadable.state !== 'loading') {
+        /**
+         * This has to notify stores of a resolved async, even if there is no
+         * current pending execution for the following case:
+         * 1) A component renders with this pending loadable.
+         * 2) The upstream dependency resolves.
+         * 3) While processing some other selector it reads this one, such as
+         *    while traversing its dependencies.  At this point it gets the
+         *    new resolved value synchronously and clears the current
+         *    execution ID.  The component wasn't getting the value itself,
+         *    though, so it still has the pending loadable.
+         * 4) When this code executes the current execution id was cleared
+         *    and it wouldn't notify the component of the new value.
+         *
+         * I think this is only an issue with "early" rendering since the
+         * components got their value using the in-progress execution.
+         * We don't have a unit test for this case yet.  I'm not sure it is
+         * necessary with recoil_concurrent_support mode.
+         */
+        if (isLatestExecution(store, executionId) || getExecutionInfo(store) == null) {
+          notifyStoresOfResolvedAsync(store, executionId);
+        }
+
+        if (cachedLoadable.state === 'hasValue') {
+          return cachedLoadable.contents;
+        } else {
+          throw cachedLoadable.contents;
+        }
+      }
+      /**
+       * If this execution is stale, let's check to see if there is some in
+       * progress execution with a matching state. If we find a match, then
+       * we can take the value from that in-progress execution. Note this may
+       * sound like an edge case, but may be very common in cases where a
+       * loading dependency resolves from loading to having a value (thus
+       * possibly triggering a re-render), and React re-renders before the
+       * chained .then() functions run, thus starting a new execution as the
+       * dep has changed value. Without this check we will run the selector
+       * twice (once in the new execution and once again in this .then(), so
+       * this check is necessary to keep unnecessary re-executions to a
+       * minimum).
+       *
+       * Also note this code does not check across all executions that may be
+       * running. It only optimizes for the _latest_ execution per store as
+       * we currently do not maintain a list of all currently running executions.
+       * This means in some cases we may run selectors more than strictly
+       * necessary when there are multiple executions running for the same
+       * selector. This may be a valid tradeoff as checking for dep changes
+       * across all in-progress executions may take longer than just
+       * re-running the selector. This will be app-dependent, and maybe in the
+       * future we can make the behavior configurable. An ideal fix may be
+       * to extend the tree cache to support caching loading states.
+       */
+
+
+      if (!isLatestExecution(store, executionId)) {
+        const executionInfo = getExecutionInfoOfInProgressExecution(state);
+
+        if ((executionInfo === null || executionInfo === void 0 ? void 0 : executionInfo.latestLoadable.state) === 'loading') {
+          /**
+           * Returning promise here without wrapping as the wrapper logic was
+           * already done upstream when this promise was generated.
+           */
+          return executionInfo.latestLoadable.contents;
+        }
+      } // Retry the selector evaluation now that the dependency has resolved
+
+
+      const [loadable, depValues] = evaluateSelectorGetter(store, state, executionId);
+      updateExecutionInfoDepValues(store, executionId, depValues);
+
+      if (loadable.state !== 'loading') {
+        resolveAsync(store, state, executionId, loadable, depValues);
+      }
+
+      if (loadable.state === 'hasError') {
+        throw loadable.contents;
+      }
+
+      return loadable.contents;
+    }).catch(error => {
+      // The selector was released since the request began; ignore the response.
+      if (error instanceof Canceled) {
+        throw CANCELED;
+      }
+
+      if (!selectorIsLive()) {
+        clearExecutionInfo(store);
+        throw CANCELED;
+      }
+
+      const loadable = loadableWithError$1(error);
+      resolveAsync(store, state, executionId, loadable, existingDeps);
+      throw error;
+    });
+  }
+
+  function setDepsInStore(store, state, deps, executionId) {
+    var _store$getState, _store$getState$curre, _store$getState2, _store$getState2$next;
+
+    if (isLatestExecution(store, executionId) || state.version === ((_store$getState = store.getState()) === null || _store$getState === void 0 ? void 0 : (_store$getState$curre = _store$getState.currentTree) === null || _store$getState$curre === void 0 ? void 0 : _store$getState$curre.version) || state.version === ((_store$getState2 = store.getState()) === null || _store$getState2 === void 0 ? void 0 : (_store$getState2$next = _store$getState2.nextTree) === null || _store$getState2$next === void 0 ? void 0 : _store$getState2$next.version)) {
+      var _store$getState$nextT, _store$getState3, _store$getState3$next;
+
+      saveDependencyMapToStore$1(new Map([[key, deps]]), store, (_store$getState$nextT = (_store$getState3 = store.getState()) === null || _store$getState3 === void 0 ? void 0 : (_store$getState3$next = _store$getState3.nextTree) === null || _store$getState3$next === void 0 ? void 0 : _store$getState3$next.version) !== null && _store$getState$nextT !== void 0 ? _store$getState$nextT : store.getState().currentTree.version);
+      deps.forEach(nodeKey => discoveredDependencyNodeKeys.add(nodeKey));
+    }
+  }
+
+  function setNewDepInStore(store, state, deps, newDepKey, executionId) {
+    deps.add(newDepKey);
+    setDepsInStore(store, state, deps, executionId);
+  }
+
+  function evaluateSelectorGetter(store, state, executionId) {
+    const endPerfBlock = startPerfBlock$1(key); // TODO T63965866: use execution ID here
+
+    let gateCallback = true;
+
+    const finishEvaluation = () => {
+      endPerfBlock();
+      gateCallback = false;
+    };
+
+    let result;
+    let resultIsError = false;
+    let loadable;
+    const loadingDepsState = {
+      loadingDepKey: null,
+      loadingDepPromise: null
+    };
+    const depValues = new Map();
+    /**
+     * Starting a fresh set of deps that we'll be using to update state. We're
+     * starting a new set versus adding it in existing state deps because
+     * the version of state that we update deps for may be a more recent version
+     * than the version the selector was called with. This is because the latest
+     * execution will update the deps of the current/latest version of state (
+     * this is safe to do because the fact that the selector is the latest
+     * execution means the deps we discover below are our best guess at the
+     * deps for the current/latest state in the store)
+     */
+
+    const deps = new Set();
+    setDepsInStore(store, state, deps, executionId);
+
+    function getRecoilValue(dep) {
+      const {
+        key: depKey
+      } = dep;
+      setNewDepInStore(store, state, deps, depKey, executionId);
+      const depLoadable = getCachedNodeLoadable(store, state, depKey);
+      depValues.set(depKey, depLoadable);
+
+      switch (depLoadable.state) {
+        case 'hasValue':
+          return depLoadable.contents;
+
+        case 'hasError':
+          throw depLoadable.contents;
+
+        case 'loading':
+          loadingDepsState.loadingDepKey = depKey;
+          loadingDepsState.loadingDepPromise = depLoadable.contents;
+          throw depLoadable.contents;
+      }
+
+      throw Recoil_err('Invalid Loadable state');
+    }
+
+    const getCallback = fn => {
+      return (...args) => {
+        if (gateCallback) {
+          throw Recoil_err('Callbacks from getCallback() should only be called asynchronously after the selector is evalutated.  It can be used for selectors to return objects with callbacks that can work with Recoil state without a subscription.');
+        }
+
+        !(recoilValue != null) ?  true ? Recoil_invariant(false, 'Recoil Value can never be null') : 0 : void 0;
+        return recoilCallback$1(store, fn, args, {
+          node: recoilValue
+        } // flowlint-line unclear-type:off
+        );
+      };
+    };
+
+    try {
+      result = get({
+        get: getRecoilValue,
+        getCallback
+      });
+      result = isRecoilValue$3(result) ? getRecoilValue(result) : result;
+
+      if (Recoil_isPromise(result)) {
+        result = wrapPendingPromise(store, result, state, depValues, executionId, loadingDepsState).finally(finishEvaluation);
+      } else {
+        finishEvaluation();
+      }
+    } catch (errorOrDepPromise) {
+      result = errorOrDepPromise;
+
+      if (Recoil_isPromise(result)) {
+        result = wrapPendingDependencyPromise(store, result, state, depValues, executionId, loadingDepsState).finally(finishEvaluation);
+      } else {
+        resultIsError = true;
+        finishEvaluation();
+      }
+    }
+
+    if (resultIsError) {
+      loadable = loadableWithError$1(result);
+    } else if (Recoil_isPromise(result)) {
+      loadable = loadableWithPromise$1(result);
+    } else {
+      loadable = loadableWithValue$2(result);
+    }
+
+    return [loadable, depValues];
+  }
+
+  function getValFromCacheAndUpdatedDownstreamDeps(store, state) {
+    const depsAfterCacheDone = new Set();
+    const executionInfo = getExecutionInfo(store);
+    let cachedVal;
+
+    try {
+      cachedVal = cache.get(nodeKey => {
+        !(typeof nodeKey === 'string') ?  true ? Recoil_invariant(false, 'Cache nodeKey is type string') : 0 : void 0;
+        const loadable = getCachedNodeLoadable(store, state, nodeKey);
+        return loadable.contents;
+      }, {
+        onNodeVisit: node => {
+          if (node.type === 'branch' && node.nodeKey !== key) {
+            depsAfterCacheDone.add(node.nodeKey);
+          }
+        }
+      });
+    } catch (error) {
+      throw Recoil_err(`Problem with cache lookup for selector "${key}": ${error.message}`);
+    }
+    /**
+     * Ensure store contains correct dependencies if we hit the cache so that
+     * the store deps and cache are in sync for a given state. This is important
+     * because store deps are normally updated when new executions are created,
+     * but cache hits don't trigger new executions but they still _may_ signifiy
+     * a change in deps in the store if the store deps for this state are empty
+     * or stale.
+     */
+
+
+    if (cachedVal) {
+      setDepsInStore(store, state, depsAfterCacheDone, executionInfo === null || executionInfo === void 0 ? void 0 : executionInfo.latestExecutionId);
+    }
+
+    return cachedVal;
+  }
+  /**
+   * FIXME: dep keys should take into account the state of the loadable to
+   * prevent the edge case where a loadable with an error and a loadable with
+   * an error as a value are treated as the same thing incorrectly. For example
+   * these two should be treated differently:
+   *
+   * selector({key: '', get: () => new Error('hi')});
+   * selector({key: '', get () => {throw new Error('hi')}});
+   *
+   * With current implementation they are treated the same
+   */
+
+
+  function depValuesToDepRoute(depValues) {
+    return Array.from(depValues.entries()).map(([depKey, valLoadable]) => [depKey, valLoadable.contents]);
+  }
+
+  function getValFromRunningNewExecutionAndUpdatedDeps(store, state) {
+    const newExecutionId = getNewExecutionId();
+    const [loadable, newDepValues] = evaluateSelectorGetter(store, state, newExecutionId);
+    /**
+     * Conditionally updates the cache with a given loadable.
+     *
+     * We only cache loadables that are not loading because our cache keys are
+     * based on dep values, which are in an unfinished state for loadables that
+     * have a 'loading' state (new deps may be discovered while the selector
+     * runs its async code). We never want to cache partial dependencies b/c it
+     * could lead to errors, such as prematurely returning the result based on a
+     * partial list of deps-- we need the full list of deps to ensure that we
+     * are returning the correct result from cache.
+     */
+
+    if (loadable.state === 'loading') {
+      setExecutionInfo(store, newExecutionId, loadable, newDepValues, state);
+      markStoreWaitingForResolvedAsync(store, newExecutionId);
+    } else {
+      clearExecutionInfo(store);
+      setCache(state, loadable, newDepValues);
+    }
+
+    return loadable;
+  }
+  /**
+   * Given a tree state, this function returns the "selector result", which is
+   * defined as a size-2 tuple of [DependencyMap, Loadable<T>].
+   *
+   * The selector's get() function will only be re-evaluated if _both_ of the
+   * following statements are true:
+   *
+   * 1. The current dep values from the given state produced a cache key that
+   *    was not found in the cache.
+   * 2. There is no currently running async execution OR there is an
+   *    async execution that is running, but after comparing the dep values in
+   *    the given state with the dep values that the execution has discovered so
+   *    far we find that at least one dep value has changed, in which case we
+   *    start a new execution (the previously running execution will continue to
+   *    run to completion, but only the new execution will be deemed the
+   *    'latest' execution, meaning it will be the only execution that will
+   *    update global state when it is finished. Any non-latest executions will
+   *    run to completion and update the selector cache but not global state).
+   */
+
+
+  function getSelectorValAndUpdatedDeps(store, state) {
+    const cachedVal = getValFromCacheAndUpdatedDownstreamDeps(store, state);
+
+    if (cachedVal != null) {
+      clearExecutionInfo(store);
+      return cachedVal;
+    }
+
+    const inProgressExecutionInfo = getExecutionInfoOfInProgressExecution(state); // FIXME: this won't work with custom caching b/c it uses separate cache
+
+    if (inProgressExecutionInfo != null) {
+      var _inProgressExecutionI;
+
+      if (((_inProgressExecutionI = inProgressExecutionInfo.latestLoadable) === null || _inProgressExecutionI === void 0 ? void 0 : _inProgressExecutionI.state) === 'loading') {
+        markStoreWaitingForResolvedAsync(store, Recoil_nullthrows(inProgressExecutionInfo.latestExecutionId));
+      } // FIXME: check after the fact to see if we made the right choice by waiting
+
+
+      return Recoil_nullthrows(inProgressExecutionInfo.latestLoadable);
+    }
+
+    return getValFromRunningNewExecutionAndUpdatedDeps(store, state);
+  }
+  /**
+   * Searches execution info across all stores to see if there is an in-progress
+   * execution whose dependency values match the values of the requesting store.
+   */
+
+
+  function getExecutionInfoOfInProgressExecution(state) {
+    var _Array$from$find;
+
+    const [, executionInfo] = (_Array$from$find = Array.from(executionInfoMap.entries()).find(([store, execInfo]) => {
+      return execInfo.latestLoadable != null && execInfo.latestExecutionId != null && !haveAsyncDepsChanged(store, state);
+    })) !== null && _Array$from$find !== void 0 ? _Array$from$find : [];
+    return executionInfo;
+  }
+
+  const mapOfCheckedVersions = new Map();
+
+  function haveAsyncDepsChanged(store, state) {
+    var _executionInfo$depVal, _mapOfCheckedVersions;
+
+    const executionInfo = getExecutionInfo(store);
+    const oldDepValues = (_executionInfo$depVal = executionInfo === null || executionInfo === void 0 ? void 0 : executionInfo.depValuesDiscoveredSoFarDuringAsyncWork) !== null && _executionInfo$depVal !== void 0 ? _executionInfo$depVal : new Map();
+    const cachedDepValuesCheckedForThisVersion = Array(((_mapOfCheckedVersions = mapOfCheckedVersions.get(state.version)) !== null && _mapOfCheckedVersions !== void 0 ? _mapOfCheckedVersions : new Map()).entries());
+    const isCachedVersionSame = mapOfCheckedVersions.has(state.version) && cachedDepValuesCheckedForThisVersion.length === oldDepValues.size && cachedDepValuesCheckedForThisVersion.every(([nodeKey, nodeVal]) => {
+      return oldDepValues.get(nodeKey) === nodeVal;
+    });
+
+    if (oldDepValues == null || state.version === (executionInfo === null || executionInfo === void 0 ? void 0 : executionInfo.stateVersion) || isCachedVersionSame) {
+      return false;
+    }
+
+    mapOfCheckedVersions.set(state.version, new Map(oldDepValues));
+    return Array.from(oldDepValues).some(([nodeKey, oldVal]) => {
+      const loadable = getCachedNodeLoadable(store, state, nodeKey);
+      return loadable.contents !== oldVal.contents;
+    });
+  }
+
+  function getExecutionInfo(store) {
+    return executionInfoMap.get(store);
+  }
+  /**
+   * This function will update the selector's execution info when the selector
+   * has either finished running an execution or has started a new execution. If
+   * the given loadable is in a 'loading' state, the intention is that a new
+   * execution has started. Otherwise, the intention is that an execution has
+   * just finished.
+   */
+
+
+  function setExecutionInfo(store, newExecutionId, loadable, depValues, state) {
+    executionInfoMap.set(store, {
+      depValuesDiscoveredSoFarDuringAsyncWork: depValues,
+      latestExecutionId: newExecutionId,
+      latestLoadable: loadable,
+      stateVersion: state.version
+    });
+  }
+
+  function updateExecutionInfoDepValues(store, executionId, depValues) {
+    if (isLatestExecution(store, executionId)) {
+      const executionInfo = getExecutionInfo(store);
+
+      if (executionInfo != null) {
+        executionInfo.depValuesDiscoveredSoFarDuringAsyncWork = depValues;
+      }
+    }
+  }
+
+  function clearExecutionInfo(store) {
+    executionInfoMap.delete(store);
+  }
+
+  function isLatestExecution(store, executionId) {
+    var _getExecutionInfo;
+
+    return executionId === ((_getExecutionInfo = getExecutionInfo(store)) === null || _getExecutionInfo === void 0 ? void 0 : _getExecutionInfo.latestExecutionId);
+  }
+
+  function setCache(state, loadable, depValues) {
+    if (true) {
+      if (loadable.state !== 'loading' && Boolean(options.dangerouslyAllowMutability) === false) {
+        Recoil_deepFreezeValue(loadable.contents);
+      }
+    }
+
+    state.atomValues.set(key, loadable);
+
+    try {
+      cache.set(depValuesToDepRoute(depValues), loadable);
+    } catch (error) {
+      throw Recoil_err(`Problem with setting cache for selector "${key}": ${error.message}`);
+    }
+  }
+
+  function detectCircularDependencies(fn) {
+    if (dependencyStack.includes(key)) {
+      const message = `Recoil selector has circular dependencies: ${dependencyStack.slice(dependencyStack.indexOf(key)).join(' \u2192 ')}`;
+      return loadableWithError$1(Recoil_err(message));
+    }
+
+    dependencyStack.push(key);
+
+    try {
+      return fn();
+    } finally {
+      dependencyStack.pop();
+    }
+  }
+
+  function selectorPeek(store, state) {
+    return cache.get(nodeKey => {
+      var _peekNodeLoadable;
+
+      !(typeof nodeKey === 'string') ?  true ? Recoil_invariant(false, 'Cache nodeKey is type string') : 0 : void 0;
+      return (_peekNodeLoadable = peekNodeLoadable$1(store, state, nodeKey)) === null || _peekNodeLoadable === void 0 ? void 0 : _peekNodeLoadable.contents;
+    });
+  }
+
+  function selectorGet(store, state) {
+    return detectCircularDependencies(() => getSelectorValAndUpdatedDeps(store, state));
+  }
+
+  function invalidateSelector(state) {
+    state.atomValues.delete(key);
+  }
+
+  function clearSelectorCache(store, treeState) {
+    !(recoilValue != null) ?  true ? Recoil_invariant(false, 'Recoil Value can never be null') : 0 : void 0;
+
+    for (const nodeKey of discoveredDependencyNodeKeys) {
+      var _node$clearCache;
+
+      const node = getNode$6(nodeKey);
+      (_node$clearCache = node.clearCache) === null || _node$clearCache === void 0 ? void 0 : _node$clearCache.call(node, store, treeState);
+    }
+
+    discoveredDependencyNodeKeys.clear();
+    invalidateSelector(treeState);
+    cache.clear();
+    markRecoilValueModified$1(store, recoilValue);
+  }
+
+  if (set != null) {
+    /**
+     * ES5 strict mode prohibits defining non-top-level function declarations,
+     * so don't use function declaration syntax here
+     */
+    const selectorSet = (store, state, newValue) => {
+      let syncSelectorSetFinished = false;
+      const writes = new Map();
+
+      function getRecoilValue({
+        key: depKey
+      }) {
+        if (syncSelectorSetFinished) {
+          throw Recoil_err('Recoil: Async selector sets are not currently supported.');
+        }
+
+        const loadable = getCachedNodeLoadable(store, state, depKey);
+
+        if (loadable.state === 'hasValue') {
+          return loadable.contents;
+        } else if (loadable.state === 'loading') {
+          throw new RecoilValueNotReady$2(depKey);
+        } else {
+          throw loadable.contents;
+        }
+      }
+
+      function setRecoilState(recoilState, valueOrUpdater) {
+        if (syncSelectorSetFinished) {
+          throw Recoil_err('Recoil: Async selector sets are not currently supported.');
+        }
+
+        const setValue = typeof valueOrUpdater === 'function' ? // cast to any because we can't restrict type S from being a function itself without losing support for opaque types
+        // flowlint-next-line unclear-type:off
+        valueOrUpdater(getRecoilValue(recoilState)) : valueOrUpdater;
+        const upstreamWrites = setNodeValue$3(store, state, recoilState.key, setValue);
+        upstreamWrites.forEach((v, k) => writes.set(k, v));
+      }
+
+      function resetRecoilState(recoilState) {
+        setRecoilState(recoilState, DEFAULT_VALUE$6);
+      }
+
+      const ret = set( // $FlowFixMe[incompatible-call]
+      {
+        set: setRecoilState,
+        get: getRecoilValue,
+        reset: resetRecoilState
+      }, newValue); // set should be a void method, but if the user makes it `async`, then it
+      // will return a Promise, which we don't currently support.
+
+      if (ret !== undefined) {
+        throw Recoil_isPromise(ret) ? Recoil_err('Recoil: Async selector sets are not currently supported.') : Recoil_err('Recoil: selector set should be a void function.');
+      }
+
+      syncSelectorSetFinished = true;
+      return writes;
+    };
+
+    return recoilValue = registerNode$1({
+      key,
+      nodeType: 'selector',
+      peek: selectorPeek,
+      get: selectorGet,
+      set: selectorSet,
+      init: selectorInit,
+      invalidate: invalidateSelector,
+      clearCache: clearSelectorCache,
+      shouldDeleteConfigOnRelease: selectorShouldDeleteConfigOnRelease,
+      dangerouslyAllowMutability: options.dangerouslyAllowMutability,
+      shouldRestoreFromSnapshots: false,
+      retainedBy
+    });
+  } else {
+    return recoilValue = registerNode$1({
+      key,
+      nodeType: 'selector',
+      peek: selectorPeek,
+      get: selectorGet,
+      init: selectorInit,
+      invalidate: invalidateSelector,
+      clearCache: clearSelectorCache,
+      shouldDeleteConfigOnRelease: selectorShouldDeleteConfigOnRelease,
+      dangerouslyAllowMutability: options.dangerouslyAllowMutability,
+      shouldRestoreFromSnapshots: false,
+      retainedBy
+    });
+  }
+}
+/* eslint-enable no-redeclare */
+
+
+var Recoil_selector = selector;
+
+// @fb-only: import type {ScopeRules} from 'Recoil_ScopedAtom';
+// @fb-only: const {scopedAtom} = require('Recoil_ScopedAtom');
+const {
+  loadableWithError: loadableWithError$2,
+  loadableWithPromise: loadableWithPromise$2,
+  loadableWithValue: loadableWithValue$3
+} = Recoil_Loadable$1;
+
+const {
+  peekNodeInfo: peekNodeInfo$3
+} = Recoil_FunctionalCore;
+
+const {
+  DEFAULT_VALUE: DEFAULT_VALUE$7,
+  DefaultValue: DefaultValue$2,
+  getConfigDeletionHandler: getConfigDeletionHandler$2,
+  registerNode: registerNode$2,
+  setConfigDeletionHandler: setConfigDeletionHandler$1
+} = Recoil_Node;
+
+const {
+  isRecoilValue: isRecoilValue$4
+} = Recoil_RecoilValue$1;
+
+const {
+  getRecoilValueAsLoadable: getRecoilValueAsLoadable$4,
+  markRecoilValueModified: markRecoilValueModified$2,
+  setRecoilValue: setRecoilValue$4,
+  setRecoilValueLoadable: setRecoilValueLoadable$2
+} = Recoil_RecoilValueInterface;
+
+const {
+  retainedByOptionWithDefault: retainedByOptionWithDefault$2
+} = Recoil_Retention;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function baseAtom(options) {
+  const {
+    key,
+    persistence_UNSTABLE: persistence
+  } = options;
+  const retainedBy = retainedByOptionWithDefault$2(options.retainedBy_UNSTABLE);
+  let liveStoresCount = 0;
+  let defaultLoadable = Recoil_isPromise(options.default) ? loadableWithPromise$2(options.default.then(value => {
+    defaultLoadable = loadableWithValue$3(value);
+    return value;
+  }).catch(error => {
+    defaultLoadable = loadableWithError$2(error);
+    throw error;
+  })) : loadableWithValue$3(options.default);
+  maybeFreezeValueOrPromise(options.default);
+  let cachedAnswerForUnvalidatedValue = undefined; // Cleanup handlers for this atom
+  // Rely on stable reference equality of the store to use it as a key per <RecoilRoot>
+
+  const cleanupEffectsByStore = new Map();
+
+  function maybeFreezeValueOrPromise(valueOrPromise) {
+    if (true) {
+      if (options.dangerouslyAllowMutability !== true) {
+        if (Recoil_isPromise(valueOrPromise)) {
+          return valueOrPromise.then(value => {
+            Recoil_deepFreezeValue(value);
+            return value;
+          });
+        } else {
+          Recoil_deepFreezeValue(valueOrPromise);
+          return valueOrPromise;
+        }
+      }
+    }
+
+    return valueOrPromise;
+  }
+
+  function wrapPendingPromise(store, promise) {
+    const wrappedPromise = promise.then(value => {
+      var _store$getState$nextT, _state$atomValues$get;
+
+      const state = (_store$getState$nextT = store.getState().nextTree) !== null && _store$getState$nextT !== void 0 ? _store$getState$nextT : store.getState().currentTree;
+
+      if (((_state$atomValues$get = state.atomValues.get(key)) === null || _state$atomValues$get === void 0 ? void 0 : _state$atomValues$get.contents) === wrappedPromise) {
+        setRecoilValue$4(store, node, value);
+      }
+
+      return value;
+    }).catch(error => {
+      var _store$getState$nextT2, _state$atomValues$get2;
+
+      const state = (_store$getState$nextT2 = store.getState().nextTree) !== null && _store$getState$nextT2 !== void 0 ? _store$getState$nextT2 : store.getState().currentTree;
+
+      if (((_state$atomValues$get2 = state.atomValues.get(key)) === null || _state$atomValues$get2 === void 0 ? void 0 : _state$atomValues$get2.contents) === wrappedPromise) {
+        setRecoilValueLoadable$2(store, node, loadableWithError$2(error));
+      }
+
+      throw error;
+    });
+    return wrappedPromise;
+  }
+
+  function initAtom(store, initState, trigger) {
+    var _options$effects;
+
+    liveStoresCount++;
+
+    const cleanupAtom = () => {
+      var _cleanupEffectsByStor;
+
+      liveStoresCount--;
+      (_cleanupEffectsByStor = cleanupEffectsByStore.get(store)) === null || _cleanupEffectsByStor === void 0 ? void 0 : _cleanupEffectsByStor.forEach(cleanup => cleanup());
+      cleanupEffectsByStore.delete(store);
+    };
+
+    store.getState().knownAtoms.add(key); // Setup async defaults to notify subscribers when they resolve
+
+    if (defaultLoadable.state === 'loading') {
+      const notifyDefaultSubscribers = () => {
+        var _store$getState$nextT3;
+
+        const state = (_store$getState$nextT3 = store.getState().nextTree) !== null && _store$getState$nextT3 !== void 0 ? _store$getState$nextT3 : store.getState().currentTree;
+
+        if (!state.atomValues.has(key)) {
+          markRecoilValueModified$2(store, node);
+        }
+      };
+
+      defaultLoadable.contents.finally(notifyDefaultSubscribers);
+    } ///////////////////
+    // Run Atom Effects
+    ///////////////////
+
+
+    const effects = (_options$effects = options.effects) !== null && _options$effects !== void 0 ? _options$effects : options.effects_UNSTABLE;
+
+    if (effects != null) {
+      // This state is scoped by Store, since this is in the initAtom() closure
+      let duringInit = true;
+      let initValue = DEFAULT_VALUE$7;
+      let isInitError = false;
+      let pendingSetSelf = null;
+
+      function getLoadable(recoilValue) {
+        // Normally we can just get the current value of another atom.
+        // But for our own value we need to check if there is a pending
+        // initialized value or get the fallback default value.
+        if (duringInit && recoilValue.key === key) {
+          // Cast T to S
+          const retValue = initValue; // flowlint-line unclear-type:off
+
+          return retValue instanceof DefaultValue$2 ? peekAtom(store, initState) // flowlint-line unclear-type:off
+          : Recoil_isPromise(retValue) ? loadableWithPromise$2(retValue.then(v => v instanceof DefaultValue$2 ? // Cast T to S
+          defaultLoadable.toPromise() // flowlint-line unclear-type:off
+          : v)) : loadableWithValue$3(retValue);
+        }
+
+        return getRecoilValueAsLoadable$4(store, recoilValue);
+      }
+
+      function getPromise(recoilValue) {
+        return getLoadable(recoilValue).toPromise();
+      }
+
+      function getInfo_UNSTABLE(recoilValue) {
+        var _store$getState$nextT4;
+
+        const info = peekNodeInfo$3(store, (_store$getState$nextT4 = store.getState().nextTree) !== null && _store$getState$nextT4 !== void 0 ? _store$getState$nextT4 : store.getState().currentTree, recoilValue.key);
+        return duringInit && recoilValue.key === key && !(initValue instanceof DefaultValue$2) ? { ...info,
+          isSet: true,
+          loadable: getLoadable(recoilValue)
+        } : info;
+      }
+
+      const setSelf = effect => valueOrUpdater => {
+        if (duringInit) {
+          const currentLoadable = getLoadable(node);
+          const currentValue = currentLoadable.state === 'hasValue' ? currentLoadable.contents : DEFAULT_VALUE$7;
+          initValue = typeof valueOrUpdater === 'function' ? // cast to any because we can't restrict T from being a function without losing support for opaque types
+          valueOrUpdater(currentValue) // flowlint-line unclear-type:off
+          : valueOrUpdater;
+
+          if (Recoil_isPromise(initValue)) {
+            initValue = initValue.then(value => {
+              // Avoid calling onSet() when setSelf() initializes with a Promise
+              pendingSetSelf = {
+                effect,
+                value
+              };
+              return value;
+            });
+          }
+        } else {
+          if (Recoil_isPromise(valueOrUpdater)) {
+            throw Recoil_err('Setting atoms to async values is not implemented.');
+          }
+
+          if (typeof valueOrUpdater !== 'function') {
+            pendingSetSelf = {
+              effect,
+              value: valueOrUpdater
+            };
+          }
+
+          setRecoilValue$4(store, node, typeof valueOrUpdater === 'function' ? currentValue => {
+            const newValue = // cast to any because we can't restrict T from being a function without losing support for opaque types
+            valueOrUpdater(currentValue); // flowlint-line unclear-type:off
+
+            pendingSetSelf = {
+              effect,
+              value: newValue
+            };
+            return newValue;
+          } : valueOrUpdater);
+        }
+      };
+
+      const resetSelf = effect => () => setSelf(effect)(DEFAULT_VALUE$7);
+
+      const onSet = effect => handler => {
+        var _cleanupEffectsByStor2;
+
+        const {
+          release
+        } = store.subscribeToTransactions(currentStore => {
+          var _currentTree$atomValu;
+
+          // eslint-disable-next-line prefer-const
+          let {
+            currentTree,
+            previousTree
+          } = currentStore.getState();
+
+          if (!previousTree) {
+            Recoil_recoverableViolation('Transaction subscribers notified without a next tree being present -- this is a bug in Recoil');
+            previousTree = currentTree; // attempt to trundle on
+          }
+
+          const newLoadable = (_currentTree$atomValu = currentTree.atomValues.get(key)) !== null && _currentTree$atomValu !== void 0 ? _currentTree$atomValu : defaultLoadable;
+
+          if (newLoadable.state === 'hasValue') {
+            var _previousTree$atomVal, _pendingSetSelf, _pendingSetSelf2, _pendingSetSelf3;
+
+            const newValue = newLoadable.contents;
+            const oldLoadable = (_previousTree$atomVal = previousTree.atomValues.get(key)) !== null && _previousTree$atomVal !== void 0 ? _previousTree$atomVal : defaultLoadable;
+            const oldValue = oldLoadable.state === 'hasValue' ? oldLoadable.contents : DEFAULT_VALUE$7; // TODO This isn't actually valid, use as a placeholder for now.
+            // Ignore atom value changes that were set via setSelf() in the same effect.
+            // We will still properly call the handler if there was a subsequent
+            // set from something other than an atom effect which was batched
+            // with the `setSelf()` call.  However, we may incorrectly ignore
+            // the handler if the subsequent batched call happens to set the
+            // atom to the exact same value as the `setSelf()`.   But, in that
+            // case, it was kind of a noop, so the semantics are debatable..
+
+            if (((_pendingSetSelf = pendingSetSelf) === null || _pendingSetSelf === void 0 ? void 0 : _pendingSetSelf.effect) !== effect || ((_pendingSetSelf2 = pendingSetSelf) === null || _pendingSetSelf2 === void 0 ? void 0 : _pendingSetSelf2.value) !== newValue) {
+              handler(newValue, oldValue, !currentTree.atomValues.has(key));
+            } else if (((_pendingSetSelf3 = pendingSetSelf) === null || _pendingSetSelf3 === void 0 ? void 0 : _pendingSetSelf3.effect) === effect) {
+              pendingSetSelf = null;
+            }
+          }
+        }, key);
+        cleanupEffectsByStore.set(store, [...((_cleanupEffectsByStor2 = cleanupEffectsByStore.get(store)) !== null && _cleanupEffectsByStor2 !== void 0 ? _cleanupEffectsByStor2 : []), release]);
+      };
+
+      for (const effect of effects) {
+        try {
+          const cleanup = effect({
+            node,
+            storeID: store.storeID,
+            trigger,
+            setSelf: setSelf(effect),
+            resetSelf: resetSelf(effect),
+            onSet: onSet(effect),
+            getPromise,
+            getLoadable,
+            getInfo_UNSTABLE
+          });
+
+          if (cleanup != null) {
+            var _cleanupEffectsByStor3;
+
+            cleanupEffectsByStore.set(store, [...((_cleanupEffectsByStor3 = cleanupEffectsByStore.get(store)) !== null && _cleanupEffectsByStor3 !== void 0 ? _cleanupEffectsByStor3 : []), cleanup]);
+          }
+        } catch (error) {
+          initValue = error;
+          isInitError = true;
+        }
+      }
+
+      duringInit = false; // Mutate initial state in place since we know there are no other subscribers
+      // since we are the ones initializing on first use.
+
+      if (!(initValue instanceof DefaultValue$2)) {
+        var _store$getState$nextT5;
+
+        const frozenInitValue = maybeFreezeValueOrPromise(initValue);
+        const initLoadable = isInitError ? loadableWithError$2(initValue) : Recoil_isPromise(frozenInitValue) ? loadableWithPromise$2(wrapPendingPromise(store, frozenInitValue)) : loadableWithValue$3(frozenInitValue);
+        initState.atomValues.set(key, initLoadable); // If there is a pending transaction, then also mutate the next state tree.
+        // This could happen if the atom was first initialized in an action that
+        // also updated some other atom's state.
+
+        (_store$getState$nextT5 = store.getState().nextTree) === null || _store$getState$nextT5 === void 0 ? void 0 : _store$getState$nextT5.atomValues.set(key, initLoadable);
+      }
+    }
+
+    return cleanupAtom;
+  }
+
+  function peekAtom(_store, state) {
+    var _ref, _state$atomValues$get3;
+
+    return (_ref = (_state$atomValues$get3 = state.atomValues.get(key)) !== null && _state$atomValues$get3 !== void 0 ? _state$atomValues$get3 : cachedAnswerForUnvalidatedValue) !== null && _ref !== void 0 ? _ref : defaultLoadable;
+  }
+
+  function getAtom(_store, state) {
+    if (state.atomValues.has(key)) {
+      // Atom value is stored in state:
+      return Recoil_nullthrows(state.atomValues.get(key));
+    } else if (state.nonvalidatedAtoms.has(key)) {
+      // Atom value is stored but needs validation before use.
+      // We might have already validated it and have a cached validated value:
+      if (cachedAnswerForUnvalidatedValue != null) {
+        return cachedAnswerForUnvalidatedValue;
+      }
+
+      if (persistence == null) {
+        Recoil_expectationViolation(`Tried to restore a persisted value for atom ${key} but it has no persistence settings.`);
+        return defaultLoadable;
+      }
+
+      const nonvalidatedValue = state.nonvalidatedAtoms.get(key);
+      const validatorResult = persistence.validator(nonvalidatedValue, DEFAULT_VALUE$7);
+      const validatedValueLoadable = validatorResult instanceof DefaultValue$2 ? defaultLoadable : loadableWithValue$3(validatorResult);
+      cachedAnswerForUnvalidatedValue = validatedValueLoadable;
+      return cachedAnswerForUnvalidatedValue;
+    } else {
+      return defaultLoadable;
+    }
+  }
+
+  function invalidateAtom() {
+    cachedAnswerForUnvalidatedValue = undefined;
+  }
+
+  function setAtom(_store, state, newValue) {
+    // Bail out if we're being set to the existing value, or if we're being
+    // reset but have no stored value (validated or unvalidated) to reset from:
+    if (state.atomValues.has(key)) {
+      const existing = Recoil_nullthrows(state.atomValues.get(key));
+
+      if (existing.state === 'hasValue' && newValue === existing.contents) {
+        return new Map();
+      }
+    } else if (!state.nonvalidatedAtoms.has(key) && newValue instanceof DefaultValue$2) {
+      return new Map();
+    }
+
+    maybeFreezeValueOrPromise(newValue);
+    cachedAnswerForUnvalidatedValue = undefined; // can be released now if it was previously in use
+
+    return new Map().set(key, loadableWithValue$3(newValue));
+  }
+
+  function shouldDeleteConfigOnReleaseAtom() {
+    return getConfigDeletionHandler$2(key) !== undefined && liveStoresCount <= 0;
+  }
+
+  const node = registerNode$2({
+    key,
+    nodeType: 'atom',
+    peek: peekAtom,
+    get: getAtom,
+    set: setAtom,
+    init: initAtom,
+    invalidate: invalidateAtom,
+    shouldDeleteConfigOnRelease: shouldDeleteConfigOnReleaseAtom,
+    dangerouslyAllowMutability: options.dangerouslyAllowMutability,
+    persistence_UNSTABLE: options.persistence_UNSTABLE ? {
+      type: options.persistence_UNSTABLE.type,
+      backButton: options.persistence_UNSTABLE.backButton
+    } : undefined,
+    shouldRestoreFromSnapshots: true,
+    retainedBy
+  });
+  return node;
+} // prettier-ignore
+
+
+function atom(options) {
+  if (true) {
+    if (typeof options.key !== 'string') {
+      throw Recoil_err('A key option with a unique string value must be provided when creating an atom.');
+    }
+
+    if (!('default' in options)) {
+      throw Recoil_err('A default value must be specified when creating an atom.');
+    }
+  }
+
+  const {
+    default: optionsDefault,
+    // @fb-only: scopeRules_APPEND_ONLY_READ_THE_DOCS,
+    ...restOptions
+  } = options;
+
+  if (isRecoilValue$4(optionsDefault) // Continue to use atomWithFallback for promise defaults for scoped atoms
+  // for now, since scoped atoms don't support async defaults
+  // @fb-only: || (isPromise(optionsDefault) && scopeRules_APPEND_ONLY_READ_THE_DOCS)
+  ) {
+    return atomWithFallback({ ...restOptions,
+      default: optionsDefault // @fb-only: scopeRules_APPEND_ONLY_READ_THE_DOCS,
+
+    }); // @fb-only: } else if (scopeRules_APPEND_ONLY_READ_THE_DOCS && !isPromise(optionsDefault)) {
+    // @fb-only: return scopedAtom<T>({
+    // @fb-only: ...restOptions,
+    // @fb-only: default: optionsDefault,
+    // @fb-only: scopeRules_APPEND_ONLY_READ_THE_DOCS,
+    // @fb-only: });
+  } else {
+    return baseAtom({ ...restOptions,
+      default: optionsDefault
+    });
+  }
+}
+
+function atomWithFallback(options) {
+  const base = atom({ ...options,
+    default: DEFAULT_VALUE$7,
+    persistence_UNSTABLE: options.persistence_UNSTABLE === undefined ? undefined : { ...options.persistence_UNSTABLE,
+      validator: storedValue => storedValue instanceof DefaultValue$2 ? storedValue : Recoil_nullthrows(options.persistence_UNSTABLE).validator(storedValue, DEFAULT_VALUE$7)
+    },
+    // TODO Hack for now.
+    effects: options.effects,
+    // flowlint-line unclear-type: off
+    effects_UNSTABLE: options.effects_UNSTABLE // flowlint-line unclear-type: off
+
+  });
+  const sel = Recoil_selector({
+    key: `${options.key}__withFallback`,
+    get: ({
+      get
+    }) => {
+      const baseValue = get(base);
+      return baseValue instanceof DefaultValue$2 ? options.default : baseValue;
+    },
+    set: ({
+      set
+    }, newValue) => set(base, newValue),
+    dangerouslyAllowMutability: options.dangerouslyAllowMutability
+  });
+  setConfigDeletionHandler$1(sel.key, getConfigDeletionHandler$2(options.key));
+  return sel;
+}
+
+var Recoil_atom = atom;
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @emails oncall+recoil
+ * 
+ * @format
+ */
+
+class MapCache {
+  constructor(options) {
+    var _options$mapKey;
+
+    _defineProperty(this, "_map", void 0);
+
+    _defineProperty(this, "_keyMapper", void 0);
+
+    this._map = new Map();
+    this._keyMapper = (_options$mapKey = options === null || options === void 0 ? void 0 : options.mapKey) !== null && _options$mapKey !== void 0 ? _options$mapKey : v => v;
+  }
+
+  size() {
+    return this._map.size;
+  }
+
+  has(key) {
+    return this._map.has(this._keyMapper(key));
+  }
+
+  get(key) {
+    return this._map.get(this._keyMapper(key));
+  }
+
+  set(key, val) {
+    this._map.set(this._keyMapper(key), val);
+  }
+
+  delete(key) {
+    this._map.delete(this._keyMapper(key));
+  }
+
+  clear() {
+    this._map.clear();
+  }
+
+}
+
+var Recoil_MapCache = {
+  MapCache
+};
+
+var Recoil_MapCache_1 = Recoil_MapCache.MapCache;
+
+var Recoil_MapCache$1 = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  MapCache: Recoil_MapCache_1
+});
+
+const {
+  LRUCache: LRUCache$2
+} = Recoil_LRUCache$1;
+
+const {
+  MapCache: MapCache$1
+} = Recoil_MapCache$1;
+
+
+
+
+
+
+
+const defaultPolicy$1 = {
+  equality: 'reference',
+  eviction: 'none',
+  maxSize: Infinity
+};
+
+function cacheFromPolicy({
+  equality = defaultPolicy$1.equality,
+  eviction = defaultPolicy$1.eviction,
+  maxSize = defaultPolicy$1.maxSize
+} = defaultPolicy$1) {
+  const valueMapper = getValueMapper$1(equality);
+  const cache = getCache(eviction, maxSize, valueMapper);
+  return cache;
+}
+
+function getValueMapper$1(equality) {
+  switch (equality) {
+    case 'reference':
+      return val => val;
+
+    case 'value':
+      return val => Recoil_stableStringify(val);
+  }
+
+  throw Recoil_err(`Unrecognized equality policy ${equality}`);
+}
+
+function getCache(eviction, maxSize, mapKey) {
+  switch (eviction) {
+    case 'keep-all':
+      // $FlowFixMe[method-unbinding]
+      return new MapCache$1({
+        mapKey
+      });
+
+    case 'lru':
+      // $FlowFixMe[method-unbinding]
+      return new LRUCache$2({
+        mapKey,
+        maxSize: Recoil_nullthrows(maxSize)
+      });
+
+    case 'most-recent':
+      // $FlowFixMe[method-unbinding]
+      return new LRUCache$2({
+        mapKey,
+        maxSize: 1
+      });
+  }
+
+  throw Recoil_err(`Unrecognized eviction policy ${eviction}`);
+}
+
+var Recoil_cacheFromPolicy = cacheFromPolicy;
+
+const {
+  setConfigDeletionHandler: setConfigDeletionHandler$2
+} = Recoil_Node;
+
+
+
+
+
+// Process scopeRules to handle any entries which are functions taking parameters
+// prettier-ignore
+// @fb-only: function mapScopeRules<P>(
+// @fb-only: scopeRules?: ParameterizedScopeRules<P>,
+// @fb-only: param: P,
+// @fb-only: ): ScopeRules | void {
+// @fb-only: return scopeRules?.map(rule =>
+// @fb-only: Array.isArray(rule)
+// @fb-only: ? rule.map(entry => (typeof entry === 'function' ? entry(param) : entry))
+// @fb-only: : rule,
+// @fb-only: );
+// @fb-only: }
+
+/*
+A function which returns an atom based on the input parameter.
+
+Each unique parameter returns a unique atom. E.g.,
+
+  const f = atomFamily(...);
+  f({a: 1}) => an atom
+  f({a: 2}) => a different atom
+
+This allows components to persist local, private state using atoms.  Each
+instance of the component may have a different key, which it uses as the
+parameter for a family of atoms; in this way, each component will have
+its own atom not shared by other instances.  These state keys may be composed
+into children's state keys as well.
+*/
+function atomFamily(options) {
+  var _options$cachePolicyF, _options$cachePolicyF2;
+
+  const atomCache = Recoil_cacheFromPolicy({
+    equality: (_options$cachePolicyF = (_options$cachePolicyF2 = options.cachePolicyForParams_UNSTABLE) === null || _options$cachePolicyF2 === void 0 ? void 0 : _options$cachePolicyF2.equality) !== null && _options$cachePolicyF !== void 0 ? _options$cachePolicyF : 'value',
+    eviction: 'keep-all'
+  }); // Simple atomFamily implementation to cache individual atoms based
+  // on the parameter value equality.
+
+  return params => {
+    var _stableStringify, _options$effects;
+
+    const cachedAtom = atomCache.get(params);
+
+    if (cachedAtom != null) {
+      return cachedAtom;
+    }
+
+    const {
+      cachePolicyForParams_UNSTABLE,
+      ...atomOptions
+    } = options;
+    const newAtom = Recoil_atom({ ...atomOptions,
+      key: `${options.key}__${(_stableStringify = Recoil_stableStringify(params)) !== null && _stableStringify !== void 0 ? _stableStringify : 'void'}`,
+      default: typeof options.default === 'function' ? // The default was parameterized
+      // Flow doesn't know that T isn't a function, so we need to case to any
+      options.default(params) // flowlint-line unclear-type:off
+      : // Default may be a static value, promise, or RecoilValue
+      options.default,
+      retainedBy_UNSTABLE: typeof options.retainedBy_UNSTABLE === 'function' ? options.retainedBy_UNSTABLE(params) : options.retainedBy_UNSTABLE,
+      effects: typeof options.effects === 'function' ? options.effects(params) : typeof options.effects_UNSTABLE === 'function' ? options.effects_UNSTABLE(params) : (_options$effects = options.effects) !== null && _options$effects !== void 0 ? _options$effects : options.effects_UNSTABLE // prettier-ignore
+      // @fb-only: scopeRules_APPEND_ONLY_READ_THE_DOCS: mapScopeRules(
+      // @fb-only: options.scopeRules_APPEND_ONLY_READ_THE_DOCS,
+      // @fb-only: params,
+      // @fb-only: ),
+
+    });
+    atomCache.set(params, newAtom);
+    setConfigDeletionHandler$2(newAtom.key, () => {
+      atomCache.delete(params);
+    });
+    return newAtom;
+  };
+}
+
+var Recoil_atomFamily = atomFamily;
+
+const {
+  setConfigDeletionHandler: setConfigDeletionHandler$3
+} = Recoil_Node;
+
+
+
+ // Keep in mind the parameter needs to be serializable as a cahche key
+// using Recoil_stableStringify
+
+
+// Add a unique index to each selector in case the cache implementation allows
+// duplicate keys based on equivalent stringified parameters
+let nextIndex = 0;
+/* eslint-disable no-redeclare */
+
+// Return a function that returns members of a family of selectors of the same type
+// E.g.,
+//
+// const s = selectorFamily(...);
+// s({a: 1}) => a selector
+// s({a: 2}) => a different selector
+//
+// By default, the selectors are distinguished by distinct values of the
+// parameter based on value equality, not reference equality.  This allows using
+// object literals or other equivalent objects at callsites to not create
+// duplicate cache entries.  This behavior may be overridden with the
+// cacheImplementationForParams option.
+function selectorFamily(options) {
+  var _options$cachePolicyF, _options$cachePolicyF2;
+
+  const selectorCache = Recoil_cacheFromPolicy({
+    equality: (_options$cachePolicyF = (_options$cachePolicyF2 = options.cachePolicyForParams_UNSTABLE) === null || _options$cachePolicyF2 === void 0 ? void 0 : _options$cachePolicyF2.equality) !== null && _options$cachePolicyF !== void 0 ? _options$cachePolicyF : 'value',
+    eviction: 'keep-all'
+  });
+  return params => {
+    var _stableStringify;
+
+    const cachedSelector = selectorCache.get(params);
+
+    if (cachedSelector != null) {
+      return cachedSelector;
+    }
+
+    const myKey = `${options.key}__selectorFamily/${(_stableStringify = Recoil_stableStringify(params, {
+      // It is possible to use functions in parameters if the user uses
+      // a cache with reference equality thanks to the incrementing index.
+      allowFunctions: true
+    })) !== null && _stableStringify !== void 0 ? _stableStringify : 'void'}/${nextIndex++}`; // Append index in case values serialize to the same key string
+
+    const myGet = callbacks => options.get(params)(callbacks);
+
+    const myCachePolicy = options.cachePolicy_UNSTABLE;
+    const retainedBy = typeof options.retainedBy_UNSTABLE === 'function' ? options.retainedBy_UNSTABLE(params) : options.retainedBy_UNSTABLE;
+    let newSelector;
+
+    if (options.set != null) {
+      const set = options.set;
+
+      const mySet = (callbacks, newValue) => set(params)(callbacks, newValue);
+
+      newSelector = Recoil_selector({
+        key: myKey,
+        get: myGet,
+        set: mySet,
+        cachePolicy_UNSTABLE: myCachePolicy,
+        dangerouslyAllowMutability: options.dangerouslyAllowMutability,
+        retainedBy_UNSTABLE: retainedBy
+      });
+    } else {
+      newSelector = Recoil_selector({
+        key: myKey,
+        get: myGet,
+        cachePolicy_UNSTABLE: myCachePolicy,
+        dangerouslyAllowMutability: options.dangerouslyAllowMutability,
+        retainedBy_UNSTABLE: retainedBy
+      });
+    }
+
+    selectorCache.set(params, newSelector);
+    setConfigDeletionHandler$3(newSelector.key, () => {
+      selectorCache.delete(params);
+    });
+    return newSelector;
+  };
+}
+/* eslint-enable no-redeclare */
+
+
+var Recoil_selectorFamily = selectorFamily;
+
+// flowlint-next-line unclear-type:off
+
+
+const constantSelector = Recoil_selectorFamily({
+  key: '__constant',
+  get: constant => () => constant,
+  cachePolicyForParams_UNSTABLE: {
+    equality: 'reference'
+  }
+}); // Function that returns a selector which always produces the
+// same constant value.  It may be called multiple times with the
+// same value, based on reference equality, and will provide the
+// same selector.
+
+function constSelector(constant) {
+  return constantSelector(constant);
+}
+
+var Recoil_constSelector = constSelector;
+
+// flowlint-next-line unclear-type:off
+
+
+const throwingSelector = Recoil_selectorFamily({
+  key: '__error',
+  get: message => () => {
+    throw Recoil_err(message);
+  },
+  // TODO Why?
+  cachePolicyForParams_UNSTABLE: {
+    equality: 'reference'
+  }
+}); // Function that returns a selector which always throws an error
+// with the provided message.
+
+function errorSelector(message) {
+  return throwingSelector(message);
+}
+
+var Recoil_errorSelector = errorSelector;
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * Wraps another recoil value and prevents writing to it.
+ *
+ * @emails oncall+recoil
+ * 
+ * @format
+ */
+
+function readOnlySelector(atom) {
+  // flowlint-next-line unclear-type: off
+  return atom;
+}
+
+var Recoil_readOnlySelector = readOnlySelector;
+
+const {
+  loadableWithError: loadableWithError$3,
+  loadableWithPromise: loadableWithPromise$3,
+  loadableWithValue: loadableWithValue$4
+} = Recoil_Loadable$1;
+
+
+
+ /////////////////
+//  TRUTH TABLE
+/////////////////
+// Dependencies        waitForNone         waitForAny        waitForAll       waitForAllSettled
+//  [loading, loading]  [Promise, Promise]  Promise           Promise         Promise
+//  [value, loading]    [value, Promise]    [value, Promise]  Promise         Promise
+//  [value, value]      [value, value]      [value, value]    [value, value]  [value, value]
+//
+//  [error, loading]    [Error, Promise]    [Error, Promise]  Error           Promise
+//  [error, error]      [Error, Error]      [Error, Error]    Error           [error, error]
+//  [value, error]      [value, Error]      [value, Error]    Error           [value, error]
+// Issue parallel requests for all dependencies and return the current
+// status if they have results, have some error, or are still pending.
+
+
+function concurrentRequests(getRecoilValue, deps) {
+  const results = Array(deps.length).fill(undefined);
+  const exceptions = Array(deps.length).fill(undefined);
+
+  for (const [i, dep] of deps.entries()) {
+    try {
+      results[i] = getRecoilValue(dep);
+    } catch (e) {
+      // exceptions can either be Promises of pending results or real errors
+      exceptions[i] = e;
+    }
+  }
+
+  return [results, exceptions];
+}
+
+function isError(exp) {
+  return exp != null && !Recoil_isPromise(exp);
+}
+
+function unwrapDependencies(dependencies) {
+  return Array.isArray(dependencies) ? dependencies : Object.getOwnPropertyNames(dependencies).map(key => dependencies[key]);
+}
+
+function wrapResults(dependencies, results) {
+  return Array.isArray(dependencies) ? results : // Object.getOwnPropertyNames() has consistent key ordering with ES6
+  Object.getOwnPropertyNames(dependencies).reduce((out, key, idx) => ({ ...out,
+    [key]: results[idx]
+  }), {});
+}
+
+function wrapLoadables(dependencies, results, exceptions) {
+  const output = exceptions.map((exception, idx) => exception == null ? loadableWithValue$4(results[idx]) : Recoil_isPromise(exception) ? loadableWithPromise$3(exception) : loadableWithError$3(exception));
+  return wrapResults(dependencies, output);
+}
+
+function combineAsyncResultsWithSyncResults(syncResults, asyncResults) {
+  return asyncResults.map((result, idx) =>
+  /**
+   * it's important we use === undefined as opposed to == null, because the
+   * resolved value of the async promise could be `null`, in which case we
+   * don't want to use syncResults[idx], which would be undefined. If async
+   * promise resolves to `undefined`, that's ok because `syncResults[idx]`
+   * will also be `undefined`. That's a little hacky, but it works.
+   */
+  result === undefined ? syncResults[idx] : result);
+} // Selector that requests all dependencies in parallel and immediately returns
+// current results without waiting.
+
+
+const waitForNone = Recoil_selectorFamily({
+  key: '__waitForNone',
+  get: dependencies => ({
+    get
+  }) => {
+    // Issue requests for all dependencies in parallel.
+    const deps = unwrapDependencies(dependencies);
+    const [results, exceptions] = concurrentRequests(get, deps); // Always return the current status of the results; never block.
+
+    return wrapLoadables(dependencies, results, exceptions);
+  },
+  dangerouslyAllowMutability: true
+}); // Selector that requests all dependencies in parallel and waits for at least
+// one to be available before returning results.  It will only error if all
+// dependencies have errors.
+
+const waitForAny = Recoil_selectorFamily({
+  key: '__waitForAny',
+  get: dependencies => ({
+    get
+  }) => {
+    // Issue requests for all dependencies in parallel.
+    // Exceptions can either be Promises of pending results or real errors
+    const deps = unwrapDependencies(dependencies);
+    const [results, exceptions] = concurrentRequests(get, deps); // If any results are available, value or error, return the current status
+
+    if (exceptions.some(exp => !Recoil_isPromise(exp))) {
+      return wrapLoadables(dependencies, results, exceptions);
+    } // Otherwise, return a promise that will resolve when the next result is
+    // available, whichever one happens to be next.  But, if all pending
+    // dependencies end up with errors, then reject the promise.
+
+
+    return new Promise(resolve => {
+      for (const [i, exp] of exceptions.entries()) {
+        if (Recoil_isPromise(exp)) {
+          exp.then(result => {
+            results[i] = result;
+            exceptions[i] = undefined;
+            resolve(wrapLoadables(dependencies, results, exceptions));
+          }).catch(error => {
+            exceptions[i] = error;
+            resolve(wrapLoadables(dependencies, results, exceptions));
+          });
+        }
+      }
+    });
+  },
+  dangerouslyAllowMutability: true
+}); // Selector that requests all dependencies in parallel and waits for all to be
+// available before returning a value.  It will error if any dependencies error.
+
+const waitForAll = Recoil_selectorFamily({
+  key: '__waitForAll',
+  get: dependencies => ({
+    get
+  }) => {
+    // Issue requests for all dependencies in parallel.
+    // Exceptions can either be Promises of pending results or real errors
+    const deps = unwrapDependencies(dependencies);
+    const [results, exceptions] = concurrentRequests(get, deps); // If all results are available, return the results
+
+    if (exceptions.every(exp => exp == null)) {
+      return wrapResults(dependencies, results);
+    } // If we have any errors, throw the first error
+
+
+    const error = exceptions.find(isError);
+
+    if (error != null) {
+      throw error;
+    } // Otherwise, return a promise that will resolve when all results are available
+
+
+    return Promise.all(exceptions).then(exceptionResults => wrapResults(dependencies, combineAsyncResultsWithSyncResults(results, exceptionResults)));
+  },
+  dangerouslyAllowMutability: true
+});
+const waitForAllSettled = Recoil_selectorFamily({
+  key: '__waitForAllSettled',
+  get: dependencies => ({
+    get
+  }) => {
+    // Issue requests for all dependencies in parallel.
+    // Exceptions can either be Promises of pending results or real errors
+    const deps = unwrapDependencies(dependencies);
+    const [results, exceptions] = concurrentRequests(get, deps); // If all results are available, return the results
+
+    if (exceptions.every(exp => !Recoil_isPromise(exp))) {
+      return wrapLoadables(dependencies, results, exceptions);
+    } // Wait for all results to settle
+
+
+    return Promise.all(exceptions.map((exp, i) => Recoil_isPromise(exp) ? exp.then(result => {
+      results[i] = result;
+      exceptions[i] = undefined;
+    }).catch(error => {
+      results[i] = undefined;
+      exceptions[i] = error;
+    }) : null)) // Then wrap them as loadables
+    .then(() => wrapLoadables(dependencies, results, exceptions));
+  },
+  dangerouslyAllowMutability: true
+});
+const noWait = Recoil_selectorFamily({
+  key: '__noWait',
+  get: dependency => ({
+    get
+  }) => {
+    try {
+      return loadableWithValue$4(get(dependency));
+    } catch (exception) {
+      return Recoil_isPromise(exception) ? loadableWithPromise$3(exception) : loadableWithError$3(exception);
+    }
+  },
+  dangerouslyAllowMutability: true
+});
+var Recoil_WaitFor = {
+  waitForNone,
+  waitForAny,
+  waitForAll,
+  waitForAllSettled,
+  noWait
+};
+
+const {
+  RecoilLoadable
+} = Recoil_Loadable$1;
+
+const {
+  DefaultValue: DefaultValue$3
+} = Recoil_Node;
+
+const {
+  RecoilRoot: RecoilRoot$2,
+  useRecoilStoreID: useRecoilStoreID$1
+} = Recoil_RecoilRoot;
+
+const {
+  isRecoilValue: isRecoilValue$5
+} = Recoil_RecoilValue$1;
+
+const {
+  retentionZone: retentionZone$1
+} = Recoil_RetentionZone;
+
+const {
+  freshSnapshot: freshSnapshot$2
+} = Recoil_Snapshot$1;
+
+const {
+  useRecoilState: useRecoilState$1,
+  useRecoilState_TRANSITION_SUPPORT_UNSTABLE: useRecoilState_TRANSITION_SUPPORT_UNSTABLE$1,
+  useRecoilStateLoadable: useRecoilStateLoadable$1,
+  useRecoilValue: useRecoilValue$1,
+  useRecoilValue_TRANSITION_SUPPORT_UNSTABLE: useRecoilValue_TRANSITION_SUPPORT_UNSTABLE$1,
+  useRecoilValueLoadable: useRecoilValueLoadable$1,
+  useRecoilValueLoadable_TRANSITION_SUPPORT_UNSTABLE: useRecoilValueLoadable_TRANSITION_SUPPORT_UNSTABLE$1,
+  useResetRecoilState: useResetRecoilState$1,
+  useSetRecoilState: useSetRecoilState$1
+} = Recoil_Hooks;
+
+const {
+  useGotoRecoilSnapshot: useGotoRecoilSnapshot$1,
+  useRecoilSnapshot: useRecoilSnapshot$1,
+  useRecoilTransactionObserver: useRecoilTransactionObserver$1
+} = Recoil_SnapshotHooks;
+
+
+
+
+
+const {
+  useRecoilCallback: useRecoilCallback$1
+} = Recoil_useRecoilCallback;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const {
+  noWait: noWait$1,
+  waitForAll: waitForAll$1,
+  waitForAllSettled: waitForAllSettled$1,
+  waitForAny: waitForAny$1,
+  waitForNone: waitForNone$1
+} = Recoil_WaitFor;
+
+var Recoil_index = {
+  // Types
+  DefaultValue: DefaultValue$3,
+  isRecoilValue: isRecoilValue$5,
+  RecoilLoadable,
+  // Recoil Root
+  RecoilRoot: RecoilRoot$2,
+  useRecoilStoreID: useRecoilStoreID$1,
+  useRecoilBridgeAcrossReactRoots_UNSTABLE: Recoil_useRecoilBridgeAcrossReactRoots,
+  // Atoms/Selectors
+  atom: Recoil_atom,
+  selector: Recoil_selector,
+  // Convenience Atoms/Selectors
+  atomFamily: Recoil_atomFamily,
+  selectorFamily: Recoil_selectorFamily,
+  constSelector: Recoil_constSelector,
+  errorSelector: Recoil_errorSelector,
+  readOnlySelector: Recoil_readOnlySelector,
+  // Concurrency Helpers for Atoms/Selectors
+  noWait: noWait$1,
+  waitForNone: waitForNone$1,
+  waitForAny: waitForAny$1,
+  waitForAll: waitForAll$1,
+  waitForAllSettled: waitForAllSettled$1,
+  // Hooks for Atoms/Selectors
+  useRecoilValue: useRecoilValue$1,
+  useRecoilValueLoadable: useRecoilValueLoadable$1,
+  useRecoilState: useRecoilState$1,
+  useRecoilStateLoadable: useRecoilStateLoadable$1,
+  useSetRecoilState: useSetRecoilState$1,
+  useResetRecoilState: useResetRecoilState$1,
+  useGetRecoilValueInfo_UNSTABLE: Recoil_useGetRecoilValueInfo,
+  useRecoilRefresher_UNSTABLE: Recoil_useRecoilRefresher,
+  useRecoilValueLoadable_TRANSITION_SUPPORT_UNSTABLE: useRecoilValueLoadable_TRANSITION_SUPPORT_UNSTABLE$1,
+  useRecoilValue_TRANSITION_SUPPORT_UNSTABLE: useRecoilValue_TRANSITION_SUPPORT_UNSTABLE$1,
+  useRecoilState_TRANSITION_SUPPORT_UNSTABLE: useRecoilState_TRANSITION_SUPPORT_UNSTABLE$1,
+  // Hooks for complex operations
+  useRecoilCallback: useRecoilCallback$1,
+  useRecoilTransaction_UNSTABLE: Recoil_useRecoilTransaction,
+  // Snapshots
+  useGotoRecoilSnapshot: useGotoRecoilSnapshot$1,
+  useRecoilSnapshot: useRecoilSnapshot$1,
+  useRecoilTransactionObserver_UNSTABLE: useRecoilTransactionObserver$1,
+  snapshot_UNSTABLE: freshSnapshot$2,
+  // Memory Management
+  useRetain: Recoil_useRetain,
+  retentionZone: retentionZone$1
+};
+var Recoil_index_1 = Recoil_index.DefaultValue;
+var Recoil_index_2 = Recoil_index.isRecoilValue;
+var Recoil_index_3 = Recoil_index.RecoilLoadable;
+var Recoil_index_4 = Recoil_index.RecoilRoot;
+var Recoil_index_5 = Recoil_index.useRecoilStoreID;
+var Recoil_index_6 = Recoil_index.useRecoilBridgeAcrossReactRoots_UNSTABLE;
+var Recoil_index_7 = Recoil_index.atom;
+var Recoil_index_8 = Recoil_index.selector;
+var Recoil_index_9 = Recoil_index.atomFamily;
+var Recoil_index_10 = Recoil_index.selectorFamily;
+var Recoil_index_11 = Recoil_index.constSelector;
+var Recoil_index_12 = Recoil_index.errorSelector;
+var Recoil_index_13 = Recoil_index.readOnlySelector;
+var Recoil_index_14 = Recoil_index.noWait;
+var Recoil_index_15 = Recoil_index.waitForNone;
+var Recoil_index_16 = Recoil_index.waitForAny;
+var Recoil_index_17 = Recoil_index.waitForAll;
+var Recoil_index_18 = Recoil_index.waitForAllSettled;
+var Recoil_index_19 = Recoil_index.useRecoilValue;
+var Recoil_index_20 = Recoil_index.useRecoilValueLoadable;
+var Recoil_index_21 = Recoil_index.useRecoilState;
+var Recoil_index_22 = Recoil_index.useRecoilStateLoadable;
+var Recoil_index_23 = Recoil_index.useSetRecoilState;
+var Recoil_index_24 = Recoil_index.useResetRecoilState;
+var Recoil_index_25 = Recoil_index.useGetRecoilValueInfo_UNSTABLE;
+var Recoil_index_26 = Recoil_index.useRecoilRefresher_UNSTABLE;
+var Recoil_index_27 = Recoil_index.useRecoilValueLoadable_TRANSITION_SUPPORT_UNSTABLE;
+var Recoil_index_28 = Recoil_index.useRecoilValue_TRANSITION_SUPPORT_UNSTABLE;
+var Recoil_index_29 = Recoil_index.useRecoilState_TRANSITION_SUPPORT_UNSTABLE;
+var Recoil_index_30 = Recoil_index.useRecoilCallback;
+var Recoil_index_31 = Recoil_index.useRecoilTransaction_UNSTABLE;
+var Recoil_index_32 = Recoil_index.useGotoRecoilSnapshot;
+var Recoil_index_33 = Recoil_index.useRecoilSnapshot;
+var Recoil_index_34 = Recoil_index.useRecoilTransactionObserver_UNSTABLE;
+var Recoil_index_35 = Recoil_index.snapshot_UNSTABLE;
+var Recoil_index_36 = Recoil_index.useRetain;
+var Recoil_index_37 = Recoil_index.retentionZone;
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Recoil_index);
+
+
+
+/***/ }),
+
 /***/ "./node_modules/scheduler/cjs/scheduler-tracing.development.js":
 /*!*********************************************************************!*\
   !*** ./node_modules/scheduler/cjs/scheduler-tracing.development.js ***!
@@ -37596,6 +52610,10 @@ module.exports = function getSideChannel() {
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
+	"./Auth/Login": "./resources/js/Pages/Auth/Login.jsx",
+	"./Auth/Login.jsx": "./resources/js/Pages/Auth/Login.jsx",
+	"./Dashboard": "./resources/js/Pages/Dashboard.jsx",
+	"./Dashboard.jsx": "./resources/js/Pages/Dashboard.jsx",
 	"./home": "./resources/js/Pages/home.jsx",
 	"./home.jsx": "./resources/js/Pages/home.jsx"
 };
@@ -37629,6 +52647,27 @@ webpackContext.id = "./resources/js/Pages sync recursive ^\\.\\/.*$";
 /***/ (() => {
 
 /* (ignored) */
+
+/***/ }),
+
+/***/ "./node_modules/goober/dist/goober.modern.js":
+/*!***************************************************!*\
+  !*** ./node_modules/goober/dist/goober.modern.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "css": () => (/* binding */ u),
+/* harmony export */   "extractCss": () => (/* binding */ r),
+/* harmony export */   "glob": () => (/* binding */ g),
+/* harmony export */   "keyframes": () => (/* binding */ b),
+/* harmony export */   "setup": () => (/* binding */ h),
+/* harmony export */   "styled": () => (/* binding */ m)
+/* harmony export */ });
+let e={data:""},t=t=>"object"==typeof window?((t?t.querySelector("#_goober"):window._goober)||Object.assign((t||document.head).appendChild(document.createElement("style")),{innerHTML:" ",id:"_goober"})).firstChild:t||e,r=e=>{let r=t(e),l=r.data;return r.data="",l},l=/(?:([\u0080-\uFFFF\w-%@]+) *:? *([^{;]+?);|([^;}{]*?) *{)|(}\s*)/g,a=/\/\*[^]*?\*\/|\s\s+|\n/g,n=(e,t)=>{let r="",l="",a="";for(let o in e){let s=e[o];"@"==o[0]?"i"==o[1]?r=o+" "+s+";":l+="f"==o[1]?n(s,o):o+"{"+n(s,"k"==o[1]?"":t)+"}":"object"==typeof s?l+=n(s,t?t.replace(/([^,])+/g,e=>o.replace(/(^:.*)|([^,])+/g,t=>/&/.test(t)?t.replace(/&/g,e):e?e+" "+t:t)):o):null!=s&&(o=o.replace(/[A-Z]/g,"-$&").toLowerCase(),a+=n.p?n.p(o,s):o+":"+s+";")}return r+(t&&a?t+"{"+a+"}":a)+l},o={},s=e=>{if("object"==typeof e){let t="";for(let r in e)t+=r+s(e[r]);return t}return e},c=(e,t,r,c,i)=>{let u=s(e),p=o[u]||(o[u]=(e=>{let t=0,r=11;for(;t<e.length;)r=101*r+e.charCodeAt(t++)>>>0;return"go"+r})(u));if(!o[p]){let t=u!==e?e:(e=>{let t,r=[{}];for(;t=l.exec(e.replace(a,""));)t[4]?r.shift():t[3]?r.unshift(r[0][t[3]]=r[0][t[3]]||{}):r[0][t[1]]=t[2];return r[0]})(e);o[p]=n(i?{["@keyframes "+p]:t}:t,r?"":"."+p)}return((e,t,r)=>{-1==t.data.indexOf(e)&&(t.data=r?e+t.data:t.data+e)})(o[p],t,c),p},i=(e,t,r)=>e.reduce((e,l,a)=>{let o=t[a];if(o&&o.call){let e=o(r),t=e&&e.props&&e.props.className||/^go/.test(e)&&e;o=t?"."+t:e&&"object"==typeof e?e.props?"":n(e,""):!1===e?"":e}return e+l+(null==o?"":o)},"");function u(e){let r=this||{},l=e.call?e(r.p):e;return c(l.unshift?l.raw?i(l,[].slice.call(arguments,1),r.p):l.reduce((e,t)=>Object.assign(e,t&&t.call?t(r.p):t),{}):l,t(r.target),r.g,r.o,r.k)}let p,d,f,g=u.bind({g:1}),b=u.bind({k:1});function h(e,t,r,l){n.p=t,p=e,d=r,f=l}function m(e,t){let r=this||{};return function(){let l=arguments;function a(n,o){let s=Object.assign({},n),c=s.className||a.className;r.p=Object.assign({theme:d&&d()},s),r.o=/ *go\d+/.test(c),s.className=u.apply(r,l)+(c?" "+c:""),t&&(s.ref=o);let i=e;return e[0]&&(i=s.as||e,delete s.as),f&&i[0]&&f(s),p(i,s)}return t?t(a):a}}
+
 
 /***/ }),
 
